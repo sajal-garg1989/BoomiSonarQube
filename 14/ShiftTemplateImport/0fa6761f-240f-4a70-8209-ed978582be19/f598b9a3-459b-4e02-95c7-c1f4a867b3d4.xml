@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f598b9a3-459b-4e02-95c7-c1f4a867b3d4</Id>
+  <Type>transform.function</Type>
+  <Name>Transfer String</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="4" name="Org Job" />
+        <Input key="2" name="Work Rule" />
+        <Input key="3" name="Cost Center" />
+        <Input key="1" name="LC1" />
+        <Input key="5" name="LC2" />
+        <Input key="6" name="LC3" />
+        <Input key="7" name="LC4" />
+        <Input key="8" name="LC5" />
+        <Input key="9" name="LC6" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="Transfer String" />
+        <Output key="2" name="LC String" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="2"
+        name="Get Dynamic Process Property" position="1"
+        sumEnabled="false" type="PropertyGet" x="61.0" y="133.0">
+          <Inputs>
+            <Input default="laborcat_count" key="1"
+            name="Property Name" />
+            <Input key="2" name="Default Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="3" name="Scripting" position="2"
+        sumEnabled="false" type="Scripting" x="426.0" y="298.0">
+          <Inputs>
+            <Input key="1" name="laborcat_count" />
+            <Input key="2" name="LC1" />
+            <Input key="3" name="LC2" />
+            <Input key="4" name="LC3" />
+            <Input key="5" name="LC4" />
+            <Input key="6" name="LC5" />
+            <Input key="7" name="LC6" />
+          </Inputs>
+          <Outputs>
+            <Output key="8" name="output" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy" preserveOrder="true"
+            useComponent="false">
+              <ScriptToExecute>//Build the labor category portion
+              of the transfer string based on how many labor
+              categories are configured if (LC1=="" &amp;&amp;
+              LC2=="" &amp;&amp; LC3=="" &amp;&amp; LC4==""
+              &amp;&amp; LC5=="" &amp;&amp; LC6=="") {output="";}
+              else if (laborcat_count== "0") {output="";} else if
+              (laborcat_count== "1") {output=LC1;} else if
+              (laborcat_count== "2") {output=LC1 + "," + LC2;} else
+              if (laborcat_count== "3") {output=LC1 + "," + LC2 +
+              "," + LC3;} else if (laborcat_count== "4")
+              {output=LC1 + "," + LC2 + "," + LC3 + "," + LC4;}
+              else if (laborcat_count== "5") {output=LC1 + "," +
+              LC2 + "," + LC3 + "," + LC4 + "," + LC5;} else if
+              (laborcat_count== "6") {output=LC1 + "," + LC2 + ","
+              + LC3 + "," + LC4 + "," + LC5 + "," +
+              LC6;}</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="laborcat_count" />
+              <Input dataType="character" index="2" name="LC1" />
+              <Input dataType="character" index="3" name="LC2" />
+              <Input dataType="character" index="4" name="LC3" />
+              <Input dataType="character" index="5" name="LC4" />
+              <Input dataType="character" index="6" name="LC5" />
+              <Input dataType="character" index="7" name="LC6" />
+              <Output index="8" name="output" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="4" name="String Concat" position="3"
+        sumEnabled="false" type="StringConcat" x="854.0" y="221.0">
+          <Inputs>
+            <Input key="1" name="OrgJob" />
+            <Input key="2" name="WorkRule" />
+            <Input key="3" name="CostCenter" />
+            <Input key="4" name="LaborCat" />
+            <Input key="5" name="End" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter=";" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="0" fromKey="9"
+        fromNamePath="Editor/LC6" fromType="function"
+        toFunction="3" toKey="7" toNamePath="Scripting/LC6"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="8"
+        fromNamePath="Scripting/output" fromType="function"
+        toFunction="0" toKey="2" toNamePath="Editor/LC String"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="3"
+        fromNamePath="Editor/Cost Center" fromType="function"
+        toFunction="4" toKey="3"
+        toNamePath="String Concat/CostCenter" toType="function" />
+        <Mapping fromFunction="3" fromKey="8"
+        fromNamePath="Scripting/output" fromType="function"
+        toFunction="4" toKey="4"
+        toNamePath="String Concat/LaborCat" toType="function" />
+        <Mapping fromFunction="0" fromKey="8"
+        fromNamePath="Editor/LC5" fromType="function"
+        toFunction="3" toKey="6" toNamePath="Scripting/LC5"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/LC1" fromType="function"
+        toFunction="3" toKey="2" toNamePath="Scripting/LC1"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="4"
+        fromNamePath="Editor/Org Job" fromType="function"
+        toFunction="4" toKey="1" toNamePath="String Concat/OrgJob"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="7"
+        fromNamePath="Editor/LC4" fromType="function"
+        toFunction="3" toKey="5" toNamePath="Scripting/LC4"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="3"
+        fromNamePath="Get Dynamic Process Property/Result"
+        fromType="function" toFunction="3" toKey="1"
+        toNamePath="Scripting/laborcat_count" toType="function" />
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/Work Rule" fromType="function"
+        toFunction="4" toKey="2"
+        toNamePath="String Concat/WorkRule" toType="function" />
+        <Mapping fromFunction="4" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="0" toKey="1"
+        toNamePath="Editor/Transfer String" toType="function" />
+        <Mapping fromFunction="0" fromKey="5"
+        fromNamePath="Editor/LC2" fromType="function"
+        toFunction="3" toKey="3" toNamePath="Scripting/LC2"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="6"
+        fromNamePath="Editor/LC3" fromType="function"
+        toFunction="3" toKey="4" toNamePath="Scripting/LC3"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

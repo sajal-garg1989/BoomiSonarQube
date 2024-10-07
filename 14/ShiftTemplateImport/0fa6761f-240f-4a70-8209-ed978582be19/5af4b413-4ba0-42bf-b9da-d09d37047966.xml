@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>5af4b413-4ba0-42bf-b9da-d09d37047966</Id>
+  <Type>transform.map</Type>
+  <Name>Integration Details Request</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="21b6bba0-9093-4d32-b899-0fab346a9084"
+    refId="fromProfile" name="Integration Details" />
+    <Ref compId="934b1dbd-115f-4281-a8f3-837abc4d800d"
+    refId="toProfile" name="Integration Details Request" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="21b6bba0-9093-4d32-b899-0fab346a9084"
+    toProfile="934b1dbd-115f-4281-a8f3-837abc4d800d">
+      <Mappings>
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Record/Elements/Description"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        toNamePath="Root/Object/batchIntegration/Array/ArrayElement1/Object/description"
+        toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Record/Elements/Error Key" fromType="profile"
+        toKey="8"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='8']"
+        toNamePath="Root/Object/batchIntegration/Array/ArrayElement1/Object/key"
+        toType="profile" />
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Record/Elements/Error Value"
+        fromType="profile" toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='9']"
+        toNamePath="Root/Object/batchIntegration/Array/ArrayElement1/Object/value"
+        toType="profile" />
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Record/Elements/Message" fromType="profile"
+        toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='10']"
+        toNamePath="Root/Object/batchIntegration/Array/ArrayElement1/Object/message"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

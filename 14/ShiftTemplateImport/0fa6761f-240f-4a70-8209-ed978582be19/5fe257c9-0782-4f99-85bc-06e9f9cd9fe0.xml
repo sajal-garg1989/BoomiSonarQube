@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>5fe257c9-0782-4f99-85bc-06e9f9cd9fe0</Id>
+  <Type>processproperty</Type>
+  <Name>ShiftTemplateImport_SFTP</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="6088f44c-1ab1-4b5c-ab90-55dc8956bc5b">
+
+        <helpText>Defaulted to /Inbound</helpText>
+        <label>SourceDirectory</label>
+        <type>string</type>
+        <defaultValue>/Inbound</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="84e4ddf6-c6b1-499d-8f52-7d260d345431">
+
+        <helpText />
+        <label>Filename</label>
+        <type>string</type>
+        <defaultValue>ShiftTemplateImport.csv</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="4bfb4838-49bf-4e38-a5b6-a13307f6026c">
+
+        <helpText>Default is false</helpText>
+        <label>Delete File After Processing</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

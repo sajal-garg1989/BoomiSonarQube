@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>92ce65a0-f0b2-4038-abd7-4575d661e11f</Id>
+  <Type>profile.json</Type>
+  <Name>Response 200 - Shift Template</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONArray elementType="repeating" isMappable="false"
+          isNode="true" key="2" name="Array">
+            <JSONArrayElement dataType="character"
+            isMappable="true" isNode="true" key="3" maxOccurs="-1"
+            minOccurs="0" name="ArrayElement1">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <JSONObject isMappable="false" isNode="true" key="4"
+              name="Object">
+                <JSONObjectEntry dataType="number"
+                isMappable="true" isNode="true" key="5" name="id">
+                  <DataFormat>
+                    <ProfileNumberFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="6"
+                name="name">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="boolean"
+                isMappable="true" isNode="true" key="7"
+                name="systemGenerated">
+                  <DataFormat />
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="8"
+                name="startDateTime">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="9"
+                name="endDateTime">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="10"
+                name="label">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="11"
+                name="description">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="12"
+                name="version">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="13"
+                name="segments">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                  <JSONArray elementType="repeating"
+                  isMappable="false" isNode="true" key="14"
+                  name="Array">
+                    <JSONArrayElement dataType="character"
+                    isMappable="true" isNode="true" key="15"
+                    maxOccurs="-1" minOccurs="0"
+                    name="ArrayElement1">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                      <JSONObject isMappable="false" isNode="true"
+                      key="16" name="Object">
+                        <JSONObjectEntry dataType="number"
+                        isMappable="true" isNode="true" key="17"
+                        name="id">
+                          <DataFormat>
+                            <ProfileNumberFormat />
+                          </DataFormat>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="character"
+                        isMappable="true" isNode="true" key="18"
+                        name="segmentType">
+                          <DataFormat>
+                            <ProfileCharacterFormat />
+                          </DataFormat>
+                          <JSONObject isMappable="false"
+                          isNode="true" key="19" name="Object">
+                            <JSONObjectEntry dataType="number"
+                            isMappable="true" isNode="true"
+                            key="20" name="id">
+                              <DataFormat>
+                                <ProfileNumberFormat />
+                              </DataFormat>
+                            </JSONObjectEntry>
+                            <JSONObjectEntry dataType="character"
+                            isMappable="true" isNode="true"
+                            key="21" name="qualifier">
+                              <DataFormat>
+                                <ProfileCharacterFormat />
+                              </DataFormat>
+                            </JSONObjectEntry>
+                          </JSONObject>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="character"
+                        isMappable="true" isNode="true" key="22"
+                        name="startDateTime">
+                          <DataFormat>
+                            <ProfileCharacterFormat />
+                          </DataFormat>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="character"
+                        isMappable="true" isNode="true" key="23"
+                        name="endDateTime">
+                          <DataFormat>
+                            <ProfileCharacterFormat />
+                          </DataFormat>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="number"
+                        isMappable="true" isNode="true" key="24"
+                        name="orderNumber">
+                          <DataFormat>
+                            <ProfileNumberFormat />
+                          </DataFormat>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="character"
+                        isMappable="true" isNode="true" key="25"
+                        name="segmentTemplateTags">
+                          <DataFormat>
+                            <ProfileCharacterFormat />
+                          </DataFormat>
+                          <JSONArray elementType="repeating"
+                          isMappable="false" isNode="true" key="26"
+                          name="Array" />
+                        </JSONObjectEntry>
+                      </JSONObject>
+                    </JSONArrayElement>
+                  </JSONArray>
+                  <Qualifiers>
+                    <QualifierList />
+                  </Qualifiers>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="boolean"
+                isMappable="true" isNode="true" key="27"
+                name="deleted">
+                  <DataFormat />
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="boolean"
+                isMappable="true" isNode="true" key="28"
+                name="locked">
+                  <DataFormat />
+                </JSONObjectEntry>
+              </JSONObject>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONArrayElement>
+          </JSONArray>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>

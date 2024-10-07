@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>ea0b565c-0d81-4b67-9bee-74ea8bc37603</Id>
+  <Type>transform.map</Type>
+  <Name>Count Active LCs</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="52b865ed-e333-4224-87e7-e1fc42c2e271"
+    refId="fromProfile" name="Labor Cat GET Response" />
+    <Ref compId="9c21a1f3-3d4b-4f04-a952-2a6d913998a4"
+    refId="function-1" name="Active LC Count" />
+    <Ref compId="52b865ed-e333-4224-87e7-e1fc42c2e271"
+    refId="toProfile" name="Labor Cat GET Response" />
+  </References>
+  <Description>Counts each labor category that is active and saves
+  the sum to dynamic process property
+  "laborcat_count"</Description>
+  <Object>
+    <Map fromProfile="52b865ed-e333-4224-87e7-e1fc42c2e271"
+    toProfile="52b865ed-e333-4224-87e7-e1fc42c2e271">
+      <Mappings>
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']"
+        fromNamePath="Root/Array/ArrayElement1/Object/abbrev"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/abbrev"
+        toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']"
+        fromNamePath="Root/Array/ArrayElement1/Object/id"
+        fromType="profile" toKey="6"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']"
+        toNamePath="Root/Array/ArrayElement1/Object/id"
+        toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='7']"
+        fromNamePath="Root/Array/ArrayElement1/Object/inactive"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/inactive"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        fromNamePath="Root/Array/ArrayElement1/Object/maxNameLength"
+        fromType="profile" toKey="8"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        toNamePath="Root/Array/ArrayElement1/Object/maxNameLength"
+        toType="profile" />
+        <Mapping fromKey="9"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='9']"
+        fromNamePath="Root/Array/ArrayElement1/Object/minNameLength"
+        fromType="profile" toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='9']"
+        toNamePath="Root/Array/ArrayElement1/Object/minNameLength"
+        toType="profile" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        fromNamePath="Root/Array/ArrayElement1/Object/name"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/name"
+        toType="profile" />
+        <Mapping fromKey="11"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']"
+        fromNamePath="Root/Array/ArrayElement1/Object/sortOrder"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']"
+        toNamePath="Root/Array/ArrayElement1/Object/sortOrder"
+        toType="profile" />
+        <Mapping fromKey="12"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='12']"
+        fromNamePath="Root/Array/ArrayElement1/Object/version"
+        fromType="profile" toKey="12"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='12']"
+        toNamePath="Root/Array/ArrayElement1/Object/version"
+        toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='7']"
+        fromNamePath="Root/Array/ArrayElement1/Object/inactive"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep category="userdefined"
+        id="9c21a1f3-3d4b-4f04-a952-2a6d913998a4" key="1"
+        name="Active LC Count" position="1" type="userdefined"
+        x="30.0" y="275.0">
+          <Inputs>
+            <Input key="1" name="inactive" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="no_output" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>b2e65dcf-0b18-4d2c-b57b-056fe5f745c5</Id>
+  <Type>process</Type>
+  <Name>_Store Shift to Cache</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="56ad1e63-d2c6-4c11-a71c-0697f67d93aa"
+    refId="shape2" name="Stage to Shift Cache" />
+    <Ref compId="2546b057-b65e-46ec-93e3-f5d3f4d338dd"
+    refId="shape5-step1-profile" name="Cache Shift Template" />
+    <Ref compId="494676ff-1205-460f-a32b-2b9158091e58"
+    refId="shape6" name="Shift Segments" />
+    <Ref compId="eec98168-5bda-40bc-ac20-1720ee41a38d"
+    refId="shape7" name="Remove Nulls" />
+  </References>
+  <Description>Store Shift segment details to cache, this will be
+  used to join all segments to one API call per shift</Description>
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="48.0" y="48.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2"
+            x="224.0" y="57.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="82.0" y="63.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="82.0" y="63.0" />
+              <linesegment length="79"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="82.0" y="63.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="161.0" y="63.0" />
+              <linesegment length="63"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="161.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape2" shapetype="map"
+        userlabel="" x="240.0" y="48.0">
+          <configuration>
+            <map mapId="56ad1e63-d2c6-4c11-a71c-0697f67d93aa" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape5"
+            x="416.0" y="57.0">
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg1" orient="horizontal"
+              x="274.0" y="63.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg2" orient="vertical"
+              x="274.0" y="63.0" />
+              <linesegment length="79"
+              name="shape2.dragpoint1.lineseg3" orient="horizontal"
+              x="274.0" y="63.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg4" orient="vertical"
+              x="353.0" y="63.0" />
+              <linesegment length="63"
+              name="shape2.dragpoint1.lineseg5" orient="horizontal"
+              x="353.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape5"
+        shapetype="dataprocess" userlabel="Split JSON" x="432.0"
+        y="48.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="json">
+                  <SplitOptions>
+                    <JSONOptions linkElementKey="23"
+                    linkElementName="ArrayElement1 (Root/Array/ArrayElement1)"
+                    profileId="2546b057-b65e-46ec-93e3-f5d3f4d338dd" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape5.dragpoint1" toShape="shape7"
+            x="608.0" y="57.0">
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg1" orient="horizontal"
+              x="466.0" y="63.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg2" orient="vertical"
+              x="466.0" y="63.0" />
+              <linesegment length="79"
+              name="shape5.dragpoint1.lineseg3" orient="horizontal"
+              x="466.0" y="63.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg4" orient="vertical"
+              x="545.0" y="63.0" />
+              <linesegment length="63"
+              name="shape5.dragpoint1.lineseg5" orient="horizontal"
+              x="545.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="doccacheload_icon" name="shape6"
+        shapetype="doccacheload" userlabel="" x="816.0" y="48.0">
+          <configuration>
+            <doccacheload docCache="494676ff-1205-460f-a32b-2b9158091e58" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="map_icon" name="shape7" shapetype="map"
+        userlabel="" x="624.0" y="48.0">
+          <configuration>
+            <map mapId="eec98168-5bda-40bc-ac20-1720ee41a38d" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape7.dragpoint1" toShape="shape6"
+            x="800.0" y="57.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="658.0" y="63.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="658.0" y="63.0" />
+              <linesegment length="79"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="658.0" y="63.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="737.0" y="63.0" />
+              <linesegment length="63"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="737.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

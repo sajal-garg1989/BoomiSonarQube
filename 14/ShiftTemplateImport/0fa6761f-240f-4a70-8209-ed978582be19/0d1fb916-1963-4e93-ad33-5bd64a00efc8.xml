@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>0d1fb916-1963-4e93-ad33-5bd64a00efc8</Id>
+  <Type>transform.function</Type>
+  <Name>Get LC</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="d1510cb5-9d5f-451c-80ad-f9255affa04b"
+    refId="function-1-documentCache" name="Labor Cat" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="LC1" />
+        <Input key="2" name="LC2" />
+        <Input key="3" name="LC3" />
+        <Input key="4" name="LC4" />
+        <Input key="5" name="LC5" />
+        <Input key="6" name="LC6" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="LC Name1" />
+        <Output key="8" name="LC Val 1" />
+        <Output key="2" name="LC Name2" />
+        <Output key="9" name="LC Val 2" />
+        <Output key="3" name="LC Name3" />
+        <Output key="10" name="LC Val 3" />
+        <Output key="4" name="LC Name4" />
+        <Output key="11" name="LC Val 4" />
+        <Output key="5" name="LC Name5" />
+        <Output key="12" name="LC Val 5" />
+        <Output key="7" name="LC Name6" />
+        <Output key="13" name="LC Val 6" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" key="1" name="Document Cache Lookup"
+        position="1" sumEnabled="false" type="DocumentCacheLookup"
+        x="56.0" y="17.0">
+          <Inputs>
+            <Input default="1" key="2"
+            name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+          </Inputs>
+          <Outputs>
+            <Output key="1"
+            name="name (Root/Array/ArrayElement1/Object/name)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="1"
+            docCache="d1510cb5-9d5f-451c-80ad-f9255affa04b">
+              <Input index="2" keyId="2"
+              name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+              <Output index="1" key="10"
+              name="name (Root/Array/ArrayElement1/Object/name)" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" enabled="true" key="2"
+        name="Document Cache Lookup" position="2"
+        sumEnabled="false" type="DocumentCacheLookup" x="65.0"
+        y="117.0">
+          <Inputs>
+            <Input default="2" isReset="false" key="2"
+            name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="1"
+            name="name (Root/Array/ArrayElement1/Object/name)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="1"
+            docCache="d1510cb5-9d5f-451c-80ad-f9255affa04b">
+              <Input index="2" keyId="2"
+              name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+              <Output index="1" key="10"
+              name="name (Root/Array/ArrayElement1/Object/name)"
+              tagListKey="0" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" enabled="true" key="3"
+        name="Document Cache Lookup" position="3"
+        sumEnabled="false" type="DocumentCacheLookup" x="66.0"
+        y="218.0">
+          <Inputs>
+            <Input default="3" isReset="false" key="2"
+            name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="1"
+            name="name (Root/Array/ArrayElement1/Object/name)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="1"
+            docCache="d1510cb5-9d5f-451c-80ad-f9255affa04b">
+              <Input index="2" keyId="2"
+              name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+              <Output index="1" key="10"
+              name="name (Root/Array/ArrayElement1/Object/name)"
+              tagListKey="0" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" enabled="true" key="4"
+        name="Document Cache Lookup" position="4"
+        sumEnabled="false" type="DocumentCacheLookup" x="73.0"
+        y="318.0">
+          <Inputs>
+            <Input default="4" isReset="false" key="2"
+            name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="1"
+            name="name (Root/Array/ArrayElement1/Object/name)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="1"
+            docCache="d1510cb5-9d5f-451c-80ad-f9255affa04b">
+              <Input index="2" keyId="2"
+              name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+              <Output index="1" key="10"
+              name="name (Root/Array/ArrayElement1/Object/name)"
+              tagListKey="0" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" enabled="true" key="5"
+        name="Document Cache Lookup" position="6"
+        sumEnabled="false" type="DocumentCacheLookup" x="81.0"
+        y="415.0">
+          <Inputs>
+            <Input default="5" isReset="false" key="2"
+            name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="1"
+            name="name (Root/Array/ArrayElement1/Object/name)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="1"
+            docCache="d1510cb5-9d5f-451c-80ad-f9255affa04b">
+              <Input index="2" keyId="2"
+              name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+              <Output index="1" key="10"
+              name="name (Root/Array/ArrayElement1/Object/name)"
+              tagListKey="0" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" enabled="true" key="6"
+        name="Document Cache Lookup" position="5"
+        sumEnabled="false" type="DocumentCacheLookup" x="78.0"
+        y="513.0">
+          <Inputs>
+            <Input default="6" isReset="false" key="2"
+            name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="1"
+            name="name (Root/Array/ArrayElement1/Object/name)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="1"
+            docCache="d1510cb5-9d5f-451c-80ad-f9255affa04b">
+              <Input index="2" keyId="2"
+              name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)" />
+              <Output index="1" key="10"
+              name="name (Root/Array/ArrayElement1/Object/name)"
+              tagListKey="0" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="7" name="Scripting" position="7"
+        sumEnabled="false" type="Scripting" x="427.0" y="0.0">
+          <Inputs>
+            <Input key="1" name="inLaborCategoryName1" />
+            <Input key="6" name="inLaborCategoryName2" />
+            <Input key="8" name="inLaborCategoryName3" />
+            <Input key="10" name="inLaborCategoryName4" />
+            <Input key="12" name="inLaborCategoryName5" />
+            <Input key="14" name="inLaborCategoryName6" />
+            <Input key="16" name="inLaborCategoryValue1" />
+            <Input key="18" name="inLaborCategoryValue2" />
+            <Input key="20" name="inLaborCategoryValue3" />
+            <Input key="22" name="inLaborCategoryValue4" />
+            <Input key="24" name="inLaborCategoryValue5" />
+            <Input key="26" name="inLaborCategoryValue6" />
+          </Inputs>
+          <Outputs>
+            <Output key="5" name="laborCategoryName1" />
+            <Output key="7" name="laborCategoryName2" />
+            <Output key="9" name="laborCategoryName3" />
+            <Output key="11" name="laborCategoryName4" />
+            <Output key="13" name="laborCategoryName5" />
+            <Output key="15" name="laborCategoryName6" />
+            <Output key="17" name="laborCategoryValue1" />
+            <Output key="19" name="laborCategoryValue2" />
+            <Output key="21" name="laborCategoryValue3" />
+            <Output key="23" name="laborCategoryValue4" />
+            <Output key="25" name="laborCategoryValue5" />
+            <Output key="27" name="laborCategoryValue6" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy" preserveOrder="true"
+            useComponent="false">
+              <ScriptToExecute>if (inLaborCategoryName1 != ""
+              &amp;&amp; inLaborCategoryValue1!= "") {
+              laborCategoryName1 = inLaborCategoryName1
+              laborCategoryValue1 = inLaborCategoryValue1 } if
+              (inLaborCategoryName2!= "" &amp;&amp;
+              inLaborCategoryValue2!= "") { laborCategoryName2 =
+              inLaborCategoryName2 laborCategoryValue2 =
+              inLaborCategoryValue2 } if (inLaborCategoryName3!= ""
+              &amp;&amp; inLaborCategoryValue3!= "") {
+              laborCategoryName3 = inLaborCategoryName3
+              laborCategoryValue3 = inLaborCategoryValue3 } if
+              (inLaborCategoryName4!= "" &amp;&amp;
+              inLaborCategoryValue4!= "") { laborCategoryName4 =
+              inLaborCategoryName4 laborCategoryValue4 =
+              inLaborCategoryValue4 } if (inLaborCategoryName5!= ""
+              &amp;&amp; inLaborCategoryValue5!= "") {
+              laborCategoryName5 = inLaborCategoryName5
+              laborCategoryValue5 = inLaborCategoryValue5 } if
+              (inLaborCategoryName6!= "" &amp;&amp;
+              inLaborCategoryValue6!= "") { laborCategoryName6 =
+              inLaborCategoryName6 laborCategoryValue6 =
+              inLaborCategoryValue6 }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="inLaborCategoryName1" />
+              <Input dataType="character" index="6"
+              name="inLaborCategoryName2" />
+              <Input dataType="character" index="8"
+              name="inLaborCategoryName3" />
+              <Input dataType="character" index="10"
+              name="inLaborCategoryName4" />
+              <Input dataType="character" index="12"
+              name="inLaborCategoryName5" />
+              <Input dataType="character" index="14"
+              name="inLaborCategoryName6" />
+              <Input dataType="character" index="16"
+              name="inLaborCategoryValue1" />
+              <Input dataType="character" index="18"
+              name="inLaborCategoryValue2" />
+              <Input dataType="character" index="20"
+              name="inLaborCategoryValue3" />
+              <Input dataType="character" index="22"
+              name="inLaborCategoryValue4" />
+              <Input dataType="character" index="24"
+              name="inLaborCategoryValue5" />
+              <Input dataType="character" index="26"
+              name="inLaborCategoryValue6" />
+              <Output index="5" name="laborCategoryName1" />
+              <Output index="7" name="laborCategoryName2" />
+              <Output index="9" name="laborCategoryName3" />
+              <Output index="11" name="laborCategoryName4" />
+              <Output index="13" name="laborCategoryName5" />
+              <Output index="15" name="laborCategoryName6" />
+              <Output index="17" name="laborCategoryValue1" />
+              <Output index="19" name="laborCategoryValue2" />
+              <Output index="21" name="laborCategoryValue3" />
+              <Output index="23" name="laborCategoryValue4" />
+              <Output index="25" name="laborCategoryValue5" />
+              <Output index="27" name="laborCategoryValue6" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="7" fromKey="21"
+        fromNamePath="Scripting/inLaborCategoryValue3"
+        fromType="function" toFunction="0" toKey="10"
+        toNamePath="Editor/LC Val 3" toType="function" />
+        <Mapping fromFunction="7" fromKey="13"
+        fromNamePath="Scripting/inLaborCategoryName5"
+        fromType="function" toFunction="0" toKey="5"
+        toNamePath="Editor/LC Name5" toType="function" />
+        <Mapping fromFunction="7" fromKey="27"
+        fromNamePath="Scripting/inLaborCategoryValue6"
+        fromType="function" toFunction="0" toKey="13"
+        toNamePath="Editor/LC Val 6" toType="function" />
+        <Mapping fromFunction="2" fromKey="1"
+        fromNamePath="Document Cache Lookup/name (Root/Array/ArrayElement1/Object/name)"
+        fromType="function" toFunction="7" toKey="6"
+        toNamePath="Scripting/inLaborCategoryName2"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="6"
+        fromNamePath="Editor/LC6" fromType="function"
+        toFunction="7" toKey="26"
+        toNamePath="Scripting/inLaborCategoryValue6"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="5"
+        fromNamePath="Editor/LC5" fromType="function"
+        toFunction="7" toKey="24"
+        toNamePath="Scripting/inLaborCategoryValue5"
+        toType="function" />
+        <Mapping fromFunction="7" fromKey="5"
+        fromNamePath="Scripting/inLaborCategoryName1"
+        fromType="function" toFunction="0" toKey="1"
+        toNamePath="Editor/LC Name1" toType="function" />
+        <Mapping fromFunction="4" fromKey="1"
+        fromNamePath="Document Cache Lookup/name (Root/Array/ArrayElement1/Object/name)"
+        fromType="function" toFunction="7" toKey="10"
+        toNamePath="Scripting/inLaborCategoryName4"
+        toType="function" />
+        <Mapping fromFunction="7" fromKey="19"
+        fromNamePath="Scripting/inLaborCategoryValue2"
+        fromType="function" toFunction="0" toKey="9"
+        toNamePath="Editor/LC Val 2" toType="function" />
+        <Mapping fromFunction="0" fromKey="4"
+        fromNamePath="Editor/LC4" fromType="function"
+        toFunction="7" toKey="22"
+        toNamePath="Scripting/inLaborCategoryValue4"
+        toType="function" />
+        <Mapping fromFunction="7" fromKey="11"
+        fromNamePath="Scripting/inLaborCategoryName4"
+        fromType="function" toFunction="0" toKey="4"
+        toNamePath="Editor/LC Name4" toType="function" />
+        <Mapping fromFunction="7" fromKey="25"
+        fromNamePath="Scripting/inLaborCategoryValue5"
+        fromType="function" toFunction="0" toKey="12"
+        toNamePath="Editor/LC Val 5" toType="function" />
+        <Mapping fromFunction="0" fromKey="3"
+        fromNamePath="Editor/LC3" fromType="function"
+        toFunction="7" toKey="20"
+        toNamePath="Scripting/inLaborCategoryValue3"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Document Cache Lookup/name (Root/Array/ArrayElement1/Object/name)"
+        fromType="function" toFunction="7" toKey="1"
+        toNamePath="Scripting/inLaborCategoryName1"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="1"
+        fromNamePath="Document Cache Lookup/name (Root/Array/ArrayElement1/Object/name)"
+        fromType="function" toFunction="7" toKey="8"
+        toNamePath="Scripting/inLaborCategoryName3"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="1"
+        fromNamePath="Document Cache Lookup/name (Root/Array/ArrayElement1/Object/name)"
+        fromType="function" toFunction="7" toKey="12"
+        toNamePath="Scripting/inLaborCategoryName5"
+        toType="function" />
+        <Mapping fromFunction="6" fromKey="1"
+        fromNamePath="Document Cache Lookup/name (Root/Array/ArrayElement1/Object/name)"
+        fromType="function" toFunction="7" toKey="14"
+        toNamePath="Scripting/inLaborCategoryName6"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/LC1" fromType="function"
+        toFunction="7" toKey="16"
+        toNamePath="Scripting/inLaborCategoryValue1"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/LC2" fromType="function"
+        toFunction="7" toKey="18"
+        toNamePath="Scripting/inLaborCategoryValue2"
+        toType="function" />
+        <Mapping fromFunction="7" fromKey="7"
+        fromNamePath="Scripting/inLaborCategoryName2"
+        fromType="function" toFunction="0" toKey="2"
+        toNamePath="Editor/LC Name2" toType="function" />
+        <Mapping fromFunction="7" fromKey="9"
+        fromNamePath="Scripting/inLaborCategoryName3"
+        fromType="function" toFunction="0" toKey="3"
+        toNamePath="Editor/LC Name3" toType="function" />
+        <Mapping fromFunction="7" fromKey="15"
+        fromNamePath="Scripting/inLaborCategoryName6"
+        fromType="function" toFunction="0" toKey="7"
+        toNamePath="Editor/LC Name6" toType="function" />
+        <Mapping fromFunction="7" fromKey="17"
+        fromNamePath="Scripting/inLaborCategoryValue1"
+        fromType="function" toFunction="0" toKey="8"
+        toNamePath="Editor/LC Val 1" toType="function" />
+        <Mapping fromFunction="7" fromKey="23"
+        fromNamePath="Scripting/inLaborCategoryValue4"
+        fromType="function" toFunction="0" toKey="11"
+        toNamePath="Editor/LC Val 4" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>119b0135-4de2-423a-ac56-518a43727e0e</Id>
+  <Type>transform.function</Type>
+  <Name>Disqualify</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="1" name="no_output" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="1"
+        name="Set Document Property" position="1"
+        sumEnabled="false" type="DocumentPropertySet" x="600.0"
+        y="275.0">
+          <Inputs>
+            <Input key="1"
+            name="Dynamic Document Property - disqualify" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.disqualify"
+            propertyName="Dynamic Document Property - disqualify" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings />
+    </Function>
+  </Object>
+</Component>

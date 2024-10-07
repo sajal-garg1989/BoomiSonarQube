@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>380dc4db-9175-4dfd-83d4-03451c77a45f</Id>
+  <Type>transform.map</Type>
+  <Name>Unique Shifts</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b98692b1-32fd-4395-999f-9c1c60881632"
+    refId="fromProfile" name="Stage" />
+    <Ref compId="b5ffce3d-c755-4dda-afb4-b890ad781445"
+    refId="toProfile" name="Unique Shifts" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b98692b1-32fd-4395-999f-9c1c60881632"
+    toProfile="b5ffce3d-c755-4dda-afb4-b890ad781445">
+      <Mappings>
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Record/Elements/Name" fromType="profile"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Record/Elements/Name" toType="profile" />
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Record/Elements/Description"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Record/Elements/Description"
+        toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Record/Elements/Label" fromType="profile"
+        toKey="6" toKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        toNamePath="Record/Elements/Label" toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        fromNamePath="Record/Elements/Shift Start"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        toNamePath="Record/Elements/Shift Start"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='8']"
+        fromNamePath="Record/Elements/Shift End" fromType="profile"
+        toKey="8" toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']"
+        toNamePath="Record/Elements/Shift End" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

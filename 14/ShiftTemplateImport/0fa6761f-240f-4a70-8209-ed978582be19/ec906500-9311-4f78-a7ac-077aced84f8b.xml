@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>ec906500-9311-4f78-a7ac-077aced84f8b</Id>
+  <Type>connector-action</Type>
+  <Name>Shift Templates Multi Create</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>kronos-1496QK-wfd_pr-prod</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+    <Property>
+      <Name>custom-action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <Operation returnApplicationErrors="true" trackResponse="true">
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <GenericOperationConfig customOperationType="EXECUTE"
+        operationType="EXECUTE" requestProfileType="xml"
+        responseProfileType="xml">
+          <field id="resourcePath" type="string"
+          value="/v1/scheduling/shift_templates/multi_create" />
+          <field id="httpMethod" type="string" value="POST" />
+          <field id="contentType" type="string"
+          value="application/json" />
+          <field id="enableTA" type="boolean" value="true" />
+          <Options />
+        </GenericOperationConfig>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

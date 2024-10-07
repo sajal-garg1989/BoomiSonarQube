@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>dd1de128-d5f5-4a83-aa49-2cfc3de22d01</Id>
+  <Type>transform.map</Type>
+  <Name>Stage to Request</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b98692b1-32fd-4395-999f-9c1c60881632"
+    refId="fromProfile" name="Stage" />
+    <Ref compId="ffc50dce-df7d-4b9b-ba2a-a58e6b09fc71"
+    refId="toProfile" name="Request - Shift Template" />
+    <Ref compId="494676ff-1205-460f-a32b-2b9158091e58"
+    refId="docCache1" name="Shift Segments" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b98692b1-32fd-4395-999f-9c1c60881632"
+    toProfile="ffc50dce-df7d-4b9b-ba2a-a58e6b09fc71">
+      <Mappings>
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Record/Elements/Description"
+        fromType="profile" toKey="45"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='45']"
+        toNamePath="Root/Array/ArrayElement1/Object/description"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='8']"
+        fromNamePath="Record/Elements/Shift End" fromType="profile"
+        toKey="46"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='46']"
+        toNamePath="Root/Array/ArrayElement1/Object/endDateTime"
+        toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Record/Elements/Label" fromType="profile"
+        toKey="48"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='48']"
+        toNamePath="Root/Array/ArrayElement1/Object/label"
+        toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Record/Elements/Name" fromType="profile"
+        toKey="50"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='50']"
+        toNamePath="Root/Array/ArrayElement1/Object/name"
+        toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        fromNamePath="Record/Elements/Shift Start"
+        fromType="profile" toKey="111"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='111']"
+        toNamePath="Root/Array/ArrayElement1/Object/startDateTime"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="60"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='55']/*[@key='56']/*[@key='57']/*[@key='58']/*[@key='60']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/costCenter/Object/costCenter/Object/qualifier"
+        fromType="profile" toKey="60"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='55']/*[@key='56']/*[@key='57']/*[@key='58']/*[@key='60']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/costCenter/Object/costCenter/Object/qualifier"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="62"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='62']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/endDateTime"
+        fromType="profile" toKey="62"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='62']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/endDateTime"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="73"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68']/*[@key='69']/*[@key='70']/*[@key='71']/*[@key='73']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1/Object/entry/Object/qualifier"
+        fromType="profile" toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68']/*[@key='69']/*[@key='70']/*[@key='71']/*[@key='73']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1/Object/entry/Object/qualifier"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="77"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68']/*[@key='69']/*[@key='74']/*[@key='75']/*[@key='77']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1/Object/laborCategory/Object/qualifier"
+        fromType="profile" toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68']/*[@key='69']/*[@key='74']/*[@key='75']/*[@key='77']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1/Object/laborCategory/Object/qualifier"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="78"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='78']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/laborString"
+        fromType="profile" toKey="78"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='78']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/laborString"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="80"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='80']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/orderNumber"
+        fromType="profile" toKey="80"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='80']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/orderNumber"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="84"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='81']/*[@key='82']/*[@key='84']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/orgNode/Object/qualifier"
+        fromType="profile" toKey="84"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='81']/*[@key='82']/*[@key='84']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/orgNode/Object/qualifier"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="100"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='91']/*[@key='92']/*[@key='93']/*[@key='94']/*[@key='97']/*[@key='98']/*[@key='100']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/segmentTemplateTags/Array/ArrayElement1/Object/tagDefinitionRef/Object/qualifier"
+        fromType="profile" toKey="100"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='91']/*[@key='92']/*[@key='93']/*[@key='94']/*[@key='97']/*[@key='98']/*[@key='100']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/segmentTemplateTags/Array/ArrayElement1/Object/tagDefinitionRef/Object/qualifier"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="104"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='101']/*[@key='102']/*[@key='104']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/segmentType/Object/qualifier"
+        fromType="profile" toKey="104"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='101']/*[@key='102']/*[@key='104']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/segmentType/Object/qualifier"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="105"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='105']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/startDateTime"
+        fromType="profile" toKey="105"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='105']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/startDateTime"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="106"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='106']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/transferString"
+        fromType="profile" toKey="106"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='106']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/transferString"
+        toType="profile" />
+        <Mapping fromCacheJoinKey="1" fromKey="110"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='2147483646']/*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='107']/*[@key='108']/*[@key='110']"
+        fromNamePath="Record/Elements/Shift Segments [Shift Name]/Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/workRule/Object/qualifier"
+        fromType="profile" toKey="110"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='107']/*[@key='108']/*[@key='110']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/workRule/Object/qualifier"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults>
+        <Default toKey="44" value="false" />
+        <Default toKey="49" value="false" />
+        <Default toKey="112" value="false" />
+      </Defaults>
+      <DocumentCacheJoins>
+        <DocumentCacheJoin cacheIndex="3"
+        docCache="494676ff-1205-460f-a32b-2b9158091e58"
+        docCacheJoinId="1">
+          <srcParentKey key="2" tagListKey="0" />
+          <CacheKeyJoinValues>
+            <CacheKeyJoinValue cacheKeyId="4"
+            cacheKeyName="Name (Record/Elements/Name)">
+              <srcLinkKey key="4" tagListKey="0" />
+            </CacheKeyJoinValue>
+          </CacheKeyJoinValues>
+        </DocumentCacheJoin>
+      </DocumentCacheJoins>
+    </Map>
+  </Object>
+</Component>

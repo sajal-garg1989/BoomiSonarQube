@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>9c21a1f3-3d4b-4f04-a952-2a6d913998a4</Id>
+  <Type>transform.function</Type>
+  <Name>Active LC Count</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="inactive" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="no_output" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="1"
+        sumEnabled="false" type="Scripting" x="148.0" y="255.0">
+          <Inputs>
+            <Input key="1" name="inactive" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="output" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy" useComponent="false">
+              <ScriptToExecute>if (inactive== "false") {output=1;}
+              else { output= 0;}</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="inactive" />
+              <Output index="2" name="output" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="4"
+        name="Set Dynamic Process Property" position="3"
+        sumEnabled="false" type="PropertySet" x="801.0" y="132.0">
+          <Inputs>
+            <Input default="laborcat_count" key="1"
+            name="Property Name" />
+            <Input key="2" name="Property Value" />
+          </Inputs>
+          <Outputs />
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="false" category="Numeric"
+        key="5" name="Sum" position="2" sumEnabled="true"
+        type="Sum2" x="482.0" y="108.0">
+          <Inputs>
+            <Input key="1" name="Value to Sum" />
+            <Input key="2" name="Reset Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/inactive" fromType="function"
+        toFunction="1" toKey="1" toNamePath="Scripting/inactive"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="Scripting/output" fromType="function"
+        toFunction="5" toKey="1" toNamePath="Sum/Value to Sum"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="2"
+        fromNamePath="Sum/Result" fromType="function"
+        toFunction="4" toKey="2"
+        toNamePath="Set Dynamic Process Property/Property Value"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

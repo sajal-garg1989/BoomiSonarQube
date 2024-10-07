@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>93113566-247f-45ee-8b51-6528793f23dd</Id>
+  <Type>profile.json</Type>
+  <Name>Callback Request</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONObject isMappable="false" isNode="true" key="2"
+          name="Object">
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="8" name="batchIntegration">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <JSONObject isMappable="false" isNode="true" key="9"
+              name="Object">
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="10" name="id">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="11"
+                name="executionid">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="12"
+                name="status">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="13"
+                name="callbackmessages">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="14"
+                name="runsummary">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+              </JSONObject>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+          </JSONObject>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>

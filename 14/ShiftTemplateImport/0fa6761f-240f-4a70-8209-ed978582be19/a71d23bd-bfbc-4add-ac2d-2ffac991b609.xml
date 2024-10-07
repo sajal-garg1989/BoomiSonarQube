@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>a71d23bd-bfbc-4add-ac2d-2ffac991b609</Id>
+  <Type>transform.map</Type>
+  <Name>Callback</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    refId="fromProfile" name="Dummy" />
+    <Ref compId="93113566-247f-45ee-8b51-6528793f23dd"
+    refId="toProfile" name="Callback Request" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="function-1-processproperty"
+    name="ShiftTemplateImport_Auth" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="function-4-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="function-8-processproperty"
+    name="ShiftTemplateImport_Auth" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    toProfile="93113566-247f-45ee-8b51-6528793f23dd">
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="1" fromType="function"
+        toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']/*[@key='9']/*[@key='10']"
+        toNamePath="Root/Object/batchIntegration/Object/id"
+        toType="profile" />
+        <Mapping fromFunction="3" fromKey="3" fromType="function"
+        toKey="12"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']/*[@key='9']/*[@key='12']"
+        toNamePath="Root/Object/batchIntegration/Object/status"
+        toType="profile" />
+        <Mapping fromFunction="4" fromKey="1" fromType="function"
+        toKey="14"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']/*[@key='9']/*[@key='14']"
+        toNamePath="Root/Object/batchIntegration/Object/runsummary"
+        toType="profile" />
+        <Mapping fromFunction="8" fromKey="1" fromType="function"
+        toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']/*[@key='9']/*[@key='11']"
+        toNamePath="Root/Object/batchIntegration/Object/executionid"
+        toType="profile" />
+        <Mapping fromFunction="9" fromKey="3" fromType="function"
+        toKey="13"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']/*[@key='9']/*[@key='13']"
+        toNamePath="Root/Object/batchIntegration/Object/callbackmessages"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="10.0" y="10.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Falcon Execution ID" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+            componentName="[Process Name]_AuthenticationProperties"
+            propertyKey="54020c96-f76a-465a-95dc-2d113bf514c9"
+            propertyName="Falcon Execution ID" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="3"
+        name="Get Dynamic Process Property" position="3"
+        sumEnabled="false" type="PropertyGet" x="30.0" y="154.0">
+          <Inputs>
+            <Input default="process_status" key="1"
+            name="Property Name" />
+            <Input default="success" key="2"
+            name="Default Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="4"
+        name="Get Process Property" position="4" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="401.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Run Summary" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+            componentName="[ProcessName]_RunSummary"
+            propertyKey="ca18c2ba-41d0-41f0-aed0-d2ed4bd842e1"
+            propertyName="Run Summary" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="8"
+        name="Get Process Property" position="8" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="82.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Boomi Execution ID" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+            componentName="[ProcessName]_AuthProperties"
+            propertyKey="78cf9826-37e4-4930-889e-fad3782671e7"
+            propertyName="Boomi Execution ID" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="9"
+        name="Get Dynamic Process Property" position="9"
+        sumEnabled="false" type="PropertyGet" x="30.0" y="277.0">
+          <Inputs>
+            <Input default="call_back_message" key="1"
+            name="Property Name" />
+            <Input key="2" name="Default Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

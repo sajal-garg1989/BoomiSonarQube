@@ -1,0 +1,748 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>17b28bf6-721e-4180-a712-cf8b4012c2db</Id>
+  <Type>process</Type>
+  <Name>_Shift Template Create</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="05dbacd6-3c03-4c8e-9404-6f3543acfccb"
+    refId="shape41.connection"
+    name="ShiftTemplateImport_APIGatewayServer" />
+    <Ref compId="1c3eb821-0923-42f4-ba21-a33358fe5c4f"
+    refId="shape43.connection"
+    name="ShiftTemplateImport_Logging" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="shape38-parameter-10-processproperty"
+    name="ShiftTemplateImport_Auth" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="shape38-parameter-11-processproperty"
+    name="ShiftTemplateImport_Auth" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="shape38-parameter-12-processproperty"
+    name="ShiftTemplateImport_Auth" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="shape38-parameter-13-processproperty"
+    name="ShiftTemplateImport_Auth" />
+    <Ref compId="77188c6f-55ff-4c5d-9d0e-643b3cac0977"
+    refId="shape43.operation" name="ShiftTemplateImport_Logging" />
+    <Ref compId="ec906500-9311-4f78-a7ac-077aced84f8b"
+    refId="shape41.operation"
+    name="Shift Templates Multi Create" />
+    <Ref compId="92ce65a0-f0b2-4038-abd7-4575d661e11f"
+    refId="shape20-step2-profile"
+    name="Response 200 - Shift Template" />
+    <Ref compId="1bb36c78-9532-4b38-b8c3-0f296f868f04"
+    refId="shape32-step1-profile"
+    name="Response 400 - Shift Template" />
+    <Ref compId="380dc4db-9175-4dfd-83d4-03451c77a45f"
+    refId="shape47" name="Unique Shifts" />
+    <Ref compId="dd1de128-d5f5-4a83-aa49-2cfc3de22d01"
+    refId="shape49" name="Stage to Request" />
+  </References>
+  <Description>Build you the request from previous
+  caching/processing and "stage" content, send to application, and
+  route response. Configure 207 response and add "Split to Batch"
+  if relevant to API. Adjust flow control as needed.</Description>
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="48.0" y="48.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape47"
+            x="224.0" y="57.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="82.0" y="63.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="82.0" y="63.0" />
+              <linesegment length="79"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="82.0" y="63.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="161.0" y="63.0" />
+              <linesegment length="63"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="161.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="route_icon" name="shape24" shapetype="route"
+        userlabel="" x="1584.0" y="208.0">
+          <configuration>
+            <route>
+              <routeproperty valueType="track">
+                <trackparameter defaultValue=""
+                propertyId="meta.base.applicationstatuscode"
+                propertyName="Base - Application Status Code" />
+              </routeproperty>
+              <routevalues>
+                <routevalue key="3" name="Equal To 200"
+                qualifier="equals" value="200" />
+                <routevalue key="6" name="Equal To 400"
+                qualifier="equals" value="400" />
+              </routevalues>
+            </route>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="3" name="shape24.dragpoint1"
+            text="1 - Equal To 200" toShape="shape20" x="1760.0"
+            y="217.0">
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg1"
+              orient="horizontal" x="1618.0" y="223.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg2" orient="vertical"
+              x="1618.0" y="223.0" />
+              <linesegment length="79"
+              name="shape24.dragpoint1.lineseg3"
+              orient="horizontal" x="1618.0" y="223.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg4" orient="vertical"
+              x="1697.0" y="223.0" />
+              <linesegment label="1 - Equal To 200" length="63"
+              name="shape24.dragpoint1.lineseg5"
+              orient="horizontal" x="1697.0" y="223.0" />
+            </dragpoint>
+            <dragpoint identifier="default"
+            name="shape24.dragpoint2" text="Default"
+            toShape="shape45" x="1760.0" y="377.0">
+              <linesegment length="0"
+              name="shape24.dragpoint2.lineseg1"
+              orient="horizontal" x="1618.0" y="223.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint2.lineseg2" orient="vertical"
+              x="1618.0" y="223.0" />
+              <linesegment length="79"
+              name="shape24.dragpoint2.lineseg3"
+              orient="horizontal" x="1618.0" y="223.0" />
+              <linesegment length="160"
+              name="shape24.dragpoint2.lineseg4" orient="vertical"
+              x="1697.0" y="223.0" />
+              <linesegment label="Default" length="63"
+              name="shape24.dragpoint2.lineseg5"
+              orient="horizontal" x="1697.0" y="383.0" />
+            </dragpoint>
+            <dragpoint identifier="6" name="shape24.dragpoint3"
+            text="2 - Equal To 400" toShape="shape32" x="1760.0"
+            y="537.0">
+              <linesegment length="0"
+              name="shape24.dragpoint3.lineseg1"
+              orient="horizontal" x="1618.0" y="223.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint3.lineseg2" orient="vertical"
+              x="1618.0" y="223.0" />
+              <linesegment length="79"
+              name="shape24.dragpoint3.lineseg3"
+              orient="horizontal" x="1618.0" y="223.0" />
+              <linesegment length="320"
+              name="shape24.dragpoint3.lineseg4" orient="vertical"
+              x="1697.0" y="223.0" />
+              <linesegment label="2 - Equal To 400" length="63"
+              name="shape24.dragpoint3.lineseg5"
+              orient="horizontal" x="1697.0" y="543.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape23" shapetype="stop"
+        userlabel="" x="1968.0" y="208.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="stop_icon" name="shape25" shapetype="stop"
+        userlabel="" x="1968.0" y="528.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="dataprocess_icon" name="shape20"
+        shapetype="dataprocess" userlabel="Split, Count Successes"
+        x="1776.0" y="208.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="2" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="json">
+                  <SplitOptions>
+                    <JSONOptions linkElementKey="3"
+                    linkElementName="ArrayElement1 (Root/Array/ArrayElement1)"
+                    profileId="92ce65a0-f0b2-4038-abd7-4575d661e11f" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+              <step index="2" key="1" name="Custom Scripting"
+              processtype="12">
+                <dataprocessscript language="groovy">
+                  <script>import java.util.Properties; import
+                  java.io.InputStream; import
+                  com.boomi.execution.ExecutionUtil;  //Get
+                  previous count total
+                  PreviousCount=ExecutionUtil.getProcessProperty("843da61e-ebe4-4980-9846-5efad2bc943c","57aed54a-d495-4614-9de0-8189e65c00d3");
+                  //Add current document stream count to previous
+                  total CurrentCount=PreviousCount.toInteger() +
+                  dataContext.getDataCount();  //Re-set count with
+                  new total
+                  ExecutionUtil.setProcessProperty("843da61e-ebe4-4980-9846-5efad2bc943c","57aed54a-d495-4614-9de0-8189e65c00d3",CurrentCount.toString());
+                   //Log count to process reporting logger =
+                  ExecutionUtil.getBaseLogger();
+                  logger.warning("Imported Transactions: " +
+                  String.valueOf(CurrentCount));  // Leave the
+                  rest of the script as-is... for ( int i = 0; i
+                  &lt; dataContext.getDataCount(); i++ ) {
+                  InputStream is = dataContext.getStream(i);
+                  Properties props = dataContext.getProperties(i);
+                   dataContext.storeStream(is, props);
+                  }</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape20.dragpoint1" toShape="shape23"
+            x="1952.0" y="217.0">
+              <linesegment length="0"
+              name="shape20.dragpoint1.lineseg1"
+              orient="horizontal" x="1810.0" y="223.0" />
+              <linesegment length="0"
+              name="shape20.dragpoint1.lineseg2" orient="vertical"
+              x="1810.0" y="223.0" />
+              <linesegment length="79"
+              name="shape20.dragpoint1.lineseg3"
+              orient="horizontal" x="1810.0" y="223.0" />
+              <linesegment length="0"
+              name="shape20.dragpoint1.lineseg4" orient="vertical"
+              x="1889.0" y="223.0" />
+              <linesegment length="63"
+              name="shape20.dragpoint1.lineseg5"
+              orient="horizontal" x="1889.0" y="223.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="flowcontrol_icon" name="shape27"
+        shapetype="flowcontrol" userlabel="" x="624.0" y="48.0">
+          <configuration>
+            <flowcontrol chunkStyle="threadOnly"
+            forEachCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape27.dragpoint1" toShape="shape49"
+            x="816.0" y="57.0">
+              <linesegment length="0"
+              name="shape27.dragpoint1.lineseg1"
+              orient="horizontal" x="658.0" y="63.0" />
+              <linesegment length="0"
+              name="shape27.dragpoint1.lineseg2" orient="vertical"
+              x="658.0" y="63.0" />
+              <linesegment length="87"
+              name="shape27.dragpoint1.lineseg3"
+              orient="horizontal" x="658.0" y="63.0" />
+              <linesegment length="0"
+              name="shape27.dragpoint1.lineseg4" orient="vertical"
+              x="745.0" y="63.0" />
+              <linesegment length="71"
+              name="shape27.dragpoint1.lineseg5"
+              orient="horizontal" x="745.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape32"
+        shapetype="dataprocess" userlabel="Split, Count Errors"
+        x="1776.0" y="528.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="json">
+                  <SplitOptions>
+                    <JSONOptions linkElementKey="2"
+                    linkElementName="Object (Root/Object)"
+                    profileId="1bb36c78-9532-4b38-b8c3-0f296f868f04" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+              <step index="2" key="2" name="Custom Scripting"
+              processtype="12">
+                <dataprocessscript language="groovy2">
+                  <script>import java.util.Properties; import
+                  java.io.InputStream; import
+                  com.boomi.execution.ExecutionUtil;  //Get
+                  previous count total
+                  PreviousCount=ExecutionUtil.getProcessProperty("843da61e-ebe4-4980-9846-5efad2bc943c","9348bb05-1848-4b77-99c0-5a2d2cccfef2");
+                  //Add current document stream count to previous
+                  total CurrentCount=PreviousCount.toInteger() +
+                  dataContext.getDataCount();  //Re-set count with
+                  new total
+                  ExecutionUtil.setProcessProperty("843da61e-ebe4-4980-9846-5efad2bc943c","9348bb05-1848-4b77-99c0-5a2d2cccfef2",CurrentCount.toString());
+                   //Log count to process reporting logger =
+                  ExecutionUtil.getBaseLogger();
+                  logger.warning("Failed Transactions: " +
+                  String.valueOf(CurrentCount));  // Leave the
+                  rest of the script as-is... for ( int i = 0; i
+                  &lt; dataContext.getDataCount(); i++ ) {
+                  InputStream is = dataContext.getStream(i);
+                  Properties props = dataContext.getProperties(i);
+                   dataContext.storeStream(is, props);
+                  }</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape32.dragpoint1" toShape="shape25"
+            x="1952.0" y="537.0">
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg1"
+              orient="horizontal" x="1810.0" y="543.0" />
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg2" orient="vertical"
+              x="1810.0" y="543.0" />
+              <linesegment length="79"
+              name="shape32.dragpoint1.lineseg3"
+              orient="horizontal" x="1810.0" y="543.0" />
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg4" orient="vertical"
+              x="1889.0" y="543.0" />
+              <linesegment length="63"
+              name="shape32.dragpoint1.lineseg5"
+              orient="horizontal" x="1889.0" y="543.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape35"
+        shapetype="dataprocess" userlabel="Group by 100" x="432.0"
+        y="48.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="2" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="ff">
+                  <SplitOptions>
+                    <FFOptions batchCount="100"
+                    headersOption="retain"
+                    profileId="b98692b1-32fd-4395-999f-9c1c60881632"
+                    splitOption="split_line" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape35.dragpoint1" toShape="shape27"
+            x="608.0" y="57.0">
+              <linesegment length="0"
+              name="shape35.dragpoint1.lineseg1"
+              orient="horizontal" x="466.0" y="63.0" />
+              <linesegment length="0"
+              name="shape35.dragpoint1.lineseg2" orient="vertical"
+              x="466.0" y="63.0" />
+              <linesegment length="79"
+              name="shape35.dragpoint1.lineseg3"
+              orient="horizontal" x="466.0" y="63.0" />
+              <linesegment length="0"
+              name="shape35.dragpoint1.lineseg4" orient="vertical"
+              x="545.0" y="63.0" />
+              <linesegment length="63"
+              name="shape35.dragpoint1.lineseg5"
+              orient="horizontal" x="545.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="note_icon" name="shape36" shapetype="note"
+        x="48.0" y="688.0">
+          <configuration>
+            <note createdBy="Michael.Banschbach@Kronos.com">
+              <noteText>Initially setup for a 207 Request/Response.
+              For a non-multi API, remove the Data Process shape
+              "Group by 100" and update the Flow Control to a
+              larger count (300-500) since they are individual
+              calls. Then remove the 207 Routing and check the
+              splits.</noteText>
+            </note>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape38"
+        shapetype="documentproperties" userlabel="Set POST Props"
+        x="1008.0" y="48.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Kronos Workforce Dimensions - HTTP - Dimensions Execution Id"
+              persist="false"
+              propertyId="connector.kronos-1496QK-wfd_pr-prod.dimensionsExecutionId"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="10"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+                    componentName="[ProcessName]_Auth"
+                    propertyKey="54020c96-f76a-465a-95dc-2d113bf514c9"
+                    propertyLabel="Falcon Execution ID" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Kronos Workforce Dimensions - HTTP - App Key"
+              persist="false"
+              propertyId="connector.kronos-1496QK-wfd_pr-prod.AppKey"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="11"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+                    componentName="[ProcessName]_Auth"
+                    propertyKey="627c44c0-8800-456c-b897-e248ca31c226"
+                    propertyLabel="AppKey" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Kronos Workforce Dimensions - HTTP - Cookie"
+              persist="false"
+              propertyId="connector.kronos-1496QK-wfd_pr-prod.Cookie"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="12"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+                    componentName="[ProcessName]_Auth"
+                    propertyKey="b756d569-0c68-47e2-ad4c-65427ded176e"
+                    propertyLabel="Cookie" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Kronos Workforce Dimensions - HTTP - Query Parameters"
+              persist="false"
+              propertyId="connector.kronos-1496QK-wfd_pr-prod.queryParameters"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="13"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+                    componentName="[ProcessName]_Auth"
+                    propertyKey="014665df-81be-41c7-a6ac-4d1550f36b5b"
+                    propertyLabel="Tenant Query String" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Dynamic Document Property - enableTransactionAssistant"
+              persist="false"
+              propertyId="dynamicdocument.enableTransactionAssistant"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="14" valueType="static">
+                    <staticparameter staticproperty="True" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Dynamic Document Property - batchName"
+              persist="false"
+              propertyId="dynamicdocument.batchName"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="15" valueType="static">
+                    <staticparameter staticproperty="Import Shift Templates" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape38.dragpoint1" toShape="shape42"
+            x="1184.0" y="57.0">
+              <linesegment length="0"
+              name="shape38.dragpoint1.lineseg1"
+              orient="horizontal" x="1042.0" y="63.0" />
+              <linesegment length="0"
+              name="shape38.dragpoint1.lineseg2" orient="vertical"
+              x="1042.0" y="63.0" />
+              <linesegment length="79"
+              name="shape38.dragpoint1.lineseg3"
+              orient="horizontal" x="1042.0" y="63.0" />
+              <linesegment length="0"
+              name="shape38.dragpoint1.lineseg4" orient="vertical"
+              x="1121.0" y="63.0" />
+              <linesegment length="63"
+              name="shape38.dragpoint1.lineseg5"
+              orient="horizontal" x="1121.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape41"
+        shapetype="connectoraction"
+        userlabel="Shift Templates Multi Create" x="1392.0"
+        y="208.0">
+          <configuration>
+            <connectoraction actionType="EXECUTE"
+            allowDynamicCredentials="NONE"
+            connectionId="05dbacd6-3c03-4c8e-9404-6f3543acfccb"
+            connectorType="kronos-1496QK-wfd_pr-prod"
+            hideSettings="false"
+            operationId="ec906500-9311-4f78-a7ac-077aced84f8b">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape41.dragpoint1" toShape="shape24"
+            x="1568.0" y="217.0">
+              <linesegment length="0"
+              name="shape41.dragpoint1.lineseg1"
+              orient="horizontal" x="1426.0" y="223.0" />
+              <linesegment length="0"
+              name="shape41.dragpoint1.lineseg2" orient="vertical"
+              x="1426.0" y="223.0" />
+              <linesegment length="79"
+              name="shape41.dragpoint1.lineseg3"
+              orient="horizontal" x="1426.0" y="223.0" />
+              <linesegment length="0"
+              name="shape41.dragpoint1.lineseg4" orient="vertical"
+              x="1505.0" y="223.0" />
+              <linesegment length="63"
+              name="shape41.dragpoint1.lineseg5"
+              orient="horizontal" x="1505.0" y="223.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape42"
+        shapetype="branch" userlabel="" x="1200.0" y="48.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape42.dragpoint1"
+            text="1" toShape="shape43" x="1376.0" y="57.0">
+              <linesegment length="0"
+              name="shape42.dragpoint1.lineseg1"
+              orient="horizontal" x="1234.0" y="63.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint1.lineseg2" orient="vertical"
+              x="1234.0" y="63.0" />
+              <linesegment length="79"
+              name="shape42.dragpoint1.lineseg3"
+              orient="horizontal" x="1234.0" y="63.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint1.lineseg4" orient="vertical"
+              x="1313.0" y="63.0" />
+              <linesegment label="1" length="63"
+              name="shape42.dragpoint1.lineseg5"
+              orient="horizontal" x="1313.0" y="63.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape42.dragpoint2"
+            text="2" toShape="shape41" x="1376.0" y="217.0">
+              <linesegment length="0"
+              name="shape42.dragpoint2.lineseg1"
+              orient="horizontal" x="1234.0" y="63.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint2.lineseg2" orient="vertical"
+              x="1234.0" y="63.0" />
+              <linesegment length="79"
+              name="shape42.dragpoint2.lineseg3"
+              orient="horizontal" x="1234.0" y="63.0" />
+              <linesegment length="160"
+              name="shape42.dragpoint2.lineseg4" orient="vertical"
+              x="1313.0" y="63.0" />
+              <linesegment label="2" length="63"
+              name="shape42.dragpoint2.lineseg5"
+              orient="horizontal" x="1313.0" y="223.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape43"
+        shapetype="connectoraction"
+        userlabel="ShiftTemplateImport - Logs" x="1392.0" y="48.0">
+          <configuration>
+            <connectoraction actionType="EXECUTE"
+            allowDynamicCredentials="NONE"
+            connectionId="1c3eb821-0923-42f4-ba21-a33358fe5c4f"
+            connectorType="kronos-1496QK-wfd_p1-prod"
+            hideSettings="false"
+            operationId="77188c6f-55ff-4c5d-9d0e-643b3cac0977">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape43.dragpoint1" toShape="shape44"
+            x="1568.0" y="57.0">
+              <linesegment length="0"
+              name="shape43.dragpoint1.lineseg1"
+              orient="horizontal" x="1426.0" y="63.0" />
+              <linesegment length="0"
+              name="shape43.dragpoint1.lineseg2" orient="vertical"
+              x="1426.0" y="63.0" />
+              <linesegment length="79"
+              name="shape43.dragpoint1.lineseg3"
+              orient="horizontal" x="1426.0" y="63.0" />
+              <linesegment length="0"
+              name="shape43.dragpoint1.lineseg4" orient="vertical"
+              x="1505.0" y="63.0" />
+              <linesegment length="63"
+              name="shape43.dragpoint1.lineseg5"
+              orient="horizontal" x="1505.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape44" shapetype="stop"
+        userlabel="" x="1584.0" y="48.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="exception_icon" name="shape46"
+        shapetype="exception" userlabel="Unrecognized Error Code"
+        x="1968.0" y="368.0">
+          <configuration>
+            <exception stopProcessReturnSingleDoc="false"
+            stopsingledoc="false" title="Unrecognized Error Code">
+              <exMessage>Unsuccessful response code received from
+              [Operation Name]. {1}</exMessage>
+              <exParameters>
+                <parametervalue key="0" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.applicationstatuscode"
+                  propertyName="Base - Application Status Code" />
+                </parametervalue>
+              </exParameters>
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape45"
+        shapetype="documentproperties" userlabel="Error Message"
+        x="1776.0" y="368.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Dynamic Process Property - error_message"
+              persist="false" propertyId="process.error_message"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="Unsuccessful response code received from [Operation Name]." />
+                  </parametervalue>
+                  <parametervalue key="4" valueType="track">
+                    <trackparameter defaultValue=""
+                    propertyId="meta.base.applicationstatuscode"
+                    propertyName="Base - Application Status Code" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape45.dragpoint1" toShape="shape46"
+            x="1952.0" y="377.0">
+              <linesegment length="0"
+              name="shape45.dragpoint1.lineseg1"
+              orient="horizontal" x="1810.0" y="383.0" />
+              <linesegment length="0"
+              name="shape45.dragpoint1.lineseg2" orient="vertical"
+              x="1810.0" y="383.0" />
+              <linesegment length="79"
+              name="shape45.dragpoint1.lineseg3"
+              orient="horizontal" x="1810.0" y="383.0" />
+              <linesegment length="0"
+              name="shape45.dragpoint1.lineseg4" orient="vertical"
+              x="1889.0" y="383.0" />
+              <linesegment length="63"
+              name="shape45.dragpoint1.lineseg5"
+              orient="horizontal" x="1889.0" y="383.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape47" shapetype="map"
+        userlabel="" x="240.0" y="48.0">
+          <configuration>
+            <map mapId="380dc4db-9175-4dfd-83d4-03451c77a45f" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape47.dragpoint1" toShape="shape35"
+            x="416.0" y="57.0">
+              <linesegment length="0"
+              name="shape47.dragpoint1.lineseg1"
+              orient="horizontal" x="274.0" y="63.0" />
+              <linesegment length="0"
+              name="shape47.dragpoint1.lineseg2" orient="vertical"
+              x="274.0" y="63.0" />
+              <linesegment length="79"
+              name="shape47.dragpoint1.lineseg3"
+              orient="horizontal" x="274.0" y="63.0" />
+              <linesegment length="0"
+              name="shape47.dragpoint1.lineseg4" orient="vertical"
+              x="353.0" y="63.0" />
+              <linesegment length="63"
+              name="shape47.dragpoint1.lineseg5"
+              orient="horizontal" x="353.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape49" shapetype="map"
+        userlabel="" x="832.0" y="48.0">
+          <configuration>
+            <map mapId="dd1de128-d5f5-4a83-aa49-2cfc3de22d01" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape49.dragpoint1" toShape="shape38"
+            x="992.0" y="57.0">
+              <linesegment length="0"
+              name="shape49.dragpoint1.lineseg1"
+              orient="horizontal" x="866.0" y="63.0" />
+              <linesegment length="0"
+              name="shape49.dragpoint1.lineseg2" orient="vertical"
+              x="866.0" y="63.0" />
+              <linesegment length="71"
+              name="shape49.dragpoint1.lineseg3"
+              orient="horizontal" x="866.0" y="63.0" />
+              <linesegment length="0"
+              name="shape49.dragpoint1.lineseg4" orient="vertical"
+              x="937.0" y="63.0" />
+              <linesegment length="55"
+              name="shape49.dragpoint1.lineseg5"
+              orient="horizontal" x="937.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

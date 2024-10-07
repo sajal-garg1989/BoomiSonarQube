@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>494676ff-1205-460f-a32b-2b9158091e58</Id>
+  <Type>documentcache</Type>
+  <Name>Shift Segments</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="ffc50dce-df7d-4b9b-ba2a-a58e6b09fc71"
+    refId="docCacheProfile" name="Request - Shift Template" />
+  </References>
+  <Description />
+  <Object>
+    <DocumentCache enforceSingleLucene="true"
+    profile="ffc50dce-df7d-4b9b-ba2a-a58e6b09fc71"
+    profileType="profile.json">
+      <CacheIndex indexId="3" indexName="Shift Name">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="name (Root/Array/ArrayElement1/Object/name)"
+        elementKey="50" id="4"
+        name="name (Root/Array/ArrayElement1/Object/name)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>

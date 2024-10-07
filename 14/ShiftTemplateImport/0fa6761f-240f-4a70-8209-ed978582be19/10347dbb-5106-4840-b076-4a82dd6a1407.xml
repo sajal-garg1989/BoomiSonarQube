@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>10347dbb-5106-4840-b076-4a82dd6a1407</Id>
+  <Type>documentcache</Type>
+  <Name>Integration Details</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="21b6bba0-9093-4d32-b899-0fab346a9084"
+    refId="docCacheProfile" name="Integration Details" />
+  </References>
+  <Description />
+  <Object>
+    <DocumentCache enforceSingleLucene="true"
+    profile="21b6bba0-9093-4d32-b899-0fab346a9084"
+    profileType="profile.flatfile">
+      <CacheIndex indexId="1" indexName="Index">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="Message (Record/Elements/Message)" elementKey="3"
+        id="2" name="Message (Record/Elements/Message)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>

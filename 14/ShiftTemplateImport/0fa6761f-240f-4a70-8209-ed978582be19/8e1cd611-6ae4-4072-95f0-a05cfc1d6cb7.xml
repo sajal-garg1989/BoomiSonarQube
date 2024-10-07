@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>8e1cd611-6ae4-4072-95f0-a05cfc1d6cb7</Id>
+  <Type>process</Type>
+  <Name>_Import Data Process</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="3b8f6f09-b837-4d71-9a1d-ebf740bf8f37"
+    refId="shape15" name="_Core Processing" />
+    <Ref compId="ce31a1a3-7d3c-469b-af89-eb60d1481229"
+    refId="shape17" name="_Retrieve Source Data" />
+    <Ref compId="5dcae07f-a034-4f7c-bd90-27f28ad00245"
+    refId="shape18" name="_Non-Dynamic Caches" />
+    <Ref compId="58e96145-9cfb-45e8-9edc-0b7dcbb1544b"
+    refId="shape24" name="_IAC Source Mapping" />
+    <Ref compId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+    refId="shape25-parameter-1-processproperty"
+    name="ShiftTemplateImport_SFTP" />
+    <Ref compId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+    refId="shape25-parameter-2-processproperty"
+    name="ShiftTemplateImport_SFTP" />
+  </References>
+  <Description>Backbone of the integration to: 1. Generate caches
+  from "GET" calls 2. Retrieve the source data (from SFTP) 3.
+  Generate dynamic caches using source data 4. Build and send
+  request to the application 5. Process and log API responses 6.
+  Send data to the transaction assistant</Description>
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="48.0" y="64.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape5"
+            x="208.0" y="73.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="82.0" y="79.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="82.0" y="79.0" />
+              <linesegment length="71"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="82.0" y="79.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="153.0" y="79.0" />
+              <linesegment length="55"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="153.0" y="79.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape5" shapetype="branch"
+        userlabel="" x="224.0" y="64.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape5.dragpoint1"
+            text="1" toShape="shape18" x="368.0" y="73.0">
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg1" orient="horizontal"
+              x="258.0" y="79.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg2" orient="vertical"
+              x="258.0" y="79.0" />
+              <linesegment length="63"
+              name="shape5.dragpoint1.lineseg3" orient="horizontal"
+              x="258.0" y="79.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg4" orient="vertical"
+              x="321.0" y="79.0" />
+              <linesegment label="1" length="47"
+              name="shape5.dragpoint1.lineseg5" orient="horizontal"
+              x="321.0" y="79.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape5.dragpoint2"
+            text="2" toShape="shape25" x="368.0" y="185.0">
+              <linesegment length="0"
+              name="shape5.dragpoint2.lineseg1" orient="horizontal"
+              x="258.0" y="79.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint2.lineseg2" orient="vertical"
+              x="258.0" y="79.0" />
+              <linesegment length="63"
+              name="shape5.dragpoint2.lineseg3" orient="horizontal"
+              x="258.0" y="79.0" />
+              <linesegment length="112"
+              name="shape5.dragpoint2.lineseg4" orient="vertical"
+              x="321.0" y="79.0" />
+              <linesegment label="2" length="47"
+              name="shape5.dragpoint2.lineseg5" orient="horizontal"
+              x="321.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape15"
+        shapetype="processcall" userlabel="_Core Processing"
+        x="928.0" y="176.0">
+          <configuration>
+            <processcall abort="true"
+            processId="3b8f6f09-b837-4d71-9a1d-ebf740bf8f37"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape17"
+        shapetype="processcall" userlabel="_Retrieve Source Data"
+        x="544.0" y="176.0">
+          <configuration>
+            <processcall abort="true"
+            processId="ce31a1a3-7d3c-469b-af89-eb60d1481229"
+            wait="true">
+              <parameters />
+              <returnpaths>
+                <returnpaths childShapeName="shape3"
+                returnLabel="" />
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape3"
+            name="shape17.dragpoint1" toShape="shape24" x="736.0"
+            y="185.0">
+              <linesegment length="0"
+              name="shape17.dragpoint1.lineseg1"
+              orient="horizontal" x="578.0" y="191.0" />
+              <linesegment length="0"
+              name="shape17.dragpoint1.lineseg2" orient="vertical"
+              x="578.0" y="191.0" />
+              <linesegment length="87"
+              name="shape17.dragpoint1.lineseg3"
+              orient="horizontal" x="578.0" y="191.0" />
+              <linesegment length="0"
+              name="shape17.dragpoint1.lineseg4" orient="vertical"
+              x="665.0" y="191.0" />
+              <linesegment length="71"
+              name="shape17.dragpoint1.lineseg5"
+              orient="horizontal" x="665.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape18"
+        shapetype="processcall" userlabel="_Non-Dynamic Caches"
+        x="384.0" y="64.0">
+          <configuration>
+            <processcall abort="true"
+            processId="5dcae07f-a034-4f7c-bd90-27f28ad00245"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape24"
+        shapetype="processcall" userlabel="_IAC Source Mapping"
+        x="752.0" y="176.0">
+          <configuration>
+            <processcall abort="true"
+            processId="58e96145-9cfb-45e8-9edc-0b7dcbb1544b"
+            wait="true">
+              <parameters />
+              <returnpaths>
+                <returnpaths childShapeName="shape7"
+                returnLabel="" />
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape7"
+            name="shape24.dragpoint1" toShape="shape15" x="912.0"
+            y="185.0">
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg1"
+              orient="horizontal" x="786.0" y="191.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg2" orient="vertical"
+              x="786.0" y="191.0" />
+              <linesegment length="71"
+              name="shape24.dragpoint1.lineseg3"
+              orient="horizontal" x="786.0" y="191.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg4" orient="vertical"
+              x="857.0" y="191.0" />
+              <linesegment length="55"
+              name="shape24.dragpoint1.lineseg5"
+              orient="horizontal" x="857.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape25"
+        shapetype="documentproperties" userlabel="Set SFTP Props"
+        x="384.0" y="176.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Dynamic Process Property - file_name"
+              persist="false" propertyId="process.file_name"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+                    componentName="[ProcessName]_SFTP"
+                    propertyKey="84e4ddf6-c6b1-499d-8f52-7d260d345431"
+                    propertyLabel="Filename" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isDynamicCredential="false" isTradingPartner="false"
+              name="Dynamic Process Property - remote_directory"
+              persist="false" propertyId="process.remote_directory"
+              shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+                    componentName="[ProcessName]_SFTP"
+                    propertyKey="6088f44c-1ab1-4b5c-ab90-55dc8956bc5b"
+                    propertyLabel="SourceDirectory" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape25.dragpoint1" toShape="shape17"
+            x="528.0" y="185.0">
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg1"
+              orient="horizontal" x="418.0" y="191.0" />
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg2" orient="vertical"
+              x="418.0" y="191.0" />
+              <linesegment length="63"
+              name="shape25.dragpoint1.lineseg3"
+              orient="horizontal" x="418.0" y="191.0" />
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg4" orient="vertical"
+              x="481.0" y="191.0" />
+              <linesegment length="47"
+              name="shape25.dragpoint1.lineseg5"
+              orient="horizontal" x="481.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

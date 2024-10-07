@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>981932da-2184-4ddc-ba6d-e12c06c45b94</Id>
+  <Type>transform.map</Type>
+  <Name>Run Summary</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    refId="fromProfile" name="Dummy" />
+    <Ref compId="42c8034b-44c0-4aca-9e08-83df7120b058"
+    refId="toProfile" name="Run Summary" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="function-1-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="function-17-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="function-10-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="function-9-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="function-18-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    toProfile="42c8034b-44c0-4aca-9e08-83df7120b058">
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="1" fromType="function"
+        toKey="3" toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Root/Object/Integration Type"
+        toType="profile" />
+        <Mapping fromFunction="9" fromKey="1" fromType="function"
+        toKey="5" toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Root/Object/Disqualified Transactions"
+        toType="profile" />
+        <Mapping fromFunction="10" fromKey="1" fromType="function"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Root/Object/Failed Transactions"
+        toType="profile" />
+        <Mapping fromFunction="17" fromKey="1" fromType="function"
+        toKey="17" toKeyPath="*[@key='1']/*[@key='2']/*[@key='17']"
+        toNamePath="Root/Object/Imported Transactions"
+        toType="profile" />
+        <Mapping fromFunction="18" fromKey="1" fromType="function"
+        toKey="18" toKeyPath="*[@key='1']/*[@key='2']/*[@key='18']"
+        toNamePath="Root/Object/Processed Source Records"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="10.0" y="10.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Integration Type" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+            componentName="[ProcessName]_RunSummary"
+            propertyKey="78bfe2de-34f9-47bf-bc6c-5b840ee8809e"
+            propertyName="Integration Type" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="9"
+        name="Get Process Property" position="9" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="299.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Disqualified Transactions" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+            componentName="[ProcessName]_RunSummary"
+            propertyKey="e3e61846-6bb2-4fe1-9586-3311f32e25e7"
+            propertyName="Disqualified Transactions" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="10"
+        name="Get Process Property" position="10"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="30.0" y="226.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Failed Transactions" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+            componentName="[ProcessName]_RunSummary"
+            propertyKey="9348bb05-1848-4b77-99c0-5a2d2cccfef2"
+            propertyName="Failed Transactions" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="17"
+        name="Get Process Property" position="17"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="30.0" y="154.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Imported Transactions" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+            componentName="[ProcessName]_RunSummary"
+            propertyKey="57aed54a-d495-4614-9de0-8189e65c00d3"
+            propertyName="Imported Transactions" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="18"
+        name="Get Process Property" position="18"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="30.0" y="82.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Processed Source Records" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+            componentName="[ProcessName]_RunSummary"
+            propertyKey="b3e7686f-9a5d-4a5e-a0a4-d9ce1a5e59c5"
+            propertyName="Processed Source Records" />
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>71992680-dc80-4941-8a2d-8e5d9629c90b</Id>
+  <Type>transform.map</Type>
+  <Name>Default Integration Details Record</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="21b6bba0-9093-4d32-b899-0fab346a9084"
+    refId="fromProfile" name="Integration Details" />
+    <Ref compId="21b6bba0-9093-4d32-b899-0fab346a9084"
+    refId="toProfile" name="Integration Details" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="21b6bba0-9093-4d32-b899-0fab346a9084"
+    toProfile="21b6bba0-9093-4d32-b899-0fab346a9084">
+      <Mappings>
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Record/Elements/Message" fromType="profile"
+        toKey="3" toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Record/Elements/Message" toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Record/Elements/Error Key" fromType="profile"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Record/Elements/Error Key" toType="profile" />
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Record/Elements/Error Value"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Record/Elements/Error Value"
+        toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Record/Elements/Description"
+        fromType="profile" toKey="6"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        toNamePath="Record/Elements/Description"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>
