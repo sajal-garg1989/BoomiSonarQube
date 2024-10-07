@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>e1df8b7e-c972-41fd-8726-6419097284b0</Id>
+  <Type>connector-action</Type>
+  <Name>New NiharikaTestConnector Connector Operation</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/SajalSandBox">
+  2582012</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-nihari-dev</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+    <Property>
+      <Name>custom-action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <Operation returnApplicationErrors="false"
+    trackResponse="true">
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <GenericOperationConfig customOperationType="EXECUTE"
+        operationType="EXECUTE" requestProfileType="xml"
+        responseProfileType="xml">
+          <field id="resourcePath" type="string"
+          value="payroll/v1/payroll-deductions-history?startPerControl=201011011&amp;endPerControl=202411309&amp;deductionCode=[401K,401LN,401L2,401RO]" />
+          <field id="httpMethod" type="string" value="GET" />
+          <field id="contentType" type="string"
+          value="application/json" />
+          <Options />
+        </GenericOperationConfig>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

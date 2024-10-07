@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>03d2262d-83ff-4524-ad4d-a923f5c7e91a</Id>
+  <Type>connector-action</Type>
+  <Name>New SajalConnector Connector Operation 2</Name>
+  <Version>5</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/SajalSandBox">
+  2582012</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-sajal1-dev</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+    <Property>
+      <Name>custom-action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <Operation trackResponse="true"
+    returnApplicationErrors="false">
+      <Archiving enabled="false" directory="" />
+      <Configuration>
+        <GenericOperationConfig operationType="EXECUTE"
+        customOperationType="EXECUTE" requestProfileType="xml"
+        responseProfileType="xml">
+          <field id="resourcePath"
+          value="/configuration/v1/locations" type="string" />
+          <field id="httpMethod" value="GET" type="string" />
+          <field id="contentType" value="application/json"
+          type="string" />
+          <Options />
+        </GenericOperationConfig>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

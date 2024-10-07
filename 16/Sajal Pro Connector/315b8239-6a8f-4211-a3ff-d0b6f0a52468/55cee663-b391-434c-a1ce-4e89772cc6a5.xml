@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>55cee663-b391-434c-a1ce-4e89772cc6a5</Id>
+  <Type>connector-settings</Type>
+  <Name>New NiharikaTestConnector Connection</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/SajalSandBox">
+  2582012</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-nihari-dev</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <GenericConnectionConfig>
+      <field id="connectionUrl" type="string"
+      value="http://Servicet.ultipro.com" />
+      <field id="authenticationType" type="string" value="Basic" />
+      <field id="username" type="string" value="BOOMIUserA" />
+      <field id="password" type="password"
+      value="bVt7536Ss2RkdO9DtDs8ou5Uk2lF4vwjqjyDmbzkokmhUNPeItwtBzRRz8ZLzwvOJntRhIhuEGAyZ4rN9tA933L5lXjoQ+PHSUpavhjPrl3V1xeDjSWbi1msKq70fQG9yEWnR3/1AlALSSrlcjLPiorM0PxEhTpIHoZVwlJkTbo=" />
+      <field id="userApiKey" type="string" value="CALEN" />
+      <field id="customerApiKey" type="string" value="VPUZZ" />
+    </GenericConnectionConfig>
+  </Object>
+</Component>

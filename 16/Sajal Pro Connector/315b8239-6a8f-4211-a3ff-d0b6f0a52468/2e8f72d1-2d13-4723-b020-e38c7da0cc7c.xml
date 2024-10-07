@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>2e8f72d1-2d13-4723-b020-e38c7da0cc7c</Id>
+  <Type>connector-settings</Type>
+  <Name>New SajalConnector Connection 2</Name>
+  <Version>2</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/SajalSandBox">
+  2582012</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-sajal1-dev</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <GenericConnectionConfig>
+      <field id="connectionUrl"
+      value="https://servicet.ultipro.com" type="string" />
+      <field id="authenticationType" value="Basic" type="string" />
+      <field id="username" value="BOOMIUserA" type="string" />
+      <field id="password"
+      value="cydEmEhQZVYG1R5+aVLOUDhHfIG4EA9gjRaurYdQEdfTFZZHVfl8BC227sfcK+Dtp4Z560Bxhg5dD4cinrADcx4CehhRBYWaD9rqEw2TIeZjJIUFw9C44BjIcVaDKKOER00mDFRAPCSKfeEa0JKmUZhK7SF+ClgytW8jw7uPiaA="
+      type="password" />
+      <field id="userApiKey" value="CALEN" type="string" />
+      <field id="customerApiKey" value="VPUZZ" type="string" />
+    </GenericConnectionConfig>
+  </Object>
+</Component>

@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>315b8239-6a8f-4211-a3ff-d0b6f0a52468</Id>
+  <Type>process</Type>
+  <Name>Sajal Pro Connector</Name>
+  <Version>9</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/SajalSandBox">
+  2582012</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>true</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="0d2164d4-a114-447b-aca4-46f1211e07f0"
+    refId="shape8.connection" name="New protest Connection" />
+    <Ref compId="35711b1b-ce31-4197-bd42-80e9ee6651dc"
+    refId="shape8.operation"
+    name="New protest Connector Operation" />
+    <Ref compId="55cee663-b391-434c-a1ce-4e89772cc6a5"
+    refId="shape10.connection"
+    name="New NiharikaTestConnector Connection" />
+    <Ref compId="e1df8b7e-c972-41fd-8726-6419097284b0"
+    refId="shape10.operation"
+    name="New NiharikaTestConnector Connector Operation" />
+    <Ref compId="2e8f72d1-2d13-4723-b020-e38c7da0cc7c"
+    refId="shape12.connection"
+    name="New SajalConnector Connection 2" />
+    <Ref compId="03d2262d-83ff-4524-ad4d-a923f5c7e91a"
+    refId="shape12.operation"
+    name="New SajalConnector Connector Operation 2" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    updateRunDates="true" processLogOnErrorOnly="false"
+    workload="general" purgeDataImmediately="false">
+      <shapes>
+        <shape name="shape1" userlabel="Start-No data"
+        image="start" x="48.0" y="48.0" shapetype="start">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2"
+            x="208.0" y="120.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape2" userlabel="Request"
+        image="message_icon" x="224.0" y="112.0"
+        shapetype="message">
+          <configuration>
+            <message combined="false">
+              <msgTxt>{2}</msgTxt>
+              <msgParameters>
+                <parametervalue valueType="static" key="0">
+                  <staticparameter staticproperty="{ &quot;jobAssignment&quot; : { &quot;baseWageRates&quot; : [ { &quot;hourlyRate&quot; : &quot;10.0&quot;, &quot;effectiveDate&quot; : &quot;2017-08-15&quot; } ], &quot;primaryLaborAccounts&quot; : [ { &quot;organizationPath&quot; : &quot;Organization/Human Resources/Leave Administrator&quot;, &quot;effectiveDate&quot; : &quot;2017-08-15&quot; } ], &quot;jobAssignmentDetails&quot; : { &quot;payRuleEffectiveDate&quot; : &quot;2017-08-15&quot;, &quot;payRuleName&quot; : &quot;Full Time&quot; } }, &quot;gdapAssignments&quot; : [ { &quot;role&quot; : &quot;Manager_role&quot;, &quot;defaultSwitch&quot; : &quot;true&quot;, &quot;originalEffectiveDate&quot; : &quot;2017-08-15&quot;, &quot;originalExpirationDate&quot; : &quot;2099-01-01&quot;, &quot;gdapName&quot; : &quot;HR Admin GDAP&quot;, &quot;effectiveDate&quot; : &quot;2017-08-15&quot;, &quot;expirationDate&quot; : &quot;2099-01-01&quot; } ], &quot;user&quot; : { &quot;userAccount&quot; : { &quot;userPassword&quot; : &quot;Kr0n0s@Cloud&quot;, &quot;passwordUpdateflag&quot; : false, &quot;logonProfileName&quot; : &quot;Default&quot;, &quot;userName&quot; : &quot;409349&quot; } }, &quot;personInformation&quot; : { &quot;expectedHoursList&quot; : [ { &quot;quantity&quot; : 8, &quot;timePeriodTypeName&quot; : &quot;Daily&quot; }, { &quot;quantity&quot; : 40, &quot;timePeriodTypeName&quot; : &quot;Weekly&quot; }, { &quot;quantity&quot; : 120, &quot;timePeriodTypeName&quot; : &quot;Pay Period&quot; } ], &quot;emailAddresses&quot; : [ { &quot;address&quot; : &quot;kksingh@gmail.com&quot;, &quot;contactTypeName&quot; : &quot;work&quot; } ], &quot;person&quot; : { &quot;lastName&quot; : &quot;Singh&quot;, &quot;hireDate&quot; : &quot;2010-08-15&quot;, &quot;romanizedFullName&quot; : &quot;Kamlesh Singh&quot;, &quot;fullTimeEquivalencies&quot; : [ { &quot;fullTimeStandardHours&quot; : 8, &quot;employeeStandardHours&quot; : 8, &quot;effectiveDate&quot; : &quot;2017-08-23&quot; } ], &quot;accrualProfileEffectiveDate&quot; : &quot;2015-01-01&quot;, &quot;accrualProfileEndDate&quot; : &quot;3000-01-01&quot;, &quot;personNumber&quot; : &quot;409349&quot;, &quot;accrualProfileName&quot; : &quot;Vac Pers Sick&quot;, &quot;birthDate&quot; : &quot;1995-08-15&quot;, &quot;firstName&quot; : &quot;Kamlesh&quot;, &quot;middleInitial&quot; : &quot;K&quot;, &quot;phoneticFullName&quot; : &quot;KamleshSingh&quot;, &quot;shortName&quot; : &quot;ksingh&quot; }, &quot;personAuthenticationTypes&quot; : [ { &quot;authenticationTypeName&quot; : &quot;Basic&quot;, &quot;activeFlag&quot; : true } ], &quot;telephoneNumbers&quot; : [ { &quot;phoneNumber&quot; : &quot;9988776655&quot;, &quot;isSMSSwitch&quot; : true, &quot;contactTypeName&quot; : &quot;Phone 1&quot; }, { &quot;phoneNumber&quot; : &quot;9988776656&quot;, &quot;isSMSSwitch&quot; : true, &quot;contactTypeName&quot; : &quot;Phone 2&quot; } ], &quot;personLicenseTypes&quot; : [ { &quot;licenseTypeName&quot; : &quot;Hourly Timekeeping&quot;, &quot;activeFlag&quot; : true }, { &quot;licenseTypeName&quot; : &quot;Absence&quot;, &quot;activeFlag&quot; : true }, { &quot;licenseTypeName&quot; : &quot;Advanced Scheduling&quot;, &quot;activeFlag&quot; : true }, { &quot;licenseTypeName&quot; : &quot;Manager&quot;, &quot;activeFlag&quot; : true }, { &quot;licenseTypeName&quot; : &quot;Employee&quot;, &quot;activeFlag&quot; : true } ], &quot;badgeAssignments&quot; : [ { &quot;badgeNumber&quot; : &quot;409350&quot;, &quot;expirationDate&quot; : &quot;2099-12-31T10:15:30&quot; } ], &quot;userAccountStatusList&quot; : [ { &quot;userAccountStatusName&quot; : &quot;Active&quot;, &quot;effectiveDate&quot; : &quot;2017-08-15&quot; } ], &quot;accessAssignment&quot; : { &quot;managerPayCodeName&quot; : &quot;All Pay Codes&quot;, &quot;transferEmployeeFlag&quot; : false, &quot;professionalPayCodeName&quot; : &quot;All Pay Codes&quot;, &quot;managerWorkRuleName&quot; : &quot;All Work Rules&quot;, &quot;approveovertimeflag&quot; : false, &quot;professionalWorkRuleName&quot; : &quot;All Work Rules&quot;, &quot;shiftCodeName&quot; : &quot;Labor Templates&quot;, &quot;managerViewPayCodeName&quot; : &quot;All Pay Codes&quot;, &quot;preferenceProfileName&quot; : &quot;Default&quot;, &quot;accessProfileName&quot; : &quot;HR Admin&quot;, &quot;delegateProfileName&quot; : &quot;Senior Managers Delegate Profile&quot;, &quot;notificationProfileName&quot; : &quot;All&quot;, &quot;schedulePatternName&quot; : &quot;All Pattern Templates&quot;, &quot;timeEntryTypeName&quot; : &quot;Time Stamp &amp; Hourly View&quot; }, &quot;postalAddresses&quot; : [ { &quot;country&quot; : &quot;IND&quot;, &quot;city&quot; : &quot;Noida&quot;, &quot;street&quot; : &quot;Sector 75&quot;, &quot;postalCode&quot; : &quot;201301&quot;, &quot;state&quot; : &quot;Uttar Pradesh&quot;, &quot;contactTypeName&quot; : &quot;Home&quot; } ], &quot;employmentStatusList&quot; : [ { &quot;employmentStatusName&quot; : &quot;Active&quot;, &quot;effectiveDate&quot; : &quot;2017-08-15&quot; } ], &quot;personAccessAssignments&quot; : [ { &quot;professionalTransferOrganizationSetName&quot; : &quot;All Administrational Groups&quot;, &quot;managerTransferOrganizationSetName&quot; : &quot;All Administrational Groups&quot;, &quot;effectiveDate&quot; : &quot;2017-08-24&quot;, &quot;managerAccessOrganizationSetName&quot; : &quot;All Administrational Groups&quot;, &quot;expirationDate&quot; : &quot;3000-01-01&quot; } ] } }" />
+                </parametervalue>
+                <parametervalue valueType="static" key="1">
+                  <staticparameter staticproperty="{ &quot;where&quot;: { &quot;employees&quot;: { &quot;key&quot;: &quot;personnumber&quot;, &quot;values&quot;: [ &quot;10046&quot;,&quot;20008&quot; ] }, &quot;onlyActivePerson&quot;: true, &quot;isEmployeeAllowed&quot;: true } }" />
+                </parametervalue>
+              </msgParameters>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape11"
+            x="352.0" y="120.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape3" userlabel="Response"
+        image="message_icon" x="704.0" y="48.0"
+        shapetype="message">
+          <configuration>
+            <message combined="false">
+              <msgTxt />
+              <msgParameters />
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape3.dragpoint1" toShape="shape5"
+            x="768.0" y="56.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape4" userlabel="Set Property"
+        image="documentproperties_icon" x="304.0" y="352.0"
+        shapetype="documentproperties">
+          <configuration>
+            <documentproperties>
+              <documentproperty persist="false"
+              name="protest - Fetch All"
+              propertyId="connector.testboomiapi_kronos_testc-2710S5-prote2-dev.fetchAll"
+              defaultValue="" isTradingPartner="false"
+              isDynamicCredential="false" shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue valueType="static" key="5">
+                    <staticparameter staticproperty="true" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty persist="false"
+              name="protest - Query Parameters"
+              propertyId="connector.testboomiapi_kronos_testc-2710S5-prote2-dev.queryParameters"
+              defaultValue="" isTradingPartner="false"
+              isDynamicCredential="false" shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue valueType="static" key="6">
+                    <staticparameter staticproperty="page=1" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape4.dragpoint1" toShape="unset"
+            x="401.0" y="362.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape5" userlabel="" image="stop_icon"
+        x="784.0" y="48.0" shapetype="stop">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape name="shape8" userlabel="My Pro connector"
+        image="connectoraction_icon" x="576.0" y="384.0"
+        shapetype="connectoraction">
+          <configuration>
+            <connectoraction operationId="35711b1b-ce31-4197-bd42-80e9ee6651dc"
+            connectionId="0d2164d4-a114-447b-aca4-46f1211e07f0"
+            actionType="EXECUTE"
+            connectorType="testboomiapi_kronos_testc-2710S5-prote2-dev"
+            hideSettings="false" allowDynamicCredentials="NONE">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape8.dragpoint1" toShape="unset"
+            x="660.0" y="394.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape10" userlabel=""
+        image="connectoraction_icon" x="752.0" y="432.0"
+        shapetype="connectoraction">
+          <configuration>
+            <connectoraction operationId="e1df8b7e-c972-41fd-8726-6419097284b0"
+            connectionId="55cee663-b391-434c-a1ce-4e89772cc6a5"
+            actionType="EXECUTE"
+            connectorType="testboomiapi_kronos_testc-2710S5-nihari-dev"
+            hideSettings="false" allowDynamicCredentials="NONE">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape10.dragpoint1" toShape="unset"
+            x="822.0" y="442.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape11" userlabel=""
+        image="documentproperties_icon" x="368.0" y="112.0"
+        shapetype="documentproperties">
+          <configuration>
+            <documentproperties>
+              <documentproperty persist="false"
+              name="SajalConnector - Fetch All"
+              propertyId="connector.testboomiapi_kronos_testc-2710S5-sajal1-dev.fetchAll"
+              defaultValue="" isTradingPartner="false"
+              isDynamicCredential="false" shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue valueType="static" key="2">
+                    <staticparameter staticproperty="true" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape11.dragpoint1" toShape="shape12"
+            x="560.0" y="152.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape12" userlabel="sajalConnector"
+        image="connectoraction_icon" x="576.0" y="144.0"
+        shapetype="connectoraction">
+          <configuration>
+            <connectoraction operationId="03d2262d-83ff-4524-ad4d-a923f5c7e91a"
+            connectionId="2e8f72d1-2d13-4723-b020-e38c7da0cc7c"
+            actionType="EXECUTE"
+            connectorType="testboomiapi_kronos_testc-2710S5-sajal1-dev"
+            hideSettings="false" allowDynamicCredentials="NONE">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape3"
+            x="688.0" y="56.0" />
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+  <Overrides allowScheduleOverride="false">
+    <Connections>
+      <ConnectionOverride id="519c8f28-c928-4f76-93c5-6aa2223fa144">
+
+        <field id="url" label="URL" xpath="HttpSettings/@url"
+        overrideable="true" />
+        <field id="connectTimeout" label="Connect Timeout"
+        xpath="HttpSettings/@connectTimeout"
+        overrideable="false" />
+        <field id="readTimeout" label="Read Timeout"
+        xpath="HttpSettings/@readTimeout" overrideable="false" />
+        <field id="useBasicAuth" label="Use Basic Authentication"
+        xpath="HttpSettings/@useBasicAuth" overrideable="false" />
+        <field id="user" label="User"
+        xpath="HttpSettings/AuthSettings/@user"
+        overrideable="false" />
+        <field id="password" label="Password"
+        xpath="HttpSettings/AuthSettings/@password"
+        overrideable="false" />
+        <field id="consumerKey" label="OAuth Consumer Key"
+        xpath="HttpSettings/OAuthSettings/@consumerKey"
+        overrideable="false" />
+        <field id="accessToken" label="OAuth Access Token"
+        xpath="HttpSettings/OAuthSettings/@accessToken"
+        overrideable="false" />
+        <field id="tokenSecret" label="OAuth Token Secret"
+        xpath="HttpSettings/OAuthSettings/@tokenSecret"
+        overrideable="false" />
+        <field id="requestTokenURL" label="OAuth Request Token URL"
+        xpath="HttpSettings/OAuthSettings/@requestTokenURL"
+        overrideable="false" />
+        <field id="authorizationURL"
+        label="OAuth Authorization URL"
+        xpath="HttpSettings/OAuthSettings/@authorizationURL"
+        overrideable="false" />
+        <field id="accessTokenURL" label="OAuth Access URL"
+        xpath="HttpSettings/OAuthSettings/@accessTokenURL"
+        overrideable="false" />
+        <field id="consumerSecret" label="OAuth Consumer Secret"
+        xpath="HttpSettings/OAuthSettings/@consumerSecret"
+        overrideable="false" />
+        <field id="realm" label="OAuth Realm"
+        xpath="HttpSettings/OAuthSettings/@realm"
+        overrideable="false" />
+        <field id="clientauth" label="Use Client Authorization"
+        xpath="HttpSettings/SSLOptions/@clientauth"
+        overrideable="false" />
+        <field id="clientsslalias" label="Client SSL Certificate"
+        xpath="HttpSettings/SSLOptions/@clientsslalias"
+        overrideable="false" />
+        <field id="trustServerCert"
+        label="Use Trusted SSL Certificate"
+        xpath="HttpSettings/SSLOptions/@trustServerCert"
+        overrideable="false" />
+        <field id="trustedcertalias"
+        label="Trust SSL Server Certificate"
+        xpath="HttpSettings/SSLOptions/@trustedcertalias"
+        overrideable="false" />
+        <field id="clientId" label="OAuth2 Client ID"
+        xpath="HttpSettings/OAuth2Settings/credentials/@clientId"
+        overrideable="false" />
+        <field id="clientSecret" label="OAuth2 Client Secret"
+        xpath="HttpSettings/OAuth2Settings/credentials/@clientSecret"
+        overrideable="false" />
+        <field id="authTokenURL2"
+        label="OAuth2 Authorization Token URL"
+        xpath="HttpSettings/OAuth2Settings/authorizationTokenEndpoint/@url"
+        overrideable="false" />
+        <field id="accessTokenURL2" label="OAuth2 Access Token URL"
+        xpath="HttpSettings/OAuth2Settings/accessTokenEndpoint/@url"
+        overrideable="false" />
+        <field id="scope" label="OAuth2 Scope"
+        xpath="HttpSettings/OAuth2Settings/scope"
+        overrideable="false" />
+        <field id="accessToken2" label="OAuth2 Access Token"
+        xpath="HttpSettings/OAuth2Settings/credentials/@accessToken"
+        overrideable="false" />
+        <field id="accessKeyId" label="Amazon AWS Access Key"
+        xpath="HttpSettings/AwsSettings/credentials/accessKeyId"
+        overrideable="false" />
+        <field id="awsSecret" label="Amazon AWS Secret Key"
+        xpath="HttpSettings/AwsSettings/credentials/awsSecret"
+        overrideable="false" />
+      </ConnectionOverride>
+    </Connections>
+    <PartnerOverrides />
+    <Properties />
+    <Extensions>
+      <ObjectDefinitions>
+        <unusedProfiles />
+      </ObjectDefinitions>
+      <DataMaps>
+        <unusedMaps />
+      </DataMaps>
+    </Extensions>
+    <CrossReferenceOverrides />
+    <PGPOverrides />
+    <DefinedProcessPropertyOverrides />
+  </Overrides>
+</Component>
