@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>b98692b1-32fd-4395-999f-9c1c60881632</Id>
+  <Type>profile.flatfile</Type>
+  <Name>Stage</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <FlatFileProfile modelVersion="2" strict="true">
+      <ProfileProperties>
+        <GeneralInfo fileType="delimited"
+        useColumnHeaders="true" />
+        <Options>
+          <DataOptions />
+          <DelimitedOptions fileDelimiter="commadelimited"
+          removeEscape="false" textQualifier="na" />
+        </Options>
+      </ProfileProperties>
+      <DataElements>
+        <FlatFileRecord detectFormat="numberofcolumns"
+        isNode="true" key="1" name="Record">
+          <FlatFileElements isNode="true" key="2" name="Elements">
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="4" mandatory="false" maxLength="0" minLength="0"
+            name="Name" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="5" mandatory="false" maxLength="0" minLength="0"
+            name="Description" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="6" mandatory="false" maxLength="0" minLength="0"
+            name="Label" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="7" mandatory="false" maxLength="0" minLength="0"
+            name="Shift Start" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="8" mandatory="false" maxLength="0" minLength="0"
+            name="Shift End" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="9" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Number" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="10" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Type" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="11" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Start" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="12" mandatory="false" maxLength="0" minLength="0"
+            name="Segment End" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="14" mandatory="false" maxLength="0" minLength="0"
+            name="Segment WorkRule" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="16" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Template Tag" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="18" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Org Job" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="20" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Labor Category1"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="24" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Labor Category2"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="26" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Labor Category3"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="28" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Labor Category4"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="30" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Labor Category5"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="32" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Labor Category6"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="22" mandatory="false" maxLength="0" minLength="0"
+            name="Segment Cost Center" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+          </FlatFileElements>
+        </FlatFileRecord>
+      </DataElements>
+    </FlatFileProfile>
+  </Object>
+</Component>

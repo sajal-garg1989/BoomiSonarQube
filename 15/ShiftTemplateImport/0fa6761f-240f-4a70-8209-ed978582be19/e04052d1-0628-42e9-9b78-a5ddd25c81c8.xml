@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>e04052d1-0628-42e9-9b78-a5ddd25c81c8</Id>
+  <Type>transform.map</Type>
+  <Name>Override Props</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    refId="fromProfile" name="Dummy" />
+    <Ref compId="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    refId="toProfile" name="Dummy" />
+    <Ref compId="7482b261-9229-463c-818b-882d0216f4bd"
+    refId="function-2" name="Override - Filename" />
+  </References>
+  <Description>Overrides extended function props with the values
+  sent from the application in the XML. If no XML value present,
+  extension value will be used</Description>
+  <Object>
+    <Map fromProfile="9fdde6da-ddd7-4fb3-906b-1d5127c90a87"
+    toProfile="9fdde6da-ddd7-4fb3-906b-1d5127c90a87">
+      <Mappings>
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="DummyRecord/Elements/Dummy"
+        fromType="profile" toFunction="2" toKey="1"
+        toType="function" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="false" cacheOption="none"
+        category="userdefined" enabled="true"
+        id="7482b261-9229-463c-818b-882d0216f4bd" key="2"
+        name="Override - Filename" position="2" sumEnabled="false"
+        type="userdefined" x="30.0" y="45.0">
+          <Inputs>
+            <Input key="1" name="dummy_input" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="process property" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="3" value="Dummy" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

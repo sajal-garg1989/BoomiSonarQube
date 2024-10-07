@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>d8b2c5b6-a6c9-4e35-a068-e25a5c913086</Id>
+  <Type>connector-action</Type>
+  <Name>ShiftTemplateImport_Listener</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>wss</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Listen</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="a55340b2-1a98-479a-a573-a815ddbe8dfb"
+    refId="request-profile" name="WFD Properties" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <WebServicesServerListenAction inputType="singlexml"
+        objectName="ShiftTemplateImport" operationType="QUERY"
+        outputType="none"
+        requestProfile="a55340b2-1a98-479a-a573-a815ddbe8dfb"
+        responseContentType="text/plain" />
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

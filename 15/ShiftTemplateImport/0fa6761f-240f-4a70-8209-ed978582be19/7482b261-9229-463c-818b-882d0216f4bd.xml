@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>7482b261-9229-463c-818b-882d0216f4bd</Id>
+  <Type>transform.function</Type>
+  <Name>Override - Filename</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="216c25eb-fc5f-452c-aa75-62878710cc6a"
+    refId="function-2-documentCache" name="WFD Properties" />
+    <Ref compId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+    refId="function-5-processproperty"
+    name="ShiftTemplateImport_SFTP" />
+    <Ref compId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+    refId="function-1-processproperty"
+    name="ShiftTemplateImport_SFTP" />
+  </References>
+  <Description>Duplicate this function for every property that can
+  be overridden from WFD XML</Description>
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="dummy_input" />
+      </Inputs>
+      <Outputs>
+        <Output key="2" name="process property" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Process Property" position="3" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="130.0" y="368.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Filename" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+            componentName="GAShiftTemplateImport_SFTP"
+            propertyKey="84e4ddf6-c6b1-499d-8f52-7d260d345431"
+            propertyName="Filename" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" key="2" name="Document Cache Lookup"
+        position="2" sumEnabled="false" type="DocumentCacheLookup"
+        x="121.0" y="203.0">
+          <Inputs>
+            <Input default="Filename" key="2" name="@name" />
+          </Inputs>
+          <Outputs>
+            <Output key="1"
+            name="@value (ProcessProperties/ProcessProperty/@value)" />
+          </Outputs>
+          <Configuration>
+            <DocumentCacheLookup cacheIndex="5"
+            docCache="216c25eb-fc5f-452c-aa75-62878710cc6a">
+              <Input index="2" keyId="6" name="@name" />
+              <Output index="1" key="14"
+              name="@value (ProcessProperties/ProcessProperty/@value)" />
+            </DocumentCacheLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="3" name="Scripting" position="4"
+        sumEnabled="false" type="Scripting" x="484.0" y="244.0">
+          <Inputs>
+            <Input key="6" name="xml_val" />
+            <Input key="7" name="ext_val" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="output" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy" useComponent="false">
+              <ScriptToExecute>if (xml_val== "") {output= ext_val;}
+              else { output= xml_val;}</ScriptToExecute>
+              <Input dataType="character" index="6"
+              name="xml_val" />
+              <Input dataType="character" index="7"
+              name="ext_val" />
+              <Output index="2" name="output" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="5"
+        name="Set Process Property" position="5" sumEnabled="false"
+        type="DefinedProcessPropertySet" x="786.0" y="279.0">
+          <Inputs>
+            <Input key="1" name="Filename" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DefinedProcessProperty componentId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0"
+            componentName="[ProcessName]_SFTPProperties"
+            propertyKey="84e4ddf6-c6b1-499d-8f52-7d260d345431"
+            propertyName="Filename" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="6" name="Whitespace Trim"
+        position="1" sumEnabled="false" type="WhitespaceTrim"
+        x="63.0" y="39.0">
+          <Inputs>
+            <Input default="dummy_input" key="1"
+            name="Original String" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="3" fromKey="2"
+        fromNamePath="Scripting/output" fromType="function"
+        toFunction="5" toKey="1"
+        toNamePath="Set Process Property/Filename"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Get Process Property/Filename"
+        fromType="function" toFunction="3" toKey="7"
+        toNamePath="Scripting/ext_val" toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/dummy_input" fromType="function"
+        toFunction="6" toKey="1"
+        toNamePath="Whitespace Trim/Original String (dummy_input)"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="1"
+        fromNamePath="Document Cache Lookup/@value (ProcessProperties/ProcessProperty/@value)"
+        fromType="function" toFunction="3" toKey="6"
+        toNamePath="Scripting/xml_val" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

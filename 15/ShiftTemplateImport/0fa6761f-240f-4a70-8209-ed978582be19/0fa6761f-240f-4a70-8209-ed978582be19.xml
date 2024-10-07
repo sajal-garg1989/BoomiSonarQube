@@ -1,0 +1,1079 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>0fa6761f-240f-4a70-8209-ed978582be19</Id>
+  <Type>process</Type>
+  <Name>ShiftTemplateImport</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>true</Value>
+    </Property>
+    <Property>
+      <Name>startshape-action-type</Name>
+      <Value>Listen</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>CONNECTOR</Value>
+    </Property>
+    <Property>
+      <Name>startshape-connector-type</Name>
+      <Value>wss</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="42fe1993-ff99-4721-8960-668989a4e40e"
+    refId="shape11" name="_Save-Initialize Properties" />
+    <Ref compId="5054c1ce-ab87-4252-b19f-d195e4f249e3"
+    refId="shape45" name="_WFD Callback" />
+    <Ref compId="5054c1ce-ab87-4252-b19f-d195e4f249e3"
+    refId="shape58" name="_WFD Callback" />
+    <Ref compId="8e1cd611-6ae4-4072-95f0-a05cfc1d6cb7"
+    refId="shape64" name="_Import Data Process" />
+    <Ref compId="5054c1ce-ab87-4252-b19f-d195e4f249e3"
+    refId="shape66" name="_WFD Callback" />
+    <Ref compId="46141e34-d71f-46d9-ba0e-24272392e3b9"
+    refId="shape79.processproperty46141e34-d71f-46d9-ba0e-24272392e3b9"
+    name="ShiftTemplateImport_Auth" />
+    <Ref compId="843da61e-ebe4-4980-9846-5efad2bc943c"
+    refId="shape77-0-processproperty"
+    name="ShiftTemplateImport_RunSummary" />
+    <Ref compId="26c4f9ed-24ca-4836-82af-a01acd4fce64"
+    refId="shape81" name="_Submit Integration Details" />
+    <Ref compId="26c4f9ed-24ca-4836-82af-a01acd4fce64"
+    refId="shape82" name="_Submit Integration Details" />
+    <Ref compId="d8b2c5b6-a6c9-4e35-a068-e25a5c913086"
+    refId="shape1.operation" name="ShiftTemplateImport_Listener" />
+  </References>
+  <Description>Shift Template Import v1.1, This integration imports
+  shift templates to application,</Description>
+  <Object>
+    <process allowSimultaneous="true" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="32.0" y="64.0">
+          <configuration>
+            <connectoraction actionType="Listen"
+            allowDynamicCredentials="NONE" connectorType="wss"
+            hideSettings="true"
+            operationId="d8b2c5b6-a6c9-4e35-a068-e25a5c913086">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape79"
+            x="240.0" y="73.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="66.0" y="79.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="66.0" y="79.0" />
+              <linesegment length="95"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="66.0" y="79.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="161.0" y="79.0" />
+              <linesegment length="79"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="161.0" y="79.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="catcherrors_icon" name="shape7"
+        shapetype="catcherrors" userlabel="" x="384.0" y="64.0">
+          <configuration>
+            <catcherrors catchAll="true" retryCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="default"
+            name="shape7.dragpoint1" text="Try" toShape="shape9"
+            x="480.0" y="73.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="418.0" y="79.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="418.0" y="79.0" />
+              <linesegment length="39"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="418.0" y="79.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="457.0" y="79.0" />
+              <linesegment label="Try" length="23"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="457.0" y="79.0" />
+            </dragpoint>
+            <dragpoint identifier="error" name="shape7.dragpoint2"
+            text="Catch" toShape="shape42" x="480.0" y="473.0">
+              <linesegment length="0"
+              name="shape7.dragpoint2.lineseg1" orient="horizontal"
+              x="418.0" y="79.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint2.lineseg2" orient="vertical"
+              x="418.0" y="79.0" />
+              <linesegment length="39"
+              name="shape7.dragpoint2.lineseg3" orient="horizontal"
+              x="418.0" y="79.0" />
+              <linesegment length="400"
+              name="shape7.dragpoint2.lineseg4" orient="vertical"
+              x="457.0" y="79.0" />
+              <linesegment label="Catch" length="23"
+              name="shape7.dragpoint2.lineseg5" orient="horizontal"
+              x="457.0" y="479.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape9" shapetype="branch"
+        userlabel="" x="496.0" y="64.0">
+          <configuration>
+            <branch numBranches="4" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape9.dragpoint1"
+            text="1" toShape="shape11" x="608.0" y="73.0">
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg1" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg2" orient="vertical"
+              x="530.0" y="79.0" />
+              <linesegment length="47"
+              name="shape9.dragpoint1.lineseg3" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg4" orient="vertical"
+              x="577.0" y="79.0" />
+              <linesegment label="1" length="31"
+              name="shape9.dragpoint1.lineseg5" orient="horizontal"
+              x="577.0" y="79.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape9.dragpoint2"
+            text="2" toShape="shape57" x="608.0" y="169.0">
+              <linesegment length="0"
+              name="shape9.dragpoint2.lineseg1" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint2.lineseg2" orient="vertical"
+              x="530.0" y="79.0" />
+              <linesegment length="47"
+              name="shape9.dragpoint2.lineseg3" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="96"
+              name="shape9.dragpoint2.lineseg4" orient="vertical"
+              x="577.0" y="79.0" />
+              <linesegment label="2" length="31"
+              name="shape9.dragpoint2.lineseg5" orient="horizontal"
+              x="577.0" y="175.0" />
+            </dragpoint>
+            <dragpoint identifier="3" name="shape9.dragpoint3"
+            text="3" toShape="shape64" x="608.0" y="249.0">
+              <linesegment length="0"
+              name="shape9.dragpoint3.lineseg1" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint3.lineseg2" orient="vertical"
+              x="530.0" y="79.0" />
+              <linesegment length="47"
+              name="shape9.dragpoint3.lineseg3" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="176"
+              name="shape9.dragpoint3.lineseg4" orient="vertical"
+              x="577.0" y="79.0" />
+              <linesegment label="3" length="31"
+              name="shape9.dragpoint3.lineseg5" orient="horizontal"
+              x="577.0" y="255.0" />
+            </dragpoint>
+            <dragpoint identifier="4" name="shape9.dragpoint4"
+            text="4" toShape="shape77" x="608.0" y="345.0">
+              <linesegment length="0"
+              name="shape9.dragpoint4.lineseg1" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint4.lineseg2" orient="vertical"
+              x="530.0" y="79.0" />
+              <linesegment length="47"
+              name="shape9.dragpoint4.lineseg3" orient="horizontal"
+              x="530.0" y="79.0" />
+              <linesegment length="272"
+              name="shape9.dragpoint4.lineseg4" orient="vertical"
+              x="577.0" y="79.0" />
+              <linesegment label="4" length="31"
+              name="shape9.dragpoint4.lineseg5" orient="horizontal"
+              x="577.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape11"
+        shapetype="processcall"
+        userlabel="_Save-Initialize Properties" x="624.0" y="64.0">
+          <configuration>
+            <processcall abort="true"
+            processId="42fe1993-ff99-4721-8960-668989a4e40e"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape43"
+        shapetype="documentproperties" userlabel="Status Failed"
+        x="624.0" y="560.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - process_status"
+              persist="false" propertyId="process.process_status">
+                <sourcevalues>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="Failed" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - call_back_message"
+              persist="false"
+              propertyId="process.call_back_message">
+                <sourcevalues>
+                  <parametervalue key="8" valueType="process">
+                    <processparameter processproperty="error_message"
+                    processpropertydefaultvalue="" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape43.dragpoint1" toShape="shape45"
+            x="736.0" y="569.0">
+              <linesegment length="0"
+              name="shape43.dragpoint1.lineseg1"
+              orient="horizontal" x="658.0" y="575.0" />
+              <linesegment length="0"
+              name="shape43.dragpoint1.lineseg2" orient="vertical"
+              x="658.0" y="575.0" />
+              <linesegment length="47"
+              name="shape43.dragpoint1.lineseg3"
+              orient="horizontal" x="658.0" y="575.0" />
+              <linesegment length="0"
+              name="shape43.dragpoint1.lineseg4" orient="vertical"
+              x="705.0" y="575.0" />
+              <linesegment length="31"
+              name="shape43.dragpoint1.lineseg5"
+              orient="horizontal" x="705.0" y="575.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape41"
+        shapetype="exception" userlabel="Process Failure" x="624.0"
+        y="656.0">
+          <configuration>
+            <exception stopProcessReturnSingleDoc="false"
+            stopsingledoc="false" title="Main process failed">
+              <exMessage>Error occurred during process execution:
+              {1} {2}</exMessage>
+              <exParameters>
+                <parametervalue key="0" valueType="process">
+                  <processparameter processproperty="error_message"
+                  processpropertydefaultvalue="" />
+                </parametervalue>
+                <parametervalue key="1" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.catcherrorsmessage"
+                  propertyName="Base - Try/Catch Message" />
+                </parametervalue>
+              </exParameters>
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="branch_icon" name="shape42"
+        shapetype="branch" userlabel="" x="496.0" y="464.0">
+          <configuration>
+            <branch numBranches="3" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape42.dragpoint1"
+            text="1" toShape="shape81" x="608.0" y="473.0">
+              <linesegment length="0"
+              name="shape42.dragpoint1.lineseg1"
+              orient="horizontal" x="530.0" y="479.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint1.lineseg2" orient="vertical"
+              x="530.0" y="479.0" />
+              <linesegment length="47"
+              name="shape42.dragpoint1.lineseg3"
+              orient="horizontal" x="530.0" y="479.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint1.lineseg4" orient="vertical"
+              x="577.0" y="479.0" />
+              <linesegment label="1" length="31"
+              name="shape42.dragpoint1.lineseg5"
+              orient="horizontal" x="577.0" y="479.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape42.dragpoint2"
+            text="2" toShape="shape43" x="608.0" y="569.0">
+              <linesegment length="0"
+              name="shape42.dragpoint2.lineseg1"
+              orient="horizontal" x="530.0" y="479.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint2.lineseg2" orient="vertical"
+              x="530.0" y="479.0" />
+              <linesegment length="47"
+              name="shape42.dragpoint2.lineseg3"
+              orient="horizontal" x="530.0" y="479.0" />
+              <linesegment length="96"
+              name="shape42.dragpoint2.lineseg4" orient="vertical"
+              x="577.0" y="479.0" />
+              <linesegment label="2" length="31"
+              name="shape42.dragpoint2.lineseg5"
+              orient="horizontal" x="577.0" y="575.0" />
+            </dragpoint>
+            <dragpoint identifier="3" name="shape42.dragpoint3"
+            text="3" toShape="shape41" x="608.0" y="665.0">
+              <linesegment length="0"
+              name="shape42.dragpoint3.lineseg1"
+              orient="horizontal" x="530.0" y="479.0" />
+              <linesegment length="0"
+              name="shape42.dragpoint3.lineseg2" orient="vertical"
+              x="530.0" y="479.0" />
+              <linesegment length="47"
+              name="shape42.dragpoint3.lineseg3"
+              orient="horizontal" x="530.0" y="479.0" />
+              <linesegment length="192"
+              name="shape42.dragpoint3.lineseg4" orient="vertical"
+              x="577.0" y="479.0" />
+              <linesegment label="3" length="31"
+              name="shape42.dragpoint3.lineseg5"
+              orient="horizontal" x="577.0" y="671.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape45"
+        shapetype="processcall" userlabel="_WFD Callback" x="752.0"
+        y="560.0">
+          <configuration>
+            <processcall abort="true"
+            processId="5054c1ce-ab87-4252-b19f-d195e4f249e3"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="message_icon" name="shape54"
+        shapetype="message" userlabel="Debug XML" x="240.0"
+        y="176.0">
+          <configuration>
+            <message combined="false">
+              <msgTxt>&lt;ProcessProperties&gt; &lt;ProcessProperty
+              value="-1"
+              name="falconExecutionId"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty value="c70_nonprd_03"
+              name="tenantId"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty value="Ivan, Sean"
+              name="SubmittedBy"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty
+              value="http://kcfn01-cfn02-api-gtw65-app.int.cfn.mykronos.com"
+              name="GatewayUrl"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty value={1}
+              name="IntegrationToken"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty value={2}
+              name="IntegrationServiceIdentifierKey"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty
+              value="internal_c70_nonprd_03_ihub"
+              name="IntegrationInternalKey"&gt;&lt;/ProcessProperty&gt;
+              &lt;ProcessProperty
+              value="c70-psrv03.cfn.mykronos.com"
+              name="VanityUrl"&gt;&lt;/ProcessProperty&gt;
+              &lt;/ProcessProperties&gt;</msgTxt>
+              <msgParameters>
+                <parametervalue key="0" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="dynamicdocument.IntegrationToken"
+                  propertyName="Dynamic Document Property - IntegrationToken" />
+                </parametervalue>
+                <parametervalue key="1" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="dynamicdocument.ServiceKey"
+                  propertyName="Dynamic Document Property - ServiceKey" />
+                </parametervalue>
+              </msgParameters>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape54.dragpoint1" toShape="unset"
+            x="295.0" y="183.0">
+              <linesegment length="0"
+              name="shape54.dragpoint1.lineseg1"
+              orient="horizontal" x="274.0" y="191.0" />
+              <linesegment length="0"
+              name="shape54.dragpoint1.lineseg2" orient="vertical"
+              x="274.0" y="191.0" />
+              <linesegment length="18"
+              name="shape54.dragpoint1.lineseg3"
+              orient="horizontal" x="274.0" y="191.0" />
+              <linesegment length="2"
+              name="shape54.dragpoint1.lineseg4" orient="vertical"
+              x="292.0" y="189.0" />
+              <linesegment length="3"
+              name="shape54.dragpoint1.lineseg5"
+              orient="horizontal" x="292.0" y="189.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape57"
+        shapetype="documentproperties"
+        userlabel="Status In Progress" x="624.0" y="160.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - process_status"
+              persist="false" propertyId="process.process_status">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="In Progress" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - call_back_message"
+              persist="false"
+              propertyId="process.call_back_message">
+                <sourcevalues>
+                  <parametervalue key="2" valueType="static">
+                    <staticparameter staticproperty="Integration has started." />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape57.dragpoint1" toShape="shape58"
+            x="752.0" y="169.0">
+              <linesegment length="0"
+              name="shape57.dragpoint1.lineseg1"
+              orient="horizontal" x="658.0" y="175.0" />
+              <linesegment length="0"
+              name="shape57.dragpoint1.lineseg2" orient="vertical"
+              x="658.0" y="175.0" />
+              <linesegment length="55"
+              name="shape57.dragpoint1.lineseg3"
+              orient="horizontal" x="658.0" y="175.0" />
+              <linesegment length="0"
+              name="shape57.dragpoint1.lineseg4" orient="vertical"
+              x="713.0" y="175.0" />
+              <linesegment length="39"
+              name="shape57.dragpoint1.lineseg5"
+              orient="horizontal" x="713.0" y="175.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape58"
+        shapetype="processcall" userlabel="_WFD Callback" x="768.0"
+        y="160.0">
+          <configuration>
+            <processcall abort="true"
+            processId="5054c1ce-ab87-4252-b19f-d195e4f249e3"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape64"
+        shapetype="processcall" userlabel="_Import Data Process"
+        x="624.0" y="240.0">
+          <configuration>
+            <processcall abort="true"
+            processId="8e1cd611-6ae4-4072-95f0-a05cfc1d6cb7"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape65"
+        shapetype="documentproperties" userlabel="Status Completed"
+        x="1152.0" y="544.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - process_status"
+              persist="false" propertyId="process.process_status">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="Completed" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - call_back_message"
+              persist="false"
+              propertyId="process.call_back_message">
+                <sourcevalues>
+                  <parametervalue key="2" valueType="static">
+                    <staticparameter staticproperty="Integration has completed without errors." />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape65.dragpoint1" toShape="shape66"
+            x="1280.0" y="553.0">
+              <linesegment length="0"
+              name="shape65.dragpoint1.lineseg1"
+              orient="horizontal" x="1186.0" y="559.0" />
+              <linesegment length="0"
+              name="shape65.dragpoint1.lineseg2" orient="vertical"
+              x="1186.0" y="559.0" />
+              <linesegment length="55"
+              name="shape65.dragpoint1.lineseg3"
+              orient="horizontal" x="1186.0" y="559.0" />
+              <linesegment length="0"
+              name="shape65.dragpoint1.lineseg4" orient="vertical"
+              x="1241.0" y="559.0" />
+              <linesegment length="39"
+              name="shape65.dragpoint1.lineseg5"
+              orient="horizontal" x="1241.0" y="559.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape66"
+        shapetype="processcall" userlabel="_WFD Callback"
+        x="1296.0" y="544.0">
+          <configuration>
+            <processcall abort="true"
+            processId="5054c1ce-ab87-4252-b19f-d195e4f249e3"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape70"
+        shapetype="documentproperties" userlabel="Debug Cookies"
+        x="112.0" y="176.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - IntegrationToken"
+              persist="false"
+              propertyId="dynamicdocument.IntegrationToken">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8va2NmbjAxLWNmbjAyLWF0aDY1LW9hbS5pbnQuY2ZuLm15a3Jvbm9zLmNvbTo4MCIsImlhdCI6MTYyNTM5MDY3NCwiZXhwIjoxNjI1NDE5NDc0LCJzdWIiOiJTSFZOU0lOR0giLCJub25jZSI6IjxEbi0wUzZfV3pBMk1qIiwicmVhbG0iOiIvYzcwX25vbnByZF8wMyJ9.FyCfhGTigLpfHOklZVPsxX4JuS02KyWLtwnaToadBYNau9vP4KR7QyRjNuUzeADt9EdFsne0x2kVaLgnoteGeazkFSaeMf8yFsGih0h7eldxhvVIcjYdcjXZGmDkhJlQYd02g7LOpCqT3vKMhtDclhJEvbIhj7fxTiqL89D3i30Ziwj7YknuRngkjqeCs4DelwKHf4MX3HLqDYe9F0DOH8hcLCIZG8ju7zpblPibo_1Gn-nRD6eV-kEeRwHT7MXMdunqviMtNa66lG0zDYid5NhQ_wFlVZ2-0ASzJ_nZEnYfHp9PUd2a1t3-bKQNrx-Eqlgg08DtGCRZO-1lxPCQuA|Q2tmeTZSZlRxb0I2dmlBVWZmWUN4YW5nZDY5elAxdDA5QTk2MURQYlBuUThRbUljbUw0UFp0OGNWdnFNZnhUaHdKQnZqVjlGajhqRXF3NldZYkZaK1daZGZHTUVOOE9IdlNyaUd3eWVrUFd6R1NRL0xrbk10aExZWndReU9hLzJ3cUJHOUhFVlVpdVRkVHFGS1FCTFR6Sms1dnQzOTZlUlE5azNvZmJWOGcyN3hzUnlXb0lvdlYrY0l3RmhEK2RxcVowOGIxUXFyRVBESTd2c2Nrek43eVNJeFdHZlpTWXFESGlFZnUvaHFNMEZJODdkUXM4QTUwWU43Z3ViaUlDL0F1T0VwMGNwTmV2Z1hzRVIvWEpjWnA2UnA0b1gybkJZdzc5cUNIaHpjbEMxdWkrRzdNdllHWFNSVmJxVmwvNDluSkdHOVFuQmhoeHFWM1RwZHZhVHR5d1AxQmdadEQyaXNWaDBGblJKb3BEK1VjQ1ZKQlNLZzlrdUtTNDFHMy91LzgwbTh4R0MvVUNZdU54NlhHMjBoazhJclIvMmNwTEQxcVR6cm5DRFM2Y3hwbHZ4M3hJRzZhYkttd1JOUFZOcUtnS3VJVG5qZVYrNmVETkx4d2czc2QzdWpWdS9GeE5DZ3U2ZnFLcHE3VmkrN1lvZHFGZXkxQXpNdnlUdHZydEhNSWduYWhOK01WMGVVeWF4UUF1LzN4N1V3eEJVK2xBeEJWNUoxcnJMNjJFVWtSb2xQdWc3akI3bnVmMlczNlQwTysra1c4a25wd0xWVCtUTlc0dTcwdDJJMTNEaEJaNXZzMjU1ZzIwaUpGbzZXdzdBRWRPM2ptckMwcDJnbTdHRHpRUDRoOXpvQ1RDUnExZkVwVUo3UVJoS3h3cVZHVEZSMzExUTdMQzNYR1pwSFJzelNXcnVwNXRMTVBBNTZMenY0K3NZaS9JRHNWVm90SnExM2psamZLYVlUdW1Sbzc3UVRjOURXM1RLdlp3LQ==&quot;" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - ServiceKey"
+              persist="false"
+              propertyId="dynamicdocument.ServiceKey">
+                <sourcevalues>
+                  <parametervalue key="2" valueType="static">
+                    <staticparameter staticproperty="&quot;AQIC5wM2LY4Sfcw1LgS7mMFeWPT4oTxMJRn13leitmN5n2M.*AAJTSQACMDIAAlNLABMzOTY0NDYzNTY4NjM0MzM5ODAzAAJTMQACMjU.*&quot;" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape70.dragpoint1" toShape="shape54"
+            x="224.0" y="185.0">
+              <linesegment length="0"
+              name="shape70.dragpoint1.lineseg1"
+              orient="horizontal" x="146.0" y="191.0" />
+              <linesegment length="0"
+              name="shape70.dragpoint1.lineseg2" orient="vertical"
+              x="146.0" y="191.0" />
+              <linesegment length="47"
+              name="shape70.dragpoint1.lineseg3"
+              orient="horizontal" x="146.0" y="191.0" />
+              <linesegment length="0"
+              name="shape70.dragpoint1.lineseg4" orient="vertical"
+              x="193.0" y="191.0" />
+              <linesegment length="31"
+              name="shape70.dragpoint1.lineseg5"
+              orient="horizontal" x="193.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape78"
+        shapetype="documentproperties" userlabel="Error Message"
+        x="992.0" y="336.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Process Property - error_message"
+              persist="false" propertyId="process.error_message">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="Process completed with record-level errors. Further details can be viewed by navigating to the Transaction Assistant and/or the Additional Details screen via the buttons below." />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape78.dragpoint1" toShape="shape76"
+            x="1120.0" y="345.0">
+              <linesegment length="0"
+              name="shape78.dragpoint1.lineseg1"
+              orient="horizontal" x="1026.0" y="351.0" />
+              <linesegment length="0"
+              name="shape78.dragpoint1.lineseg2" orient="vertical"
+              x="1026.0" y="351.0" />
+              <linesegment length="55"
+              name="shape78.dragpoint1.lineseg3"
+              orient="horizontal" x="1026.0" y="351.0" />
+              <linesegment length="0"
+              name="shape78.dragpoint1.lineseg4" orient="vertical"
+              x="1081.0" y="351.0" />
+              <linesegment length="39"
+              name="shape78.dragpoint1.lineseg5"
+              orient="horizontal" x="1081.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape76"
+        shapetype="exception"
+        userlabel="Transaction Errors Encountered" x="1136.0"
+        y="336.0">
+          <configuration>
+            <exception stopsingledoc="false" title="">
+              <exMessage>Process completed with transaction errors.
+              If Transaction Assistant is enabled, failed records
+              can be re-submitted through Transaction
+              Assistant.</exMessage>
+              <exParameters />
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="decision_icon" name="shape77"
+        shapetype="decision" userlabel="Transaction Failures?"
+        x="624.0" y="336.0">
+          <configuration>
+            <decision comparison="greaterthan"
+            name="Transaction Failures?">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="843da61e-ebe4-4980-9846-5efad2bc943c"
+                componentName="[ProcessName]_RunSummary"
+                propertyKey="9348bb05-1848-4b77-99c0-5a2d2cccfef2"
+                propertyLabel="Failed Transactions" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="0" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape77.dragpoint1"
+            text="True" toShape="shape78" x="976.0" y="345.0">
+              <linesegment length="0"
+              name="shape77.dragpoint1.lineseg1"
+              orient="horizontal" x="658.0" y="351.0" />
+              <linesegment length="0"
+              name="shape77.dragpoint1.lineseg2" orient="vertical"
+              x="658.0" y="351.0" />
+              <linesegment length="167"
+              name="shape77.dragpoint1.lineseg3"
+              orient="horizontal" x="658.0" y="351.0" />
+              <linesegment length="0"
+              name="shape77.dragpoint1.lineseg4" orient="vertical"
+              x="825.0" y="351.0" />
+              <linesegment label="True" length="151"
+              name="shape77.dragpoint1.lineseg5"
+              orient="horizontal" x="825.0" y="351.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape77.dragpoint2"
+            text="False" toShape="shape80" x="976.0" y="457.0">
+              <linesegment length="0"
+              name="shape77.dragpoint2.lineseg1"
+              orient="horizontal" x="658.0" y="351.0" />
+              <linesegment length="0"
+              name="shape77.dragpoint2.lineseg2" orient="vertical"
+              x="658.0" y="351.0" />
+              <linesegment length="167"
+              name="shape77.dragpoint2.lineseg3"
+              orient="horizontal" x="658.0" y="351.0" />
+              <linesegment length="112"
+              name="shape77.dragpoint2.lineseg4" orient="vertical"
+              x="825.0" y="351.0" />
+              <linesegment label="False" length="151"
+              name="shape77.dragpoint2.lineseg5"
+              orient="horizontal" x="825.0" y="463.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape79"
+        shapetype="documentproperties"
+        userlabel="Set Boomi Exec ID" x="256.0" y="64.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - [ProcessName]_AuthProperties - Boomi Execution ID"
+              persist="false"
+              propertyId="definedprocess.46141e34-d71f-46d9-ba0e-24272392e3b9@78cf9826-37e4-4930-889e-fad3782671e7">
+
+                <sourcevalues>
+                  <parametervalue key="1" valueType="execution">
+                    <executionparameter executionproperty="Execution Id" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape79.dragpoint1" toShape="shape7"
+            x="368.0" y="73.0">
+              <linesegment length="0"
+              name="shape79.dragpoint1.lineseg1"
+              orient="horizontal" x="290.0" y="79.0" />
+              <linesegment length="0"
+              name="shape79.dragpoint1.lineseg2" orient="vertical"
+              x="290.0" y="79.0" />
+              <linesegment length="47"
+              name="shape79.dragpoint1.lineseg3"
+              orient="horizontal" x="290.0" y="79.0" />
+              <linesegment length="0"
+              name="shape79.dragpoint1.lineseg4" orient="vertical"
+              x="337.0" y="79.0" />
+              <linesegment length="31"
+              name="shape79.dragpoint1.lineseg5"
+              orient="horizontal" x="337.0" y="79.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape80"
+        shapetype="branch" userlabel="" x="992.0" y="448.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape80.dragpoint1"
+            text="1" toShape="shape82" x="1136.0" y="457.0">
+              <linesegment length="0"
+              name="shape80.dragpoint1.lineseg1"
+              orient="horizontal" x="1026.0" y="463.0" />
+              <linesegment length="0"
+              name="shape80.dragpoint1.lineseg2" orient="vertical"
+              x="1026.0" y="463.0" />
+              <linesegment length="63"
+              name="shape80.dragpoint1.lineseg3"
+              orient="horizontal" x="1026.0" y="463.0" />
+              <linesegment length="0"
+              name="shape80.dragpoint1.lineseg4" orient="vertical"
+              x="1089.0" y="463.0" />
+              <linesegment label="1" length="47"
+              name="shape80.dragpoint1.lineseg5"
+              orient="horizontal" x="1089.0" y="463.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape80.dragpoint2"
+            text="2" toShape="shape65" x="1136.0" y="553.0">
+              <linesegment length="0"
+              name="shape80.dragpoint2.lineseg1"
+              orient="horizontal" x="1026.0" y="463.0" />
+              <linesegment length="0"
+              name="shape80.dragpoint2.lineseg2" orient="vertical"
+              x="1026.0" y="463.0" />
+              <linesegment length="63"
+              name="shape80.dragpoint2.lineseg3"
+              orient="horizontal" x="1026.0" y="463.0" />
+              <linesegment length="96"
+              name="shape80.dragpoint2.lineseg4" orient="vertical"
+              x="1089.0" y="463.0" />
+              <linesegment label="2" length="47"
+              name="shape80.dragpoint2.lineseg5"
+              orient="horizontal" x="1089.0" y="559.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape81"
+        shapetype="processcall"
+        userlabel="_Submit Integration Details" x="624.0"
+        y="464.0">
+          <configuration>
+            <processcall abort="true"
+            processId="26c4f9ed-24ca-4836-82af-a01acd4fce64"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape82"
+        shapetype="processcall"
+        userlabel="_Submit Integration Details" x="1152.0"
+        y="448.0">
+          <configuration>
+            <processcall abort="true"
+            processId="26c4f9ed-24ca-4836-82af-a01acd4fce64"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+  <Overrides allowScheduleOverride="false">
+    <Connections>
+      <ConnectionOverride id="05dbacd6-3c03-4c8e-9404-6f3543acfccb">
+
+        <field id="connectionUrl" label="URL"
+        overrideable="true" />
+      </ConnectionOverride>
+      <ConnectionOverride id="33f48423-ce6e-4669-bc0f-b4da4f5a792a">
+
+        <field id="host" label="Host" xpath="SFTPSettings/@host"
+        overrideable="true" />
+        <field id="port" label="Port" xpath="SFTPSettings/@port"
+        overrideable="true" />
+        <field id="user" label="User"
+        xpath="SFTPSettings/AuthSettings/@user"
+        overrideable="true" />
+        <field id="password" label="Password"
+        xpath="SFTPSettings/AuthSettings/@password"
+        overrideable="true" />
+        <field id="proxyEnabled" label="Use Proxy"
+        xpath="SFTPSettings/ProxySettings/@proxyEnabled"
+        overrideable="false" />
+        <field id="proxyType" label="Choose Proxy Type"
+        xpath="SFTPSettings/ProxySettings/@type"
+        overrideable="false" />
+        <field id="proxyHost" label="Proxy Host"
+        xpath="SFTPSettings/ProxySettings/@host"
+        overrideable="false" />
+        <field id="proxyPort" label="Proxy Port"
+        xpath="SFTPSettings/ProxySettings/@port"
+        overrideable="false" />
+        <field id="proxyUser" label="Proxy User"
+        xpath="SFTPSettings/ProxySettings/@user"
+        overrideable="false" />
+        <field id="proxyPassword" label="Proxy Password"
+        xpath="SFTPSettings/ProxySettings/@password"
+        overrideable="false" />
+        <field id="sshkeyauth"
+        label="Use Private Key Authentication"
+        xpath="SFTPSettings/SSHOptions/@sshkeyauth"
+        overrideable="false" />
+        <field id="sshkeypath" label="Client SSH Key Path"
+        xpath="SFTPSettings/SSHOptions/@sshkeypath"
+        overrideable="false" />
+        <field id="sshkeypassword" label="Key File Password"
+        xpath="SFTPSettings/SSHOptions/@sshkeypassword"
+        overrideable="false" />
+        <field id="knownHostEntry" label="Known Hosts Entry"
+        xpath="SFTPSettings/SSHOptions/knownHostEntry/text()"
+        overrideable="false" />
+        <field id="dhKeySizeMax1024"
+        label="Use Max Key Exchange size of 1024"
+        xpath="SFTPSettings/SSHOptions/@dhKeySizeMax1024"
+        overrideable="false" />
+      </ConnectionOverride>
+    </Connections>
+    <Operations>
+      <OperationOverride id="d8b2c5b6-a6c9-4e35-a068-e25a5c913086">
+        <field id="ObjectName" label="Object"
+        xpath="WebServicesServerListenAction/@objectName"
+        overrideable="false" />
+      </OperationOverride>
+    </Operations>
+    <PartnerOverrides />
+    <Properties />
+    <Extensions>
+      <ObjectDefinitions>
+        <unusedProfiles />
+      </ObjectDefinitions>
+      <DataMaps>
+        <unusedMaps />
+      </DataMaps>
+    </Extensions>
+    <CrossReferenceOverrides />
+    <PGPOverrides />
+    <DefinedProcessPropertyOverrides>
+      <OverrideableDefinedProcessPropertyComponent componentId="46141e34-d71f-46d9-ba0e-24272392e3b9">
+
+        <OverrideableDefinedProcessPropertyValue key="f6711f40-878d-4c49-9fd6-972a7ce2c0c3"
+        name="Username" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="d7489fd7-cab7-49d5-b705-ee880e3c4fcb"
+        name="Password" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="2ce65dc6-63cb-4d70-8673-e8c0fc689d40"
+        name="ClientId" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="f9857bc5-8053-4d75-96bd-70b7029b0c18"
+        name="ClientSecret" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="b756d569-0c68-47e2-ad4c-65427ded176e"
+        name="Cookie" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="c82b7064-dc18-4c95-8ebf-0d2b021526a1"
+        name="GrantType" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="b0b2c9b3-6884-4434-b539-49d7fc75700b"
+        name="GatewayDefaultPort" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="627c44c0-8800-456c-b897-e248ca31c226"
+        name="AppKey" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="1142c39e-09eb-4647-a25f-366a5d23b1d4"
+        name="EnableAuthnChain" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="1f4d8ea8-2051-4f52-89e6-5d4969a2c3cf"
+        name="AUTHN_TOKEN" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="503060aa-c335-4eba-bd36-f3f00afebb0e"
+        name="AUTHN_SSID" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="ccabb88f-c1f9-49a6-b666-5915c21f2455"
+        name="DisableCookie" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="78cf9826-37e4-4930-889e-fad3782671e7"
+        name="Boomi Execution ID" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="54020c96-f76a-465a-95dc-2d113bf514c9"
+        name="Falcon Execution ID" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="014665df-81be-41c7-a6ac-4d1550f36b5b"
+        name="Tenant Query String" overrideable="false" />
+      </OverrideableDefinedProcessPropertyComponent>
+      <OverrideableDefinedProcessPropertyComponent componentId="7b6aadb3-f516-4b3b-bf75-df3c18b1e0e1">
+
+        <OverrideableDefinedProcessPropertyValue key="5b0510ed-cfb9-4b53-8c42-e20428207288"
+        name="ExcludeEmployees" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="8ea1ff66-d2a7-422c-a34d-6937e078b077"
+        name="PayPeriod" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="31f8539d-9525-4989-b272-7b7342f86165"
+        name="Falcon Execution Id" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="75cc32b5-2ebc-4223-9dc5-53541c58506d"
+        name="ResultFileName" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="7e180537-0f46-41b9-adf5-cb48a618f454"
+        name="ErrorFilename" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="696212e7-513d-488c-95e6-63f05c8e4cd0"
+        name="StartDate" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="873729ff-49d3-4723-9a1a-899a23b9e891"
+        name="EndDate" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="66d7dd66-92f9-4b85-963e-c6df78efeb01"
+        name="DisqualifyActive" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="3cc2c35f-2f32-42d1-b114-f3177aabcb58"
+        name="DisqualifyInactive" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="11543aa2-47a3-4c78-be37-71c08d9fcadf"
+        name="Payrules" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="1878a511-dc76-487d-8585-3652d2d653f5"
+        name="IncludeEmployees" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="8ad4af4e-3d33-4dc9-afbd-65bdb5cf7293"
+        name="HyperfindAndLocations" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="38d88436-c942-4117-8fd2-1010725683de"
+        name="ErrorMessage" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="d3b86dbe-f4cd-48dd-ae25-7f5a1f4812af"
+        name="Tenant Id" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="3a55681c-452d-40ec-b181-51408c14310a"
+        name="_TimeFormat" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="0168b29c-1bc5-4a0b-b72f-5e7396cc40e1"
+        name="TotalRecords" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="cb947e74-9b93-4f98-b50f-930116518646"
+        name="DisqualifyRecords" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="d399b476-d0fd-40a1-86eb-6d239644fdd7"
+        name="EmployeeProcessed" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="8b6b9cb6-9341-405d-9a1a-083b37c250b2"
+        name="RunSummary" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="853773e6-b840-4a6b-a647-d8ba1e478b15"
+        name="CallBackMessage" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="9de38ca8-336c-4e9b-b949-c66383700281"
+        name="PayPeriodSpan" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="a56e1dd9-6bbe-4bba-8674-9fc5f1412e78"
+        name="_HyperfindAndLocationsType" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="2f3e0325-7dd7-4e2a-b1f7-0ebd5ec47e37"
+        name="_EnableCustomMapping" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="10aef30e-72a3-49fc-9afc-f2dadd7904d1"
+        name="TotalShifts" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="24d31f02-79eb-4d37-aac2-0f86ca585c23"
+        name="_ExportType" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="1daf4dfb-5ac3-42ab-8649-a4cf1dddf624"
+        name="Payrules" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="c38c91e1-adca-4812-adf9-af7a5fa099c6"
+        name="Custom 1" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="85c15ade-93cd-45e4-9119-841200221745"
+        name="Boomi Execution Id" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="2f942402-4d7e-44aa-9541-f47c0624d188"
+        name="_HyperfindQueryThreshold" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="7a176821-15aa-439c-8e20-1ea25f21e43a"
+        name="Proficiency Levels Input File" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="1338ea21-86d4-4e21-b0cc-74ec3b0f1809"
+        name="Skills Input File" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="c1c94dde-47bb-4420-beca-fff3cd658bb5"
+        name="Certificates Input File" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="b1006603-bc86-4a05-a5f5-0d107af2ec1c"
+        name="Person Skills Assignment Input File"
+        overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="89f40460-f797-4984-ab20-d4105455e191"
+        name="Person Certificates Assignment Input File"
+        overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="b1af7647-13f1-4a6b-b0a6-5d434b333488"
+        name="Delete File After Processing" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="90af1ede-9337-4bc7-90a3-2760acf57772"
+        name="[Example Control Property]" overrideable="false" />
+      </OverrideableDefinedProcessPropertyComponent>
+      <OverrideableDefinedProcessPropertyComponent componentId="843da61e-ebe4-4980-9846-5efad2bc943c">
+
+        <OverrideableDefinedProcessPropertyValue key="78bfe2de-34f9-47bf-bc6c-5b840ee8809e"
+        name="Integration Type" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="9348bb05-1848-4b77-99c0-5a2d2cccfef2"
+        name="Failed Transactions" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="e3e61846-6bb2-4fe1-9586-3311f32e25e7"
+        name="Disqualified Transactions" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="57aed54a-d495-4614-9de0-8189e65c00d3"
+        name="Successful Transactions" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="98b0248a-384e-4fae-bbb3-f2c92f4b2505"
+        name="Updated Prof Levels Count" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="31f7d942-2e30-4dc9-a8d0-a7bdae84a8c7"
+        name="Failed Prof Levels Count" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="b3e7686f-9a5d-4a5e-a0a4-d9ce1a5e59c5"
+        name="Processed Source Records" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="ca18c2ba-41d0-41f0-aed0-d2ed4bd842e1"
+        name="Run Summary" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="881aece7-4b9f-4012-8da2-4608f9409cc4"
+        name="Errors Present" overrideable="false" />
+      </OverrideableDefinedProcessPropertyComponent>
+      <OverrideableDefinedProcessPropertyComponent componentId="5fe257c9-0782-4f99-85bc-06e9f9cd9fe0">
+
+        <OverrideableDefinedProcessPropertyValue key="6088f44c-1ab1-4b5c-ab90-55dc8956bc5b"
+        name="SourceDirectory" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="84e4ddf6-c6b1-499d-8f52-7d260d345431"
+        name="Filename" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="4bfb4838-49bf-4e38-a5b6-a13307f6026c"
+        name="Delete File After Processing" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="911d9ac4-b146-4100-91b7-c15b64f7f405"
+        name="Environment" overrideable="true" />
+      </OverrideableDefinedProcessPropertyComponent>
+      <OverrideableDefinedProcessPropertyComponent componentId="a9d0ffbe-5299-4d9f-a0c1-ed374e41e3d7">
+
+        <OverrideableDefinedProcessPropertyValue key="6536d50a-43c9-4328-a136-31f34f206855"
+        name="[Example CRT Config]" overrideable="false" />
+      </OverrideableDefinedProcessPropertyComponent>
+    </DefinedProcessPropertyOverrides>
+  </Overrides>
+</Component>

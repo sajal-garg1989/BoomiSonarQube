@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>56ad1e63-d2c6-4c11-a71c-0697f67d93aa</Id>
+  <Type>transform.map</Type>
+  <Name>Stage to Shift Cache</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b98692b1-32fd-4395-999f-9c1c60881632"
+    refId="fromProfile" name="Stage" />
+    <Ref compId="2546b057-b65e-46ec-93e3-f5d3f4d338dd"
+    refId="toProfile" name="Cache Shift Template" />
+    <Ref compId="f598b9a3-459b-4e02-95c7-c1f4a867b3d4"
+    refId="function-1" name="Transfer String" />
+    <Ref compId="0d1fb916-1963-4e93-ad33-5bd64a00efc8"
+    refId="function-2" name="Get LC" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b98692b1-32fd-4395-999f-9c1c60881632"
+    toProfile="2546b057-b65e-46ec-93e3-f5d3f4d338dd">
+      <Mappings>
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Record/Elements/Description"
+        fromType="profile" toKey="45"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='45']"
+        toNamePath="Root/Array/ArrayElement1/Object/description"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='8']"
+        fromNamePath="Record/Elements/Shift End" fromType="profile"
+        toKey="46"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='46']"
+        toNamePath="Root/Array/ArrayElement1/Object/endDateTime"
+        toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Record/Elements/Label" fromType="profile"
+        toKey="48"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='48']"
+        toNamePath="Root/Array/ArrayElement1/Object/label"
+        toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Record/Elements/Name" fromType="profile"
+        toKey="50"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='50']"
+        toNamePath="Root/Array/ArrayElement1/Object/name"
+        toType="profile" />
+        <Mapping fromKey="12"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='12']"
+        fromNamePath="Record/Elements/Segment End"
+        fromType="profile" toKey="62"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='62']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/endDateTime"
+        toType="profile" />
+        <Mapping fromKey="9"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='9']"
+        fromNamePath="Record/Elements/Segment Number"
+        fromType="profile" toKey="80"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='80']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/orderNumber"
+        toType="profile" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        fromNamePath="Record/Elements/Segment Type"
+        fromType="profile" toKey="104"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='101']/*[@key='102']/*[@key='104']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/segmentType/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="11"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='11']"
+        fromNamePath="Record/Elements/Segment Start"
+        fromType="profile" toKey="105"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='105']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/startDateTime"
+        toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        fromNamePath="Record/Elements/Shift Start"
+        fromType="profile" toKey="111"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='111']"
+        toNamePath="Root/Array/ArrayElement1/Object/startDateTime"
+        toType="profile" />
+        <Mapping fromKey="16"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='16']"
+        fromNamePath="Record/Elements/Segment Template Tag"
+        fromType="profile" toKey="100"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='91']/*[@key='92']/*[@key='93']/*[@key='94']/*[@key='97']/*[@key='98']/*[@key='100']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/segmentTemplateTags/Array/ArrayElement1/Object/tagDefinitionRef/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="14"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='14']"
+        fromNamePath="Record/Elements/Segment WorkRule"
+        fromType="profile" toFunction="1" toKey="2"
+        toType="function" />
+        <Mapping fromKey="22"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='22']"
+        fromNamePath="Record/Elements/Segment Cost Center"
+        fromType="profile" toFunction="1" toKey="3"
+        toType="function" />
+        <Mapping fromKey="18"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='18']"
+        fromNamePath="Record/Elements/Segment Org Job"
+        fromType="profile" toFunction="1" toKey="4"
+        toType="function" />
+        <Mapping fromKey="20"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='20']"
+        fromNamePath="Record/Elements/Segment Labor Category1"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="1" fromType="function"
+        toKey="106"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='106']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/transferString"
+        toType="profile" />
+        <Mapping fromKey="24"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='24']"
+        fromNamePath="Record/Elements/Segment Labor Category2"
+        fromType="profile" toFunction="1" toKey="5"
+        toType="function" />
+        <Mapping fromKey="26"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='26']"
+        fromNamePath="Record/Elements/Segment Labor Category3"
+        fromType="profile" toFunction="1" toKey="6"
+        toType="function" />
+        <Mapping fromKey="28"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='28']"
+        fromNamePath="Record/Elements/Segment Labor Category4"
+        fromType="profile" toFunction="1" toKey="7"
+        toType="function" />
+        <Mapping fromKey="30"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='30']"
+        fromNamePath="Record/Elements/Segment Labor Category5"
+        fromType="profile" toFunction="1" toKey="8"
+        toType="function" />
+        <Mapping fromKey="32"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='32']"
+        fromNamePath="Record/Elements/Segment Labor Category6"
+        fromType="profile" toFunction="1" toKey="9"
+        toType="function" />
+        <Mapping fromKey="22"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='22']"
+        fromNamePath="Record/Elements/Segment Cost Center"
+        fromType="profile" toKey="60"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='55']/*[@key='56']/*[@key='57']/*[@key='58']/*[@key='60']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/costCenter/Object/costCenter/Object/qualifier"
+        toType="profile" />
+        <Mapping fromFunction="1" fromKey="2" fromType="function"
+        toKey="78"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='78']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/laborString"
+        toType="profile" />
+        <Mapping fromKey="18"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='18']"
+        fromNamePath="Record/Elements/Segment Org Job"
+        fromType="profile" toKey="84"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='81']/*[@key='82']/*[@key='84']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/orgNode/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="14"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='14']"
+        fromNamePath="Record/Elements/Segment WorkRule"
+        fromType="profile" toKey="110"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='107']/*[@key='108']/*[@key='110']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/workRule/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="20"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='20']"
+        fromNamePath="Record/Elements/Segment Labor Category1"
+        fromType="profile" toFunction="2" toKey="1"
+        toType="function" />
+        <Mapping fromKey="24"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='24']"
+        fromNamePath="Record/Elements/Segment Labor Category2"
+        fromType="profile" toFunction="2" toKey="2"
+        toType="function" />
+        <Mapping fromKey="26"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='26']"
+        fromNamePath="Record/Elements/Segment Labor Category3"
+        fromType="profile" toFunction="2" toKey="3"
+        toType="function" />
+        <Mapping fromKey="28"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='28']"
+        fromNamePath="Record/Elements/Segment Labor Category4"
+        fromType="profile" toFunction="2" toKey="4"
+        toType="function" />
+        <Mapping fromKey="30"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='30']"
+        fromNamePath="Record/Elements/Segment Labor Category5"
+        fromType="profile" toFunction="2" toKey="5"
+        toType="function" />
+        <Mapping fromKey="32"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='32']"
+        fromNamePath="Record/Elements/Segment Labor Category6"
+        fromType="profile" toFunction="2" toKey="6"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="1" fromType="function"
+        toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='1']/*[@key='69'][@tagListKey='1']/*[@key='74'][@tagListKey='1']/*[@key='75'][@tagListKey='1']/*[@key='77'][@tagListKey='1']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[1]/Object/laborCategory/Object/qualifier"
+        toTagListKey="1" toType="profile" />
+        <Mapping fromFunction="2" fromKey="8" fromType="function"
+        toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='1']/*[@key='69'][@tagListKey='1']/*[@key='70'][@tagListKey='1']/*[@key='71'][@tagListKey='1']/*[@key='73'][@tagListKey='1']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[1]/Object/entry/Object/qualifier"
+        toTagListKey="1" toType="profile" />
+        <Mapping fromFunction="2" fromKey="2" fromType="function"
+        toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='2']/*[@key='69'][@tagListKey='2']/*[@key='74'][@tagListKey='2']/*[@key='75'][@tagListKey='2']/*[@key='77'][@tagListKey='2']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[2]/Object/laborCategory/Object/qualifier"
+        toTagListKey="2" toType="profile" />
+        <Mapping fromFunction="2" fromKey="9" fromType="function"
+        toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='2']/*[@key='69'][@tagListKey='2']/*[@key='70'][@tagListKey='2']/*[@key='71'][@tagListKey='2']/*[@key='73'][@tagListKey='2']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[2]/Object/entry/Object/qualifier"
+        toTagListKey="2" toType="profile" />
+        <Mapping fromFunction="2" fromKey="3" fromType="function"
+        toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='3']/*[@key='69'][@tagListKey='3']/*[@key='74'][@tagListKey='3']/*[@key='75'][@tagListKey='3']/*[@key='77'][@tagListKey='3']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[3]/Object/laborCategory/Object/qualifier"
+        toTagListKey="3" toType="profile" />
+        <Mapping fromFunction="2" fromKey="10" fromType="function"
+        toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='3']/*[@key='69'][@tagListKey='3']/*[@key='70'][@tagListKey='3']/*[@key='71'][@tagListKey='3']/*[@key='73'][@tagListKey='3']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[3]/Object/entry/Object/qualifier"
+        toTagListKey="3" toType="profile" />
+        <Mapping fromFunction="2" fromKey="4" fromType="function"
+        toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='4']/*[@key='69'][@tagListKey='4']/*[@key='74'][@tagListKey='4']/*[@key='75'][@tagListKey='4']/*[@key='77'][@tagListKey='4']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[4]/Object/laborCategory/Object/qualifier"
+        toTagListKey="4" toType="profile" />
+        <Mapping fromFunction="2" fromKey="11" fromType="function"
+        toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='4']/*[@key='69'][@tagListKey='4']/*[@key='70'][@tagListKey='4']/*[@key='71'][@tagListKey='4']/*[@key='73'][@tagListKey='4']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[4]/Object/entry/Object/qualifier"
+        toTagListKey="4" toType="profile" />
+        <Mapping fromFunction="2" fromKey="5" fromType="function"
+        toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='5']/*[@key='69'][@tagListKey='5']/*[@key='74'][@tagListKey='5']/*[@key='75'][@tagListKey='5']/*[@key='77'][@tagListKey='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[5]/Object/laborCategory/Object/qualifier"
+        toTagListKey="5" toType="profile" />
+        <Mapping fromFunction="2" fromKey="12" fromType="function"
+        toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='5']/*[@key='69'][@tagListKey='5']/*[@key='70'][@tagListKey='5']/*[@key='71'][@tagListKey='5']/*[@key='73'][@tagListKey='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[5]/Object/entry/Object/qualifier"
+        toTagListKey="5" toType="profile" />
+        <Mapping fromFunction="2" fromKey="13" fromType="function"
+        toKey="73"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='6']/*[@key='69'][@tagListKey='6']/*[@key='70'][@tagListKey='6']/*[@key='71'][@tagListKey='6']/*[@key='73'][@tagListKey='6']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[6]/Object/entry/Object/qualifier"
+        toTagListKey="6" toType="profile" />
+        <Mapping fromFunction="2" fromKey="7" fromType="function"
+        toKey="77"
+        toKeyPath="*[@key='1']/*[@key='22']/*[@key='23']/*[@key='24']/*[@key='51']/*[@key='52']/*[@key='53']/*[@key='54']/*[@key='64']/*[@key='65']/*[@key='66']/*[@key='67']/*[@key='68'][@tagListKey='6']/*[@key='69'][@tagListKey='6']/*[@key='74'][@tagListKey='6']/*[@key='75'][@tagListKey='6']/*[@key='77'][@tagListKey='6']"
+        toNamePath="Root/Array/ArrayElement1/Object/segments/Array/ArrayElement1/Object/laborCategories/Object/entries/Array/ArrayElement1[6]/Object/laborCategory/Object/qualifier"
+        toTagListKey="6" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep category="userdefined"
+        id="f598b9a3-459b-4e02-95c7-c1f4a867b3d4" key="1"
+        name="Transfer String" position="1" type="userdefined"
+        x="10.0" y="10.0">
+          <Inputs>
+            <Input key="4" name="Org Job" />
+            <Input key="2" name="Work Rule" />
+            <Input key="3" name="Cost Center" />
+            <Input key="1" name="LC1" />
+            <Input key="5" name="LC2" />
+            <Input key="6" name="LC3" />
+            <Input key="7" name="LC4" />
+            <Input key="8" name="LC5" />
+            <Input key="9" name="LC6" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="Transfer String" />
+            <Output key="2" name="LC String" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep category="userdefined"
+        id="0d1fb916-1963-4e93-ad33-5bd64a00efc8" key="2"
+        name="Get LC" position="2" type="userdefined" x="30.0"
+        y="352.0">
+          <Inputs>
+            <Input key="1" name="LC1" />
+            <Input key="2" name="LC2" />
+            <Input key="3" name="LC3" />
+            <Input key="4" name="LC4" />
+            <Input key="5" name="LC5" />
+            <Input key="6" name="LC6" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="LC Name1" />
+            <Output key="8" name="LC Val 1" />
+            <Output key="2" name="LC Name2" />
+            <Output key="9" name="LC Val 2" />
+            <Output key="3" name="LC Name3" />
+            <Output key="10" name="LC Val 3" />
+            <Output key="4" name="LC Name4" />
+            <Output key="11" name="LC Val 4" />
+            <Output key="5" name="LC Name5" />
+            <Output key="12" name="LC Val 5" />
+            <Output key="7" name="LC Name6" />
+            <Output key="13" name="LC Val 6" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="44" value="false" />
+        <Default toKey="49" value="false" />
+        <Default toKey="112" value="false" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

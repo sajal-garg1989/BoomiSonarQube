@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>4413209c-5d76-41d0-947d-c8dac383f15f</Id>
+  <Type>connector-action</Type>
+  <Name>Get Labor Categories</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>kronos-1496QK-wfd_pr-prod</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+    <Property>
+      <Name>custom-action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <Operation returnApplicationErrors="true" trackResponse="true">
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <GenericOperationConfig customOperationType="EXECUTE"
+        operationType="EXECUTE" requestProfileType="xml"
+        responseProfileType="xml">
+          <field id="resourcePath" type="string"
+          value="/v1/commons/labor_categories" />
+          <field id="httpMethod" type="string" value="GET" />
+          <field id="contentType" type="string"
+          value="application/json" />
+          <field id="enableTA" type="boolean" value="false" />
+          <Options />
+        </GenericOperationConfig>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

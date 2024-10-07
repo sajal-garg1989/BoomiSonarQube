@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>843da61e-ebe4-4980-9846-5efad2bc943c</Id>
+  <Type>processproperty</Type>
+  <Name>ShiftTemplateImport_RunSummary</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="78bfe2de-34f9-47bf-bc6c-5b840ee8809e">
+
+        <helpText />
+        <label>Integration Type</label>
+        <type>string</type>
+        <defaultValue>Import</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="9348bb05-1848-4b77-99c0-5a2d2cccfef2">
+
+        <helpText />
+        <label>Failed Transactions</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e3e61846-6bb2-4fe1-9586-3311f32e25e7">
+
+        <helpText />
+        <label>Disqualified Transactions</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="57aed54a-d495-4614-9de0-8189e65c00d3">
+
+        <helpText />
+        <label>Successful Transactions</label>
+        <type>number</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b3e7686f-9a5d-4a5e-a0a4-d9ce1a5e59c5">
+
+        <helpText />
+        <label>Processed Source Records</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ca18c2ba-41d0-41f0-aed0-d2ed4bd842e1">
+
+        <helpText />
+        <label>Run Summary</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

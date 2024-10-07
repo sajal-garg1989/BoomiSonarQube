@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>162310a6-2f72-40ba-a2b3-41873cb55b06</Id>
+  <Type>transform.map</Type>
+  <Name>Source to Stage</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="0ed0619a-03c7-46ae-9708-fe36cce53260"
+    refId="fromProfile" name="Source" />
+    <Ref compId="b98692b1-32fd-4395-999f-9c1c60881632"
+    refId="toProfile" name="Stage" />
+    <Ref compId="119b0135-4de2-423a-ac56-518a43727e0e"
+    refId="function-1" name="Disqualify" />
+  </References>
+  <Description>Map from source file profile to stage profile that
+  contains all data that is connected to the JSON request
+  downstream.</Description>
+  <Object>
+    <Map fromProfile="0ed0619a-03c7-46ae-9708-fe36cce53260"
+    toProfile="b98692b1-32fd-4395-999f-9c1c60881632">
+      <Mappings>
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Record/Elements/Name" fromType="profile"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Record/Elements/Name" toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Record/Elements/Description"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Record/Elements/Description"
+        toType="profile" />
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Record/Elements/Label" fromType="profile"
+        toKey="6" toKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        toNamePath="Record/Elements/Label" toType="profile" />
+        <Mapping fromKey="31"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='31']"
+        fromNamePath="Record/Elements/Shift Start Dtm"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        toNamePath="Record/Elements/Shift Start"
+        toType="profile" />
+        <Mapping fromKey="32"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='32']"
+        fromNamePath="Record/Elements/Shift End Dtm"
+        fromType="profile" toKey="8"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='8']"
+        toNamePath="Record/Elements/Shift End" toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Record/Elements/Segment Number"
+        fromType="profile" toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='9']"
+        toNamePath="Record/Elements/Segment Number"
+        toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        fromNamePath="Record/Elements/Segment Type"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        toNamePath="Record/Elements/Segment Type"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='8']"
+        fromNamePath="Record/Elements/Segment Start Dtm"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='11']"
+        toNamePath="Record/Elements/Segment Start"
+        toType="profile" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        fromNamePath="Record/Elements/Segment End Dtm"
+        fromType="profile" toKey="12"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='12']"
+        toNamePath="Record/Elements/Segment End"
+        toType="profile" />
+        <Mapping fromKey="34"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='34']"
+        fromNamePath="Record/Elements/Segment WorkRule"
+        fromType="profile" toKey="14"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='14']"
+        toNamePath="Record/Elements/Segment WorkRule"
+        toType="profile" />
+        <Mapping fromKey="36"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='36']"
+        fromNamePath="Record/Elements/Segment Template Tag"
+        fromType="profile" toKey="16"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='16']"
+        toNamePath="Record/Elements/Segment Template Tag"
+        toType="profile" />
+        <Mapping fromKey="38"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='38']"
+        fromNamePath="Record/Elements/Segment Org Job"
+        fromType="profile" toKey="18"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='18']"
+        toNamePath="Record/Elements/Segment Org Job"
+        toType="profile" />
+        <Mapping fromKey="40"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='40']"
+        fromNamePath="Record/Elements/Segment Labor Category1"
+        fromType="profile" toKey="20"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='20']"
+        toNamePath="Record/Elements/Segment Labor Category1"
+        toType="profile" />
+        <Mapping fromKey="42"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='42']"
+        fromNamePath="Record/Elements/Segment Cost Center"
+        fromType="profile" toKey="22"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='22']"
+        toNamePath="Record/Elements/Segment Cost Center"
+        toType="profile" />
+        <Mapping fromKey="44"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='44']"
+        fromNamePath="Record/Elements/Segment Labor Category2"
+        fromType="profile" toKey="24"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='24']"
+        toNamePath="Record/Elements/Segment Labor Category2"
+        toType="profile" />
+        <Mapping fromKey="46"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='46']"
+        fromNamePath="Record/Elements/Segment Labor Category3"
+        fromType="profile" toKey="26"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='26']"
+        toNamePath="Record/Elements/Segment Labor Category3"
+        toType="profile" />
+        <Mapping fromKey="48"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='48']"
+        fromNamePath="Record/Elements/Segment Labor Category4"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='28']"
+        toNamePath="Record/Elements/Segment Labor Category4"
+        toType="profile" />
+        <Mapping fromKey="50"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='50']"
+        fromNamePath="Record/Elements/Segment Labor Category5"
+        fromType="profile" toKey="30"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='30']"
+        toNamePath="Record/Elements/Segment Labor Category5"
+        toType="profile" />
+        <Mapping fromKey="52"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='52']"
+        fromNamePath="Record/Elements/Segment Labor Category6"
+        fromType="profile" toKey="32"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='32']"
+        toNamePath="Record/Elements/Segment Labor Category6"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep category="userdefined"
+        id="119b0135-4de2-423a-ac56-518a43727e0e" key="1"
+        name="Disqualify" position="1" type="userdefined" x="30.0"
+        y="172.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="no_output" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

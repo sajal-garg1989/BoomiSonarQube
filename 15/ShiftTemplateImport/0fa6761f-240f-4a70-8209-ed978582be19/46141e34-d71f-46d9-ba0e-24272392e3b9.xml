@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>46141e34-d71f-46d9-ba0e-24272392e3b9</Id>
+  <Type>processproperty</Type>
+  <Name>ShiftTemplateImport_Auth</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="b756d569-0c68-47e2-ad4c-65427ded176e">
+
+        <helpText>Access token received from OpenAM</helpText>
+        <label>Cookie</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="627c44c0-8800-456c-b897-e248ca31c226">
+
+        <helpText>API Gateway Key for published API's.</helpText>
+        <label>AppKey</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="1f4d8ea8-2051-4f52-89e6-5d4969a2c3cf">
+
+        <helpText />
+        <label>AUTHN_TOKEN</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="503060aa-c335-4eba-bd36-f3f00afebb0e">
+
+        <helpText />
+        <label>AUTHN_SSID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="78cf9826-37e4-4930-889e-fad3782671e7">
+
+        <helpText />
+        <label>Boomi Execution ID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="54020c96-f76a-465a-95dc-2d113bf514c9">
+
+        <helpText />
+        <label>Falcon Execution ID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="014665df-81be-41c7-a6ac-4d1550f36b5b">
+
+        <helpText />
+        <label>Tenant Query String</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

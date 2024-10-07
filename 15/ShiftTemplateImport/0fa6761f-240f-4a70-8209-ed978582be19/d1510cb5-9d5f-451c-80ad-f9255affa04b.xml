@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>d1510cb5-9d5f-451c-80ad-f9255affa04b</Id>
+  <Type>documentcache</Type>
+  <Name>Labor Cat</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="52b865ed-e333-4224-87e7-e1fc42c2e271"
+    refId="docCacheProfile" name="Labor Cat GET Response" />
+  </References>
+  <Description />
+  <Object>
+    <DocumentCache enforceSingleLucene="true"
+    profile="52b865ed-e333-4224-87e7-e1fc42c2e271"
+    profileType="profile.json">
+      <CacheIndex indexId="1" indexName="Sort Order">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)"
+        elementKey="11" id="2"
+        name="sortOrder (Root/Array/ArrayElement1/Object/sortOrder)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>

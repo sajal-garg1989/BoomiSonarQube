@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>216c25eb-fc5f-452c-aa75-62878710cc6a</Id>
+  <Type>documentcache</Type>
+  <Name>WFD Properties</Name>
+  <Version>1</Version>
+  <FolderId name="TestBoomiAPI_Kronos_TestCustomer16-ihub16/akansha">
+  3798328</FolderId>
+  <AccountId>testboomiapi_kronos_testc-2710S5</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="a55340b2-1a98-479a-a573-a815ddbe8dfb"
+    refId="docCacheProfile" name="WFD Properties" />
+  </References>
+  <Description />
+  <Object>
+    <DocumentCache profile="a55340b2-1a98-479a-a573-a815ddbe8dfb"
+    profileType="profile.xml">
+      <CacheIndex indexId="5" indexName="name">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="@name" elementKey="12" id="6"
+        name="@name (ProcessProperties/ProcessProperty/@name)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>
