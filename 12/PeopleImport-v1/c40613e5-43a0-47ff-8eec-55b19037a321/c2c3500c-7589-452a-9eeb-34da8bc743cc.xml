@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>c2c3500c-7589-452a-9eeb-34da8bc743cc</Id>
+  <Type>processproperty</Type>
+  <Name>PeopleImport-v1_SFTPProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="dfb8df9b-683c-47fd-874b-7f8abfce3981">
+
+        <helpText>Specify the directory path to read the person
+        records file.</helpText>
+        <label>SourceDirectory</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ea0769d5-ef2f-453b-a811-7ae12cf9905f">
+
+        <helpText>Specify the directory to store the processed
+        files.</helpText>
+        <label>_DestinationDirectoryPath</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="aea1aa5e-254e-4ac5-88f6-54a3f5f91655">
+
+        <helpText>Directory to move the data to after it has been
+        successfully uploaded.</helpText>
+        <label>_MoveProcessedFileToDirectory</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="36fc1f6b-2627-45c4-b458-7c18fd9d5612">
+
+        <helpText>In order to delete source CSV file from SFTP
+        server after processing, set this property to
+        true.</helpText>
+        <label>_DeleteSourceFileAfterReading</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="403e7a59-e917-4980-9a74-5a73e49d433e">
+
+        <helpText>Enter the file name or use the asterisk (*) or
+        question mark (?) as wildcard characters to enter patterns
+        of file names so that the integration reads only files that
+        have names that match this filter.</helpText>
+        <label>SourceFileName</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="086a418b-ce8a-43ca-ab61-924c1bffa90c">
+
+        <helpText />
+        <label>LogDirectory</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="4582a7a4-3bcb-4a30-b389-0897f212523e">
+
+        <helpText>For internal processing only.</helpText>
+        <label>FileExistenceStatus</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

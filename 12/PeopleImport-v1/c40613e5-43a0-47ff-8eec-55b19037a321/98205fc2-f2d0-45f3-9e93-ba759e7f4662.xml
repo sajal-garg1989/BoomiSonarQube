@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>98205fc2-f2d0-45f3-9e93-ba759e7f4662</Id>
+  <Type>profile.xml</Type>
+  <Name>PersonIdList</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>xmlflavor</Name>
+      <Value>basic</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <XMLProfile modelVersion="2" strict="true">
+      <ProfileProperties>
+        <XMLGeneralInfo />
+        <XMLOptions encoding="utf8" implicitElementOrdering="true"
+        parseRespectMaxOccurs="true" respectMinOccurs="false"
+        respectMinOccursAlways="false" />
+      </ProfileProperties>
+      <DataElements>
+        <XMLElement dataType="character" isMappable="true"
+        isNode="true" isRoot="true" key="1" loopingOption="unique"
+        maxOccurs="1" minOccurs="1" name="PersonList"
+        useNamespace="-1" validateData="false">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <QualifierList />
+          <XMLElement dataType="character" isMappable="true"
+          isNode="true" key="2" loopingOption="unique"
+          maxOccurs="1" minOccurs="0" name="Persons"
+          useNamespace="-1" validateData="false">
+            <DataFormat>
+              <ProfileCharacterFormat />
+            </DataFormat>
+            <QualifierList />
+            <XMLElement dataType="character" isMappable="true"
+            isNode="true" key="3" loopingOption="occurrence"
+            maxOccurs="-1" minOccurs="0" name="person"
+            useNamespace="-1" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <QualifierList />
+              <XMLAttribute dataType="number" isMappable="true"
+              isNode="true" key="4" name="id" useNamespace="-1"
+              validateData="false">
+                <DataFormat>
+                  <ProfileNumberFormat numberFormat="" />
+                </DataFormat>
+                <QualifierList />
+              </XMLAttribute>
+            </XMLElement>
+          </XMLElement>
+        </XMLElement>
+      </DataElements>
+      <Namespaces>
+        <XMLNamespace key="-1" name="Empty Namespace">
+          <Types />
+        </XMLNamespace>
+      </Namespaces>
+      <tagLists />
+    </XMLProfile>
+  </Object>
+</Component>

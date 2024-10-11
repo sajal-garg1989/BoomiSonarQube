@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>63c2befb-2edd-4b37-ad22-c15190fa28c9</Id>
+  <Type>profile.json</Type>
+  <Name>ErrorMessageProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONObject isMappable="false" isNode="true" key="2"
+          name="Object">
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="3" name="Response">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <JSONArray elementType="repeating" isMappable="false"
+              isNode="true" key="4" name="Array">
+                <JSONArrayElement dataType="character"
+                isMappable="true" isNode="true" key="5"
+                maxOccurs="-1" minOccurs="0" name="ArrayElement1">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                  <JSONObject isMappable="false" isNode="true"
+                  key="6" name="Object">
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="7"
+                    name="@Status" validateData="false">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                      <Qualifiers>
+                        <QualifierList />
+                      </Qualifiers>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="8"
+                    name="@Action" validateData="false">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                      <Qualifiers>
+                        <QualifierList />
+                      </Qualifiers>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="9"
+                    name="Error">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                      <JSONObject isMappable="false" isNode="true"
+                      key="10" name="Object">
+                        <JSONObjectEntry dataType="number"
+                        isMappable="true" isNode="true" key="11"
+                        name="@AtIndex" validateData="false">
+                          <DataFormat>
+                            <ProfileNumberFormat />
+                          </DataFormat>
+                          <Qualifiers>
+                            <QualifierList />
+                          </Qualifiers>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="character"
+                        isMappable="true" isNode="true" key="12"
+                        name="@Message" validateData="false">
+                          <DataFormat>
+                            <ProfileCharacterFormat />
+                          </DataFormat>
+                          <Qualifiers>
+                            <QualifierList />
+                          </Qualifiers>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="character"
+                        isMappable="true" isNode="true" key="13"
+                        name="DetailErrors">
+                          <DataFormat>
+                            <ProfileCharacterFormat />
+                          </DataFormat>
+                          <JSONObject isMappable="false"
+                          isNode="true" key="14" name="Object">
+                            <JSONObjectEntry dataType="character"
+                            isMappable="true" isNode="true"
+                            key="15" name="Error">
+                              <DataFormat>
+                                <ProfileCharacterFormat />
+                              </DataFormat>
+                              <JSONObject isMappable="false"
+                              isNode="true" key="16" name="Object">
+                                <JSONObjectEntry dataType="character"
+                                isMappable="true" isNode="true"
+                                key="17" name="@Message">
+                                  <DataFormat>
+                                    <ProfileCharacterFormat />
+                                  </DataFormat>
+                                </JSONObjectEntry>
+                                <JSONObjectEntry dataType="number"
+                                isMappable="true" isNode="true"
+                                key="18" name="@ErrorCode">
+                                  <DataFormat>
+                                    <ProfileNumberFormat />
+                                  </DataFormat>
+                                </JSONObjectEntry>
+                              </JSONObject>
+                              <Qualifiers>
+                                <QualifierList />
+                              </Qualifiers>
+                            </JSONObjectEntry>
+                          </JSONObject>
+                          <Qualifiers>
+                            <QualifierList />
+                          </Qualifiers>
+                        </JSONObjectEntry>
+                        <JSONObjectEntry dataType="number"
+                        isMappable="true" isNode="true" key="19"
+                        name="@ErrorCode" validateData="false">
+                          <DataFormat>
+                            <ProfileNumberFormat />
+                          </DataFormat>
+                          <Qualifiers>
+                            <QualifierList />
+                          </Qualifiers>
+                        </JSONObjectEntry>
+                      </JSONObject>
+                      <Qualifiers>
+                        <QualifierList />
+                      </Qualifiers>
+                    </JSONObjectEntry>
+                  </JSONObject>
+                  <Qualifiers>
+                    <QualifierList />
+                  </Qualifiers>
+                </JSONArrayElement>
+              </JSONArray>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+          </JSONObject>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>

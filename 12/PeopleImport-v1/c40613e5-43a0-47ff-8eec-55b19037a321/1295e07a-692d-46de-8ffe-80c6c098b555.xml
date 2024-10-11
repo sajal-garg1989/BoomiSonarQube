@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>1295e07a-692d-46de-8ffe-80c6c098b555</Id>
+  <Type>transform.function</Type>
+  <Name>SetEmpStatusEffDate</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="function-1-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="2" name="RehireDate" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="outDate" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Process Property" position="2" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="75.0" y="61.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1"
+            name="EmploymentStatusEffDateForRehire" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+            componentName="PeopleImport-v1_RehireProcessProperties"
+            propertyKey="0aa54cf7-0ac0-49f3-87b9-d6b727066a65"
+            propertyName="EmploymentStatusEffDateForRehire" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="3" name="Scripting" position="4"
+        sumEnabled="false" type="Scripting" x="668.0" y="287.0">
+          <Inputs>
+            <Input default="" key="1" name="RehireDt" />
+            <Input default="" key="2" name="UserEffDate" />
+            <Input key="4" name="CurrentDate" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="outDate" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>if(UserEffDate?.trim()) { outDate =
+              UserEffDate; } else if(RehireDt?.trim()) { outDate =
+              RehireDt; } else { outDate = CurrentDate;
+              }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="RehireDt" />
+              <Input dataType="character" index="2"
+              name="UserEffDate" />
+              <Input dataType="character" index="4"
+              name="CurrentDate" />
+              <Output index="3" name="outDate" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" category="Date" key="4"
+        name="Get Current Date" position="1" sumEnabled="false"
+        type="CurrentDate" x="49.0" y="529.0">
+          <Inputs />
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Date" enabled="true" key="6" name="Date Format"
+        position="3" sumEnabled="false" type="DateFormat" x="348.0"
+        y="443.0">
+          <Inputs>
+            <Input default="" isReset="false" key="1"
+            name="Date String" />
+            <Input default="yyyyMMdd HHmmss.SSS" isReset="false"
+            key="2" name="Input Mask" />
+            <Input default="yyyy-MM-dd" isReset="false" key="3"
+            name="Output Mask" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="6" fromKey="2"
+        fromNamePath="Date Format/Result" fromType="function"
+        toFunction="3" toKey="4" toNamePath="Scripting/CurrentDate"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="3"
+        fromNamePath="Scripting/outDate" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/outDate"
+        toType="function" />
+        <Mapping fromFunction="4" fromKey="2"
+        fromNamePath="Get Current Date/Result" fromType="function"
+        toFunction="6" toKey="1"
+        toNamePath="Date Format/Date String" toType="function" />
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/RehireDate" fromType="function"
+        toFunction="3" toKey="1" toNamePath="Scripting/RehireDt"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Get Process Property/EmpStatusEffDate"
+        fromType="function" toFunction="3" toKey="2"
+        toNamePath="Scripting/UserEffDate" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

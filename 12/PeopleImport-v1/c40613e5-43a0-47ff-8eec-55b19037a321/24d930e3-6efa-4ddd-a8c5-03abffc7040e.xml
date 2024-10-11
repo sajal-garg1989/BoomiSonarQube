@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>24d930e3-6efa-4ddd-a8c5-03abffc7040e</Id>
+  <Type>crossref</Type>
+  <Name>PeopleImport-v1_PayperiodLookupTable</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <CrossRefTable atomEnabled="false" modelVersion="3">
+      <ColumnHeaders>
+        <columnHeader>Payperiod</columnHeader>
+        <columnHeader>Symbolicperiod</columnHeader>
+      </ColumnHeaders>
+      <Rows>
+        <row>
+          <Values>
+            <ref colIdx="0" value="4" />
+            <ref colIdx="1" value="Current_SchedPeriod" />
+          </Values>
+        </row>
+        <row>
+          <Values>
+            <ref colIdx="0" value="7" />
+            <ref colIdx="1" value="Last_Week" />
+          </Values>
+        </row>
+        <row>
+          <Values>
+            <ref colIdx="0" value="5" />
+            <ref colIdx="1" value="Next_SchedPeriod" />
+          </Values>
+        </row>
+        <row>
+          <Values>
+            <ref colIdx="0" value="3" />
+            <ref colIdx="1" value="Previous_SchedPeriod" />
+          </Values>
+        </row>
+        <row>
+          <Values>
+            <ref colIdx="0" value="13" />
+            <ref colIdx="1" value="Today" />
+          </Values>
+        </row>
+        <row>
+          <Values>
+            <ref colIdx="0" value="6" />
+            <ref colIdx="1" value="Week_to_Date" />
+          </Values>
+        </row>
+        <row>
+          <Values>
+            <ref colIdx="0" value="8" />
+            <ref colIdx="1" value="Yesterday" />
+          </Values>
+        </row>
+      </Rows>
+    </CrossRefTable>
+  </Object>
+</Component>

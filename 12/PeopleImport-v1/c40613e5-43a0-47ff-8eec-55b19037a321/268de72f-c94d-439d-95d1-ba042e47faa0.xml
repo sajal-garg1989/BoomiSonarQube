@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>268de72f-c94d-439d-95d1-ba042e47faa0</Id>
+  <Type>connector-action</Type>
+  <Name>GetAccessTokenOperation</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Send</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+    <Property>
+      <Name>output-profile</Name>
+      <Value>25177428-4740-4a30-90d7-cbda0e205cfa</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="25177428-4740-4a30-90d7-cbda0e205cfa"
+    refId="response-profile" name="AccessTokenAPIResponse" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpSendAction dataContentType="application/x-www-form-urlencoded"
+        followRedirects="false" methodType="POST"
+        requestProfileType="NONE"
+        responseProfile="25177428-4740-4a30-90d7-cbda0e205cfa"
+        responseProfileType="JSON" returnErrors="false"
+        returnResponses="true">
+          <requestHeaders />
+          <pathElements>
+            <element isVariable="true" key="2000001"
+            name="access_token_qstring" />
+          </pathElements>
+          <responseHeaderMapping />
+        </HttpSendAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

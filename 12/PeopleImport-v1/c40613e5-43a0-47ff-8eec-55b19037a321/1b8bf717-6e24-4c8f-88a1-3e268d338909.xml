@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>1b8bf717-6e24-4c8f-88a1-3e268d338909</Id>
+  <Type>transform.function</Type>
+  <Name>CalculateImportCount</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="1" name="recordsImported" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Document Property" position="1"
+        sumEnabled="false" type="DocumentPropertyGet" x="10.0"
+        y="189.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - ProcessedRecordCount" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.ProcessedRecordCount"
+            propertyName="Dynamic Document Property - ProcessedRecordCount" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="2"
+        name="Get Document Property" position="2"
+        sumEnabled="false" type="DocumentPropertyGet" x="24.0"
+        y="281.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - ErrorRecordCount" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.ErrorRecordCount"
+            propertyName="Dynamic Document Property - ErrorRecordCount" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Numeric" key="3" name="Math Subtract"
+        position="3" sumEnabled="false" type="MathSubtract"
+        x="301.0" y="190.0">
+          <Inputs>
+            <Input default="0" key="1" name="Value" />
+            <Input default="0" key="2" name="Value to Subtract" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="3" fromKey="2"
+        fromNamePath="Math Subtract/Result" fromType="function"
+        toFunction="0" toKey="1"
+        toNamePath="Editor/recordsImported" toType="function" />
+        <Mapping fromFunction="2" fromKey="3"
+        fromNamePath="Get Document Property/Dynamic Document Property - ErrorRecordCount"
+        fromType="function" toFunction="3" toKey="2"
+        toNamePath="Math Subtract/Value to Subtract"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="3"
+        fromNamePath="Get Document Property/Dynamic Document Property - ProcessedRecordCount"
+        fromType="function" toFunction="3" toKey="1"
+        toNamePath="Math Subtract/Value" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

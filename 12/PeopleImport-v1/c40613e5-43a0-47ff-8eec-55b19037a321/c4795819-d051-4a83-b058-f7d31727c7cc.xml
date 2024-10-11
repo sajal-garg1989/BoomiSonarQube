@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>c4795819-d051-4a83-b058-f7d31727c7cc</Id>
+  <Type>transform.map</Type>
+  <Name>TAFailureBulkResponseMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="943d51a4-8968-4788-b28c-de2c893fda77"
+    refId="toProfile" name="ErrorProfile" />
+    <Ref compId="63c2befb-2edd-4b37-ad22-c15190fa28c9"
+    refId="fromProfile" name="ErrorMessageProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="63c2befb-2edd-4b37-ad22-c15190fa28c9"
+    toProfile="943d51a4-8968-4788-b28c-de2c893fda77">
+      <Mappings>
+        <Mapping fromKey="17"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='9']/*[@key='10']/*[@key='13']/*[@key='14']/*[@key='15']/*[@key='16']/*[@key='17']"
+        fromNamePath="Root/Object/Response/Array/ArrayElement1/Object/Error/Object/DetailErrors/Object/Error/Object/Message"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Record/Elements/ErrorMessage"
+        toType="profile" />
+        <Mapping fromKey="18"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='9']/*[@key='10']/*[@key='13']/*[@key='14']/*[@key='15']/*[@key='16']/*[@key='18']"
+        fromNamePath="Root/Object/Response/Array/ArrayElement1/Object/Error/Object/DetailErrors/Object/Error/Object/ErrorCode"
+        fromType="profile" toKey="4"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Record/Elements/ErrorCode" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults>
+        <Default toKey="3" value="1" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

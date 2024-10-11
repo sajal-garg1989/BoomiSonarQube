@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>742c680c-f62b-49fc-b387-4409500d8e6a</Id>
+  <Type>transform.map</Type>
+  <Name>PersonsXML2MinorRuleProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="a986a481-436f-48df-b2e0-f6a1a0d8b28b"
+    refId="toProfile" name="PersonMinorRuleProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="a986a481-436f-48df-b2e0-f6a1a0d8b28b">
+      <Mappings>
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+        <Mapping fromKey="1626"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1625']/*[@key='1626']"
+        fromNamePath="Kronos_Persons_API/Request/PersonMinorRuleAssignment/MinorRuleValue"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']/*[@key='9']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/minorRule/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="1627"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1625']/*[@key='1627']"
+        fromNamePath="Kronos_Persons_API/Request/PersonMinorRuleAssignment/SchoolCalendarValue"
+        fromType="profile" toKey="13"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='13']"
+        toNamePath="Root/Array/ArrayElement1/Object/schoolCalendar/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="1628"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1625']/*[@key='1628']"
+        fromNamePath="Kronos_Persons_API/Request/PersonMinorRuleAssignment/EmancipatedMinor"
+        fromType="profile" toKey="14"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='14']"
+        toNamePath="Root/Array/ArrayElement1/Object/emancipatedMinor"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

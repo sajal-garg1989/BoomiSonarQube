@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>74c0019e-2465-40b0-b194-be43488d235c</Id>
+  <Type>documentcache</Type>
+  <Name>IntegrationErrorCache</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="943d51a4-8968-4788-b28c-de2c893fda77"
+    refId="docCacheProfile" name="ErrorProfile" />
+  </References>
+  <Description />
+  <Object>
+    <DocumentCache enforceSingleLucene="false"
+    profile="943d51a4-8968-4788-b28c-de2c893fda77"
+    profileType="profile.flatfile">
+      <CacheIndex indexId="1" indexName="index">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="ErrorIndex (Record/Elements/ErrorIndex)"
+        elementKey="3" id="2"
+        name="ErrorIndex (Record/Elements/ErrorIndex)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>
