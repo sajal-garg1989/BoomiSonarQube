@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>0a45d2d3-775e-4c5a-acdf-e476959f22fd</Id>
+  <Type>processproperty</Type>
+  <Name>DefaultProcessProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="122229c7-0362-4400-bb71-f3c69d63e771">
+
+        <helpText />
+        <label>DefaultDisqualifyActive</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d462a861-bd35-4040-a0d5-e60737f3c2af">
+
+        <helpText />
+        <label>DefaultDisqualifyInactive</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d82e8844-4223-46fb-8fc5-d5824f91b85a">
+
+        <helpText />
+        <label>DefaultDisqualifyTerminated</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="806a9fdd-fd1b-40b8-a96c-c290f4973313">
+
+        <helpText />
+        <label>DefaultLookupExistingPersonData</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="83e195db-dd2d-4358-b809-9be3ae0a1b05">
+
+        <helpText />
+        <label>DefaultDisqualifyNew</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b80beba8-089f-4758-a953-9814a5862c0c">
+
+        <helpText />
+        <label>DefaultDisqualifyExisting</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="eb3b671d-a71a-4986-a44a-bbfde274a7c4">
+
+        <helpText />
+        <label>DefaultFileFilter</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="21a82ab7-3161-413e-81dd-aa833cb2d7f9">
+
+        <helpText />
+        <label>DefaultAssignLicenses</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="cf1f1ef8-f7cc-4a97-aee9-e331b812e094">
+
+        <helpText />
+        <label>DefaultEnableTransactionAssistant</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="14472f6b-8d37-491b-b0be-64c9cad6bb11">
+
+        <helpText />
+        <label>DefaultBatchName</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8c496c25-7ff0-42ba-b7d5-bea9384ca41c">
+
+        <helpText />
+        <label>DefaultAssignSkills</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="706ceb95-c5ed-499a-8d50-39253a67e2ab">
+
+        <helpText />
+        <label>DefaultAssignCerts</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="51811d9e-01c2-4e3b-829f-6b15a2817249">
+
+        <helpText />
+        <label>DefaultSourceDirectoryPath</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="10c772d6-809e-4af4-bed1-0c329b5a88fd">
+
+        <helpText />
+        <label>DefaultDestinationDirectoryPath</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="24ffb234-be1a-4807-9e38-e632530a6b8f">
+
+        <helpText />
+        <label>DefaultMoveProcessedFileToDirectory</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ba3fc614-5c24-4b81-9c1b-850bcdeaa573">
+
+        <helpText />
+        <label>DefaultDeleteSourceFileAfterReading</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="5a19432f-ba84-4c6e-98f0-6f9601cff452">
+
+        <helpText />
+        <label>DefaultEnableCustomMapping</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ebe7a283-402f-4a29-a4da-5fb6cf2dcf0e">
+
+        <helpText />
+        <label>DefaultDisableReportsToMapping</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="fb75a1a9-8bdd-416d-aa0c-fbf803c89b8d">
+
+        <helpText />
+        <label>DefaultDelimiter</label>
+        <type>string</type>
+        <defaultValue>,</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="4a5e2d02-956a-4c6f-b5df-027c4dcbd19b">
+
+        <helpText />
+        <label>DefaultUnassignLicenses</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e741c2a9-beb1-4fe3-b652-2998d321efff">
+
+        <helpText />
+        <label>DefaultRoles</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6e12d5b4-e339-48dc-9aa4-d1168a0a4abf">
+
+        <helpText />
+        <label>DefaultAppKey</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f27b95a9-b081-417f-ab05-ee07d150c12e">
+
+        <helpText />
+        <label>DefaultHyperfindType</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="40f90ec5-6ab7-4159-890e-34f6f1f56cff">
+
+        <helpText />
+        <label>DefaultHyperfind</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6c85c2e2-31dc-47e6-b56c-e6c1176a41fa">
+
+        <helpText />
+        <label>DefaultPayPeriod</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f8364215-782b-4c70-8fd2-8254feccc6f0">
+
+        <helpText />
+        <label>DefaultPayPeriodSpan</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

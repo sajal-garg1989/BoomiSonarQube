@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>d1bbec56-e831-4c8e-9c73-ce011f323924</Id>
+  <Type>profile.flatfile</Type>
+  <Name>FixedLengthProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <FlatFileProfile modelVersion="2" strict="true">
+      <ProfileProperties>
+        <GeneralInfo fileType="datapositioned"
+        useColumnHeaders="true" />
+        <Options>
+          <DataOptions />
+          <DelimitedOptions fileDelimiter="stardelimited"
+          removeEscape="false" textQualifier="na" />
+        </Options>
+      </ProfileProperties>
+      <DataElements>
+        <FlatFileRecord detectFormat="numberofcolumns"
+        isNode="true" key="1" name="Record">
+          <FlatFileElements isNode="true" key="2"
+          name="Elements" />
+        </FlatFileRecord>
+      </DataElements>
+    </FlatFileProfile>
+  </Object>
+</Component>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>92d96c40-2384-45f7-8291-ad11c635e23b</Id>
+  <Type>transform.map</Type>
+  <Name>CalculateRecordsCount</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+    refId="fromProfile" name="TransactionAssistantResponse" />
+    <Ref compId="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+    refId="toProfile" name="TransactionAssistantResponse" />
+    <Ref compId="6122617b-1325-4ee3-b099-7d1d639acb1b"
+    refId="function-2" name="RecordsCount" />
+  </References>
+  <Object>
+    <Map fromProfile="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+    toProfile="9d263f88-50d2-458d-8f9c-51d8cbd16110">
+      <Mappings>
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']"
+        fromNamePath="Root/Object/Response/Object/Status"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']"
+        toNamePath="Root/Object/Response/Object/Status"
+        toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']"
+        fromNamePath="Root/Object/Response/Object/Action"
+        fromType="profile" toKey="6"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']"
+        toNamePath="Root/Object/Response/Object/Action"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        fromNamePath="Root/Object/Response/Object/RecordsProcessed"
+        fromType="profile" toKey="8"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        toNamePath="Root/Object/Response/Object/RecordsProcessed"
+        toType="profile" />
+        <Mapping fromKey="9"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='9']"
+        fromNamePath="Root/Object/Response/Object/RecordsImported"
+        fromType="profile" toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='9']"
+        toNamePath="Root/Object/Response/Object/RecordsImported"
+        toType="profile" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        fromNamePath="Root/Object/Response/Object/FailedRecords"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        toNamePath="Root/Object/Response/Object/FailedRecords"
+        toType="profile" />
+        <Mapping fromKey="8"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        fromNamePath="Root/Object/Response/Object/RecordsProcessed"
+        fromType="profile" toFunction="2" toKey="1"
+        toType="function" />
+        <Mapping fromKey="9"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='9']"
+        fromNamePath="Root/Object/Response/Object/RecordsImported"
+        fromType="profile" toFunction="2" toKey="2"
+        toType="function" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        fromNamePath="Root/Object/Response/Object/FailedRecords"
+        fromType="profile" toFunction="2" toKey="3"
+        toType="function" />
+        <Mapping fromKey="11"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']"
+        fromNamePath="Root/Object/Response/Object/ErrorRecordsExist"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']"
+        toNamePath="Root/Object/Response/Object/ErrorRecordsExist"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep category="userdefined"
+        id="6122617b-1325-4ee3-b099-7d1d639acb1b" key="2"
+        name="RecordsCount" position="2" type="userdefined"
+        x="30.0" y="34.0">
+          <Inputs>
+            <Input key="1" name="RecordsProcessed" />
+            <Input key="2" name="RecordsImported" />
+            <Input key="3" name="ErrorRecords" />
+          </Inputs>
+          <Outputs />
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

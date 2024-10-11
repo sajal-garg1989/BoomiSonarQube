@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>72e2b3c5-1c7d-471a-b6fe-4305560b60bc</Id>
+  <Type>documentcache</Type>
+  <Name>PropertiesCache</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="aaf803ff-c407-4353-afad-8b1cac57c5d6"
+    refId="docCacheProfile" name="SetProperties" />
+  </References>
+  <Object>
+    <DocumentCache profile="aaf803ff-c407-4353-afad-8b1cac57c5d6"
+    profileType="profile.flatfile">
+      <CacheIndex indexId="5" indexName="Name">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="Name (Record/Elements/Name)" elementKey="3" id="6"
+        name="Name (Record/Elements/Name)" taglistKey="0"
+        xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>01fef77d-06b9-4f5e-9c49-265dcd2c4e23</Id>
+  <Type>transform.map</Type>
+  <Name>PersonIdsJSON2XML</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="13dbda02-f170-44c1-90da-96276318d3d8"
+    refId="fromProfile" name="HyperfindResponse" />
+    <Ref compId="98205fc2-f2d0-45f3-9e93-ba759e7f4662"
+    refId="toProfile" name="PersonIdList" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="13dbda02-f170-44c1-90da-96276318d3d8"
+    toProfile="98205fc2-f2d0-45f3-9e93-ba759e7f4662">
+      <Mappings>
+        <Mapping fromKey="20"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='14']/*[@key='15']/*[@key='16']/*[@key='17']/*[@key='18']/*[@key='19']/*[@key='20']"
+        fromNamePath="Root/Object/result/Object/refs/Array/ArrayElement1/Object/id"
+        fromType="profile" toKey="4"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']"
+        toNamePath="PersonList/Persons/person/id"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

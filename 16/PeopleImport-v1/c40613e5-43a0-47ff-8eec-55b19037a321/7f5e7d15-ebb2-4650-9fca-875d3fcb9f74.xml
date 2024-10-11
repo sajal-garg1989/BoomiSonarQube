@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>7f5e7d15-ebb2-4650-9fca-875d3fcb9f74</Id>
+  <Type>transform.map</Type>
+  <Name>ihubGenericMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="1daa4dfa-6514-4eb7-b4ff-c217ff6871be"
+    refId="fromProfile" name="ProcessProperties" />
+    <Ref compId="aaf803ff-c407-4353-afad-8b1cac57c5d6"
+    refId="toProfile" name="SetProperties" />
+    <Ref compId="e99a0a33-f314-4037-84d9-b3669d185b7f"
+    refId="function-2-table" name="PeopleImport-v1_LookupTable2" />
+    <Ref compId="3f11bd55-208d-4cb6-9028-2012b00a3825"
+    refId="function-3-table" name="PeopleImport-v1_LookupTable3" />
+    <Ref compId="0cf5556a-62bb-4284-9f38-5c6c7b290c15"
+    refId="function-4-table" name="PeopleImport-v1_LookupTable4" />
+    <Ref compId="9e4f2223-d149-43b0-80a3-59cacc058ce3"
+    refId="function-5-table" name="PeopleImport-v1_LookupTable5" />
+    <Ref compId="73719a83-698d-4844-a09f-fc1f40aaa0a0"
+    refId="function-6" name="HandleCSLicenses" />
+    <Ref compId="dcab64ca-9351-4360-bd31-f5ea8f222077"
+    refId="function-1-table" name="PeopleImport-v1_LookupTable1" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="1daa4dfa-6514-4eb7-b4ff-c217ff6871be"
+    toProfile="aaf803ff-c407-4353-afad-8b1cac57c5d6">
+      <Mappings>
+        <Mapping fromKey="12"
+        fromKeyPath="*[@key='1']/*[@key='10']/*[@key='12']"
+        fromNamePath="ProcessProperties/ProcessProperty/name"
+        fromType="profile" toKey="3"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Record/Elements/Name" toType="profile" />
+        <Mapping fromKey="14"
+        fromKeyPath="*[@key='1']/*[@key='10']/*[@key='14']"
+        fromNamePath="ProcessProperties/ProcessProperty/value"
+        fromType="profile" toFunction="7" toKey="1"
+        toType="function" />
+        <Mapping fromFunction="7" fromKey="2" fromType="function"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Record/Elements/Value" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true" category="Lookup" key="1"
+        name="Cross Reference Lookup" position="1"
+        sumEnabled="false" type="CrossRefLookup" x="30.0"
+        y="165.0">
+          <Inputs />
+          <Outputs />
+          <Configuration>
+            <CrossRefLookup crossRefTableId="dcab64ca-9351-4360-bd31-f5ea8f222077"
+            skipLookupIfNoInputs="true" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" category="Lookup" key="2"
+        name="Cross Reference Lookup" position="2"
+        sumEnabled="false" type="CrossRefLookup" x="30.0"
+        y="218.0">
+          <Inputs />
+          <Outputs />
+          <Configuration>
+            <CrossRefLookup crossRefTableId="e99a0a33-f314-4037-84d9-b3669d185b7f"
+            skipLookupIfNoInputs="true" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" category="Lookup" key="3"
+        name="Cross Reference Lookup" position="3"
+        sumEnabled="false" type="CrossRefLookup" x="30.0"
+        y="263.0">
+          <Inputs />
+          <Outputs />
+          <Configuration>
+            <CrossRefLookup crossRefTableId="3f11bd55-208d-4cb6-9028-2012b00a3825"
+            skipLookupIfNoInputs="true" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" category="Lookup" key="4"
+        name="Cross Reference Lookup" position="4"
+        sumEnabled="false" type="CrossRefLookup" x="30.0"
+        y="313.0">
+          <Inputs />
+          <Outputs />
+          <Configuration>
+            <CrossRefLookup crossRefTableId="0cf5556a-62bb-4284-9f38-5c6c7b290c15"
+            skipLookupIfNoInputs="true" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" category="Lookup" key="5"
+        name="Cross Reference Lookup" position="5"
+        sumEnabled="false" type="CrossRefLookup" x="30.0"
+        y="358.0">
+          <Inputs />
+          <Outputs />
+          <Configuration>
+            <CrossRefLookup crossRefTableId="9e4f2223-d149-43b0-80a3-59cacc058ce3"
+            skipLookupIfNoInputs="true" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep category="userdefined"
+        id="73719a83-698d-4844-a09f-fc1f40aaa0a0" key="6"
+        name="HandleCSLicenses" position="6" type="userdefined"
+        x="30.0" y="468.0">
+          <Inputs>
+            <Input key="1" name="InputValue" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="OutputValue" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" enabled="true" key="7"
+        name="Scripting" position="7" sumEnabled="false"
+        type="Scripting" x="30.0" y="39.0">
+          <Inputs>
+            <Input key="1" name="value" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="value" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>import com.boomi.execution.*;
+              if(!value.equals(',') &amp;&amp; value.contains(','))
+              { value = value.replace(",","#"); }</ScriptToExecute>
+              <Input dataType="character" index="1" name="value" />
+              <Output index="2" name="value" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>
