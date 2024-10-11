@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>e6b132c6-fdbc-491b-ba7e-db126a0e6d59</Id>
+  <Type>connector-action</Type>
+  <Name>New protest Connector Operation</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Sajal">7114126</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-prote2-dev</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+    <Property>
+      <Name>custom-action-type</Name>
+      <Value>EXECUTE</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <Operation returnApplicationErrors="false"
+    trackResponse="true">
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <GenericOperationConfig customOperationType="EXECUTE"
+        operationType="EXECUTE" requestProfileType="xml"
+        responseProfileType="xml">
+          <field id="resourcePath" type="string"
+          value="/personnel/v1/contacts" />
+          <field id="httpMethod" type="string" value="GET" />
+          <field id="contentType" type="string"
+          value="application/json" />
+          <Options />
+        </GenericOperationConfig>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

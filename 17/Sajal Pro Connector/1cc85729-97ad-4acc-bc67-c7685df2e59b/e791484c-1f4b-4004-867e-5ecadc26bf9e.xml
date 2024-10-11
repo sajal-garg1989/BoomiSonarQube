@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>e791484c-1f4b-4004-867e-5ecadc26bf9e</Id>
+  <Type>connector-settings</Type>
+  <Name>New NiharikaTestConnector Connection</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Sajal">7114126</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-nihari-dev</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <GenericConnectionConfig>
+      <field id="connectionUrl" type="string"
+      value="http://Servicet.ultipro.com" />
+      <field id="authenticationType" type="string" value="Basic" />
+      <field id="username" type="string" value="BOOMIUserA" />
+      <field id="password" type="password" value="" />
+      <field id="userApiKey" type="string" value="CALEN" />
+      <field id="customerApiKey" type="string" value="VPUZZ" />
+    </GenericConnectionConfig>
+  </Object>
+</Component>

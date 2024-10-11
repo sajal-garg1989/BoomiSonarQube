@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>564ef779-dc4a-4811-b2d4-6880b30eb711</Id>
+  <Type>connector-settings</Type>
+  <Name>New protest Connection</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Sajal">7114126</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>testboomiapi_kronos_testc-2710S5-prote2-dev</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <GenericConnectionConfig>
+      <field id="connectionUrl" type="string"
+      value="http://Servicet.ultipro.com" />
+      <field id="authenticationType" type="string" value="Basic" />
+      <field id="username" type="string" value="BOOMIUserA" />
+      <field id="password" type="password" value="" />
+      <field id="connectionHeaders" type="customproperties">
+        <customProperties>
+          <properties encrypted="true" key="key1"
+          value="ICgZlY4NLaNBM5NGb2DAGAA0XokAaKQqA/HpZxUpOdTsFZmNeYuMOageMPMwdORuuD29Q8+ucXN2Ii3lsgEq2OKW5CT3lj8exy0qQEWoBYTbkgSLvmPCM/6uc9mezqH5BlQ/jkAhavsY/DhwQW2+agN16W3uxKERq6O2EiPwe/g=" />
+          <properties encrypted="true" key="key2"
+          value="bEl22rJn3k010Np6DV1Yp+CiPyuL3CTE31eaty98QjKoBqGX8JrBZirPzrd/qdK7DgpYINk0jwH31JWr8/bjtvpHSvratfYKxHwUR4dNbwMiyLvzjnRcFXIhsDwIE2lNi1b4tz8oiFY0NlRA+Ipf2v4hbzS7IPMS7dMDzo5wC3s=" />
+        </customProperties>
+      </field>
+      <field id="userApiKey" type="string" value="CALEN" />
+      <field id="customerApiKey" type="string" value="VPUZZ" />
+    </GenericConnectionConfig>
+  </Object>
+</Component>
