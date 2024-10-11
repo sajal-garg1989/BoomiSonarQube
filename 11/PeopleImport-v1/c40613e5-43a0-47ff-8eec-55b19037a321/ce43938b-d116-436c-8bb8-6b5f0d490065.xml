@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>ce43938b-d116-436c-8bb8-6b5f0d490065</Id>
+  <Type>transform.map</Type>
+  <Name>PersonsXML2ZoneCategories</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="1220d21c-ce55-47ff-bace-73c9e3156d0b"
+    refId="toProfile" name="PersonZoneCategoryAssignmentProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="1220d21c-ce55-47ff-bace-73c9e3156d0b">
+      <Mappings>
+        <Mapping fromKey="1636"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1635']/*[@key='1636']"
+        fromNamePath="Kronos_Persons_API/Request/ZoneCategoryAssignment/ZoneCategoryQualifier"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']/*[@key='9']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/zoneCategory/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="1637"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1635']/*[@key='1637']"
+        fromNamePath="Kronos_Persons_API/Request/ZoneCategoryAssignment/ZoneSetQualifier"
+        fromType="profile" toKey="15"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='13']/*[@key='14']/*[@key='15']"
+        toNamePath="Root/Array/ArrayElement1/Object/zone/Object/zoneSet/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="1638"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1635']/*[@key='1638']"
+        fromNamePath="Kronos_Persons_API/Request/ZoneCategoryAssignment/ZoneQualifier"
+        fromType="profile" toKey="18"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='16']/*[@key='17']/*[@key='18']"
+        toNamePath="Root/Array/ArrayElement1/Object/zone/Object/zone/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

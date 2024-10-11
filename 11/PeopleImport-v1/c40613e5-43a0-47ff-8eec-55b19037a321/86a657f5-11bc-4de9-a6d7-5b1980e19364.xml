@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>86a657f5-11bc-4de9-a6d7-5b1980e19364</Id>
+  <Type>transform.map</Type>
+  <Name>UpdateForDeAssignmentZoneCategories</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="1220d21c-ce55-47ff-bace-73c9e3156d0b"
+    refId="fromProfile"
+    name="PersonZoneCategoryAssignmentProfile" />
+    <Ref compId="1220d21c-ce55-47ff-bace-73c9e3156d0b"
+    refId="toProfile" name="PersonZoneCategoryAssignmentProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="1220d21c-ce55-47ff-bace-73c9e3156d0b"
+    toProfile="1220d21c-ce55-47ff-bace-73c9e3156d0b">
+      <Mappings>
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']/*[@key='9']/*[@key='10']"
+        fromNamePath="Root/Array/ArrayElement1/Object/zoneCategory/Object/qualifier"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+        <Mapping fromKey="15"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='13']/*[@key='14']/*[@key='15']"
+        fromNamePath="Root/Array/ArrayElement1/Object/zone/Object/zoneSet/Object/qualifier"
+        fromType="profile" toFunction="1" toKey="2"
+        toType="function" />
+        <Mapping fromKey="18"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='16']/*[@key='17']/*[@key='18']"
+        fromNamePath="Root/Array/ArrayElement1/Object/zone/Object/zone/Object/qualifier"
+        fromType="profile" toFunction="1" toKey="3"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="4" fromType="function"
+        toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']/*[@key='9']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/zoneCategory/Object/qualifier"
+        toType="profile" />
+        <Mapping fromFunction="1" fromKey="5" fromType="function"
+        toKey="15"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='13']/*[@key='14']/*[@key='15']"
+        toNamePath="Root/Array/ArrayElement1/Object/zone/Object/zoneSet/Object/qualifier"
+        toType="profile" />
+        <Mapping fromFunction="1" fromKey="6" fromType="function"
+        toKey="18"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='16']/*[@key='17']/*[@key='18']"
+        toNamePath="Root/Array/ArrayElement1/Object/zone/Object/zone/Object/qualifier"
+        toType="profile" />
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        fromNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="1"
+        sumEnabled="false" type="Scripting" x="10.0" y="10.0">
+          <Inputs>
+            <Input key="1" name="ZoneCategory" />
+            <Input key="2" name="ZoneSet" />
+            <Input key="3" name="Zone" />
+          </Inputs>
+          <Outputs>
+            <Output key="4" name="ZoneCategory" />
+            <Output key="5" name="ZoneSet" />
+            <Output key="6" name="Zone" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy" useComponent="false">
+              <ScriptToExecute>
+              if(ZoneCategory.equalsIgnoreCase("NONE") ||
+              ZoneCategory.equalsIgnoreCase("EMPTY") ){
+              ZoneCategory= ""; }
+              if(ZoneSet.equalsIgnoreCase("NONE") ||
+              ZoneSet.equalsIgnoreCase("EMPTY")) { ZoneSet=""; }
+              if(Zone.equalsIgnoreCase("NONE") ||
+              Zone.equalsIgnoreCase("EMPTY") ){ Zone="";
+              }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="ZoneCategory" />
+              <Input dataType="character" index="2"
+              name="ZoneSet" />
+              <Input dataType="character" index="3" name="Zone" />
+              <Output index="4" name="ZoneCategory" />
+              <Output index="5" name="ZoneSet" />
+              <Output index="6" name="Zone" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

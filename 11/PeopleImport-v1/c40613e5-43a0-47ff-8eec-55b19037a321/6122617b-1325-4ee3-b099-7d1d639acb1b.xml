@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>6122617b-1325-4ee3-b099-7d1d639acb1b</Id>
+  <Type>transform.function</Type>
+  <Name>RecordsCount</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-6-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-8-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-3-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-9-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-4-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-11-processproperty"
+    name="TransactionAssistantProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="RecordsProcessed" />
+        <Input key="2" name="RecordsImported" />
+        <Input key="3" name="ErrorRecords" />
+      </Inputs>
+      <Outputs />
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="3"
+        name="Set Process Property" position="3" sumEnabled="false"
+        type="DefinedProcessPropertySet" x="465.0" y="71.0">
+          <Inputs>
+            <Input key="1" name="TotalRecordsProcessed" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="970f2d04-843f-4835-b156-5b018cc752ee"
+            propertyName="TotalRecordsProcessed" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="4"
+        name="Set Process Property" position="6" sumEnabled="false"
+        type="DefinedProcessPropertySet" x="862.0" y="221.0">
+          <Inputs>
+            <Input key="1" name="TotalImportedRecords" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="a8396e2d-fd6e-40a8-a2c6-dee808a65321"
+            propertyName="TotalImportedRecords" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="6"
+        name="Set Process Property" position="9" sumEnabled="false"
+        type="DefinedProcessPropertySet" x="1262.0" y="305.0">
+          <Inputs>
+            <Input key="1" name="totalErrorRecords" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="3a47783a-2844-45ec-b032-619035acc468"
+            propertyName="TotalErrorRecords" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Numeric" key="7" name="Math Add" position="2"
+        sumEnabled="false" type="MathAdd" x="221.0" y="59.0">
+          <Inputs>
+            <Input default="0" key="1" name="Value" />
+            <Input default="0" key="2" name="Value to Add" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="8"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="0.0" y="14.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="TotalRecordsProcessed" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="970f2d04-843f-4835-b156-5b018cc752ee"
+            propertyName="TotalRecordsProcessed" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="9"
+        name="Get Process Property" position="4" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="469.0" y="176.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="TotalImportedRecords" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="a8396e2d-fd6e-40a8-a2c6-dee808a65321"
+            propertyName="TotalImportedRecords" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Numeric" key="10" name="Math Add" position="5"
+        sumEnabled="false" type="MathAdd" x="616.0" y="292.0">
+          <Inputs>
+            <Input default="0" key="1" name="Value" />
+            <Input default="0" key="2" name="Value to Add" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="11"
+        name="Get Process Property" position="7" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="893.0" y="303.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="TotalErrorRecords" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="3a47783a-2844-45ec-b032-619035acc468"
+            propertyName="TotalErrorRecords" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Numeric" key="12" name="Math Add" position="8"
+        sumEnabled="false" type="MathAdd" x="1134.0" y="333.0">
+          <Inputs>
+            <Input default="0" key="1" name="Value" />
+            <Input default="0" key="2" name="Value to Add" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="9" fromKey="1"
+        fromNamePath="Get Process Property/totalImportedRecords"
+        fromType="function" toFunction="10" toKey="2"
+        toNamePath="Math Add/Value to Add" toType="function" />
+        <Mapping fromFunction="10" fromKey="2"
+        fromNamePath="Math Add/Result" fromType="function"
+        toFunction="4" toKey="1"
+        toNamePath="Set Process Property/totalImportedRecords"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="3"
+        fromNamePath="Editor/ErrorRecords" fromType="function"
+        toFunction="12" toKey="2"
+        toNamePath="Math Add/Value to Add" toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/RecordsProcessed" fromType="function"
+        toFunction="7" toKey="1" toNamePath="Math Add/Value"
+        toType="function" />
+        <Mapping fromFunction="8" fromKey="1"
+        fromNamePath="Get Process Property/totalRecordsProcessed"
+        fromType="function" toFunction="7" toKey="2"
+        toNamePath="Math Add/Value to Add" toType="function" />
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/RecordsImported" fromType="function"
+        toFunction="10" toKey="1" toNamePath="Math Add/Value"
+        toType="function" />
+        <Mapping fromFunction="11" fromKey="1"
+        fromNamePath="Get Process Property/totalErrorRecords"
+        fromType="function" toFunction="12" toKey="1"
+        toNamePath="Math Add/Value" toType="function" />
+        <Mapping fromFunction="12" fromKey="2"
+        fromNamePath="Math Add/Result" fromType="function"
+        toFunction="6" toKey="1"
+        toNamePath="Set Process Property/totalErrorRecords"
+        toType="function" />
+        <Mapping fromFunction="7" fromKey="2"
+        fromNamePath="Math Add/Result" fromType="function"
+        toFunction="3" toKey="1"
+        toNamePath="Set Process Property/totalRecordsProcessed"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

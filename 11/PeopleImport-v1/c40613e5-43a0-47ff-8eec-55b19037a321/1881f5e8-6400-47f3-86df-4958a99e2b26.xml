@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>1881f5e8-6400-47f3-86df-4958a99e2b26</Id>
+  <Type>connector-action</Type>
+  <Name>PersonAttendanceProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Send</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="d9289dfe-6a42-4658-8596-44fa1e5de2b3"
+    refId="request-profile" name="PersonAttendanceProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpSendAction dataContentType="application/json"
+        followRedirects="false" methodType="POST"
+        requestProfile="d9289dfe-6a42-4658-8596-44fa1e5de2b3"
+        requestProfileType="JSON" responseProfileType="NONE"
+        returnErrors="true" returnResponses="true">
+          <requestHeaders>
+            <header headerName="AppKey" isVariable="true"
+            key="1000000" />
+            <header headerName="Authorization" isVariable="true"
+            key="1000001" />
+            <header headerName="Cookie" isVariable="true"
+            key="1000002" />
+          </requestHeaders>
+          <pathElements>
+            <element key="2000000"
+            name="v1/commons/persons/attendance_profile/multi_update" />
+            <element isVariable="true" key="2000001"
+            name="api_qstring" />
+          </pathElements>
+          <responseHeaderMapping />
+          <reflectHeaders />
+        </HttpSendAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>4dffe9c2-b65c-4cff-b8aa-8bccf0f8d526</Id>
+  <Type>transform.map</Type>
+  <Name>PersonXML2PercentageRule</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="f373b13d-ac0f-4b95-9739-53a246b4ec36"
+    refId="toProfile" name="PercentageRuleRequestJsonProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="f373b13d-ac0f-4b95-9739-53a246b4ec36">
+      <Mappings>
+        <Mapping fromKey="1648"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1647']/*[@key='1648']"
+        fromNamePath="Kronos_Persons_API/Request/PersonPercentageAllocationAssignment/EffectiveDate"
+        fromType="profile" toKey="6"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']"
+        toNamePath="Root/Array/ArrayElement1/Object/effectiveDate"
+        toType="profile" />
+        <Mapping fromKey="1649"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1647']/*[@key='1649']"
+        fromNamePath="Kronos_Persons_API/Request/PersonPercentageAllocationAssignment/ExpirationDate"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/expirationDate"
+        toType="profile" />
+        <Mapping fromKey="1650"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1647']/*[@key='1650']"
+        fromNamePath="Kronos_Persons_API/Request/PersonPercentageAllocationAssignment/PercentageAllocationRule"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/processor"
+        toType="profile" />
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='7']/*[@key='8']/*[@key='9']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

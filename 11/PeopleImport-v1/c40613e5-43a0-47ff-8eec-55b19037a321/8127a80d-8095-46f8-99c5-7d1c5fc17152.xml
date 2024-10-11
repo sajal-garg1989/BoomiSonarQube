@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>8127a80d-8095-46f8-99c5-7d1c5fc17152</Id>
+  <Type>transform.map</Type>
+  <Name>MultiReadPersonsAPI</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="13dbda02-f170-44c1-90da-96276318d3d8"
+    refId="fromProfile" name="HyperfindResponse" />
+    <Ref compId="12da1e45-9952-4b83-b841-e8b47d7d2767"
+    refId="toProfile" name="MultiReadPersonsAPIRequest" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="13dbda02-f170-44c1-90da-96276318d3d8"
+    toProfile="12da1e45-9952-4b83-b841-e8b47d7d2767">
+      <Mappings>
+        <Mapping fromFunction="5" fromKey="3" fromType="function"
+        toKey="74"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='20']/*[@key='68']/*[@key='69']/*[@key='70']/*[@key='72']/*[@key='73']/*[@key='74']"
+        toNamePath="Root/Object/where/Object/employees/Object/values/Array/ArrayElement1"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="5"
+        name="Get Document Property" position="5"
+        sumEnabled="false" type="DocumentPropertyGet" x="30.0"
+        y="12.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - personId" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue=" 214,306"
+            persist="false" propertyId="dynamicdocument.personId"
+            propertyName="Dynamic Document Property - personId" />
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="75" value="employee" />
+        <Default toKey="76" value="false" />
+        <Default toKey="71" value="personid" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

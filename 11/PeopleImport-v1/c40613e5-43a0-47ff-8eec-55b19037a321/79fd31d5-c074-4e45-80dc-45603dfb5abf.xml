@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>79fd31d5-c074-4e45-80dc-45603dfb5abf</Id>
+  <Type>transform.map</Type>
+  <Name>TAErrorresponseMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="2852d4cd-6245-4818-aca4-d9924eca95b9"
+    refId="fromProfile" name="TAErrorResponseProfile" />
+    <Ref compId="c23e0522-3bfb-45f4-9af1-939ca7b76fbd"
+    refId="toProfile" name="TAErrorMessage" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="2852d4cd-6245-4818-aca4-d9924eca95b9"
+    toProfile="c23e0522-3bfb-45f4-9af1-939ca7b76fbd">
+      <Mappings>
+        <Mapping fromKey="9"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='7']/*[@key='8']/*[@key='9']"
+        fromNamePath="Root/Object/Response/Object/Error/Object/Message"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="2" fromType="function"
+        toKey="3" toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Record/Elements/Message" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="1"
+        sumEnabled="false" type="Scripting" x="10.0" y="10.0">
+          <Inputs>
+            <Input key="1" name="message" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="outMessage" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy2" useComponent="false">
+              <ScriptToExecute>if(message){ outMessage =
+              message.replaceAll("\\\"", "\""); }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="message" />
+              <Output index="2" name="outMessage" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

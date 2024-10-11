@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>26f6faea-ff74-4e2b-8f7a-d2da265b0d51</Id>
+  <Type>transform.function</Type>
+  <Name>AttendAdminAPIResponseFilenames</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="236f7137-555b-4ca1-83e9-dba27196e731"
+    refId="function-1-processproperty" name="RunSummaryStep" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="1" name="file1" />
+        <Output key="2" name="file2" />
+        <Output key="3" name="file3" />
+        <Output key="4" name="file4" />
+        <Output key="6" name="file5" />
+        <Output key="7" name="file6" />
+        <Output key="8" name="file7" />
+        <Output key="9" name="file8" />
+        <Output key="10" name="file9" />
+        <Output key="11" name="file10" />
+        <Output key="5" name="isdownloadable" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="0.0" y="40.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1"
+            name="AttAdmin_APIResponse_filenames" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="236f7137-555b-4ca1-83e9-dba27196e731"
+            componentName="RunSummaryStep"
+            propertyKey="b1302002-904f-4a19-be94-2a9abed5ad34"
+            propertyName="AttAdmin_APIResponse_filenames" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="2" name="String Remove" position="2"
+        sumEnabled="false" type="StringRemove" x="252.0" y="68.0">
+          <Inputs>
+            <Input default="" key="1" name="Original String" />
+            <Input default="GA," key="2" name="String to Remove" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="3" name="Scripting" position="3"
+        sumEnabled="false" type="Scripting" x="604.0" y="102.0">
+          <Inputs>
+            <Input default="" key="1" name="fileList" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="file1" />
+            <Output key="3" name="file2" />
+            <Output key="4" name="file3" />
+            <Output key="5" name="file4" />
+            <Output key="6" name="file5" />
+            <Output key="7" name="file6" />
+            <Output key="8" name="file7" />
+            <Output key="10" name="file8" />
+            <Output key="11" name="file9" />
+            <Output key="12" name="file10" />
+            <Output key="13" name="isdownloadable" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>HashMap&lt;String,String&gt;
+              fileNameMap = new HashMap&lt;String,String&gt;();
+              //process mapped licenses String[] files =
+              fileList.split(",") isdownloadable="true"; int
+              counter=1; for (String file: files){
+              fileNameMap.put(counter,file); counter++; } if
+              (counter &gt;2){ isdownloadable=true; } fileCount=1;
+              while (fileCount &lt;=10){ if (fileCount==1){ file1=
+              fileNameMap.get(fileCount); } if (fileCount==2){
+              file2= fileNameMap.get(fileCount); } if
+              (fileCount==3){ file3= fileNameMap.get(fileCount); }
+              if (fileCount==4){ file4= fileNameMap.get(fileCount);
+              } if (fileCount==5){ file5=
+              fileNameMap.get(fileCount); } if (fileCount==6){
+              file6= fileNameMap.get(fileCount); } if
+              (fileCount==7){ file7= fileNameMap.get(fileCount); }
+              if (fileCount==8){ file8= fileNameMap.get(fileCount);
+              } if (fileCount==9){ file9=
+              fileNameMap.get(fileCount); } if (fileCount==10){
+              file10= fileNameMap.get(fileCount); } fileCount++;
+              }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="fileList" />
+              <Output index="2" name="file1" />
+              <Output index="3" name="file2" />
+              <Output index="4" name="file3" />
+              <Output index="5" name="file4" />
+              <Output index="6" name="file5" />
+              <Output index="7" name="file6" />
+              <Output index="8" name="file7" />
+              <Output index="10" name="file8" />
+              <Output index="11" name="file9" />
+              <Output index="12" name="file10" />
+              <Output index="13" name="isdownloadable" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="3" fromKey="7"
+        fromNamePath="Scripting/file6" fromType="function"
+        toFunction="0" toKey="7" toNamePath="Editor/file6"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Get Process Property/PI_APIResponse_filenames"
+        fromType="function" toFunction="2" toKey="1"
+        toNamePath="String Remove/Original String"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="6"
+        fromNamePath="Scripting/file5" fromType="function"
+        toFunction="0" toKey="6" toNamePath="Editor/file5"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="5"
+        fromNamePath="Scripting/file4" fromType="function"
+        toFunction="0" toKey="4" toNamePath="Editor/file4"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="12"
+        fromNamePath="Scripting/file10" fromType="function"
+        toFunction="0" toKey="11" toNamePath="Editor/file10"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="4"
+        fromNamePath="Scripting/file3" fromType="function"
+        toFunction="0" toKey="3" toNamePath="Editor/file3"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="13"
+        fromNamePath="Scripting/isdownloadable" fromType="function"
+        toFunction="0" toKey="5" toNamePath="Editor/isdownloadable"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="8"
+        fromNamePath="Scripting/file7" fromType="function"
+        toFunction="0" toKey="8" toNamePath="Editor/file7"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="2"
+        fromNamePath="String Remove/Result" fromType="function"
+        toFunction="3" toKey="1" toNamePath="Scripting/fileList"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="2"
+        fromNamePath="Scripting/file1" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/file1"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="3"
+        fromNamePath="Scripting/file2" fromType="function"
+        toFunction="0" toKey="2" toNamePath="Editor/file2"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="10"
+        fromNamePath="Scripting/file8" fromType="function"
+        toFunction="0" toKey="9" toNamePath="Editor/file8"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="11"
+        fromNamePath="Scripting/file9" fromType="function"
+        toFunction="0" toKey="10" toNamePath="Editor/file9"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

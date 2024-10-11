@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>b48a0c5e-e806-4d7e-af06-ad899bc93088</Id>
+  <Type>transform.map</Type>
+  <Name>RehireCustomMapCSV2XML</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="ca4a4ff6-c0c2-4e99-b416-7c9bbdea74d7"
+    refId="toProfile" name="RehirePersonsAPIXMLProfile" />
+    <Ref compId="8bf87d3e-94db-4d81-b20b-f28feb453037"
+    refId="fromProfile" name="RehireCustomFlatFileProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="8bf87d3e-94db-4d81-b20b-f28feb453037"
+    toProfile="ca4a4ff6-c0c2-4e99-b416-7c9bbdea74d7">
+      <Mappings />
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults>
+        <Default toKey="443" value="1" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

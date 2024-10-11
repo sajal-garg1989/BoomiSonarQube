@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>a9bc4895-eaa3-4a68-9c9a-43b3c3cd0b17</Id>
+  <Type>connector-action</Type>
+  <Name>TransactionAssistantWSOperation</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Send</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+    <Property>
+      <Name>output-profile</Name>
+      <Value>9d263f88-50d2-458d-8f9c-51d8cbd16110</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+    refId="response-profile" name="TransactionAssistantResponse" />
+    <Ref compId="eadf8548-c127-4200-9e05-6b3a69c0dc43"
+    refId="request-profile"
+    name="TransactionAssistantJSONRequest" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpSendAction dataContentType="application/json"
+        followRedirects="false" methodType="POST"
+        requestProfile="eadf8548-c127-4200-9e05-6b3a69c0dc43"
+        requestProfileType="JSON"
+        responseProfile="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+        responseProfileType="JSON" returnErrors="true"
+        returnMimeResponse="false" returnResponses="true">
+          <requestHeaders>
+            <header headerName="AppKey" isVariable="true"
+            key="1000000" />
+            <header headerName="Authorization" isVariable="true"
+            key="1000001" />
+            <header headerName="Cookie" isVariable="true"
+            key="1000002" />
+          </requestHeaders>
+          <pathElements>
+            <element key="2000000"
+            name="v1/ta/failed_import_transactions/process" />
+            <element isVariable="true" key="2000001"
+            name="api_qstring" />
+          </pathElements>
+          <responseHeaderMapping />
+          <reflectHeaders />
+        </HttpSendAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

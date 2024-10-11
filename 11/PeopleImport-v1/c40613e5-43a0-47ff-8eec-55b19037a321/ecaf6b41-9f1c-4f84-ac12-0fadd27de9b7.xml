@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>ecaf6b41-9f1c-4f84-ac12-0fadd27de9b7</Id>
+  <Type>transform.map</Type>
+  <Name>PersonsXML2EmployeeJobPreferences</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="f7b07976-2925-4f90-ae73-c776d21014cd"
+    refId="toProfile" name="EmployeeJobPreferences" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="f7b07976-2925-4f90-ae73-c776d21014cd">
+      <Mappings>
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="5"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/personNumber"
+        toType="profile" />
+        <Mapping fromKey="1514"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1514']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/EffectiveDate"
+        fromType="profile" toKey="12"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='12']"
+        toNamePath="Root/Array/ArrayElement1/Object/effectiveDate"
+        toType="profile" />
+        <Mapping fromKey="1517"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1516']/*[@key='1517']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference1/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='0']/*[@key='9'][@tagListKey='0']/*[@key='10'][@tagListKey='0']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1/Object/job"
+        toTagListKey="0" toType="profile" />
+        <Mapping fromKey="1518"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1516']/*[@key='1518']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference1/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='0']/*[@key='9'][@tagListKey='0']/*[@key='11'][@tagListKey='0']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1/Object/preference"
+        toTagListKey="0" toType="profile" />
+        <Mapping fromKey="1520"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1519']/*[@key='1520']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference2/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='1']/*[@key='9'][@tagListKey='1']/*[@key='10'][@tagListKey='1']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[2]/Object/job"
+        toTagListKey="1" toType="profile" />
+        <Mapping fromKey="1521"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1519']/*[@key='1521']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference2/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='1']/*[@key='9'][@tagListKey='1']/*[@key='11'][@tagListKey='1']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[2]/Object/preference"
+        toTagListKey="1" toType="profile" />
+        <Mapping fromKey="1523"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1522']/*[@key='1523']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference3/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='2']/*[@key='9'][@tagListKey='2']/*[@key='10'][@tagListKey='2']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[3]/Object/job"
+        toTagListKey="2" toType="profile" />
+        <Mapping fromKey="1524"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1522']/*[@key='1524']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference3/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='2']/*[@key='9'][@tagListKey='2']/*[@key='11'][@tagListKey='2']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[3]/Object/preference"
+        toTagListKey="2" toType="profile" />
+        <Mapping fromKey="1526"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1525']/*[@key='1526']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference4/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='3']/*[@key='9'][@tagListKey='3']/*[@key='10'][@tagListKey='3']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[4]/Object/job"
+        toTagListKey="3" toType="profile" />
+        <Mapping fromKey="1527"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1525']/*[@key='1527']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference4/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='3']/*[@key='9'][@tagListKey='3']/*[@key='11'][@tagListKey='3']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[4]/Object/preference"
+        toTagListKey="3" toType="profile" />
+        <Mapping fromKey="1529"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1528']/*[@key='1529']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference5/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='4']/*[@key='9'][@tagListKey='4']/*[@key='10'][@tagListKey='4']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[5]/Object/job"
+        toTagListKey="4" toType="profile" />
+        <Mapping fromKey="1530"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1528']/*[@key='1530']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference5/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='4']/*[@key='9'][@tagListKey='4']/*[@key='11'][@tagListKey='4']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[5]/Object/preference"
+        toTagListKey="4" toType="profile" />
+        <Mapping fromKey="1532"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1531']/*[@key='1532']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference6/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='5']/*[@key='9'][@tagListKey='5']/*[@key='10'][@tagListKey='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[6]/Object/job"
+        toTagListKey="5" toType="profile" />
+        <Mapping fromKey="1533"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1531']/*[@key='1533']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference6/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='5']/*[@key='9'][@tagListKey='5']/*[@key='11'][@tagListKey='5']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[6]/Object/preference"
+        toTagListKey="5" toType="profile" />
+        <Mapping fromKey="1535"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1534']/*[@key='1535']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference7/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='6']/*[@key='9'][@tagListKey='6']/*[@key='10'][@tagListKey='6']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[7]/Object/job"
+        toTagListKey="6" toType="profile" />
+        <Mapping fromKey="1536"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1534']/*[@key='1536']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference7/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='6']/*[@key='9'][@tagListKey='6']/*[@key='11'][@tagListKey='6']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[7]/Object/preference"
+        toTagListKey="6" toType="profile" />
+        <Mapping fromKey="1538"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1537']/*[@key='1538']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference8/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='7']/*[@key='9'][@tagListKey='7']/*[@key='10'][@tagListKey='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[8]/Object/job"
+        toTagListKey="7" toType="profile" />
+        <Mapping fromKey="1539"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1537']/*[@key='1539']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference8/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='7']/*[@key='9'][@tagListKey='7']/*[@key='11'][@tagListKey='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[8]/Object/preference"
+        toTagListKey="7" toType="profile" />
+        <Mapping fromKey="1541"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1540']/*[@key='1541']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference9/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='8']/*[@key='9'][@tagListKey='8']/*[@key='10'][@tagListKey='8']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[9]/Object/job"
+        toTagListKey="8" toType="profile" />
+        <Mapping fromKey="1542"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1540']/*[@key='1542']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference9/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='8']/*[@key='9'][@tagListKey='8']/*[@key='11'][@tagListKey='8']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[9]/Object/preference"
+        toTagListKey="8" toType="profile" />
+        <Mapping fromKey="1544"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1543']/*[@key='1544']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference10/Job"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='9']/*[@key='9'][@tagListKey='9']/*[@key='10'][@tagListKey='9']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[10]/Object/job"
+        toTagListKey="9" toType="profile" />
+        <Mapping fromKey="1545"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1513']/*[@key='1515']/*[@key='1543']/*[@key='1545']"
+        fromNamePath="Kronos_Persons_API/Request/EmployeeJobPreferences/JobPreferences/JobPreference10/Preference"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='6']/*[@key='7']/*[@key='8'][@tagListKey='9']/*[@key='9'][@tagListKey='9']/*[@key='11'][@tagListKey='9']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeJobPreferences/Array/ArrayElement1[10]/Object/preference"
+        toTagListKey="9" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

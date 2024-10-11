@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>dcda3718-91f1-46e9-b3aa-5c31a3e350a2</Id>
+  <Type>transform.map</Type>
+  <Name>PersonIdsXML2JSON</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="98205fc2-f2d0-45f3-9e93-ba759e7f4662"
+    refId="fromProfile" name="PersonIdList" />
+    <Ref compId="13dbda02-f170-44c1-90da-96276318d3d8"
+    refId="toProfile" name="HyperfindResponse" />
+    <Ref compId="dfb52dd6-20d4-4527-8d09-fbbf616fc846"
+    refId="function-2" name="PopulatePersonIdFunction" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="98205fc2-f2d0-45f3-9e93-ba759e7f4662"
+    toProfile="13dbda02-f170-44c1-90da-96276318d3d8">
+      <Mappings>
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']"
+        fromNamePath="PersonList/Persons/person/id"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="2" fromType="function"
+        toKey="10" toKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        toNamePath="Root/Object/count" toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']"
+        fromNamePath="PersonList/Persons/person/id"
+        fromType="profile" toFunction="2" toKey="1"
+        toType="function" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="false" category="Numeric"
+        key="1" name="Count" position="1" sumEnabled="true"
+        type="Count" x="30.0" y="196.0">
+          <Inputs>
+            <Input default="" key="1" name="Field to Count" />
+            <Input default="0" key="2" name="Reset Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="false" cacheOption="none"
+        category="userdefined" enabled="true"
+        id="dfb52dd6-20d4-4527-8d09-fbbf616fc846" key="2"
+        name="PopulatePersonIdFunction" position="2"
+        sumEnabled="false" type="userdefined" x="30.0" y="335.0">
+          <Inputs>
+            <Input default="" key="1" name="personId" />
+          </Inputs>
+          <Outputs />
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

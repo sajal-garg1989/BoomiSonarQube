@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>a1994c81-9037-46b6-a2c5-61994401a6ec</Id>
+  <Type>processproperty</Type>
+  <Name>PeopleImport-v1_CRTConfig</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="38e26524-35b5-4135-936c-885b7774fb50">
+
+        <helpText />
+        <label>_PeopleImport-v1_LookupTable1</label>
+        <type>string</type>
+        <defaultValue>
+        Field1,Field2,Field3,Field4,Field5,Field6,Field7,Field8,Field9,Field10,Field11,Field12,Field13,Field14,Field15,Field16,Field17,Field18,Field19,Field20</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a7b1f79b-0d99-43ff-86e8-c57e59eb7e67">
+
+        <helpText />
+        <label>_PeopleImport-v1_LookupTable2</label>
+        <type>string</type>
+        <defaultValue>
+        Field1,Field2,Field3,Field4,Field5,Field6,Field7,Field8,Field9,Field10,Field11,Field12,Field13,Field14,Field15,Field16,Field17,Field18,Field19,Field20</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="168c8fc5-f1e4-4656-a325-6be73bc6b61a">
+
+        <helpText />
+        <label>_PeopleImport-v1_LookupTable3</label>
+        <type>string</type>
+        <defaultValue>
+        Field1,Field2,Field3,Field4,Field5,Field6,Field7,Field8,Field9,Field10,Field11,Field12,Field13,Field14,Field15,Field16,Field17,Field18,Field19,Field20</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="738525c2-5081-4237-9920-acecdc834374">
+
+        <helpText />
+        <label>_PeopleImport-v1_LookupTable4</label>
+        <type>string</type>
+        <defaultValue>
+        Field1,Field2,Field3,Field4,Field5,Field6,Field7,Field8,Field9,Field10,Field11,Field12,Field13,Field14,Field15,Field16,Field17,Field18,Field19,Field20</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0202fc08-11f5-4fe5-aaed-683cc33087a8">
+
+        <helpText />
+        <label>_PeopleImport-v1_LookupTable5</label>
+        <type>string</type>
+        <defaultValue>
+        Field1,Field2,Field3,Field4,Field5,Field6,Field7,Field8,Field9,Field10,Field11,Field12,Field13,Field14,Field15,Field16,Field17,Field18,Field19,Field20</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0677caa8-6703-4556-8278-ff4ffee4d274">
+
+        <helpText />
+        <label>_PeopleImport-v1_PayperiodLookupTable</label>
+        <type>string</type>
+        <defaultValue>Payperiod,Symbolicperiod</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

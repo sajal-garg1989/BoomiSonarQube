@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>aae251fd-5c98-4863-b964-9dafb6c3313d</Id>
+  <Type>transform.map</Type>
+  <Name>PersonsXML2LeaveAdmin</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="e775e626-0676-4e5c-b9c1-21d94bceafe6"
+    refId="toProfile" name="PersonLeaveAdmin" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="e775e626-0676-4e5c-b9c1-21d94bceafe6">
+      <Mappings>
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="15"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='15']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+        <Mapping fromKey="1500"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1500']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/BadgeNumber"
+        fromType="profile" toKey="16"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='16']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/badgeNumber"
+        toType="profile" />
+        <Mapping fromKey="1501"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1501']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonKey"
+        fromType="profile" toKey="17"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='17']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personKey"
+        toType="profile" />
+        <Mapping fromKey="1502"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1502']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/EmployeeKey"
+        fromType="profile" toKey="18"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='18']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/employeeKey"
+        toType="profile" />
+        <Mapping fromKey="1503"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1503']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/UserKey"
+        fromType="profile" toKey="19"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='19']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/userKey"
+        toType="profile" />
+        <Mapping fromKey="1504"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1504']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/AssociateObjectIdentifier"
+        fromType="profile" toKey="20"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='20']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/aoid"
+        toType="profile" />
+        <Mapping fromKey="1505"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1505']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/ClientObjectIdentifier"
+        fromType="profile" toKey="21"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='21']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/coid"
+        toType="profile" />
+        <Mapping fromKey="1506"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1506']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/EffectiveDate"
+        fromType="profile" toKey="22"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='22']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/effectiveDate"
+        toType="profile" />
+        <Mapping fromKey="1507"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1507']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/EffectiveTime"
+        fromType="profile" toKey="23"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='23']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/effectiveTime"
+        toType="profile" />
+        <Mapping fromKey="1580"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1580']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/PersonNumber"
+        fromType="profile" toKey="26"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/personNumber"
+        toType="profile" />
+        <Mapping fromKey="1581"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1581']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/BadgeNumber"
+        fromType="profile" toKey="27"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='27']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/badgeNumber"
+        toType="profile" />
+        <Mapping fromKey="1582"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1582']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/PersonKey"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='28']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/personKey"
+        toType="profile" />
+        <Mapping fromKey="1583"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1583']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/EmployeeKey"
+        fromType="profile" toKey="29"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='29']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/employeeKey"
+        toType="profile" />
+        <Mapping fromKey="1584"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1584']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/UserKey"
+        fromType="profile" toKey="30"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='30']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/userKey"
+        toType="profile" />
+        <Mapping fromKey="1585"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1585']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/AssociateObjectIdentifier"
+        fromType="profile" toKey="31"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='31']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/aoid"
+        toType="profile" />
+        <Mapping fromKey="1586"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1586']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/ClientObjectIdentifier"
+        fromType="profile" toKey="32"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='32']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/coid"
+        toType="profile" />
+        <Mapping fromKey="1587"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1587']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/EffectiveDate"
+        fromType="profile" toKey="33"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='33']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/effectiveDate"
+        toType="profile" />
+        <Mapping fromKey="1588"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1578']/*[@key='1579']/*[@key='1588']"
+        fromNamePath="Kronos_Persons_API/Request/PersonLeaveAdministratorAssignment/AdministratorIdentity/EffectiveTime"
+        fromType="profile" toKey="34"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='34']"
+        toNamePath="Root/Array/ArrayElement1/Object/administrator/Object/effectiveTime"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

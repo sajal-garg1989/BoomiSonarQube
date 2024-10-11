@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>e775e626-0676-4e5c-b9c1-21d94bceafe6</Id>
+  <Type>profile.json</Type>
+  <Name>PersonLeaveAdmin</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONArray elementType="repeating" isMappable="false"
+          isNode="true" key="2" name="Array">
+            <JSONArrayElement dataType="character"
+            isMappable="true" isNode="true" key="3" maxOccurs="-1"
+            minOccurs="0" name="ArrayElement1">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <JSONObject isMappable="false" isNode="true" key="4"
+              name="Object">
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="13"
+                name="personIdentity">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                  <JSONObject isMappable="false" isNode="true"
+                  key="14" name="Object">
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="15"
+                    name="personNumber">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="16"
+                    name="badgeNumber">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="number"
+                    isMappable="true" isNode="true" key="17"
+                    name="personKey">
+                      <DataFormat>
+                        <ProfileNumberFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="number"
+                    isMappable="true" isNode="true" key="18"
+                    name="employeeKey">
+                      <DataFormat>
+                        <ProfileNumberFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="number"
+                    isMappable="true" isNode="true" key="19"
+                    name="userKey">
+                      <DataFormat>
+                        <ProfileNumberFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="20"
+                    name="aoid">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="21"
+                    name="coid">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="22"
+                    name="effectiveDate">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="23"
+                    name="effectiveTime">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                  </JSONObject>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="24"
+                name="administrator">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                  <JSONObject isMappable="false" isNode="true"
+                  key="25" name="Object">
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="26"
+                    name="personNumber">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="27"
+                    name="badgeNumber">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="number"
+                    isMappable="true" isNode="true" key="28"
+                    name="personKey">
+                      <DataFormat>
+                        <ProfileNumberFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="number"
+                    isMappable="true" isNode="true" key="29"
+                    name="employeeKey">
+                      <DataFormat>
+                        <ProfileNumberFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="number"
+                    isMappable="true" isNode="true" key="30"
+                    name="userKey">
+                      <DataFormat>
+                        <ProfileNumberFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="31"
+                    name="aoid">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="32"
+                    name="coid">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="33"
+                    name="effectiveDate">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="34"
+                    name="effectiveTime">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                    </JSONObjectEntry>
+                  </JSONObject>
+                </JSONObjectEntry>
+              </JSONObject>
+            </JSONArrayElement>
+          </JSONArray>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>

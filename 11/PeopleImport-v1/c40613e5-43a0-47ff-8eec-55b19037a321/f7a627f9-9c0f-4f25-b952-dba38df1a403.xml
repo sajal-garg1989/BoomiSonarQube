@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f7a627f9-9c0f-4f25-b952-dba38df1a403</Id>
+  <Type>transform.function</Type>
+  <Name>CallbackHttpClient</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-2-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-3-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-4-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-5-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-6-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-8-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-7-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-9-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-10-processproperty"
+    name="AutoCallbackProperty" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="1" name="out" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="10"
+        sumEnabled="false" type="Scripting" x="540.0" y="162.0">
+          <Inputs>
+            <Input default="" key="3" name="serverUrl" />
+            <Input default="" key="4" name="pathParam" />
+            <Input key="6" name="port" />
+            <Input key="10" name="falconExecutionId" />
+            <Input key="11" name="errorMessage" />
+            <Input key="13" name="AppKey" />
+            <Input key="14" name="access_token" />
+            <Input key="15" name="disableCookie" />
+            <Input key="16" name="boomiExecutionId" />
+          </Inputs>
+          <Outputs>
+            <Output key="12" name="out" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>/** * Created by Ashish.Kumar on
+              9/21/2016. */ import java.io.BufferedReader import
+              java.io.InputStreamReader import
+              java.io.OutputStreamWriter import java.net.URL import
+              java.net.URLConnection import com.boomi.execution.*;
+              def sendCallbackRequest() { /*String serverUrl =
+              "http://keng01-dev01-api72-gtw72.dev.mykronos.internal:9020"
+              String pathParam =
+              "v1/ihub/callback?access_token=6630237b-9c5c-4ec3-91f5-b63a599b9933&amp;tenantId=manufacturing"
+              String errorMessage= "Process failed. Please refer to
+              logs for details." String falconExecutionId ="1"
+              String executionId="1" def port=9020*/ def reader def
+              writer try { // String executionId=
+              ExecutionManager.getCurrent().getExecutionId() String
+              reqBody = "{\n" + " \"id\" : \"" + falconExecutionId
+              + "\",\n" + " \"executionid\" : \""+ boomiExecutionId
+              + "\",\n" + " \"status\" : \"Failed\",\n" + "
+              \"callbackmessages\" : \""+ errorMessage + "\"\n" +
+              "\n" + "}" //1. check if url ends with / if
+              (serverUrl.endsWith("/")) serverUrl =
+              serverUrl.substring(0,serverUrl.lastIndexOf("/"))
+              String protocolUrl =
+              serverUrl.substring(0,serverUrl.indexOf("//")+2)
+              String hostUrl =
+              serverUrl.substring(serverUrl.indexOf("//")+2) if
+              (hostUrl.lastIndexOf(":") == -1 ){ serverUrl =
+              serverUrl.concat(":"+ port) } else { String
+              newhostUrl =
+              hostUrl.substring(0,hostUrl.lastIndexOf(":") )
+              serverUrl = protocolUrl + newhostUrl + ":" + port }
+              String gatewayUrl = serverUrl + "/" + pathParam
+              //println "Gateway Server URL :" + gatewayUrl def url
+              = new URL(gatewayUrl) HttpURLConnection conn =
+              (HttpURLConnection)url.openConnection()
+              conn.setRequestProperty("Content-Type",
+              "application/json");
+              conn.setRequestProperty("AppKey", AppKey); if
+              (disableCookie.trim().equalsIgnoreCase("true")){
+              conn.setRequestProperty("Authorization",
+              access_token); }else { //String cookie =
+              "AUTHN_TOKEN=\"" + authn_token+"\";authn_ssid="
+              +authn_ssid conn.setRequestProperty("Cookie",
+              access_token); } conn.setRequestMethod("PUT")
+              conn.setDoOutput(true) writer = new
+              OutputStreamWriter(conn.getOutputStream())
+              writer.write(reqBody) writer.flush() String line
+              String output ="" reader = new BufferedReader(new
+              InputStreamReader(conn.getInputStream())) while (
+              (line = reader.readLine()) != null) { output += line
+              } //println "API Response: " + output return output }
+              catch (Exception e){ throw new Exception ("Exception
+              occurred during auto callback - callback API failed.
+              Reason: " + e.getLocalizedMessage()) } finally { if
+              (reader != null) reader.close() if (writer != null)
+              writer.close() } } out =
+              sendCallbackRequest()</ScriptToExecute>
+              <Input dataType="character" index="3"
+              name="serverUrl" />
+              <Input dataType="character" index="4"
+              name="pathParam" />
+              <Input dataType="character" index="6" name="port" />
+              <Input dataType="character" index="10"
+              name="falconExecutionId" />
+              <Input dataType="character" index="11"
+              name="errorMessage" />
+              <Input dataType="character" index="13"
+              name="AppKey" />
+              <Input dataType="character" index="14"
+              name="access_token" />
+              <Input dataType="character" index="15"
+              name="disableCookie" />
+              <Input dataType="character" index="16"
+              name="boomiExecutionId" />
+              <Output index="12" name="out" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="2"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="0.0" y="0.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="ServerURL" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="de843a69-0a23-41c7-9335-249242f5a889"
+            propertyName="ServerURL" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="3"
+        name="Get Process Property" position="2" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="2.0" y="69.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="PathParam" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="3d1453eb-d285-4329-a707-67e2a6874508"
+            propertyName="PathParam" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="4"
+        name="Get Process Property" position="3" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="4.0" y="144.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="GatewayDefaultPort" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="c90ce421-3ae3-4f0c-a94a-ba13d1001fc0"
+            propertyName="GatewayDefaultPort" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="5"
+        name="Get Process Property" position="4" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="10.0" y="212.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="FalconExecutionId" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="c3a9af41-95b4-49ab-9175-dc88655c5053"
+            propertyName="FalconExecutionId" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="6"
+        name="Get Process Property" position="5" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="11.0" y="284.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="CallbackErrorMessage" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="26b8f3bd-f03e-439e-b117-70d5032af6a0"
+            propertyName="CallbackErrorMessage" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="7"
+        name="Get Process Property" position="6" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="11.0" y="354.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="AppKey" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="f776b017-4ce5-430f-9e81-186149337360"
+            propertyName="AppKey" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="8"
+        name="Get Process Property" position="7" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="13.0" y="425.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="AccessToken" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="cbb4fdc9-8ab8-48fc-9800-f77fa084678f"
+            propertyName="AccessToken" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="9"
+        name="Get Process Property" position="8" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="15.0" y="499.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="DisableCookie" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="04fff28e-46ac-4582-8cfd-8c23ed042b21"
+            propertyName="DisableCookie" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="10"
+        name="Get Process Property" position="9" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="18.0" y="575.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="BoomiExecutionId" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="95728884-e7f9-4e76-8b79-0f4f9bffe3ee"
+            propertyName="BoomiExecutionId" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="3" fromKey="1"
+        fromNamePath="Get Process Property/PathParam"
+        fromType="function" toFunction="1" toKey="4"
+        toNamePath="Scripting/pathParam" toType="function" />
+        <Mapping fromFunction="10" fromKey="1"
+        fromNamePath="Get Process Property/BoomiExecutionId"
+        fromType="function" toFunction="1" toKey="16"
+        toNamePath="Scripting/boomiExecutionId"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="1"
+        fromNamePath="Get Process Property/ServerURL"
+        fromType="function" toFunction="1" toKey="3"
+        toNamePath="Scripting/serverUrl" toType="function" />
+        <Mapping fromFunction="4" fromKey="1"
+        fromNamePath="Get Process Property/GatewayPort"
+        fromType="function" toFunction="1" toKey="6"
+        toNamePath="Scripting/port" toType="function" />
+        <Mapping fromFunction="7" fromKey="1"
+        fromNamePath="Get Process Property/AppKey"
+        fromType="function" toFunction="1" toKey="13"
+        toNamePath="Scripting/AppKey" toType="function" />
+        <Mapping fromFunction="6" fromKey="1"
+        fromNamePath="Get Process Property/CallbackErrorMessage"
+        fromType="function" toFunction="1" toKey="11"
+        toNamePath="Scripting/errorMessage" toType="function" />
+        <Mapping fromFunction="9" fromKey="1"
+        fromNamePath="Get Process Property/DisableCookie"
+        fromType="function" toFunction="1" toKey="15"
+        toNamePath="Scripting/disableCookie" toType="function" />
+        <Mapping fromFunction="5" fromKey="1"
+        fromNamePath="Get Process Property/FalconExecutionId"
+        fromType="function" toFunction="1" toKey="10"
+        toNamePath="Scripting/falconExecutionId"
+        toType="function" />
+        <Mapping fromFunction="8" fromKey="1"
+        fromNamePath="Get Process Property/AccessToken"
+        fromType="function" toFunction="1" toKey="14"
+        toNamePath="Scripting/access_token" toType="function" />
+        <Mapping fromFunction="1" fromKey="12"
+        fromNamePath="Scripting/out" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/out"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

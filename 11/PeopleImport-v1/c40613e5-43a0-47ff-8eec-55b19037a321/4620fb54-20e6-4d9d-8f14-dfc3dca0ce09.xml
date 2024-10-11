@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>4620fb54-20e6-4d9d-8f14-dfc3dca0ce09</Id>
+  <Type>transform.function</Type>
+  <Name>FormatEmploymentStatus</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="1" name="status" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Document Property" position="1"
+        sumEnabled="false" type="DocumentPropertyGet" x="199.0"
+        y="247.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - ExistingEmploymentStatus" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.ExistingEmploymentStatus"
+            propertyName="Dynamic Document Property - ExistingEmploymentStatus" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="2" name="String To Lower"
+        position="2" sumEnabled="false" type="String2Lower"
+        x="522.0" y="246.0">
+          <Inputs>
+            <Input default="" key="1" name="Original String" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="3"
+        fromNamePath="Get Document Property/Dynamic Document Property - ExistingEmpStatus"
+        fromType="function" toFunction="2" toKey="1"
+        toNamePath="String To Lower/Original String"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="2"
+        fromNamePath="String To Lower/Result" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/status"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

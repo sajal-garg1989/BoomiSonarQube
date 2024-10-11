@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>8b527dcd-0969-4f2b-b3a1-4417c3710170</Id>
+  <Type>processproperty</Type>
+  <Name>UserDefinedDelimiter</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="6ca250b9-9c38-464d-ac33-7ae048df2ebc">
+
+        <helpText>Single character field separator of data
+        values</helpText>
+        <label>Delimiter</label>
+        <type>string</type>
+        <defaultValue>,</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8e1a23a3-90e8-4cd3-aa11-479ad7742d5e">
+
+        <helpText>Type of integration</helpText>
+        <label>IntegrationType</label>
+        <type>string</type>
+        <defaultValue>Import</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

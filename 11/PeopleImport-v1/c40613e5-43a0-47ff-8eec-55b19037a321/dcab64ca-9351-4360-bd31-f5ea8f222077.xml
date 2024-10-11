@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>dcab64ca-9351-4360-bd31-f5ea8f222077</Id>
+  <Type>crossref</Type>
+  <Name>PeopleImport-v1_LookupTable1</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <CrossRefTable atomEnabled="false" columns="0"
+    matchType="wildcard" modelVersion="3">
+      <ColumnHeaders>
+        <columnHeader>Field1</columnHeader>
+        <columnHeader>Field2</columnHeader>
+        <columnHeader>Field3</columnHeader>
+        <columnHeader>Field4</columnHeader>
+        <columnHeader>Field5</columnHeader>
+        <columnHeader>Field6</columnHeader>
+        <columnHeader>Field7</columnHeader>
+        <columnHeader>Field8</columnHeader>
+        <columnHeader>Field9</columnHeader>
+        <columnHeader>Field10</columnHeader>
+        <columnHeader>Field11</columnHeader>
+        <columnHeader>Field12</columnHeader>
+        <columnHeader>Field13</columnHeader>
+        <columnHeader>Field14</columnHeader>
+        <columnHeader>Field15</columnHeader>
+        <columnHeader>Field16</columnHeader>
+        <columnHeader>Field17</columnHeader>
+        <columnHeader>Field18</columnHeader>
+        <columnHeader>Field19</columnHeader>
+        <columnHeader>Field20</columnHeader>
+      </ColumnHeaders>
+      <Rows />
+    </CrossRefTable>
+  </Object>
+</Component>
