@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>ccc91c5f-5e22-407e-9b86-8ee771c6dddf</Id>
+  <Type>process</Type>
+  <Name>_ExecuteHyperfind</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="c1dc5886-9bfc-4f8c-94ca-0d42dc7de59a"
+    refId="shape4.operation" name="ExecuteHyperfind" />
+    <Ref compId="75928b84-7b11-4f22-8bc2-94c15687c5e1"
+    refId="shape6" name="HFExecuteRequestMap" />
+    <Ref compId="01fef77d-06b9-4f5e-9c49-265dcd2c4e23"
+    refId="shape7" name="PersonIdsJSON2XML" />
+    <Ref compId="dcda3718-91f1-46e9-b3aa-5c31a3e350a2"
+    refId="shape12" name="PersonIdsXML2JSON" />
+    <Ref compId="866d897d-a578-4ae7-9005-d80520b18c03"
+    refId="shape4.connection"
+    name="PeopleImport-v1_APIGatewayServer" />
+    <Ref compId="98205fc2-f2d0-45f3-9e93-ba759e7f4662"
+    refId="shape8-step1-profile" name="PersonIdList" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape3-parameter-13-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape3-parameter-15-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape3-parameter-16-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape3-parameter-14-processproperty"
+    name="AuthenticationProperties" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="_ExecuteHyperfind" x="0.0" y="144.0">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape17"
+            x="128.0" y="153.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="159.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="159.0" />
+              <linesegment length="55"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="159.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="89.0" y="159.0" />
+              <linesegment length="39"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="89.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape3"
+        shapetype="documentproperties" userlabel="" x="400.0"
+        y="144.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - api_qstring"
+              persist="false"
+              propertyId="dynamicdocument.api_qstring">
+                <sourcevalues>
+                  <parametervalue key="12" valueType="static">
+                    <staticparameter staticproperty="?tenantId=" />
+                  </parametervalue>
+                  <parametervalue key="13"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="d433e82a-500a-4cff-a3d7-bb13514e1378"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - Authorization"
+              persist="false"
+              propertyId="dynamicdocument.Authorization">
+                <sourcevalues>
+                  <parametervalue key="14"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="b756d569-0c68-47e2-ad4c-65427ded176e"
+                    propertyLabel="AccessToken" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - AppKey"
+              persist="false" propertyId="dynamicdocument.AppKey">
+                <sourcevalues>
+                  <parametervalue key="15"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="41841706-fab3-4095-842f-83c63035a675"
+                    propertyLabel="AppKey" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - Cookie"
+              persist="false" propertyId="dynamicdocument.Cookie">
+                <sourcevalues>
+                  <parametervalue key="16"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="b756d569-0c68-47e2-ad4c-65427ded176e"
+                    propertyLabel="AccessToken" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape3.dragpoint1" toShape="shape4"
+            x="528.0" y="153.0">
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg1" orient="horizontal"
+              x="434.0" y="159.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg2" orient="vertical"
+              x="434.0" y="159.0" />
+              <linesegment length="55"
+              name="shape3.dragpoint1.lineseg3" orient="horizontal"
+              x="434.0" y="159.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg4" orient="vertical"
+              x="489.0" y="159.0" />
+              <linesegment length="39"
+              name="shape3.dragpoint1.lineseg5" orient="horizontal"
+              x="489.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape4"
+        shapetype="connectoraction" userlabel="executeHFQuery"
+        x="544.0" y="144.0">
+          <configuration>
+            <connectoraction actionType="Send"
+            connectionId="866d897d-a578-4ae7-9005-d80520b18c03"
+            connectorType="http" hideSettings="false"
+            operationId="c1dc5886-9bfc-4f8c-94ca-0d42dc7de59a"
+            parameter-profile="EMBEDDED|HttpParameterChooser|c1dc5886-9bfc-4f8c-94ca-0d42dc7de59a">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape4.dragpoint1" toShape="shape7"
+            x="736.0" y="153.0">
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg1" orient="horizontal"
+              x="578.0" y="159.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg2" orient="vertical"
+              x="578.0" y="159.0" />
+              <linesegment length="87"
+              name="shape4.dragpoint1.lineseg3" orient="horizontal"
+              x="578.0" y="159.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg4" orient="vertical"
+              x="665.0" y="159.0" />
+              <linesegment length="71"
+              name="shape4.dragpoint1.lineseg5" orient="horizontal"
+              x="665.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape6" shapetype="map"
+        userlabel="HFExecuteRequest" x="256.0" y="144.0">
+          <configuration>
+            <map mapId="75928b84-7b11-4f22-8bc2-94c15687c5e1" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape6.dragpoint1" toShape="shape3"
+            x="384.0" y="153.0">
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg1" orient="horizontal"
+              x="290.0" y="159.0" />
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg2" orient="vertical"
+              x="290.0" y="159.0" />
+              <linesegment length="55"
+              name="shape6.dragpoint1.lineseg3" orient="horizontal"
+              x="290.0" y="159.0" />
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg4" orient="vertical"
+              x="345.0" y="159.0" />
+              <linesegment length="39"
+              name="shape6.dragpoint1.lineseg5" orient="horizontal"
+              x="345.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape7" shapetype="map"
+        userlabel="ConvertJSONToXML" x="752.0" y="144.0">
+          <configuration>
+            <map mapId="01fef77d-06b9-4f5e-9c49-265dcd2c4e23" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape7.dragpoint1" toShape="shape8"
+            x="928.0" y="153.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="786.0" y="159.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="786.0" y="159.0" />
+              <linesegment length="79"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="786.0" y="159.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="865.0" y="159.0" />
+              <linesegment length="63"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="865.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape8"
+        shapetype="dataprocess"
+        userlabel="SplitPersonIds(100 Batch)" x="944.0" y="144.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="xml">
+                  <SplitOptions>
+                    <XMLOptions batchCount="100" linkElementKey="3"
+                    linkElementName="person (PersonList/Persons/person)"
+                    profileId="98205fc2-f2d0-45f3-9e93-ba759e7f4662" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape8.dragpoint1" toShape="shape12"
+            x="1152.0" y="153.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="978.0" y="159.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="978.0" y="159.0" />
+              <linesegment length="95"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="978.0" y="159.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="1073.0" y="159.0" />
+              <linesegment length="79"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="1073.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape11"
+        shapetype="returndocuments"
+        userlabel="returnIdListinBatches" x="1424.0" y="144.0">
+          <configuration>
+            <returndocuments label="returnIdListinBatches" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="map_icon" name="shape12" shapetype="map"
+        userlabel="ConvertXMLToJSON" x="1168.0" y="144.0">
+          <configuration>
+            <map mapId="dcda3718-91f1-46e9-b3aa-5c31a3e350a2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape11"
+            x="1408.0" y="153.0">
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg1"
+              orient="horizontal" x="1202.0" y="159.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg2" orient="vertical"
+              x="1202.0" y="159.0" />
+              <linesegment length="111"
+              name="shape12.dragpoint1.lineseg3"
+              orient="horizontal" x="1202.0" y="159.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg4" orient="vertical"
+              x="1313.0" y="159.0" />
+              <linesegment length="95"
+              name="shape12.dragpoint1.lineseg5"
+              orient="horizontal" x="1313.0" y="159.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="catcherrors_icon" name="shape17"
+        shapetype="catcherrors" userlabel="" x="144.0" y="144.0">
+          <configuration>
+            <catcherrors catchAll="true" retryCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="default"
+            name="shape17.dragpoint1" text="Try" toShape="shape6"
+            x="240.0" y="153.0">
+              <linesegment length="0"
+              name="shape17.dragpoint1.lineseg1"
+              orient="horizontal" x="178.0" y="159.0" />
+              <linesegment length="0"
+              name="shape17.dragpoint1.lineseg2" orient="vertical"
+              x="178.0" y="159.0" />
+              <linesegment length="39"
+              name="shape17.dragpoint1.lineseg3"
+              orient="horizontal" x="178.0" y="159.0" />
+              <linesegment length="0"
+              name="shape17.dragpoint1.lineseg4" orient="vertical"
+              x="217.0" y="159.0" />
+              <linesegment label="Try" length="23"
+              name="shape17.dragpoint1.lineseg5"
+              orient="horizontal" x="217.0" y="159.0" />
+            </dragpoint>
+            <dragpoint identifier="error" name="shape17.dragpoint2"
+            text="Catch" toShape="shape18" x="256.0" y="425.0">
+              <linesegment length="0"
+              name="shape17.dragpoint2.lineseg1"
+              orient="horizontal" x="178.0" y="159.0" />
+              <linesegment length="0"
+              name="shape17.dragpoint2.lineseg2" orient="vertical"
+              x="178.0" y="159.0" />
+              <linesegment length="47"
+              name="shape17.dragpoint2.lineseg3"
+              orient="horizontal" x="178.0" y="159.0" />
+              <linesegment length="272"
+              name="shape17.dragpoint2.lineseg4" orient="vertical"
+              x="225.0" y="159.0" />
+              <linesegment label="Catch" length="31"
+              name="shape17.dragpoint2.lineseg5"
+              orient="horizontal" x="225.0" y="431.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape18"
+        shapetype="exception" userlabel="" x="272.0" y="416.0">
+          <configuration>
+            <exception stopProcessReturnSingleDoc="false"
+            stopsingledoc="false"
+            title="Exception while fetching employee details">
+              <exMessage>Error during hyper find execution. Error
+              details : {1}</exMessage>
+              <exParameters>
+                <parametervalue key="0" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.catcherrorsmessage"
+                  propertyName="Base - Try/Catch Message" />
+                </parametervalue>
+              </exParameters>
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="stop_icon" name="shape19" shapetype="stop"
+        userlabel="" x="1424.0" y="80.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

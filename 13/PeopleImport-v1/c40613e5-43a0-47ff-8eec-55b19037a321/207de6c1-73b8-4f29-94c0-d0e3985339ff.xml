@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>207de6c1-73b8-4f29-94c0-d0e3985339ff</Id>
+  <Type>processproperty</Type>
+  <Name>PeopleImport-v1_ProcessProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="be3ef091-a01e-46a9-8ae4-a827c9332c58">
+
+        <helpText>If true, the process will not import person
+        records with active status.</helpText>
+        <label>DisqualifyActive</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e4fd2d21-406a-4116-864b-36de4b8fe5c1">
+
+        <helpText>If true, the process will not import inactive
+        person records.</helpText>
+        <label>DisqualifyInactive</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7371cdbf-6ce0-4ae2-ac8e-5e96c0d7f7d0">
+
+        <helpText>If true, the process will not import terminated
+        person records.</helpText>
+        <label>DisqualifyTerminated</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b5f11bdc-dfeb-45b8-9f22-91c30f99ad4b">
+
+        <helpText />
+        <label>LookupExistingPersonData</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d4647233-31ec-45b0-99c2-7eec5519e8e8">
+
+        <helpText>If true, the process will not import new person
+        records.</helpText>
+        <label>DisqualifyNew</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="9c10f143-86cc-460f-b81f-e7cf1d5ea556">
+
+        <helpText>If true, the process will not import existing
+        person data records.</helpText>
+        <label>DisqualifyExisting</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="61c5c22b-3a06-463d-9f51-28498491b115">
+
+        <helpText />
+        <label>FalconExecutionId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6160f7e9-5fac-42ef-902e-0f7b5795e4b3">
+
+        <helpText>Comma separated list of licenses that should be
+        assigned while importing/updating person
+        records.</helpText>
+        <label>AssignLicenses</label>
+        <type>string</type>
+        <defaultValue>Hourly Timekeeping, Advanced
+        Scheduling</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="9483665d-74af-4a6d-a25b-bc42c5411cb5">
+
+        <helpText />
+        <label>ErrorMessage</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="24cd69d3-86a5-4db0-bfc6-209d364d7c42">
+
+        <helpText />
+        <label>CallBackMessage</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="1d5d2d58-b60c-433e-9195-81f78346aca2">
+
+        <helpText />
+        <label>ProcessStatus</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="aee89c7e-2398-42c2-97f0-2b02330093f7">
+
+        <helpText />
+        <label>RunSummary</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="26e5d174-14d4-4c45-b28b-d850bbf1aab7">
+
+        <helpText>Submits import errors to Transaction
+        Assistant</helpText>
+        <label>EnableTransactionAssistant</label>
+        <type>boolean</type>
+        <defaultValue>true</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0ed77471-b94a-4d10-b3d5-26231d492e5c">
+
+        <helpText>Specify the batch name.</helpText>
+        <label>BatchName</label>
+        <type>string</type>
+        <defaultValue>Universal People Import</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="34cc76f3-2246-42cf-ada6-3e2580b82cdf">
+
+        <helpText>Set this to true, inorder to assign skills while
+        importing people records. Workforce Scheduler license is
+        required to assign skills. Default is set to
+        false.</helpText>
+        <label>AssignSkills</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d4bd8085-d744-41ec-90ec-f844639ded0e">
+
+        <helpText>Set this to true, inorder to assign certification
+        while importing people records. Workforce Scheduler license
+        is required to assign certifications. Default is set to
+        false.</helpText>
+        <label>AssignCertifications</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7938e873-6a62-4e4d-9b90-63771494c315">
+
+        <helpText />
+        <label>TenantId</label>
+        <type>string</type>
+        <defaultValue>healthcare</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="593bbf39-d78c-4860-82eb-da7a974255c0">
+
+        <helpText>Set it true to provide custom generic people
+        import profile in mapping</helpText>
+        <label>_EnableCustomMapping</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a8050738-2fcc-4841-8d14-6173d3ea8e44">
+
+        <helpText>To disable assignment of reporting manager for
+        employee record, set this to true.</helpText>
+        <label>DisableReportsToMapping</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6d8cc7f2-d8fd-4adc-b978-057050b1779f">
+
+        <helpText />
+        <label>RouteFlow</label>
+        <type>string</type>
+        <defaultValue>GPI</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7e39c31c-f231-49a3-bcdd-4561e70a668f">
+
+        <helpText />
+        <label>GetTermicatedEmployees</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="72080e42-a3e2-4734-a833-7df15a92a086">
+
+        <helpText>Field separator for data values</helpText>
+        <label>Delimiter</label>
+        <type>string</type>
+        <defaultValue>,</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="c815a45d-0fbb-41f2-9672-cfcf1111bbf0">
+
+        <helpText>Type of integration</helpText>
+        <label>_IntegrationType</label>
+        <type>string</type>
+        <defaultValue>Import</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3062e98d-a7d8-4004-a513-0c08475c14a3">
+
+        <helpText>Comma separated list of licenses that needs to
+        un-assigned while importing/updating person
+        records.</helpText>
+        <label>UnassignLicenses</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="05e5927d-8f9a-4f85-8319-55f0cf13da84">
+
+        <helpText>Comma separated list of roles that should be
+        assigned while importing/updating person
+        records.</helpText>
+        <label>Roles</label>
+        <type>string</type>
+        <defaultValue>Employee, Manager</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ace31159-3eb1-4d9a-a29e-e963ef155010">
+
+        <helpText />
+        <label>BoomiExecutionId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="36b281d5-d334-4b46-8b2f-667f7d556e11">
+
+        <helpText>Type should be "Hyperfind".</helpText>
+        <label>HyperfindType</label>
+        <type>string</type>
+        <defaultValue>Hyperfind</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="08be490e-b926-4cf4-b815-51b8f6dd68a7">
+
+        <helpText>Id for the hyperfind query.</helpText>
+        <label>Hyperfind</label>
+        <type>string</type>
+        <defaultValue>1</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="5ad302c5-f237-4aa7-90d4-0141ce82a719">
+
+        <helpText>Select the timeframe for retrieving existing
+        person data based on hyperfind id and payperiod selected.
+        Default payperiod used is "Today".</helpText>
+        <label>PayPeriod</label>
+        <type>string</type>
+        <defaultValue>13</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="57b0fa81-4e29-43a7-a276-0ee2a45e35fa">
+
+        <helpText>Inorder to fetch existing person data based on
+        hyperfind id and payperiod span, specify the value in
+        format "mm/dd/yyyy mm/dd/yyyy".</helpText>
+        <label>_PayPeriodSpan</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="9131c8b5-7f19-4376-86bb-8ceda85f90c0">
+
+        <helpText>Limit to fetch existing persons data.</helpText>
+        <label>_Threshold</label>
+        <type>number</type>
+        <defaultValue>5000</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="eeca33a6-680b-4cc0-92a7-62c6ca61054c">
+
+        <helpText>Enable processing of extended data map1. By
+        default extended maps are not processed.</helpText>
+        <label>_ProcessExtendedDataMap1</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="88b652a6-c80a-4b17-986c-88b887b2ed91">
+
+        <helpText>Enable processing of extended data map2. By
+        default extended maps are not processed.</helpText>
+        <label>_ProcessExtendedDataMap2</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="40324f1c-7712-4955-9cb6-d19aad1ae318">
+
+        <helpText>Enable processing of extended data map3. By
+        default extended maps are not processed.</helpText>
+        <label>_ProcessExtendedDataMap3</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6470ddac-a62a-4875-a038-706e945cbaf7">
+
+        <helpText>Enable processing of extended data map4. By
+        default extended maps are not processed.</helpText>
+        <label>_ProcessExtendedDataMap4</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0df2bf41-f9f4-4c53-9c6f-d7792839dc22">
+
+        <helpText>Generate log files for data map output. This can
+        be helpful for troubleshooting</helpText>
+        <label>EnableLogging</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7a9fa86a-e179-49fb-bbe7-8838a61b9b24">
+
+        <helpText>Set it true to use fixed length profile mapping
+        for data transformation.</helpText>
+        <label>_EnableFixedLengthMapping</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

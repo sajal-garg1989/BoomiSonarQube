@@ -1,0 +1,1070 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f7184e5b-e503-425d-9165-a47a2df9fc36</Id>
+  <Type>process</Type>
+  <Name>_RehireProcess</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="f51c062d-7772-46fd-812f-64a23125b6be"
+    refId="shape10-rule1-function2documentCache"
+    name="ExistingPersonDataCache" />
+    <Ref compId="6a1e70bb-4812-460d-bf20-48cd4e0058a6"
+    refId="shape10-profile"
+    name="RehirePeopleImportFlatFileProfile" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape8-0-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="56654aea-2afe-422f-8d76-312b4f35835d"
+    refId="shape20" name="_DataTransformation" />
+    <Ref compId="96ccbb72-148a-478a-a2ed-7655a9007cf5"
+    refId="shape21" name="_DataTransformForRehire" />
+    <Ref compId="c011997c-da3d-4963-bcd8-d1db015edb84"
+    refId="shape10-rule3-function6" name="GetCurrentDate" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape23-0-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="f51c062d-7772-46fd-812f-64a23125b6be"
+    refId="shape24-rule1-function2documentCache"
+    name="ExistingPersonDataCache" />
+    <Ref compId="8bf87d3e-94db-4d81-b20b-f28feb453037"
+    refId="shape24-profile" name="RehireCustomFlatFileProfile" />
+    <Ref compId="a9494887-502f-4310-8eff-b60bf2b8ae82"
+    refId="shape24-rule3-function3documentCache"
+    name="EmployeeExtensionCache" />
+    <Ref compId="a9494887-502f-4310-8eff-b60bf2b8ae82"
+    refId="shape24-rule3-function4documentCache"
+    name="EmployeeExtensionCache" />
+    <Ref compId="c011997c-da3d-4963-bcd8-d1db015edb84"
+    refId="shape24-rule3-function6" name="GetCurrentDate" />
+    <Ref compId="c011997c-da3d-4963-bcd8-d1db015edb84"
+    refId="shape24-rule4-function4" name="GetCurrentDate" />
+    <Ref compId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    refId="shape26.processpropertyaaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    name="HyperfindProperties" />
+    <Ref compId="88ec3bdb-d374-4245-b6f4-8067b51cf7f4"
+    refId="shape27" name="_GetTerminatedPersonData" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape26-parameter-2-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape26-parameter-3-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape26-parameter-4-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape26-parameter-5-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+    refId="shape26-parameter-1-processproperty"
+    name="PeopleImport-v1_RehireProcessProperties" />
+    <Ref compId="f9779ab6-154a-45ed-a024-9213c3a5cd96"
+    refId="shape32-parameter-4-documentCache"
+    name="TerminatedEmployeeExtensionCache" />
+    <Ref compId="4620fb54-20e6-4d9d-8f14-dfc3dca0ce09"
+    refId="shape10-rule3-function9"
+    name="FormatEmploymentStatus" />
+    <Ref compId="f9779ab6-154a-45ed-a024-9213c3a5cd96"
+    refId="shape10-rule3-function10documentCache"
+    name="TerminatedEmployeeExtensionCache" />
+    <Ref compId="f9779ab6-154a-45ed-a024-9213c3a5cd96"
+    refId="shape33-parameter-4-documentCache"
+    name="TerminatedEmployeeExtensionCache" />
+    <Ref compId="4620fb54-20e6-4d9d-8f14-dfc3dca0ce09"
+    refId="shape24-rule4-function9"
+    name="FormatEmploymentStatus" />
+    <Ref compId="f9779ab6-154a-45ed-a024-9213c3a5cd96"
+    refId="shape24-rule4-function10documentCache"
+    name="TerminatedEmployeeExtensionCache" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="0.0" y="496.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape8"
+            x="144.0" y="505.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="511.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="511.0" />
+              <linesegment length="63"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="511.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="97.0" y="511.0" />
+              <linesegment length="47"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="97.0" y="511.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="businessrules_icon" name="shape10"
+        shapetype="businessrules" userlabel="" x="1119.0"
+        y="368.0">
+          <configuration>
+            <businessrules profileId="6a1e70bb-4812-460d-bf20-48cd4e0058a6"
+            profileName="RehirePeopleImportFlatFileProfile"
+            profileType="profile.flatfile">
+              <rule key="3" name="FilterRehireEmployees">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="SourceEmploymentStatus" id="2"
+                xsi:type="BusinessRuleFunction">
+                  <inputMapping fromElementKey="44"
+                  fromName="EmployeeStatus (Record/Elements/EmployeeStatus)"
+                  fromTaglist="0" toFunctionInputKey="1" />
+                  <FunctionStep cacheEnabled="false"
+                  category="String" key="2" name="String To Lower"
+                  position="-1" type="String2Lower">
+                    <Inputs>
+                      <Input default="" key="1"
+                      name="Original String" />
+                    </Inputs>
+                    <Outputs>
+                      <Output key="2" name="Result" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="GetCurrentDate" id="6"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="userdefined"
+                  id="c011997c-da3d-4963-bcd8-d1db015edb84" key="6"
+                  name="GetCurrentDate" position="-1"
+                  type="userdefined">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1" name="CurrentDate" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="FormatEmploymentStatus" id="9"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="userdefined"
+                  id="4620fb54-20e6-4d9d-8f14-dfc3dca0ce09" key="9"
+                  name="FormatEmploymentStatus" position="-1"
+                  type="userdefined">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1" name="status" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="ExistingEmpStatusEffDate" id="10"
+                xsi:type="BusinessRuleFunction">
+                  <inputMapping fromElementKey="10"
+                  fromName="PersonNumber (Record/Elements/PersonNumber)"
+                  fromTaglist="0" toFunctionInputKey="2" />
+                  <FunctionStep cacheEnabled="false"
+                  category="Lookup" key="10"
+                  name="Document Cache Lookup" position="-1"
+                  type="DocumentCacheLookup">
+                    <Inputs>
+                      <Input default="" key="2"
+                      name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                    </Inputs>
+                    <Outputs>
+                      <Output key="1"
+                      name="effectiveDate (Root/Array/ArrayElement1/Object/employeeExtension/Object/employmentStatuses/Array/ArrayElement1/Object/effectiveDate)" />
+                    </Outputs>
+                    <Configuration>
+                      <DocumentCacheLookup cacheIndex="1"
+                      docCache="f9779ab6-154a-45ed-a024-9213c3a5cd96">
+
+                        <Input index="2" keyId="2"
+                        name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                        <Output index="1" key="190"
+                        name="effectiveDate (Root/Array/ArrayElement1/Object/employeeExtension/Object/employmentStatuses/Array/ArrayElement1/Object/effectiveDate)" />
+                      </DocumentCacheLookup>
+                    </Configuration>
+                  </FunctionStep>
+                </input>
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="and" xsi:type="GroupingCondition">
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="2"
+                    name="SourceEmploymentStatus" outputId="2"
+                    xsi:type="FunctionConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;active&quot;" value="active"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="9"
+                    name="FormatEmploymentStatus" outputId="1"
+                    xsi:type="FunctionConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;terminated&quot;"
+                    value="terminated"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="&lt;"
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="10"
+                    name="ExistingEmpStatusEffDate" outputId="1"
+                    xsi:type="FunctionConditionInput" />
+                    <rightInput deleted="false" id="6"
+                    name="GetCurrentDate" outputId="1"
+                    xsi:type="FunctionConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage />
+              </rule>
+            </businessrules>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="Accepted"
+            name="shape10.dragpoint1" text="Accepted"
+            toShape="shape21" x="1359.0" y="297.0">
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg1"
+              orient="horizontal" x="1154.0" y="383.0" />
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg2" orient="vertical"
+              x="1154.0" y="383.0" />
+              <linesegment length="110"
+              name="shape10.dragpoint1.lineseg3"
+              orient="horizontal" x="1154.0" y="383.0" />
+              <linesegment length="80"
+              name="shape10.dragpoint1.lineseg4" orient="vertical"
+              x="1264.0" y="303.0" />
+              <linesegment label="Accepted" length="95"
+              name="shape10.dragpoint1.lineseg5"
+              orient="horizontal" x="1264.0" y="303.0" />
+            </dragpoint>
+            <dragpoint identifier="Rejected"
+            name="shape10.dragpoint2" text="Rejected"
+            toShape="shape20" x="1359.0" y="505.0">
+              <linesegment length="0"
+              name="shape10.dragpoint2.lineseg1"
+              orient="horizontal" x="1154.0" y="383.0" />
+              <linesegment length="0"
+              name="shape10.dragpoint2.lineseg2" orient="vertical"
+              x="1154.0" y="383.0" />
+              <linesegment length="110"
+              name="shape10.dragpoint2.lineseg3"
+              orient="horizontal" x="1154.0" y="383.0" />
+              <linesegment length="128"
+              name="shape10.dragpoint2.lineseg4" orient="vertical"
+              x="1264.0" y="383.0" />
+              <linesegment label="Rejected" length="95"
+              name="shape10.dragpoint2.lineseg5"
+              orient="horizontal" x="1264.0" y="511.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="decision_icon" name="shape8"
+        shapetype="decision" userlabel="ProcessRehires" x="159.0"
+        y="496.0">
+          <configuration>
+            <decision comparison="equals" name="ProcessRehires">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                componentName="PeopleImport-v1_RehireProcessProperties"
+                propertyKey="bfb69475-9ac4-40dc-850a-85a0ed741569"
+                propertyLabel="_ProcessRehires" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape8.dragpoint1"
+            text="True" toShape="shape25" x="272.0" y="169.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="194.0" y="511.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="194.0" y="511.0" />
+              <linesegment length="47"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="194.0" y="511.0" />
+              <linesegment length="336"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="241.0" y="175.0" />
+              <linesegment label="True" length="31"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="241.0" y="175.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape8.dragpoint2"
+            text="False" toShape="shape18" x="464.0" y="505.0">
+              <linesegment length="0"
+              name="shape8.dragpoint2.lineseg1" orient="horizontal"
+              x="194.0" y="511.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint2.lineseg2" orient="vertical"
+              x="194.0" y="511.0" />
+              <linesegment length="143"
+              name="shape8.dragpoint2.lineseg3" orient="horizontal"
+              x="194.0" y="511.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint2.lineseg4" orient="vertical"
+              x="337.0" y="511.0" />
+              <linesegment label="False" length="127"
+              name="shape8.dragpoint2.lineseg5" orient="horizontal"
+              x="337.0" y="511.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape18"
+        shapetype="dataprocess" userlabel="" x="479.0" y="496.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="ff">
+                  <SplitOptions>
+                    <FFOptions headersOption="retain"
+                    splitOption="split_line" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape18.dragpoint1" toShape="shape19"
+            x="656.0" y="505.0">
+              <linesegment length="0"
+              name="shape18.dragpoint1.lineseg1"
+              orient="horizontal" x="514.0" y="511.0" />
+              <linesegment length="0"
+              name="shape18.dragpoint1.lineseg2" orient="vertical"
+              x="514.0" y="511.0" />
+              <linesegment length="79"
+              name="shape18.dragpoint1.lineseg3"
+              orient="horizontal" x="514.0" y="511.0" />
+              <linesegment length="0"
+              name="shape18.dragpoint1.lineseg4" orient="vertical"
+              x="593.0" y="511.0" />
+              <linesegment length="63"
+              name="shape18.dragpoint1.lineseg5"
+              orient="horizontal" x="593.0" y="511.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape19"
+        shapetype="documentproperties" userlabel="Set Current Data"
+        x="671.0" y="496.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - DisqualifiedRows"
+              persist="false"
+              propertyId="dynamicdocument.DisqualifiedRows">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="current" />
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape19.dragpoint1" toShape="shape20"
+            x="1359.0" y="505.0">
+              <linesegment length="0"
+              name="shape19.dragpoint1.lineseg1"
+              orient="horizontal" x="706.0" y="511.0" />
+              <linesegment length="0"
+              name="shape19.dragpoint1.lineseg2" orient="vertical"
+              x="706.0" y="511.0" />
+              <linesegment length="334"
+              name="shape19.dragpoint1.lineseg3"
+              orient="horizontal" x="706.0" y="511.0" />
+              <linesegment length="0"
+              name="shape19.dragpoint1.lineseg4" orient="vertical"
+              x="1040.0" y="511.0" />
+              <linesegment length="319"
+              name="shape19.dragpoint1.lineseg5"
+              orient="horizontal" x="1040.0" y="511.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape20"
+        shapetype="processcall" userlabel="" x="1375.0" y="496.0">
+          <configuration>
+            <processcall abort="true"
+            processId="56654aea-2afe-422f-8d76-312b4f35835d"
+            wait="true">
+              <parameters />
+              <returnpaths>
+                <returnpaths childShapeName="shape14"
+                returnLabel="TransformedData" />
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape14"
+            name="shape20.dragpoint1" text="TransformedData"
+            toShape="shape22" x="1648.0" y="425.0">
+              <linesegment length="0"
+              name="shape20.dragpoint1.lineseg1"
+              orient="horizontal" x="1409.0" y="511.0" />
+              <linesegment length="0"
+              name="shape20.dragpoint1.lineseg2" orient="vertical"
+              x="1409.0" y="511.0" />
+              <linesegment length="127"
+              name="shape20.dragpoint1.lineseg3"
+              orient="horizontal" x="1409.0" y="511.0" />
+              <linesegment length="80"
+              name="shape20.dragpoint1.lineseg4" orient="vertical"
+              x="1536.0" y="431.0" />
+              <linesegment label="TransformedData" length="112"
+              name="shape20.dragpoint1.lineseg5"
+              orient="horizontal" x="1536.0" y="431.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape21"
+        shapetype="processcall" userlabel="" x="1375.0" y="288.0">
+          <configuration>
+            <processcall abort="true"
+            processId="96ccbb72-148a-478a-a2ed-7655a9007cf5"
+            wait="true">
+              <parameters />
+              <returnpaths>
+                <returnpaths childShapeName="shape13"
+                returnLabel="TransformedData" />
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape13"
+            name="shape21.dragpoint1" text="TransformedData"
+            toShape="shape22" x="1648.0" y="425.0">
+              <linesegment length="0"
+              name="shape21.dragpoint1.lineseg1"
+              orient="horizontal" x="1409.0" y="303.0" />
+              <linesegment length="0"
+              name="shape21.dragpoint1.lineseg2" orient="vertical"
+              x="1409.0" y="303.0" />
+              <linesegment length="127"
+              name="shape21.dragpoint1.lineseg3"
+              orient="horizontal" x="1409.0" y="303.0" />
+              <linesegment length="128"
+              name="shape21.dragpoint1.lineseg4" orient="vertical"
+              x="1536.0" y="303.0" />
+              <linesegment label="TransformedData" length="112"
+              name="shape21.dragpoint1.lineseg5"
+              orient="horizontal" x="1536.0" y="431.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape22"
+        shapetype="returndocuments" userlabel="" x="1663.0"
+        y="416.0">
+          <configuration>
+            <returndocuments label="" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="decision_icon" name="shape23"
+        shapetype="decision" userlabel="IsCustomMap?" x="783.0"
+        y="288.0">
+          <configuration>
+            <decision comparison="equals" name="IsCustomMap?">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                componentName="PeopleImport-v1_RehireProcessProperties"
+                propertyKey="af061240-36ca-46c4-90cd-5d1b617c0b00"
+                propertyLabel="_EnableCustomMappingForRehire" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape23.dragpoint1"
+            text="True" toShape="shape33" x="912.0" y="233.0">
+              <linesegment length="0"
+              name="shape23.dragpoint1.lineseg1"
+              orient="horizontal" x="818.0" y="303.0" />
+              <linesegment length="0"
+              name="shape23.dragpoint1.lineseg2" orient="vertical"
+              x="818.0" y="303.0" />
+              <linesegment length="55"
+              name="shape23.dragpoint1.lineseg3"
+              orient="horizontal" x="818.0" y="303.0" />
+              <linesegment length="64"
+              name="shape23.dragpoint1.lineseg4" orient="vertical"
+              x="873.0" y="239.0" />
+              <linesegment label="True" length="39"
+              name="shape23.dragpoint1.lineseg5"
+              orient="horizontal" x="873.0" y="239.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape23.dragpoint2"
+            text="False" toShape="shape32" x="912.0" y="377.0">
+              <linesegment length="0"
+              name="shape23.dragpoint2.lineseg1"
+              orient="horizontal" x="818.0" y="303.0" />
+              <linesegment length="0"
+              name="shape23.dragpoint2.lineseg2" orient="vertical"
+              x="818.0" y="303.0" />
+              <linesegment length="55"
+              name="shape23.dragpoint2.lineseg3"
+              orient="horizontal" x="818.0" y="303.0" />
+              <linesegment length="80"
+              name="shape23.dragpoint2.lineseg4" orient="vertical"
+              x="873.0" y="303.0" />
+              <linesegment label="False" length="39"
+              name="shape23.dragpoint2.lineseg5"
+              orient="horizontal" x="873.0" y="383.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="businessrules_icon" name="shape24"
+        shapetype="businessrules" userlabel="" x="1119.0"
+        y="224.0">
+          <configuration>
+            <businessrules profileId="8bf87d3e-94db-4d81-b20b-f28feb453037"
+            profileName="RehireCustomFlatFileProfile"
+            profileType="profile.flatfile">
+              <rule key="4" name="FilterRehireEmployees">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="GetCurrentDate" id="4"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="userdefined"
+                  id="c011997c-da3d-4963-bcd8-d1db015edb84" key="4"
+                  name="GetCurrentDate" position="-1"
+                  type="userdefined">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1" name="CurrentDate" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="SourceEmpStatus" id="5"
+                xsi:type="BusinessRuleFunction">
+                  <inputMapping fromElementKey="4"
+                  fromName="EmploymentStatus (Record/Elements/EmploymentStatus)"
+                  fromTaglist="0" toFunctionInputKey="1" />
+                  <FunctionStep cacheEnabled="false"
+                  category="String" key="5" name="String To Lower"
+                  position="-1" type="String2Lower">
+                    <Inputs>
+                      <Input default="" key="1"
+                      name="Original String" />
+                    </Inputs>
+                    <Outputs>
+                      <Output key="2" name="Result" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="FormatExistingEmploymentStatus" id="9"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="userdefined"
+                  id="4620fb54-20e6-4d9d-8f14-dfc3dca0ce09" key="9"
+                  name="FormatEmploymentStatus" position="-1"
+                  type="userdefined">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1" name="status" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="ExistingEmpStatusEffDate" id="10"
+                xsi:type="BusinessRuleFunction">
+                  <inputMapping fromElementKey="3"
+                  fromName="PersonNumber (Record/Elements/PersonNumber)"
+                  fromTaglist="0" toFunctionInputKey="2" />
+                  <FunctionStep cacheEnabled="false"
+                  category="Lookup" key="10"
+                  name="Document Cache Lookup" position="-1"
+                  type="DocumentCacheLookup">
+                    <Inputs>
+                      <Input default="" key="2"
+                      name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                    </Inputs>
+                    <Outputs>
+                      <Output key="1"
+                      name="effectiveDate (Root/Array/ArrayElement1/Object/employeeExtension/Object/employmentStatuses/Array/ArrayElement1/Object/effectiveDate)" />
+                    </Outputs>
+                    <Configuration>
+                      <DocumentCacheLookup cacheIndex="1"
+                      docCache="f9779ab6-154a-45ed-a024-9213c3a5cd96">
+
+                        <Input index="2" keyId="2"
+                        name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                        <Output index="1" key="190"
+                        name="effectiveDate (Root/Array/ArrayElement1/Object/employeeExtension/Object/employmentStatuses/Array/ArrayElement1/Object/effectiveDate)" />
+                      </DocumentCacheLookup>
+                    </Configuration>
+                  </FunctionStep>
+                </input>
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="and" xsi:type="GroupingCondition">
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="5"
+                    name="SourceEmpStatus" outputId="2"
+                    xsi:type="FunctionConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;active&quot;" value="active"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="9"
+                    name="FormatExistingEmploymentStatus"
+                    outputId="1"
+                    xsi:type="FunctionConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;terminated&quot;"
+                    value="terminated"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="&lt;"
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="10"
+                    name="ExistingEmpStatusEffDate" outputId="1"
+                    xsi:type="FunctionConditionInput" />
+                    <rightInput deleted="false" id="4"
+                    name="GetCurrentDate" outputId="1"
+                    xsi:type="FunctionConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage />
+              </rule>
+            </businessrules>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="Accepted"
+            name="shape24.dragpoint1" text="Accepted"
+            toShape="shape21" x="1359.0" y="297.0">
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg1"
+              orient="horizontal" x="1154.0" y="239.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint1.lineseg2" orient="vertical"
+              x="1154.0" y="239.0" />
+              <linesegment length="110"
+              name="shape24.dragpoint1.lineseg3"
+              orient="horizontal" x="1154.0" y="239.0" />
+              <linesegment length="64"
+              name="shape24.dragpoint1.lineseg4" orient="vertical"
+              x="1264.0" y="239.0" />
+              <linesegment label="Accepted" length="95"
+              name="shape24.dragpoint1.lineseg5"
+              orient="horizontal" x="1264.0" y="303.0" />
+            </dragpoint>
+            <dragpoint identifier="Rejected"
+            name="shape24.dragpoint2" text="Rejected"
+            toShape="shape20" x="1359.0" y="505.0">
+              <linesegment length="0"
+              name="shape24.dragpoint2.lineseg1"
+              orient="horizontal" x="1154.0" y="239.0" />
+              <linesegment length="0"
+              name="shape24.dragpoint2.lineseg2" orient="vertical"
+              x="1154.0" y="239.0" />
+              <linesegment length="110"
+              name="shape24.dragpoint2.lineseg3"
+              orient="horizontal" x="1154.0" y="239.0" />
+              <linesegment length="272"
+              name="shape24.dragpoint2.lineseg4" orient="vertical"
+              x="1264.0" y="239.0" />
+              <linesegment label="Rejected" length="95"
+              name="shape24.dragpoint2.lineseg5"
+              orient="horizontal" x="1264.0" y="511.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape25"
+        shapetype="branch" userlabel="" x="287.0" y="160.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape25.dragpoint1"
+            text="1" toShape="shape26" x="480.0" y="73.0">
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg1"
+              orient="horizontal" x="322.0" y="175.0" />
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg2" orient="vertical"
+              x="322.0" y="175.0" />
+              <linesegment length="87"
+              name="shape25.dragpoint1.lineseg3"
+              orient="horizontal" x="322.0" y="175.0" />
+              <linesegment length="96"
+              name="shape25.dragpoint1.lineseg4" orient="vertical"
+              x="409.0" y="79.0" />
+              <linesegment label="1" length="71"
+              name="shape25.dragpoint1.lineseg5"
+              orient="horizontal" x="409.0" y="79.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape25.dragpoint2"
+            text="2" toShape="shape28" x="480.0" y="297.0">
+              <linesegment length="0"
+              name="shape25.dragpoint2.lineseg1"
+              orient="horizontal" x="322.0" y="175.0" />
+              <linesegment length="0"
+              name="shape25.dragpoint2.lineseg2" orient="vertical"
+              x="322.0" y="175.0" />
+              <linesegment length="87"
+              name="shape25.dragpoint2.lineseg3"
+              orient="horizontal" x="322.0" y="175.0" />
+              <linesegment length="128"
+              name="shape25.dragpoint2.lineseg4" orient="vertical"
+              x="409.0" y="175.0" />
+              <linesegment label="2" length="71"
+              name="shape25.dragpoint2.lineseg5"
+              orient="horizontal" x="409.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape26"
+        shapetype="documentproperties" userlabel="" x="495.0"
+        y="64.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - Hyperfind"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@0db441c9-0fbd-4491-9a42-99b1fada2177">
+
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                    componentName="PeopleImport-v1_RehireProcessProperties"
+                    propertyKey="65c44452-79b5-400d-a5f3-bdb1af342c55"
+                    propertyLabel="HyperfindForRehire" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - HyperfindType"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@2c33260f-a0f9-455d-938e-6309373a7094">
+
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                    componentName="PeopleImport-v1_RehireProcessProperties"
+                    propertyKey="2affa3ff-7402-46fb-8b07-99f6e7b66ecd"
+                    propertyLabel="HyperfindTypeForRehire" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - PayPeriod"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@d56423a0-eae5-45f2-a1a9-73c84a172a95">
+
+                <sourcevalues>
+                  <parametervalue key="3"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                    componentName="PeopleImport-v1_RehireProcessProperties"
+                    propertyKey="44877995-215c-4d06-9852-01503ccc2ce4"
+                    propertyLabel="PayPeriodForRehire" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - PayPeriodSpan"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@e7c8a85a-f5f6-44c5-aecb-af58ff4a9050">
+
+                <sourcevalues>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                    componentName="PeopleImport-v1_RehireProcessProperties"
+                    propertyKey="158451b8-c8b1-4b94-8fd5-4baf4a145486"
+                    propertyLabel="_PayPeriodSpanForrehire" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - Threshold"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@46847be9-321f-414a-8af9-77beace75e9d">
+
+                <sourcevalues>
+                  <parametervalue key="5"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="68ed1034-bcba-42dd-914a-d9b88af018cb"
+                    componentName="PeopleImport-v1_RehireProcessProperties"
+                    propertyKey="92138db3-b011-4616-80dd-b32a81967b6a"
+                    propertyLabel="_ThresholdRehire" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape26.dragpoint1" toShape="shape27"
+            x="623.0" y="73.0">
+              <linesegment length="0"
+              name="shape26.dragpoint1.lineseg1"
+              orient="horizontal" x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape26.dragpoint1.lineseg2" orient="vertical"
+              x="530.0" y="79.0" />
+              <linesegment length="54"
+              name="shape26.dragpoint1.lineseg3"
+              orient="horizontal" x="530.0" y="79.0" />
+              <linesegment length="0"
+              name="shape26.dragpoint1.lineseg4" orient="vertical"
+              x="584.0" y="79.0" />
+              <linesegment length="39"
+              name="shape26.dragpoint1.lineseg5"
+              orient="horizontal" x="584.0" y="79.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape27"
+        shapetype="processcall" userlabel="" x="639.0" y="64.0">
+          <configuration>
+            <processcall abort="true"
+            processId="88ec3bdb-d374-4245-b6f4-8067b51cf7f4"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="dataprocess_icon" name="shape28"
+        shapetype="dataprocess" userlabel="" x="495.0" y="288.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="ff">
+                  <SplitOptions>
+                    <FFOptions headersOption="retain"
+                    splitOption="split_line" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape28.dragpoint1" toShape="shape29"
+            x="624.0" y="297.0">
+              <linesegment length="0"
+              name="shape28.dragpoint1.lineseg1"
+              orient="horizontal" x="530.0" y="303.0" />
+              <linesegment length="0"
+              name="shape28.dragpoint1.lineseg2" orient="vertical"
+              x="530.0" y="303.0" />
+              <linesegment length="55"
+              name="shape28.dragpoint1.lineseg3"
+              orient="horizontal" x="530.0" y="303.0" />
+              <linesegment length="0"
+              name="shape28.dragpoint1.lineseg4" orient="vertical"
+              x="585.0" y="303.0" />
+              <linesegment length="39"
+              name="shape28.dragpoint1.lineseg5"
+              orient="horizontal" x="585.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape29"
+        shapetype="documentproperties" userlabel="Set Current Data"
+        x="639.0" y="288.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - DisqualifiedRows"
+              persist="false"
+              propertyId="dynamicdocument.DisqualifiedRows">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="current" />
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape29.dragpoint1" toShape="shape23"
+            x="768.0" y="297.0">
+              <linesegment length="0"
+              name="shape29.dragpoint1.lineseg1"
+              orient="horizontal" x="674.0" y="303.0" />
+              <linesegment length="0"
+              name="shape29.dragpoint1.lineseg2" orient="vertical"
+              x="674.0" y="303.0" />
+              <linesegment length="55"
+              name="shape29.dragpoint1.lineseg3"
+              orient="horizontal" x="674.0" y="303.0" />
+              <linesegment length="0"
+              name="shape29.dragpoint1.lineseg4" orient="vertical"
+              x="729.0" y="303.0" />
+              <linesegment length="39"
+              name="shape29.dragpoint1.lineseg5"
+              orient="horizontal" x="729.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape32"
+        shapetype="documentproperties"
+        userlabel="EmpStatusEffectiveDate" x="927.0" y="368.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - ExistingEmploymentStatus"
+              persist="false"
+              propertyId="dynamicdocument.ExistingEmploymentStatus">
+
+                <sourcevalues>
+                  <parametervalue key="4"
+                  valueType="documentcache">
+                    <documentcacheparameter docCache="f9779ab6-154a-45ed-a024-9213c3a5cd96"
+                    docCacheIndex="1" elementId="191"
+                    elementName="employmentStatus (Root/Array/ArrayElement1/Object/employeeExtension/Object/employmentStatuses/Array/ArrayElement1/Object/employmentStatus)">
+
+                      <cacheKeyValues>
+                        <cacheKeyValue cacheKeyId="2">
+                          <parametervalue key="0"
+                          valueType="profile">
+                            <profileelement elementId="10"
+                            elementName="PersonNumber (Record/Elements/PersonNumber)"
+                            profileId="6a1e70bb-4812-460d-bf20-48cd4e0058a6"
+                            profileType="profile.flatfile" />
+                          </parametervalue>
+                        </cacheKeyValue>
+                      </cacheKeyValues>
+                    </documentcacheparameter>
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape32.dragpoint1" toShape="shape10"
+            x="1104.0" y="377.0">
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg1"
+              orient="horizontal" x="962.0" y="383.0" />
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg2" orient="vertical"
+              x="962.0" y="383.0" />
+              <linesegment length="79"
+              name="shape32.dragpoint1.lineseg3"
+              orient="horizontal" x="962.0" y="383.0" />
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg4" orient="vertical"
+              x="1041.0" y="383.0" />
+              <linesegment length="63"
+              name="shape32.dragpoint1.lineseg5"
+              orient="horizontal" x="1041.0" y="383.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape33"
+        shapetype="documentproperties"
+        userlabel="EmpStatusEffectiveDate" x="927.0" y="224.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - ExistingEmploymentStatus"
+              persist="false"
+              propertyId="dynamicdocument.ExistingEmploymentStatus">
+
+                <sourcevalues>
+                  <parametervalue key="4"
+                  valueType="documentcache">
+                    <documentcacheparameter docCache="f9779ab6-154a-45ed-a024-9213c3a5cd96"
+                    docCacheIndex="1" elementId="191"
+                    elementName="employmentStatus (Root/Array/ArrayElement1/Object/employeeExtension/Object/employmentStatuses/Array/ArrayElement1/Object/employmentStatus)">
+
+                      <cacheKeyValues>
+                        <cacheKeyValue cacheKeyId="2">
+                          <parametervalue key="0"
+                          valueType="profile">
+                            <profileelement elementId="10"
+                            elementName="PersonNumber (Record/Elements/PersonNumber)"
+                            profileId="6a1e70bb-4812-460d-bf20-48cd4e0058a6"
+                            profileType="profile.flatfile" />
+                          </parametervalue>
+                        </cacheKeyValue>
+                      </cacheKeyValues>
+                    </documentcacheparameter>
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape33.dragpoint1" toShape="shape24"
+            x="1104.0" y="233.0">
+              <linesegment length="0"
+              name="shape33.dragpoint1.lineseg1"
+              orient="horizontal" x="962.0" y="239.0" />
+              <linesegment length="0"
+              name="shape33.dragpoint1.lineseg2" orient="vertical"
+              x="962.0" y="239.0" />
+              <linesegment length="79"
+              name="shape33.dragpoint1.lineseg3"
+              orient="horizontal" x="962.0" y="239.0" />
+              <linesegment length="0"
+              name="shape33.dragpoint1.lineseg4" orient="vertical"
+              x="1041.0" y="239.0" />
+              <linesegment length="63"
+              name="shape33.dragpoint1.lineseg5"
+              orient="horizontal" x="1041.0" y="239.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

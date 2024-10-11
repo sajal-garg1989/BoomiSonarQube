@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>c3f32057-98db-4370-aeb4-5f44e4c9b74c</Id>
+  <Type>transform.map</Type>
+  <Name>TASuccessMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="4ea01091-9f0e-4ef6-b35e-d4994eb66aee"
+    refId="fromProfile" name="PersonsAPIJsonProfile" />
+    <Ref compId="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+    refId="toProfile" name="TransactionAssistantResponse" />
+    <Ref compId="d93a0b29-e0de-4755-ba3f-36dd050a2871"
+    refId="function-4" name="CountRecordsPerBatch" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="4ea01091-9f0e-4ef6-b35e-d4994eb66aee"
+    toProfile="9d263f88-50d2-458d-8f9c-51d8cbd16110">
+      <Mappings>
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Root/Array/ArrayElement1" fromType="profile"
+        toFunction="4" toKey="2" toType="function" />
+        <Mapping fromFunction="3" fromKey="3" fromType="function"
+        toKey="8"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        toNamePath="Root/Object/Response/Object/RecordsProcessed"
+        toType="profile" />
+        <Mapping fromFunction="3" fromKey="3" fromType="function"
+        toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='9']"
+        toNamePath="Root/Object/Response/Object/RecordsImported"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="false">
+        <FunctionStep cacheEnabled="false" cacheOption="none"
+        category="userdefined" enabled="true"
+        id="d93a0b29-e0de-4755-ba3f-36dd050a2871" key="4"
+        name="CountRecordsPerBatch" position="4" sumEnabled="false"
+        type="userdefined" x="30.0" y="54.0">
+          <Inputs>
+            <Input key="2" name="array" />
+          </Inputs>
+          <Outputs />
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="3"
+        name="Get Document Property" position="3"
+        sumEnabled="false" type="DocumentPropertyGet" x="30.0"
+        y="180.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - recordsperbatch" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.recordsperbatch"
+            propertyName="Dynamic Document Property - recordsperbatch" />
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="5" value="success" />
+        <Default toKey="6" value="process" />
+        <Default toKey="11" value="false" />
+        <Default toKey="10" value="0" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

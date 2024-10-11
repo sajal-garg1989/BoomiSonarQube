@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>a73f76e7-293e-4385-87b8-2d20d9d0bcbd</Id>
+  <Type>process</Type>
+  <Name>_GetRunSummary</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape3.processproperty207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="ed5bf273-d449-4b96-8820-a36975af23f5"
+    refId="shape2" name="RunSummary" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="true" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="16.0" y="96.0">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape7"
+            x="112.0" y="105.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="50.0" y="111.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="50.0" y="111.0" />
+              <linesegment length="39"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="50.0" y="111.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="89.0" y="111.0" />
+              <linesegment length="23"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="89.0" y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape3"
+        shapetype="documentproperties" userlabel="" x="656.0"
+        y="96.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - PeopleImport-v1_ProcessProperties - RunSummary"
+              persist="false"
+              propertyId="definedprocess.207de6c1-73b8-4f29-94c0-d0e3985339ff@aee89c7e-2398-42c2-97f0-2b02330093f7">
+
+                <sourcevalues>
+                  <parametervalue key="1" valueType="current" />
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape3.dragpoint1" toShape="shape6"
+            x="752.0" y="105.0">
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg1" orient="horizontal"
+              x="690.0" y="111.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg2" orient="vertical"
+              x="690.0" y="111.0" />
+              <linesegment length="39"
+              name="shape3.dragpoint1.lineseg3" orient="horizontal"
+              x="690.0" y="111.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg4" orient="vertical"
+              x="729.0" y="111.0" />
+              <linesegment length="23"
+              name="shape3.dragpoint1.lineseg5" orient="horizontal"
+              x="729.0" y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape2" shapetype="map"
+        userlabel="RunSummary" x="304.0" y="96.0">
+          <configuration>
+            <map mapId="ed5bf273-d449-4b96-8820-a36975af23f5" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape9"
+            x="416.0" y="105.0">
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg1" orient="horizontal"
+              x="338.0" y="111.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg2" orient="vertical"
+              x="338.0" y="111.0" />
+              <linesegment length="47"
+              name="shape2.dragpoint1.lineseg3" orient="horizontal"
+              x="338.0" y="111.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg4" orient="vertical"
+              x="385.0" y="111.0" />
+              <linesegment length="31"
+              name="shape2.dragpoint1.lineseg5" orient="horizontal"
+              x="385.0" y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape6" shapetype="stop"
+        userlabel="" x="768.0" y="96.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="dataprocess_icon" name="shape7"
+        shapetype="dataprocess" userlabel="SetIndexAndTotalError"
+        x="128.0" y="96.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Custom Scripting"
+              processtype="12">
+                <dataprocessscript language="groovy2">
+                  <script>import java.io.InputStream; import
+                  java.util.Properties; import
+                  java.io.ByteArrayInputStream; import
+                  org.json.JSONObject; import
+                  com.boomi.execution.ExecutionUtil;  for(int k =
+                  0; k&lt;dataContext.getDataCount();k++){
+                  Properties props = dataContext.getProperties(k);
+                  String PI_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "4c17f44d-bba1-4d3e-ad39-d0ae036cb37f"); String
+                  EAR_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "3b810f72-a781-4cb0-ad5a-43aa47ef2c12"); String
+                  EJP_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "8fb9380d-af56-4d61-8606-5d799138b719"); String
+                  AttAdmin_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "65fccaec-9472-409a-8298-8d3ea648c585"); String
+                  AttProfile_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "2651ca42-5f36-46dc-aed8-a5201403001a"); String
+                  CascadeProfile_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "9fca40ff-615d-405f-b510-14c48f6e5598"); String
+                  LeaveAdmin_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "6a049ce9-01f1-4a25-8452-b6424ddf51b4"); String
+                  LeaveProfile_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "268ac350-640d-459d-97df-6881d947dfc6"); String
+                  ProcessProfile_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "654d4a0f-176e-4613-bc1a-23a6484fdefd"); String
+                  PayCodeValueProfile_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "bc451807-3dfe-43ce-bd4a-33499bb47d6a"); String
+                  MinorRule_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "a73379a0-9b69-47b9-88b6-35eeb8608bdc"); String
+                  ZoneCategoriesAssignment_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "f8714ac8-21bb-4e2d-a0df-bc0543be7e88"); String
+                  PercentageAllocationAssignment_errorCount =
+                  ExecutionUtil.getProcessProperty("236f7137-555b-4ca1-83e9-dba27196e731",
+                  "72f49f43-511c-4138-87bb-eb39a5e06a84");   int
+                  totalErrorCount = Integer.parseInt(PI_errorCount)
+                  + Integer.parseInt(EAR_errorCount) + 
+                  Integer.parseInt(EJP_errorCount) +
+                  Integer.parseInt(AttAdmin_errorCount) +
+                  Integer.parseInt(AttProfile_errorCount) +
+                  Integer.parseInt(CascadeProfile_errorCount) +
+                  Integer.parseInt(LeaveAdmin_errorCount) +
+                  Integer.parseInt(LeaveProfile_errorCount) +
+                  Integer.parseInt(ProcessProfile_errorCount) +
+                  Integer.parseInt(PayCodeValueProfile_errorCount)
+                  + Integer.parseInt(MinorRule_errorCount) + 
+                  Integer.parseInt(ZoneCategoriesAssignment_errorCount)
+                  +
+                  Integer.parseInt(PercentageAllocationAssignment_errorCount);
+                  
+                  ExecutionUtil.setProcessProperty("3a115d0e-f459-4cab-abe4-3b8fffa50632",
+                  "9348bb05-1848-4b77-99c0-5a2d2cccfef2",
+                  Integer.toString(totalErrorCount));  JSONObject
+                  jsonObj = new JSONObject();
+                  jsonObj.put("TAErrorIndex", "1");
+                  jsonObj.put("APIErrorIndex", "2"); String data =
+                  jsonObj.toString();  InputStream is = new
+                  ByteArrayInputStream(data.getBytes());
+                  dataContext.storeStream(is, props); }</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape7.dragpoint1" toShape="shape2"
+            x="288.0" y="105.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="162.0" y="111.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="162.0" y="111.0" />
+              <linesegment length="71"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="162.0" y="111.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="233.0" y="111.0" />
+              <linesegment length="55"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="233.0" y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape9"
+        shapetype="dataprocess"
+        userlabel="RemoveDuplicatesAndCountError" x="432.0"
+        y="96.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Custom Scripting"
+              processtype="12">
+                <dataprocessscript language="groovy2">
+                  <script>import java.util.Properties; import
+                  java.io.InputStream; import
+                  com.fasterxml.jackson.databind.JsonNode import
+                  com.fasterxml.jackson.databind.ObjectMapper
+                  import
+                  com.fasterxml.jackson.databind.node.ObjectNode
+                  import com.boomi.execution.ExecutionUtil; for(int
+                  i=0; i&lt; dataContext.getDataCount(); i++){ int
+                  count = 0; InputStream is = null BufferedReader
+                  reader = null Properties props =
+                  dataContext.getProperties(i); try{ is =
+                  dataContext.getStream(i); reader = new
+                  BufferedReader(new InputStreamReader(is));
+                  StringBuffer inData = new StringBuffer(); while
+                  ((line = reader.readLine()) != null) {
+                  inData.append(line); } String jsonResponse =
+                  inData.toString(); ObjectMapper mapper = new
+                  ObjectMapper(); JsonNode responseData =
+                  mapper.readTree(jsonResponse); JsonNode
+                  taErrorArray = responseData.path("Errors").path(
+                  "TransactionAssistant"); if (taErrorArray !=null
+                  &amp;&amp; taErrorArray.isArray()) {
+                  Set&lt;String&gt; errorMessageSet = new
+                  HashSet&lt;String&gt;(); Iterator&lt;JsonNode&gt;
+                  nodeIterator = taErrorArray.iterator(); while
+                  (nodeIterator.hasNext()) { JsonNode errorNode =
+                  nodeIterator.next(); String errorMessage =
+                  errorNode.path("ErrorMessage") .asText(); if
+                  (errorMessageSet.contains(errorMessage)) {
+                  nodeIterator.remove(); } else {
+                  errorMessageSet.add(errorMessage); } } //
+                  calculate TA error count taCount =
+                  taErrorArray.size();
+                  ExecutionUtil.setProcessProperty("3a115d0e-f459-4cab-abe4-3b8fffa50632",
+                  "843fba33-da33-4d2d-b756-07d1e01b3a02",
+                  Integer.toString(taCount)); // calculate total
+                  error count JsonNode totalErrorNode =
+                  responseData.path("TotalErrors"); if
+                  (!totalErrorNode.isMissingNode()) { int
+                  totalErrors = totalErrorNode.asInt(); totalErrors
+                  = totalErrors + taCount; ObjectNode responseNode
+                  = (ObjectNode) responseData;
+                  responseNode.put("TotalErrors",
+                  Integer.toString(totalErrors));
+                  ExecutionUtil.setProcessProperty("3a115d0e-f459-4cab-abe4-3b8fffa50632",
+                  "9348bb05-1848-4b77-99c0-5a2d2cccfef2",
+                  Integer.toString(totalErrors)); } } String
+                  uniqueOutput =
+                  mapper.writeValueAsString(responseData); is = new
+                  ByteArrayInputStream(uniqueOutput.getBytes()); }
+                  finally { if (reader != null) { try {
+                  reader.close(); } catch (IOException ex) { } } if
+                  (is != null) { try { is.close(); } catch
+                  (IOException ex) { } } }
+                  dataContext.storeStream(is, props); }</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape9.dragpoint1" toShape="shape3"
+            x="640.0" y="105.0">
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg1" orient="horizontal"
+              x="466.0" y="111.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg2" orient="vertical"
+              x="466.0" y="111.0" />
+              <linesegment length="95"
+              name="shape9.dragpoint1.lineseg3" orient="horizontal"
+              x="466.0" y="111.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg4" orient="vertical"
+              x="561.0" y="111.0" />
+              <linesegment length="79"
+              name="shape9.dragpoint1.lineseg5" orient="horizontal"
+              x="561.0" y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

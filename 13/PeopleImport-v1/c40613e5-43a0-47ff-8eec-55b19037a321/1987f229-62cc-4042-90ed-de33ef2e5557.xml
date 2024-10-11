@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>1987f229-62cc-4042-90ed-de33ef2e5557</Id>
+  <Type>transform.map</Type>
+  <Name>TransactionAssistantJSONMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="65095fe0-fbf5-4b07-8a09-6d45e0040665"
+    refId="fromProfile" name="DummyProfile" />
+    <Ref compId="eadf8548-c127-4200-9e05-6b3a69c0dc43"
+    refId="toProfile" name="TransactionAssistantJSONRequest" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-5-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-6-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-7-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-9-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-4-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-3-processproperty"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="function-10-processproperty"
+    name="TransactionAssistantProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="65095fe0-fbf5-4b07-8a09-6d45e0040665"
+    toProfile="eadf8548-c127-4200-9e05-6b3a69c0dc43">
+      <Mappings>
+        <Mapping fromFunction="3" fromKey="1" fromType="function"
+        toKey="5" toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Root/Object/sourceName" toType="profile" />
+        <Mapping fromFunction="4" fromKey="1" fromType="function"
+        toKey="6" toKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        toNamePath="Root/Object/sourceDetails" toType="profile" />
+        <Mapping fromFunction="5" fromKey="1" fromType="function"
+        toKey="7" toKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        toNamePath="Root/Object/transactionType"
+        toType="profile" />
+        <Mapping fromFunction="6" fromKey="1" fromType="function"
+        toKey="3" toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Root/Object/batchName" toType="profile" />
+        <Mapping fromFunction="7" fromKey="1" fromType="function"
+        toKey="29" toKeyPath="*[@key='1']/*[@key='2']/*[@key='29']"
+        toNamePath="Root/Object/endpointUrl" toType="profile" />
+        <Mapping fromFunction="9" fromKey="1" fromType="function"
+        toKey="23" toKeyPath="*[@key='1']/*[@key='2']/*[@key='23']"
+        toNamePath="Root/Object/transactionId" toType="profile" />
+        <Mapping fromFunction="10" fromKey="1" fromType="function"
+        toKey="38" toKeyPath="*[@key='1']/*[@key='2']/*[@key='38']"
+        toNamePath="Root/Object/enableTransactionAssistant"
+        toType="profile" />
+        <Mapping fromFunction="11" fromKey="3" fromType="function"
+        toKey="30" toKeyPath="*[@key='1']/*[@key='2']/*[@key='30']"
+        toNamePath="Root/Object/requestBodyText"
+        toType="profile" />
+        <Mapping fromFunction="12" fromKey="3" fromType="function"
+        toKey="28" toKeyPath="*[@key='1']/*[@key='2']/*[@key='28']"
+        toNamePath="Root/Object/errorText" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="3"
+        name="Get Process Property" position="3" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="207.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="sourceName" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="91b26812-4709-4fc3-bb84-386e5c062c1d"
+            propertyName="sourceName" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="4"
+        name="Get Process Property" position="4" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="285.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="sourceDetails" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="06e0bc77-0aaa-48ab-b13e-19c3826afce9"
+            propertyName="sourceDetails" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="5"
+        name="Get Process Property" position="5" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="353.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="transactionType" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="ddeb65ba-0a1b-49f5-bc40-fcb130410a19"
+            propertyName="transactionType" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="6"
+        name="Get Process Property" position="6" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="69.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="batchName" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="18cd7bfa-14d7-4cc0-8e45-adc11070a9ce"
+            propertyName="batchName" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="7"
+        name="Get Process Property" position="7" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="751.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="endpointURL" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="e2ed97be-713a-4dbd-8f4a-f701540af615"
+            propertyName="endpointURL" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="9"
+        name="Get Process Property" position="9" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="138.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="falconExecutionId" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="312ef5ac-a57b-4c59-a44b-bebd06cd3326"
+            propertyName="falconExecutionId" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="10"
+        name="Get Process Property" position="10"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="30.0" y="0.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="enableTransactionAssistant" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+            componentName="TransactionAssistantProcessProperties"
+            propertyKey="710dfc37-19d5-45f2-9ded-1336a2fab3b8"
+            propertyName="enableTransactionAssistant" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="11"
+        name="Get Document Property" position="11"
+        sumEnabled="false" type="DocumentPropertyGet" x="30.0"
+        y="567.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - requestBody" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.requestBody"
+            propertyName="Dynamic Document Property - requestBody" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="12"
+        name="Get Document Property" position="12"
+        sumEnabled="false" type="DocumentPropertyGet" x="30.0"
+        y="662.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - responseBody" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.responseBody"
+            propertyName="Dynamic Document Property - responseBody" />
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

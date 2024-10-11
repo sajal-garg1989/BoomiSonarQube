@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>a74eec67-cbc4-4f6d-b3f3-a798a48e8d52</Id>
+  <Type>transform.map</Type>
+  <Name>TAFailureSingleResponseMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="c23e0522-3bfb-45f4-9af1-939ca7b76fbd"
+    refId="fromProfile" name="TAErrorMessage" />
+    <Ref compId="943d51a4-8968-4788-b28c-de2c893fda77"
+    refId="toProfile" name="ErrorProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="c23e0522-3bfb-45f4-9af1-939ca7b76fbd"
+    toProfile="943d51a4-8968-4788-b28c-de2c893fda77">
+      <Mappings>
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Record/Elements/Message" fromType="profile"
+        toKey="5" toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Record/Elements/ErrorMessage"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults>
+        <Default toKey="3" value="1" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

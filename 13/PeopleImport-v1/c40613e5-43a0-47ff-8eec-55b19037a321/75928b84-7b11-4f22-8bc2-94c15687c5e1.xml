@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>75928b84-7b11-4f22-8bc2-94c15687c5e1</Id>
+  <Type>transform.map</Type>
+  <Name>HFExecuteRequestMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="de970f6d-d86c-438c-9854-55ac7f4dd67a"
+    refId="fromProfile" name="customSearchDummy" />
+    <Ref compId="b733ec6b-17f6-4e9b-9ec8-d69167988aff"
+    refId="toProfile" name="HyperfindRequest" />
+    <Ref compId="d924c34d-7ee0-40f5-a1d9-492a431bc9b8"
+    refId="function-7" name="PayperiodDateRange" />
+    <Ref compId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    refId="function-4-processproperty"
+    name="HyperfindProperties" />
+    <Ref compId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    refId="function-5-processproperty"
+    name="HyperfindProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="de970f6d-d86c-438c-9854-55ac7f4dd67a"
+    toProfile="b733ec6b-17f6-4e9b-9ec8-d69167988aff">
+      <Mappings>
+        <Mapping fromFunction="5" fromKey="1" fromType="function"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Root/Object/threshold" toType="profile" />
+        <Mapping fromFunction="4" fromKey="1" fromType="function"
+        toKey="13"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='11']/*[@key='12']/*[@key='13']"
+        toNamePath="Root/Object/hyperfind/Object/id"
+        toType="profile" />
+        <Mapping fromFunction="7" fromKey="2" fromType="function"
+        toKey="20"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='14']/*[@key='15']/*[@key='20']"
+        toNamePath="Root/Object/dateRange/Object/startDate"
+        toType="profile" />
+        <Mapping fromFunction="7" fromKey="3" fromType="function"
+        toKey="21"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='14']/*[@key='15']/*[@key='21']"
+        toNamePath="Root/Object/dateRange/Object/endDate"
+        toType="profile" />
+        <Mapping fromFunction="7" fromKey="5" fromType="function"
+        toKey="19"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='14']/*[@key='15']/*[@key='16']/*[@key='17']/*[@key='19']"
+        toNamePath="Root/Object/dateRange/Object/symbolicPeriod/Object/qualifier"
+        toType="profile" />
+        <Mapping fromFunction="7" fromKey="6" fromType="function"
+        toKey="18"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='14']/*[@key='15']/*[@key='16']/*[@key='17']/*[@key='18']"
+        toNamePath="Root/Object/dateRange/Object/symbolicPeriod/Object/id"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="4"
+        name="Get Process Property" position="4" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="0.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Hyperfind" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+            componentName="HyperfindProperties"
+            propertyKey="0db441c9-0fbd-4491-9a42-99b1fada2177"
+            propertyName="Hyperfind" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="5"
+        name="Get Process Property" position="5" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="73.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Threshold" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+            componentName="HyperfindProperties"
+            propertyKey="46847be9-321f-414a-8af9-77beace75e9d"
+            propertyName="Threshold" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep category="userdefined"
+        id="d924c34d-7ee0-40f5-a1d9-492a431bc9b8" key="7"
+        name="PayperiodDateRange" position="7" type="userdefined"
+        x="30.0" y="146.0">
+          <Inputs />
+          <Outputs>
+            <Output key="5" name="payperiod" />
+            <Output key="6" name="payperiodid" />
+            <Output key="2" name="startDate" />
+            <Output key="3" name="endDate" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="5" value="true" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

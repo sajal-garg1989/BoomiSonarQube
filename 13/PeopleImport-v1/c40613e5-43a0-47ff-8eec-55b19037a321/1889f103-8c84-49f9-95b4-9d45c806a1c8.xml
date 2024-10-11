@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>1889f103-8c84-49f9-95b4-9d45c806a1c8</Id>
+  <Type>transform.map</Type>
+  <Name>PersonsXML2AttendanceProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="d9289dfe-6a42-4658-8596-44fa1e5de2b3"
+    refId="toProfile" name="PersonAttendanceProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="d9289dfe-6a42-4658-8596-44fa1e5de2b3">
+      <Mappings>
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="15"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='15']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+        <Mapping fromKey="1500"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1500']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/BadgeNumber"
+        fromType="profile" toKey="16"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='16']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/badgeNumber"
+        toType="profile" />
+        <Mapping fromKey="1501"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1501']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonKey"
+        fromType="profile" toKey="17"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='17']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personKey"
+        toType="profile" />
+        <Mapping fromKey="1502"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1502']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/EmployeeKey"
+        fromType="profile" toKey="18"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='18']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/employeeKey"
+        toType="profile" />
+        <Mapping fromKey="1503"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1503']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/UserKey"
+        fromType="profile" toKey="19"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='19']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/userKey"
+        toType="profile" />
+        <Mapping fromKey="1504"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1504']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/AssociateObjectIdentifier"
+        fromType="profile" toKey="20"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='20']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/aoid"
+        toType="profile" />
+        <Mapping fromKey="1505"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1505']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/ClientObjectIdentifier"
+        fromType="profile" toKey="21"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='21']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/coid"
+        toType="profile" />
+        <Mapping fromKey="1506"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1506']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/EffectiveDate"
+        fromType="profile" toKey="22"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='22']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/effectiveDate"
+        toType="profile" />
+        <Mapping fromKey="1507"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1507']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/EffectiveTime"
+        fromType="profile" toKey="23"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='13']/*[@key='14']/*[@key='23']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/effectiveTime"
+        toType="profile" />
+        <Mapping fromKey="1591"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1590']/*[@key='1591']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment1/EffectiveDate"
+        fromType="profile" toKey="29"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='0']/*[@key='27'][@tagListKey='0']/*[@key='29'][@tagListKey='0']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1/Object/effectiveDate"
+        toTagListKey="0" toType="profile" />
+        <Mapping fromKey="1592"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1590']/*[@key='1592']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment1/ProfileName"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='0']/*[@key='27'][@tagListKey='0']/*[@key='28'][@tagListKey='0']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1/Object/profileName"
+        toTagListKey="0" toType="profile" />
+        <Mapping fromKey="1594"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1593']/*[@key='1594']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment2/EffectiveDate"
+        fromType="profile" toKey="29"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='1']/*[@key='27'][@tagListKey='1']/*[@key='29'][@tagListKey='1']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[2]/Object/effectiveDate"
+        toTagListKey="1" toType="profile" />
+        <Mapping fromKey="1595"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1593']/*[@key='1595']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment2/ProfileName"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='1']/*[@key='27'][@tagListKey='1']/*[@key='28'][@tagListKey='1']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[2]/Object/profileName"
+        toTagListKey="1" toType="profile" />
+        <Mapping fromKey="1597"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1596']/*[@key='1597']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment3/EffectiveDate"
+        fromType="profile" toKey="29"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='2']/*[@key='27'][@tagListKey='2']/*[@key='29'][@tagListKey='2']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[3]/Object/effectiveDate"
+        toTagListKey="2" toType="profile" />
+        <Mapping fromKey="1598"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1596']/*[@key='1598']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment3/ProfileName"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='2']/*[@key='27'][@tagListKey='2']/*[@key='28'][@tagListKey='2']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[3]/Object/profileName"
+        toTagListKey="2" toType="profile" />
+        <Mapping fromKey="1600"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1599']/*[@key='1600']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment4/EffectiveDate"
+        fromType="profile" toKey="29"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='3']/*[@key='27'][@tagListKey='3']/*[@key='29'][@tagListKey='3']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[4]/Object/effectiveDate"
+        toTagListKey="3" toType="profile" />
+        <Mapping fromKey="1601"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1599']/*[@key='1601']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment4/ProfileName"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='3']/*[@key='27'][@tagListKey='3']/*[@key='28'][@tagListKey='3']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[4]/Object/profileName"
+        toTagListKey="3" toType="profile" />
+        <Mapping fromKey="1603"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1602']/*[@key='1603']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment5/EffectiveDate"
+        fromType="profile" toKey="29"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='4']/*[@key='27'][@tagListKey='4']/*[@key='29'][@tagListKey='4']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[5]/Object/effectiveDate"
+        toTagListKey="4" toType="profile" />
+        <Mapping fromKey="1604"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1548']/*[@key='1589']/*[@key='1602']/*[@key='1604']"
+        fromNamePath="Kronos_Persons_API/Request/PersonAttendanceProfileAssignment/AttendanceProfileAssignmentList/AttendanceProfileAssignment5/ProfileName"
+        fromType="profile" toKey="28"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='24']/*[@key='25']/*[@key='26'][@tagListKey='4']/*[@key='27'][@tagListKey='4']/*[@key='28'][@tagListKey='4']"
+        toNamePath="Root/Array/ArrayElement1/Object/attendanceProfileAssignments/Array/ArrayElement1[5]/Object/profileName"
+        toTagListKey="4" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

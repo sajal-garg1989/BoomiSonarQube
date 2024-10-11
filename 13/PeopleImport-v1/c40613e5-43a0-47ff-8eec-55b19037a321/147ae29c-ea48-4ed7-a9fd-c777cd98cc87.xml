@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>147ae29c-ea48-4ed7-a9fd-c777cd98cc87</Id>
+  <Type>process</Type>
+  <Name>_HandleTransactionAssistantResponse</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="74c0019e-2465-40b0-b194-be43488d235c"
+    refId="shape10" name="IntegrationErrorCache" />
+    <Ref compId="6c097398-9a48-4cd0-a4de-6cb6d32d8157"
+    refId="shape12" name="TAContainerFailureMap" />
+    <Ref compId="74c0019e-2465-40b0-b194-be43488d235c"
+    refId="shape13" name="IntegrationErrorCache" />
+    <Ref compId="79fd31d5-c074-4e45-80dc-45603dfb5abf"
+    refId="shape14" name="TAErrorresponseMap" />
+    <Ref compId="c4795819-d051-4a83-b058-f7d31727c7cc"
+    refId="shape16" name="TAFailureBulkResponseMap" />
+    <Ref compId="74c0019e-2465-40b0-b194-be43488d235c"
+    refId="shape17" name="IntegrationErrorCache" />
+    <Ref compId="a74eec67-cbc4-4f6d-b3f3-a798a48e8d52"
+    refId="shape18" name="TAFailureSingleResponseMap" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="16.0" y="240.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2"
+            x="272.0" y="248.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="49.0" y="254.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="49.0" y="254.0" />
+              <linesegment length="119"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="49.0" y="254.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="168.0" y="254.0" />
+              <linesegment length="104"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="168.0" y="254.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="route_icon" name="shape2" shapetype="route"
+        userlabel="" x="288.0" y="240.0">
+          <configuration>
+            <route>
+              <routeproperty valueType="track">
+                <trackparameter defaultValue=""
+                propertyId="meta.base.applicationstatuscode"
+                propertyName="Base - Application Status Code" />
+              </routeproperty>
+              <routevalues>
+                <routevalue key="3" name="Equal To 200"
+                qualifier="equals" value="200" />
+              </routevalues>
+            </route>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="3" name="shape2.dragpoint1"
+            text="1 - Equal To 200" toShape="shape3" x="352.0"
+            y="152.0">
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg1" orient="horizontal"
+              x="321.0" y="254.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg2" orient="vertical"
+              x="321.0" y="254.0" />
+              <linesegment length="23"
+              name="shape2.dragpoint1.lineseg3" orient="horizontal"
+              x="321.0" y="254.0" />
+              <linesegment length="96"
+              name="shape2.dragpoint1.lineseg4" orient="vertical"
+              x="344.0" y="158.0" />
+              <linesegment label="1 - Equal To 200" length="8"
+              name="shape2.dragpoint1.lineseg5" orient="horizontal"
+              x="344.0" y="158.0" />
+            </dragpoint>
+            <dragpoint identifier="default"
+            name="shape2.dragpoint2" text="Default"
+            toShape="shape7" x="448.0" y="312.0">
+              <linesegment length="0"
+              name="shape2.dragpoint2.lineseg1" orient="horizontal"
+              x="321.0" y="254.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint2.lineseg2" orient="vertical"
+              x="321.0" y="254.0" />
+              <linesegment length="71"
+              name="shape2.dragpoint2.lineseg3" orient="horizontal"
+              x="321.0" y="254.0" />
+              <linesegment length="64"
+              name="shape2.dragpoint2.lineseg4" orient="vertical"
+              x="392.0" y="254.0" />
+              <linesegment label="Default" length="56"
+              name="shape2.dragpoint2.lineseg5" orient="horizontal"
+              x="392.0" y="318.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape3" shapetype="stop"
+        userlabel="" x="368.0" y="144.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="route_icon" name="shape7" shapetype="route"
+        userlabel="" x="464.0" y="304.0">
+          <configuration>
+            <route>
+              <routeproperty valueType="track">
+                <trackparameter defaultValue=""
+                propertyId="meta.base.applicationstatuscode"
+                propertyName="Base - Application Status Code" />
+              </routeproperty>
+              <routevalues>
+                <routevalue key="3"
+                name="Matches Regular Expression 400|500"
+                qualifier="regex" value="400|500" />
+              </routevalues>
+            </route>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="3" name="shape7.dragpoint1"
+            text="1 - Matches Regular Expression 400|500"
+            toShape="shape11" x="624.0" y="248.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="497.0" y="318.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="497.0" y="318.0" />
+              <linesegment length="71"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="497.0" y="318.0" />
+              <linesegment length="64"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="568.0" y="254.0" />
+              <linesegment label="1 - Matches Regular Expression 400|500"
+              length="56" name="shape7.dragpoint1.lineseg5"
+              orient="horizontal" x="568.0" y="254.0" />
+            </dragpoint>
+            <dragpoint identifier="default"
+            name="shape7.dragpoint2" text="Default"
+            toShape="shape8" x="624.0" y="456.0">
+              <linesegment length="0"
+              name="shape7.dragpoint2.lineseg1" orient="horizontal"
+              x="497.0" y="318.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint2.lineseg2" orient="vertical"
+              x="497.0" y="318.0" />
+              <linesegment length="71"
+              name="shape7.dragpoint2.lineseg3" orient="horizontal"
+              x="497.0" y="318.0" />
+              <linesegment length="144"
+              name="shape7.dragpoint2.lineseg4" orient="vertical"
+              x="568.0" y="318.0" />
+              <linesegment label="Default" length="56"
+              name="shape7.dragpoint2.lineseg5" orient="horizontal"
+              x="568.0" y="462.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="message_icon" name="shape8"
+        shapetype="message" userlabel="" x="640.0" y="448.0">
+          <configuration>
+            <message combined="false">
+              <msgTxt>{1},{2}</msgTxt>
+              <msgParameters>
+                <parametervalue key="0" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.applicationstatuscode"
+                  propertyName="Base - Application Status Code" />
+                </parametervalue>
+                <parametervalue key="1" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.applicationstatusmessage"
+                  propertyName="Base - Application Status Message" />
+                </parametervalue>
+              </msgParameters>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape8.dragpoint1" toShape="shape9"
+            x="720.0" y="456.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="673.0" y="462.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="673.0" y="462.0" />
+              <linesegment length="31"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="673.0" y="462.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="704.0" y="462.0" />
+              <linesegment length="16"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="704.0" y="462.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape9"
+        shapetype="dataprocess" userlabel="" x="736.0" y="448.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Custom Scripting"
+              processtype="12">
+                <dataprocessscript language="groovy2">
+                  <script>import java.io.InputStream; import
+                  java.util.Properties; import
+                  java.io.BufferedReader; import
+                  java.io.InputStreamReader; import
+                  java.io.ByteArrayInputStream; import
+                  org.json.JSONArray; import org.json.JSONObject;
+                    for( int k = 0; k &lt;
+                  dataContext.getDataCount(); k++ ) { InputStream
+                  is = dataContext.getStream(k); Properties props
+                  = dataContext.getProperties(k); BufferedReader
+                  reader = new BufferedReader(new
+                  InputStreamReader(is)); StringBuffer outData =
+                  new StringBuffer(); while ((line =
+                  reader.readLine()) != null) {
+                  outData.append(line); } String statusData =
+                  outData.toString(); String data = "";
+                  if(statusData){ String[] tokens =
+                  statusData.split(","); JSONObject jsonObj = new
+                  JSONObject(); jsonObj.put("ErrorIndex", "1");
+                  jsonObj.put("ErrorCode", tokens[0]);
+                  jsonObj.put("ErrorMessage", tokens[1]); data =
+                  jsonObj.toString(); }  is = new
+                  ByteArrayInputStream(data.toString().getBytes());
+                  dataContext.storeStream(is, props); }</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape9.dragpoint1" toShape="shape10"
+            x="832.0" y="456.0">
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg1" orient="horizontal"
+              x="769.0" y="462.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg2" orient="vertical"
+              x="769.0" y="462.0" />
+              <linesegment length="39"
+              name="shape9.dragpoint1.lineseg3" orient="horizontal"
+              x="769.0" y="462.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg4" orient="vertical"
+              x="808.0" y="462.0" />
+              <linesegment length="24"
+              name="shape9.dragpoint1.lineseg5" orient="horizontal"
+              x="808.0" y="462.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="doccacheload_icon" name="shape10"
+        shapetype="doccacheload" userlabel="" x="848.0" y="448.0">
+          <configuration>
+            <doccacheload docCache="74c0019e-2465-40b0-b194-be43488d235c" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="catcherrors_icon" name="shape11"
+        shapetype="catcherrors" userlabel="" x="640.0" y="240.0">
+          <configuration>
+            <catcherrors catchAll="false" retryCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="default"
+            name="shape11.dragpoint1" text="Try" toShape="shape14"
+            x="736.0" y="200.0">
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg1"
+              orient="horizontal" x="673.0" y="254.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg2" orient="vertical"
+              x="673.0" y="254.0" />
+              <linesegment length="39"
+              name="shape11.dragpoint1.lineseg3"
+              orient="horizontal" x="673.0" y="254.0" />
+              <linesegment length="48"
+              name="shape11.dragpoint1.lineseg4" orient="vertical"
+              x="712.0" y="206.0" />
+              <linesegment label="Try" length="24"
+              name="shape11.dragpoint1.lineseg5"
+              orient="horizontal" x="712.0" y="206.0" />
+            </dragpoint>
+            <dragpoint identifier="error" name="shape11.dragpoint2"
+            text="Catch" toShape="shape12" x="736.0" y="328.0">
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg1"
+              orient="horizontal" x="673.0" y="254.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg2" orient="vertical"
+              x="673.0" y="254.0" />
+              <linesegment length="39"
+              name="shape11.dragpoint2.lineseg3"
+              orient="horizontal" x="673.0" y="254.0" />
+              <linesegment length="80"
+              name="shape11.dragpoint2.lineseg4" orient="vertical"
+              x="712.0" y="254.0" />
+              <linesegment label="Catch" length="24"
+              name="shape11.dragpoint2.lineseg5"
+              orient="horizontal" x="712.0" y="334.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape12" shapetype="map"
+        userlabel="" x="752.0" y="320.0">
+          <configuration>
+            <map mapId="6c097398-9a48-4cd0-a4de-6cb6d32d8157" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape13"
+            x="912.0" y="328.0">
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg1"
+              orient="horizontal" x="785.0" y="334.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg2" orient="vertical"
+              x="785.0" y="334.0" />
+              <linesegment length="71"
+              name="shape12.dragpoint1.lineseg3"
+              orient="horizontal" x="785.0" y="334.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg4" orient="vertical"
+              x="856.0" y="334.0" />
+              <linesegment length="56"
+              name="shape12.dragpoint1.lineseg5"
+              orient="horizontal" x="856.0" y="334.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="doccacheload_icon" name="shape13"
+        shapetype="doccacheload" userlabel="" x="928.0" y="320.0">
+          <configuration>
+            <doccacheload docCache="74c0019e-2465-40b0-b194-be43488d235c" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="map_icon" name="shape14" shapetype="map"
+        userlabel="" x="752.0" y="192.0">
+          <configuration>
+            <map mapId="79fd31d5-c074-4e45-80dc-45603dfb5abf" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape14.dragpoint1" toShape="shape15"
+            x="880.0" y="200.0">
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg1"
+              orient="horizontal" x="785.0" y="206.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg2" orient="vertical"
+              x="785.0" y="206.0" />
+              <linesegment length="55"
+              name="shape14.dragpoint1.lineseg3"
+              orient="horizontal" x="785.0" y="206.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg4" orient="vertical"
+              x="840.0" y="206.0" />
+              <linesegment length="40"
+              name="shape14.dragpoint1.lineseg5"
+              orient="horizontal" x="840.0" y="206.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="catcherrors_icon" name="shape15"
+        shapetype="catcherrors" userlabel="" x="896.0" y="192.0">
+          <configuration>
+            <catcherrors catchAll="false" retryCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="default"
+            name="shape15.dragpoint1" text="Try" toShape="shape16"
+            x="1040.0" y="104.0">
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg1"
+              orient="horizontal" x="929.0" y="206.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg2" orient="vertical"
+              x="929.0" y="206.0" />
+              <linesegment length="63"
+              name="shape15.dragpoint1.lineseg3"
+              orient="horizontal" x="929.0" y="206.0" />
+              <linesegment length="96"
+              name="shape15.dragpoint1.lineseg4" orient="vertical"
+              x="992.0" y="110.0" />
+              <linesegment label="Try" length="48"
+              name="shape15.dragpoint1.lineseg5"
+              orient="horizontal" x="992.0" y="110.0" />
+            </dragpoint>
+            <dragpoint identifier="error" name="shape15.dragpoint2"
+            text="Catch" toShape="shape18" x="1040.0" y="248.0">
+              <linesegment length="0"
+              name="shape15.dragpoint2.lineseg1"
+              orient="horizontal" x="929.0" y="206.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint2.lineseg2" orient="vertical"
+              x="929.0" y="206.0" />
+              <linesegment length="63"
+              name="shape15.dragpoint2.lineseg3"
+              orient="horizontal" x="929.0" y="206.0" />
+              <linesegment length="48"
+              name="shape15.dragpoint2.lineseg4" orient="vertical"
+              x="992.0" y="206.0" />
+              <linesegment label="Catch" length="48"
+              name="shape15.dragpoint2.lineseg5"
+              orient="horizontal" x="992.0" y="254.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape16" shapetype="map"
+        userlabel="" x="1056.0" y="96.0">
+          <configuration>
+            <map mapId="c4795819-d051-4a83-b058-f7d31727c7cc" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape16.dragpoint1" toShape="shape17"
+            x="1264.0" y="168.0">
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg1"
+              orient="horizontal" x="1089.0" y="110.0" />
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg2" orient="vertical"
+              x="1089.0" y="110.0" />
+              <linesegment length="95"
+              name="shape16.dragpoint1.lineseg3"
+              orient="horizontal" x="1089.0" y="110.0" />
+              <linesegment length="64"
+              name="shape16.dragpoint1.lineseg4" orient="vertical"
+              x="1184.0" y="110.0" />
+              <linesegment length="80"
+              name="shape16.dragpoint1.lineseg5"
+              orient="horizontal" x="1184.0" y="174.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="doccacheload_icon" name="shape17"
+        shapetype="doccacheload" userlabel="" x="1280.0" y="160.0">
+          <configuration>
+            <doccacheload docCache="74c0019e-2465-40b0-b194-be43488d235c" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="map_icon" name="shape18" shapetype="map"
+        userlabel="" x="1056.0" y="240.0">
+          <configuration>
+            <map mapId="a74eec67-cbc4-4f6d-b3f3-a798a48e8d52" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape18.dragpoint1" toShape="shape17"
+            x="1264.0" y="168.0">
+              <linesegment length="0"
+              name="shape18.dragpoint1.lineseg1"
+              orient="horizontal" x="1089.0" y="254.0" />
+              <linesegment length="0"
+              name="shape18.dragpoint1.lineseg2" orient="vertical"
+              x="1089.0" y="254.0" />
+              <linesegment length="95"
+              name="shape18.dragpoint1.lineseg3"
+              orient="horizontal" x="1089.0" y="254.0" />
+              <linesegment length="80"
+              name="shape18.dragpoint1.lineseg4" orient="vertical"
+              x="1184.0" y="174.0" />
+              <linesegment length="80"
+              name="shape18.dragpoint1.lineseg5"
+              orient="horizontal" x="1184.0" y="174.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>68ed1034-bcba-42dd-914a-d9b88af018cb</Id>
+  <Type>processproperty</Type>
+  <Name>PeopleImport-v1_RehireProcessProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="af061240-36ca-46c4-90cd-5d1b617c0b00">
+
+        <helpText>In order to define custom mapping for rehire
+        processing, set this property to true. It will disable use
+        of default data map for rehire.</helpText>
+        <label>_EnableCustomMappingForRehire</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="bfb69475-9ac4-40dc-850a-85a0ed741569">
+
+        <helpText>Enable processing of rehire employees. Configure
+        data maps for rehire processing.</helpText>
+        <label>_ProcessRehires</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="cb380680-6988-41ea-8047-cb1c634c63a6">
+
+        <helpText>Enable processing of extended data map1 for
+        rehire processing. By default extended maps are not
+        processed.</helpText>
+        <label>_ProcessExtendedMapForRehire1</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="1f587aa9-b2a8-4399-956d-71ea5de8fa96">
+
+        <helpText>Enable processing of extended data map2 for
+        rehire processing. By default extended maps are not
+        processed.</helpText>
+        <label>_ProcessExtendedMapForRehire2</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ef575734-2ad6-4667-8bc0-4a68049d2e66">
+
+        <helpText>Enable processing of extended data map3 for
+        rehire processing. By default extended maps are not
+        processed.</helpText>
+        <label>_ProcessExtendedMapForRehire3</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="4aa00005-ed1a-499a-ad3f-62049211def5">
+
+        <helpText>Enable processing of extended data map4 for
+        rehire processing. By default extended maps are not
+        processed.</helpText>
+        <label>_ProcessExtendedMapForRehire4</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="2affa3ff-7402-46fb-8b07-99f6e7b66ecd">
+
+        <helpText>Type should be "Hyperfind".</helpText>
+        <label>HyperfindTypeForRehire</label>
+        <type>string</type>
+        <defaultValue>Hyperfind</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="65c44452-79b5-400d-a5f3-bdb1af342c55">
+
+        <helpText>Id for the hyperfind query.</helpText>
+        <label>HyperfindForRehire</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="44877995-215c-4d06-9852-01503ccc2ce4">
+
+        <helpText>Select the timeframe for retrieving existing
+        person data based on hyperfind id and payperiod selected.
+        Default payperiod used is "Today".</helpText>
+        <label>PayPeriodForRehire</label>
+        <type>string</type>
+        <defaultValue>13</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="158451b8-c8b1-4b94-8fd5-4baf4a145486">
+
+        <helpText>Inorder to fetch existing person data based on
+        hyperfind id and payperiod span, specify the value in
+        format "mm/dd/yyyy mm/dd/yyyy".</helpText>
+        <label>_PayPeriodSpanForRehire</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="92138db3-b011-4616-80dd-b32a81967b6a">
+
+        <helpText>Limit to fetch existing persons data.</helpText>
+        <label>_ThresholdRehire</label>
+        <type>string</type>
+        <defaultValue>5000</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0aa54cf7-0ac0-49f3-87b9-d6b727066a65">
+
+        <helpText>Default employment status effective date for
+        processing rehire in YYYY-MM-DD format.</helpText>
+        <label>EmploymentStatusEffDateForRehire</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="44c46bfa-9132-49b7-a11f-fd39490215f9">
+
+        <helpText>Set it true to provide fixed length profile
+        mapping for data transformation.</helpText>
+        <label>_EnableFixedLengthProfileMapping</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

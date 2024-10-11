@@ -1,0 +1,627 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>63548d6f-7b5c-4f44-82af-f6ddbee1d64a</Id>
+  <Type>process</Type>
+  <Name>_GetOAuthAccessToken</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape2-parameter-4-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape2-parameter-6-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape2-parameter-8-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="2280e666-9ed2-4683-a23b-5f3df1cc3620"
+    refId="shape3.connection"
+    name="PeopleImport-v1_AuthenticationServer" />
+    <Ref compId="268de72f-c94d-439d-95d1-ba042e47faa0"
+    refId="shape3.operation" name="GetAccessTokenOperation" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape7.processpropertye88fc850-b692-4d7f-b02a-624e479553ac"
+    name="AuthenticationProperties" />
+    <Ref compId="25177428-4740-4a30-90d7-cbda0e205cfa"
+    refId="shape7-parameter-1-profile"
+    name="AccessTokenAPIResponse" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape8-0-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-4-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-6-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-8-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-2-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape11-0-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape12-parameter-2-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape12-parameter-4-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape12.processpropertye88fc850-b692-4d7f-b02a-624e479553ac"
+    name="AuthenticationProperties" />
+    <Ref compId="0a45d2d3-775e-4c5a-acdf-e476959f22fd"
+    refId="shape7-parameter-2-processproperty"
+    name="DefaultProcessProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape2-parameter-2-processproperty"
+    name="AuthenticationProperties" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" updateRunDates="false"
+    workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="0.0" y="160.0">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape5"
+            x="128.0" y="169.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="175.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="175.0" />
+              <linesegment length="55"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="175.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="89.0" y="175.0" />
+              <linesegment length="39"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="89.0" y="175.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape2"
+        shapetype="documentproperties"
+        userlabel="Build Query String" x="576.0" y="16.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - access_token_qstring"
+              persist="false"
+              propertyId="dynamicdocument.access_token_qstring">
+                <sourcevalues>
+                  <parametervalue key="11"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="d433e82a-500a-4cff-a3d7-bb13514e1378"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="/access_token?username=" />
+                  </parametervalue>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="f6711f40-878d-4c49-9fd6-972a7ce2c0c3"
+                    propertyLabel="Username" />
+                  </parametervalue>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="&amp;password=" />
+                  </parametervalue>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="d7489fd7-cab7-49d5-b705-ee880e3c4fcb"
+                    propertyLabel="Password" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="&amp;client_id=" />
+                  </parametervalue>
+                  <parametervalue key="6"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="2ce65dc6-63cb-4d70-8673-e8c0fc689d40"
+                    propertyLabel="Client ID" />
+                  </parametervalue>
+                  <parametervalue key="7" valueType="static">
+                    <staticparameter staticproperty="&amp;client_secret=" />
+                  </parametervalue>
+                  <parametervalue key="8"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="f9857bc5-8053-4d75-96bd-70b7029b0c18"
+                    propertyLabel="Client Secret" />
+                  </parametervalue>
+                  <parametervalue key="9" valueType="static">
+                    <staticparameter staticproperty="&amp;grant_type=password" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape3"
+            x="784.0" y="57.0">
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg1" orient="horizontal"
+              x="610.0" y="31.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg2" orient="vertical"
+              x="610.0" y="31.0" />
+              <linesegment length="95"
+              name="shape2.dragpoint1.lineseg3" orient="horizontal"
+              x="610.0" y="31.0" />
+              <linesegment length="32"
+              name="shape2.dragpoint1.lineseg4" orient="vertical"
+              x="705.0" y="31.0" />
+              <linesegment length="79"
+              name="shape2.dragpoint1.lineseg5" orient="horizontal"
+              x="705.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape3"
+        shapetype="connectoraction" userlabel="Get Access Token"
+        x="800.0" y="48.0">
+          <configuration>
+            <connectoraction actionType="Send"
+            connectionId="2280e666-9ed2-4683-a23b-5f3df1cc3620"
+            connectorType="http" hideSettings="false"
+            operationId="268de72f-c94d-439d-95d1-ba042e47faa0"
+            parameter-profile="EMBEDDED|HttpParameterChooser|268de72f-c94d-439d-95d1-ba042e47faa0">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape3.dragpoint1" toShape="shape7"
+            x="928.0" y="57.0">
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg1" orient="horizontal"
+              x="834.0" y="63.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg2" orient="vertical"
+              x="834.0" y="63.0" />
+              <linesegment length="55"
+              name="shape3.dragpoint1.lineseg3" orient="horizontal"
+              x="834.0" y="63.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg4" orient="vertical"
+              x="889.0" y="63.0" />
+              <linesegment length="39"
+              name="shape3.dragpoint1.lineseg5" orient="horizontal"
+              x="889.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape4" shapetype="stop"
+        userlabel="" x="1296.0" y="320.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="catcherrors_icon" name="shape5"
+        shapetype="catcherrors" userlabel="" x="144.0" y="160.0">
+          <configuration>
+            <catcherrors catchAll="true" retryCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="default"
+            name="shape5.dragpoint1" text="Try" toShape="shape11"
+            x="272.0" y="57.0">
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg1" orient="horizontal"
+              x="178.0" y="175.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg2" orient="vertical"
+              x="178.0" y="175.0" />
+              <linesegment length="55"
+              name="shape5.dragpoint1.lineseg3" orient="horizontal"
+              x="178.0" y="175.0" />
+              <linesegment length="112"
+              name="shape5.dragpoint1.lineseg4" orient="vertical"
+              x="233.0" y="63.0" />
+              <linesegment label="Try" length="39"
+              name="shape5.dragpoint1.lineseg5" orient="horizontal"
+              x="233.0" y="63.0" />
+            </dragpoint>
+            <dragpoint identifier="error" name="shape5.dragpoint2"
+            text="Catch" toShape="shape6" x="272.0" y="345.0">
+              <linesegment length="0"
+              name="shape5.dragpoint2.lineseg1" orient="horizontal"
+              x="178.0" y="175.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint2.lineseg2" orient="vertical"
+              x="178.0" y="175.0" />
+              <linesegment length="55"
+              name="shape5.dragpoint2.lineseg3" orient="horizontal"
+              x="178.0" y="175.0" />
+              <linesegment length="176"
+              name="shape5.dragpoint2.lineseg4" orient="vertical"
+              x="233.0" y="175.0" />
+              <linesegment label="Catch" length="39"
+              name="shape5.dragpoint2.lineseg5" orient="horizontal"
+              x="233.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape6"
+        shapetype="exception" userlabel="Authentication Error"
+        x="288.0" y="336.0">
+          <configuration>
+            <exception stopsingledoc="true" title="">
+              <exMessage>Failed to get access token. Please verify
+              authentication details. Error: {1}</exMessage>
+              <exParameters>
+                <parametervalue key="0" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.catcherrorsmessage"
+                  propertyName="Base - Try/Catch Message" />
+                </parametervalue>
+              </exParameters>
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape7"
+        shapetype="documentproperties" userlabel="set access token"
+        x="944.0" y="48.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AuthenticationParameters - AccessToken"
+              persist="false"
+              propertyId="definedprocess.e88fc850-b692-4d7f-b02a-624e479553ac@b756d569-0c68-47e2-ad4c-65427ded176e">
+
+                <sourcevalues>
+                  <parametervalue key="1" valueType="profile">
+                    <profileelement elementId="3"
+                    elementName="access_token (Root/Object/access_token)"
+                    profileId="25177428-4740-4a30-90d7-cbda0e205cfa"
+                    profileType="profile.json" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AuthenticationProperties - AppKey"
+              persist="false"
+              propertyId="definedprocess.e88fc850-b692-4d7f-b02a-624e479553ac@41841706-fab3-4095-842f-83c63035a675">
+
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="0a45d2d3-775e-4c5a-acdf-e476959f22fd"
+                    componentName="DefaultProcessProperties"
+                    propertyKey="6e12d5b4-e339-48dc-9aa4-d1168a0a4abf"
+                    propertyLabel="DefaultAppKey" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape7.dragpoint1" toShape="shape13"
+            x="1024.0" y="345.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="978.0" y="63.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="978.0" y="63.0" />
+              <linesegment length="31"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="978.0" y="63.0" />
+              <linesegment length="288"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="1009.0" y="63.0" />
+              <linesegment length="15"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="1009.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="decision_icon" name="shape8"
+        shapetype="decision" userlabel="AuthChainEnabled?"
+        x="416.0" y="48.0">
+          <configuration>
+            <decision comparison="equals" name="AuthChainEnabled?">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                componentName="AuthenticationProperties"
+                propertyKey="8fa009f5-f77c-47d3-b6d7-0b4da4e33ae9"
+                propertyLabel="EnableAuthChain" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape8.dragpoint1"
+            text="True" toShape="shape9" x="560.0" y="153.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="450.0" y="63.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="450.0" y="63.0" />
+              <linesegment length="63"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="450.0" y="63.0" />
+              <linesegment length="96"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="513.0" y="63.0" />
+              <linesegment label="True" length="47"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="513.0" y="159.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape8.dragpoint2"
+            text="False" toShape="shape2" x="560.0" y="25.0">
+              <linesegment length="0"
+              name="shape8.dragpoint2.lineseg1" orient="horizontal"
+              x="450.0" y="63.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint2.lineseg2" orient="vertical"
+              x="450.0" y="63.0" />
+              <linesegment length="63"
+              name="shape8.dragpoint2.lineseg3" orient="horizontal"
+              x="450.0" y="63.0" />
+              <linesegment length="32"
+              name="shape8.dragpoint2.lineseg4" orient="vertical"
+              x="513.0" y="31.0" />
+              <linesegment label="False" length="47"
+              name="shape8.dragpoint2.lineseg5" orient="horizontal"
+              x="513.0" y="31.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape9"
+        shapetype="documentproperties"
+        userlabel="Build Query String" x="576.0" y="144.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - access_token_qstring"
+              persist="false"
+              propertyId="dynamicdocument.access_token_qstring">
+                <sourcevalues>
+                  <parametervalue key="11"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="d433e82a-500a-4cff-a3d7-bb13514e1378"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="/access_token?username=" />
+                  </parametervalue>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="f6711f40-878d-4c49-9fd6-972a7ce2c0c3"
+                    propertyLabel="Username" />
+                  </parametervalue>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="&amp;password=" />
+                  </parametervalue>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="d7489fd7-cab7-49d5-b705-ee880e3c4fcb"
+                    propertyLabel="Password" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="&amp;client_id=" />
+                  </parametervalue>
+                  <parametervalue key="6"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="2ce65dc6-63cb-4d70-8673-e8c0fc689d40"
+                    propertyLabel="Client ID" />
+                  </parametervalue>
+                  <parametervalue key="7" valueType="static">
+                    <staticparameter staticproperty="&amp;client_secret=" />
+                  </parametervalue>
+                  <parametervalue key="8"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationParameters"
+                    propertyKey="f9857bc5-8053-4d75-96bd-70b7029b0c18"
+                    propertyLabel="Client Secret" />
+                  </parametervalue>
+                  <parametervalue key="9" valueType="static">
+                    <staticparameter staticproperty="&amp;grant_type=password" />
+                  </parametervalue>
+                  <parametervalue key="12" valueType="static">
+                    <staticparameter staticproperty="&amp;auth_chain=OAuthLdapService" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape9.dragpoint1" toShape="shape3"
+            x="784.0" y="57.0">
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg1" orient="horizontal"
+              x="610.0" y="159.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg2" orient="vertical"
+              x="610.0" y="159.0" />
+              <linesegment length="95"
+              name="shape9.dragpoint1.lineseg3" orient="horizontal"
+              x="610.0" y="159.0" />
+              <linesegment length="96"
+              name="shape9.dragpoint1.lineseg4" orient="vertical"
+              x="705.0" y="63.0" />
+              <linesegment length="79"
+              name="shape9.dragpoint1.lineseg5" orient="horizontal"
+              x="705.0" y="63.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="decision_icon" name="shape11"
+        shapetype="decision" userlabel="" x="288.0" y="48.0">
+          <configuration>
+            <decision comparison="equals" name="">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                componentName="AuthenticationProperties"
+                propertyKey="8563db50-83fb-450e-ad10-df7bdfceae24"
+                propertyLabel="DisableCookie" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape11.dragpoint1"
+            text="True" toShape="shape8" x="400.0" y="57.0">
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg1"
+              orient="horizontal" x="322.0" y="63.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg2" orient="vertical"
+              x="322.0" y="63.0" />
+              <linesegment length="47"
+              name="shape11.dragpoint1.lineseg3"
+              orient="horizontal" x="322.0" y="63.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg4" orient="vertical"
+              x="369.0" y="63.0" />
+              <linesegment label="True" length="31"
+              name="shape11.dragpoint1.lineseg5"
+              orient="horizontal" x="369.0" y="63.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape11.dragpoint2"
+            text="False" toShape="shape12" x="400.0" y="345.0">
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg1"
+              orient="horizontal" x="322.0" y="63.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg2" orient="vertical"
+              x="322.0" y="63.0" />
+              <linesegment length="47"
+              name="shape11.dragpoint2.lineseg3"
+              orient="horizontal" x="322.0" y="63.0" />
+              <linesegment length="288"
+              name="shape11.dragpoint2.lineseg4" orient="vertical"
+              x="369.0" y="63.0" />
+              <linesegment label="False" length="31"
+              name="shape11.dragpoint2.lineseg5"
+              orient="horizontal" x="369.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape12"
+        shapetype="documentproperties" userlabel="" x="416.0"
+        y="336.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AuthenticationProperties - AccessToken"
+              persist="false"
+              propertyId="definedprocess.e88fc850-b692-4d7f-b02a-624e479553ac@b756d569-0c68-47e2-ad4c-65427ded176e">
+
+                <sourcevalues>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="AUTHN_TOKEN=&quot;" />
+                  </parametervalue>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="ca17c482-1ab9-4a88-a773-419850a6f508"
+                    propertyLabel="AUTHN_TOKEN" />
+                  </parametervalue>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="&quot;;authn_ssid=" />
+                  </parametervalue>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="5b9784a7-7419-4422-8cf5-9eefab05b1b2"
+                    propertyLabel="AUTHN_SSID" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape13"
+            x="1024.0" y="345.0">
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg1"
+              orient="horizontal" x="450.0" y="351.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg2" orient="vertical"
+              x="450.0" y="351.0" />
+              <linesegment length="295"
+              name="shape12.dragpoint1.lineseg3"
+              orient="horizontal" x="450.0" y="351.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg4" orient="vertical"
+              x="745.0" y="351.0" />
+              <linesegment length="279"
+              name="shape12.dragpoint1.lineseg5"
+              orient="horizontal" x="745.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape13"
+        shapetype="returndocuments" userlabel="" x="1040.0"
+        y="336.0">
+          <configuration>
+            <returndocuments label="" />
+          </configuration>
+          <dragpoints />
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

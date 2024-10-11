@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>55e88e2e-8b91-4da0-afe3-1369976f8418</Id>
+  <Type>transform.function</Type>
+  <Name>DerivePrimaryJob</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="OrgLevel1" />
+        <Input key="2" name="OrgLevel2" />
+        <Input key="3" name="OrgLevel3" />
+        <Input key="4" name="OrgLevel4" />
+        <Input key="5" name="OrgLevel5" />
+        <Input key="6" name="PrimaryJob" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="PrimaryJob" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="3" name="Scripting" position="1"
+        sumEnabled="false" type="Scripting" x="161.0" y="18.0">
+          <Inputs>
+            <Input default="" key="1" name="OrgLevel1" />
+            <Input default="" key="2" name="OrgLevel2" />
+            <Input default="" key="3" name="OrgLevel3" />
+            <Input default="" key="4" name="OrgLevel4" />
+            <Input default="" key="5" name="OrgLevel5" />
+            <Input default="" key="6" name="primaryJob" />
+          </Inputs>
+          <Outputs>
+            <Output key="17" name="result" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>import java.util.Properties; import
+              java.io.InputStream; result = '';
+              if(OrgLevel1.trim().length() &gt; 0 ) { result =
+              result + '/' + OrgLevel1.trim() }
+              if(OrgLevel2.trim().length() &gt; 0 ) { result =
+              result + '/' + OrgLevel2.trim() }
+              if(OrgLevel3.trim().length() &gt; 0 ) { result =
+              result + '/' + OrgLevel3.trim() }
+              if(OrgLevel4.trim().length() &gt; 0 ) { result =
+              result + '/' + OrgLevel4.trim() }
+              if(OrgLevel5.trim().length() &gt; 0 ) { result =
+              result + '/' + OrgLevel5.trim() }
+              if(primaryJob.trim().length() &gt; 0 ) { if
+              (result.trim().length() &gt; 0){ result = result +
+              '/' + primaryJob.trim() }else{ result =
+              primaryJob.trim() } } if (result.trim().length() &gt;
+              0 &amp;&amp; result.startsWith("/")){ result =
+              result.substring(1); }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="OrgLevel1" />
+              <Input dataType="character" index="2"
+              name="OrgLevel2" />
+              <Input dataType="character" index="3"
+              name="OrgLevel3" />
+              <Input dataType="character" index="4"
+              name="OrgLevel4" />
+              <Input dataType="character" index="5"
+              name="OrgLevel5" />
+              <Input dataType="character" index="6"
+              name="primaryJob" />
+              <Output index="17" name="result" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="0" fromKey="3"
+        fromNamePath="Editor/OrgLevel3" fromType="function"
+        toFunction="3" toKey="3" toNamePath="Scripting/OrgLevel3"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="6"
+        fromNamePath="Editor/PrimaryJob" fromType="function"
+        toFunction="3" toKey="6" toNamePath="Scripting/primaryJob"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/OrgLevel2" fromType="function"
+        toFunction="3" toKey="2" toNamePath="Scripting/OrgLevel2"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/OrgLevel1" fromType="function"
+        toFunction="3" toKey="1" toNamePath="Scripting/OrgLevel1"
+        toType="function" />
+        <Mapping fromFunction="3" fromKey="17"
+        fromNamePath="Scripting/result" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/PrimaryJob"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="5"
+        fromNamePath="Editor/OrgLevel5" fromType="function"
+        toFunction="3" toKey="5" toNamePath="Scripting/OrgLevel5"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="4"
+        fromNamePath="Editor/OrgLevel4" fromType="function"
+        toFunction="3" toKey="4" toNamePath="Scripting/OrgLevel4"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

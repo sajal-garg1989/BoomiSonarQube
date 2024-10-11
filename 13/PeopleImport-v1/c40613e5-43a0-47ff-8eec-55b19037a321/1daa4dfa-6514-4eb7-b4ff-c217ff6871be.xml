@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>1daa4dfa-6514-4eb7-b4ff-c217ff6871be</Id>
+  <Type>profile.xml</Type>
+  <Name>ProcessProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>xmlflavor</Name>
+      <Value>basic</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <XMLProfile modelVersion="2" strict="true">
+      <ProfileProperties>
+        <XMLGeneralInfo />
+        <XMLOptions encoding="utf8" implicitElementOrdering="true"
+        parseRespectMaxOccurs="true" respectMinOccurs="false"
+        respectMinOccursAlways="false" />
+      </ProfileProperties>
+      <DataElements>
+        <XMLElement dataType="character" isMappable="true"
+        isNode="true" key="1" loopingOption="unique" maxOccurs="1"
+        minOccurs="0" name="ProcessProperties" typeExpanded="true"
+        typeKey="2" typeName="ProcessPropertiesType"
+        useNamespace="-1" validateData="false">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <QualifierList />
+          <XMLElement dataType="character" isMappable="true"
+          isNode="true" key="10" loopingOption="occurrence"
+          maxOccurs="-1" minOccurs="1" name="ProcessProperty"
+          typeExpanded="true" typeKey="5"
+          typeName="ProcessPropertyType" useNamespace="-1"
+          validateData="false">
+            <DataFormat>
+              <ProfileCharacterFormat />
+            </DataFormat>
+            <QualifierList />
+            <XMLAttribute dataType="character" isMappable="true"
+            isNode="true" key="12" name="name" required="false"
+            useNamespace="-1" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <QualifierList />
+            </XMLAttribute>
+            <XMLAttribute dataType="character" isMappable="true"
+            isNode="true" key="14" name="value" required="false"
+            useNamespace="-1" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </XMLAttribute>
+          </XMLElement>
+        </XMLElement>
+      </DataElements>
+      <Namespaces>
+        <XMLNamespace key="-1" name="Empty Namespace" prefix="ns1">
+          <Types>
+            <Type anonymous="false" declarationClass="cType"
+            typeKey="2">
+              <XMLElement dataType="character" isMappable="true"
+              isNode="true" key="3" loopingOption="unique"
+              maxOccurs="1" minOccurs="0"
+              name="ProcessPropertiesType" typeExpanded="false"
+              typeKey="2" typeName="ProcessPropertiesType"
+              useNamespace="-1" validateData="false">
+                <DataFormat>
+                  <ProfileCharacterFormat />
+                </DataFormat>
+                <QualifierList />
+                <XMLElement dataType="character" isMappable="true"
+                isNode="true" key="4" loopingOption="occurrence"
+                maxOccurs="-1" minOccurs="1" name="ProcessProperty"
+                typeExpanded="false" typeKey="5"
+                typeName="ProcessPropertyType" useNamespace="-1"
+                validateData="false">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                  <QualifierList />
+                </XMLElement>
+              </XMLElement>
+            </Type>
+            <Type anonymous="false" declarationClass="cType"
+            typeKey="5">
+              <XMLElement dataType="character" isMappable="true"
+              isNode="true" key="6" loopingOption="unique"
+              maxOccurs="-1" minOccurs="1"
+              name="ProcessPropertyType" typeExpanded="false"
+              typeKey="5" typeName="ProcessPropertyType"
+              useNamespace="-1" validateData="false">
+                <DataFormat>
+                  <ProfileCharacterFormat />
+                </DataFormat>
+                <QualifierList />
+                <XMLAttribute dataType="character"
+                isMappable="true" isNode="true" key="7" name="name"
+                required="false" useNamespace="-1">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </XMLAttribute>
+                <XMLAttribute dataType="character"
+                isMappable="true" isNode="true" key="8"
+                name="value" required="false" useNamespace="-1">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </XMLAttribute>
+              </XMLElement>
+            </Type>
+          </Types>
+        </XMLNamespace>
+      </Namespaces>
+      <tagLists />
+    </XMLProfile>
+  </Object>
+</Component>
