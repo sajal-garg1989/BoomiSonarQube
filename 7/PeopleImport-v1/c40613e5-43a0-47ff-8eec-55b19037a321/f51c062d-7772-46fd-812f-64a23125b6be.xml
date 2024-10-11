@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f51c062d-7772-46fd-812f-64a23125b6be</Id>
+  <Type>documentcache</Type>
+  <Name>ExistingPersonDataCache</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="1d9eb635-c982-4108-8f52-529fd3215ae4"
+    refId="docCacheProfile" name="ExistingPersonDataProfile 2" />
+  </References>
+  <Object>
+    <DocumentCache profile="1d9eb635-c982-4108-8f52-529fd3215ae4"
+    profileType="profile.flatfile">
+      <CacheIndex indexId="1" indexName="PersonNumber">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="PersonNumber (Record/Elements/PersonNumber)"
+        elementKey="3" id="2"
+        name="PersonNumber (Record/Elements/PersonNumber)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>

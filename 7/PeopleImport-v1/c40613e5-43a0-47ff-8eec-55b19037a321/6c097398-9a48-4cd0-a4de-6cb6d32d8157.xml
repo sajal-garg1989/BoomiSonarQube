@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>6c097398-9a48-4cd0-a4de-6cb6d32d8157</Id>
+  <Type>transform.map</Type>
+  <Name>TAContainerFailureMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="8163734a-d43f-456b-9fbb-23259690b09d"
+    refId="fromProfile" name="GenericErrorProfile" />
+    <Ref compId="943d51a4-8968-4788-b28c-de2c893fda77"
+    refId="toProfile" name="ErrorProfile" />
+    <Ref compId="9e3e67a3-32fb-4547-9b0a-19e712794e26"
+    refId="function-1-scriptingComponent" name="SetErrorMessage" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="8163734a-d43f-456b-9fbb-23259690b09d"
+    toProfile="943d51a4-8968-4788-b28c-de2c893fda77">
+      <Mappings>
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Root/Object/errorCode" fromType="profile"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Record/Elements/ErrorCode" toType="profile" />
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Root/Object/message" fromType="profile"
+        toFunction="1" toKey="1" toType="function" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Root/Object/errorMessage" fromType="profile"
+        toFunction="1" toKey="2" toType="function" />
+        <Mapping fromFunction="1" fromKey="3" fromType="function"
+        toKey="5" toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Record/Elements/ErrorMessage"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="1"
+        sumEnabled="false" type="Scripting" x="30.0" y="134.0">
+          <Inputs>
+            <Input key="1" name="message" />
+            <Input key="2" name="errorMessage" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="outMessage" />
+          </Outputs>
+          <Configuration>
+            <Scripting componentId="9e3e67a3-32fb-4547-9b0a-19e712794e26"
+            language="groovy2" useComponent="true">
+              <ScriptToExecute>if(message){ outMessage = message; }
+              else{ outMessage = errorMessage; }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="message" />
+              <Input dataType="character" index="2"
+              name="errorMessage" />
+              <Output index="3" name="outMessage" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="3" value="1" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

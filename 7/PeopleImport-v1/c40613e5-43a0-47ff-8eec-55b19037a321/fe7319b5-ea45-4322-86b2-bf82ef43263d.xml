@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>fe7319b5-ea45-4322-86b2-bf82ef43263d</Id>
+  <Type>connector-action</Type>
+  <Name>PeopleImportListener</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>wss</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Listen</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="1daa4dfa-6514-4eb7-b4ff-c217ff6871be"
+    refId="request-profile" name="ProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <WebServicesServerListenAction inputType="singlexml"
+        objectName="PeopleImport-v1" operationType="QUERY"
+        outputType="none"
+        requestProfile="1daa4dfa-6514-4eb7-b4ff-c217ff6871be"
+        responseContentType="application/xml" />
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

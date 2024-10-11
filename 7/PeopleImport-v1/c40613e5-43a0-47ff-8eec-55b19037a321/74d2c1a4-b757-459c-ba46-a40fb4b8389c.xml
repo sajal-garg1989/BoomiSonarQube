@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>74d2c1a4-b757-459c-ba46-a40fb4b8389c</Id>
+  <Type>processproperty</Type>
+  <Name>AutoCallbackProperty</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="d76e92c8-d5b0-4f6a-8aa7-804752165b69">
+
+        <helpText />
+        <label>AuthURL</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="49e2b1b5-824e-43a7-991a-16d617e6ef3f">
+
+        <helpText />
+        <label>TenantId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="dc403b02-2dc7-4b28-853a-da7833bdb502">
+
+        <helpText />
+        <label>Username</label>
+        <type>string</type>
+        <defaultValue>SuperUser</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6539f06e-8001-41a4-b4c2-26cabbbe2bb5">
+
+        <helpText />
+        <label>Password</label>
+        <type>string</type>
+        <defaultValue>kronites</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="598f21d9-2112-4e1f-a7fa-102e8435def0">
+
+        <helpText />
+        <label>ClientId</label>
+        <type>string</type>
+        <defaultValue>kronos</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="139c2482-702b-4d64-911b-7ba64708261c">
+
+        <helpText />
+        <label>ClientSecret</label>
+        <type>string</type>
+        <defaultValue>kronites</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="263309a6-ed9d-4efe-9857-be669a967a93">
+
+        <helpText />
+        <label>GrantType</label>
+        <type>string</type>
+        <defaultValue>password</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="cbb4fdc9-8ab8-48fc-9800-f77fa084678f">
+
+        <helpText />
+        <label>AccessToken</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="de843a69-0a23-41c7-9335-249242f5a889">
+
+        <helpText />
+        <label>ServerURL</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3d1453eb-d285-4329-a707-67e2a6874508">
+
+        <helpText />
+        <label>PathParam</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="251eea0f-7236-4851-9b96-b4fee7294be7">
+
+        <helpText />
+        <label>GatewayURL</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="c90ce421-3ae3-4f0c-a94a-ba13d1001fc0">
+
+        <helpText />
+        <label>GatewayDefaultPort</label>
+        <type>string</type>
+        <defaultValue>9001</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="c3a9af41-95b4-49ab-9175-dc88655c5053">
+
+        <helpText />
+        <label>FalconExecutionId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="26b8f3bd-f03e-439e-b117-70d5032af6a0">
+
+        <helpText />
+        <label>CallbackErrorMessage</label>
+        <type>string</type>
+        <defaultValue>Configuration error ! Please verify and
+        correct the environment extension settings.</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f776b017-4ce5-430f-9e81-186149337360">
+
+        <helpText />
+        <label>AppKey</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="c6371192-2d06-4665-83da-92de6f466b53">
+
+        <helpText>Use authn chain parameter to get access token.
+        Default is false.</helpText>
+        <label>EnableAuthnChain</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3e755c74-4973-4107-a218-4e4a9b84e189">
+
+        <helpText />
+        <label>AUTHN_TOKEN</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8db98355-ba2e-4daf-b325-4455ecd72636">
+
+        <helpText />
+        <label>AUTHN_SSID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="04fff28e-46ac-4582-8cfd-8c23ed042b21">
+
+        <helpText />
+        <label>DisableCookie</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="95728884-e7f9-4e76-8b79-0f4f9bffe3ee">
+
+        <helpText />
+        <label>BoomiExecutionId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

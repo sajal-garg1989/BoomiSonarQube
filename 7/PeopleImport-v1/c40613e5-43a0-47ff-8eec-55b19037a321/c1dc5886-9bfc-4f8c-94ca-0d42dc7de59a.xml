@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>c1dc5886-9bfc-4f8c-94ca-0d42dc7de59a</Id>
+  <Type>connector-action</Type>
+  <Name>ExecuteHyperfind</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Send</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+    <Property>
+      <Name>output-profile</Name>
+      <Value>13dbda02-f170-44c1-90da-96276318d3d8</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="13dbda02-f170-44c1-90da-96276318d3d8"
+    refId="response-profile" name="HyperfindResponse" />
+    <Ref compId="b733ec6b-17f6-4e9b-9ec8-d69167988aff"
+    refId="request-profile" name="HyperfindRequest" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpSendAction dataContentType="application/json"
+        followRedirects="false" methodType="POST"
+        requestProfile="b733ec6b-17f6-4e9b-9ec8-d69167988aff"
+        requestProfileType="JSON"
+        responseProfile="13dbda02-f170-44c1-90da-96276318d3d8"
+        responseProfileType="JSON" returnErrors="false"
+        returnResponses="true">
+          <requestHeaders>
+            <header headerName="Authorization" isVariable="true"
+            key="1000001" />
+            <header headerName="AppKey" isVariable="true"
+            key="1000002" />
+            <header headerName="Cookie" isVariable="true"
+            key="1000003" />
+          </requestHeaders>
+          <pathElements>
+            <element key="2000000"
+            name="v1/commons/hyperfind/execute" />
+            <element isVariable="true" key="2000001"
+            name="api_qstring" />
+          </pathElements>
+          <responseHeaderMapping />
+          <reflectHeaders />
+        </HttpSendAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

@@ -1,0 +1,576 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>36333a2f-9641-4052-bc0e-f506ad985062</Id>
+  <Type>profile.flatfile</Type>
+  <Name>PeopleImportFlatFileProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <FlatFileProfile modelVersion="2" strict="true">
+      <ProfileProperties>
+        <GeneralInfo fileType="delimited"
+        useColumnHeaders="true" />
+        <Options>
+          <DataOptions />
+          <DelimitedOptions fileDelimiter="commadelimited"
+          removeEscape="false"
+          textQualifier="textqualifierdouble" />
+        </Options>
+      </ProfileProperties>
+      <DataElements>
+        <FlatFileRecord detectFormat="numberofcolumns"
+        isNode="true" key="1" name="Record">
+          <FlatFileElements isNode="true" key="2" name="Elements">
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="10" mandatory="false" maxLength="0" minLength="0"
+            name="PersonNumber" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="12" mandatory="false" maxLength="0" minLength="0"
+            name="FirstName" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="13" mandatory="false" maxLength="0" minLength="0"
+            name="LastName" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="14" mandatory="false" maxLength="0" minLength="0"
+            name="MiddleInitial" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="78" mandatory="false" maxLength="0" minLength="0"
+            name="ShortName" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="34" mandatory="false" maxLength="0" minLength="0"
+            name="BadgeNumber" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="36" mandatory="false" maxLength="0" minLength="0"
+            name="BirthDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="80" mandatory="false" maxLength="0" minLength="0"
+            name="PhoneNumber" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="42" mandatory="false" maxLength="0" minLength="0"
+            name="Email" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="19" mandatory="false" maxLength="0" minLength="0"
+            name="HomeAddressStreet" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="21" mandatory="false" maxLength="0" minLength="0"
+            name="HomeAddressCity" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="23" mandatory="false" maxLength="0" minLength="0"
+            name="HomeAddressState" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="54" mandatory="false" maxLength="0" minLength="0"
+            name="HomeAddressPostalCode"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="55" mandatory="false" maxLength="0" minLength="0"
+            name="HomeAddressCountry" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="44" mandatory="false" maxLength="0" minLength="0"
+            name="EmployeeStatus" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="46" mandatory="false" maxLength="0" minLength="0"
+            name="StatusStartDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="24" mandatory="false" maxLength="0" minLength="0"
+            name="StatusEndDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="25" mandatory="false" maxLength="0" minLength="0"
+            name="HireDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="26" mandatory="false" maxLength="0" minLength="0"
+            name="RehireDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="27" mandatory="false" maxLength="0" minLength="0"
+            name="TerminationDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="32" mandatory="false" maxLength="0" minLength="0"
+            name="ExemptStatus" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="82" mandatory="false" maxLength="0" minLength="0"
+            name="WorkerType" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="90" mandatory="false" maxLength="0" minLength="0"
+            name="PrimaryLaborCategory" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="92" mandatory="false" maxLength="0" minLength="0"
+            name="EffectiveDate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="91" mandatory="false" maxLength="0" minLength="0"
+            name="PrimaryJob" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="111" mandatory="false" maxLength="0" minLength="0"
+            name="OrgLevel1" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="112" mandatory="false" maxLength="0" minLength="0"
+            name="OrgLevel2" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="113" mandatory="false" maxLength="0" minLength="0"
+            name="OrgLevel3" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="114" mandatory="false" maxLength="0" minLength="0"
+            name="OrgLevel4" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="115" mandatory="false" maxLength="0" minLength="0"
+            name="OrgLevel5" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="93" mandatory="false" maxLength="0" minLength="0"
+            name="EmployeeStandardHours"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="94" mandatory="false" maxLength="0" minLength="0"
+            name="EmployeeFullTimeHours"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="95" mandatory="false" maxLength="0" minLength="0"
+            name="IsManager" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="96" mandatory="false" maxLength="0" minLength="0"
+            name="ReportsTo" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="98" mandatory="false" maxLength="0" minLength="0"
+            name="PayRule" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="99" mandatory="false" maxLength="0" minLength="0"
+            name="PayType" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="100" mandatory="false" maxLength="0" minLength="0"
+            name="PayFrequency" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="97" mandatory="false" maxLength="0" minLength="0"
+            name="WageRate" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="117" mandatory="false" maxLength="0" minLength="0"
+            name="WageRateEffectiveDate"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="118" mandatory="false" maxLength="0" minLength="0"
+            name="ScheduleGroup" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="116" mandatory="false" maxLength="0" minLength="0"
+            name="DeviceGroupName" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="119" mandatory="false" maxLength="0" minLength="0"
+            name="DeviceNumber" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="120" mandatory="false" maxLength="0" minLength="0"
+            name="Timezone" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            justification="left" key="121" mandatory="false"
+            maxLength="0" minLength="0" name="Currency"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="122" mandatory="false" maxLength="0" minLength="0"
+            name="CurrencyLocale" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="101" mandatory="false" maxLength="0" minLength="0"
+            name="UserID" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="102" mandatory="false" maxLength="0" minLength="0"
+            name="Password" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="103" mandatory="false" maxLength="0" minLength="0"
+            name="UserAccountStatus" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="104" mandatory="false" maxLength="0" minLength="0"
+            name="UserAccountExpirationDate"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="110" mandatory="false" maxLength="0" minLength="0"
+            name="AuthenticationType" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="86" mandatory="false" maxLength="0" minLength="0"
+            name="CustomFieldDataType" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="87" mandatory="false" maxLength="0" minLength="0"
+            name="CustomFieldDataValue" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="88" mandatory="false" maxLength="0" minLength="0"
+            name="CustomDateName" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="89" mandatory="false" maxLength="0" minLength="0"
+            name="CustomDateValue" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="132" mandatory="false" maxLength="0" minLength="0"
+            name="TimeEntryMethod" useToIdentifyFormat="false"
+            validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+            <FlatFileElement dataType="character"
+            enforceUnique="false" identityValue=""
+            isMappable="true" isNode="true" justification="left"
+            key="133" mandatory="false" maxLength="0" minLength="0"
+            name="TimeEntryEffectiveDate"
+            useToIdentifyFormat="false" validateData="false">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </FlatFileElement>
+          </FlatFileElements>
+        </FlatFileRecord>
+      </DataElements>
+    </FlatFileProfile>
+  </Object>
+</Component>

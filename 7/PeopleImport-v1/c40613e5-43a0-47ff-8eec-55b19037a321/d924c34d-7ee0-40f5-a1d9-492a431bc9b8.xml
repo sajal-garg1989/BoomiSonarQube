@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>d924c34d-7ee0-40f5-a1d9-492a431bc9b8</Id>
+  <Type>transform.function</Type>
+  <Name>PayperiodDateRange</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="24d930e3-6efa-4ddd-a8c5-03abffc7040e"
+    refId="function-2-table"
+    name="PeopleImport-v1_PayperiodLookupTable" />
+    <Ref compId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    refId="function-3-processproperty"
+    name="HyperfindProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="5" name="payperiod" />
+        <Output key="6" name="payperiodid" />
+        <Output key="2" name="startDate" />
+        <Output key="3" name="endDate" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="1"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="6.0" y="66.0">
+          <Inputs />
+          <Outputs>
+            <Output isReset="false" key="1" name="PayPeriod" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+            componentName="HyperfindProperties"
+            propertyKey="d56423a0-eae5-45f2-a1a9-73c84a172a95"
+            propertyName="PayPeriod" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Lookup" enabled="true" key="2"
+        name="Cross Reference Lookup" position="3"
+        sumEnabled="false" type="CrossRefLookup" x="318.0"
+        y="76.0">
+          <Inputs>
+            <Input default="" key="1" name="Payperiod" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Symbolicperiod" />
+          </Outputs>
+          <Configuration>
+            <CrossRefLookup crossRefTableId="24d930e3-6efa-4ddd-a8c5-03abffc7040e"
+            skipLookupIfNoInputs="true">
+              <Input index="1" name="Payperiod" refId="1" />
+              <Output index="2" name="Symbolicperiod" refId="2" />
+            </CrossRefLookup>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="3"
+        name="Get Process Property" position="2" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="296.0" y="240.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="PayPeriodSpan" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+            componentName="HyperfindProperties"
+            propertyKey="e7c8a85a-f5f6-44c5-aecb-af58ff4a9050"
+            propertyName="PayPeriodSpan" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="4" name="String Split" position="4"
+        sumEnabled="false" type="StringSplit" x="563.0" y="281.0">
+          <Inputs>
+            <Input default="" key="1" name="Original String" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="startDate" />
+            <Output key="2" name="endDate" />
+          </Outputs>
+          <Configuration>
+            <StringSplit delimiter="" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Date" key="5" name="Date Format" position="5"
+        sumEnabled="false" type="DateFormat" x="814.0" y="213.0">
+          <Inputs>
+            <Input default="" key="1" name="Date String" />
+            <Input default="mm/dd/yyyy" key="2"
+            name="Input Mask" />
+            <Input default="yyyy-mm-dd" key="3"
+            name="Output Mask" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Date" enabled="true" key="6" name="Date Format"
+        position="6" sumEnabled="false" type="DateFormat" x="829.0"
+        y="375.0">
+          <Inputs>
+            <Input default="" isReset="false" key="1"
+            name="Date String" />
+            <Input default="mm/dd/yyyy" isReset="false" key="2"
+            name="Input Mask" />
+            <Input default="yyyy-mm-dd" isReset="false" key="3"
+            name="Output Mask" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="3" fromKey="1"
+        fromNamePath="Get Process Property/PayPeriodSpan"
+        fromType="function" toFunction="4" toKey="1"
+        toNamePath="String Split/Original String"
+        toType="function" />
+        <Mapping fromFunction="6" fromKey="2"
+        fromNamePath="Date Format/Result" fromType="function"
+        toFunction="0" toKey="3" toNamePath="Editor/endDate"
+        toType="function" />
+        <Mapping fromFunction="4" fromKey="2"
+        fromNamePath="String Split/endDate" fromType="function"
+        toFunction="6" toKey="1"
+        toNamePath="Date Format/Date String" toType="function" />
+        <Mapping fromFunction="4" fromKey="1"
+        fromNamePath="String Split/startDate" fromType="function"
+        toFunction="5" toKey="1"
+        toNamePath="Date Format/Date String" toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Get Process Property/PayPeriod"
+        fromType="function" toFunction="2" toKey="1"
+        toNamePath="Cross Reference Lookup/Payperiod"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="2"
+        fromNamePath="Date Format/Result" fromType="function"
+        toFunction="0" toKey="2" toNamePath="Editor/startDate"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="2"
+        fromNamePath="Cross Reference Lookup/Symbolicperiod"
+        fromType="function" toFunction="0" toKey="5"
+        toNamePath="Editor/payperiod" toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Get Process Property/PayPeriod"
+        fromType="function" toFunction="0" toKey="6"
+        toNamePath="Editor/payperiodid" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

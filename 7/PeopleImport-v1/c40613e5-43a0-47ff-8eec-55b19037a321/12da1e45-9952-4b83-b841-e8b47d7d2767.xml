@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>12da1e45-9952-4b83-b841-e8b47d7d2767</Id>
+  <Type>profile.json</Type>
+  <Name>MultiReadPersonsAPIRequest</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONObject isMappable="false" isNode="true" key="2"
+          name="Object">
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="20" name="where">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <JSONObject isMappable="false" isNode="true" key="68"
+              name="Object">
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="69"
+                name="employees">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                  <JSONObject isMappable="false" isNode="true"
+                  key="70" name="Object">
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="71"
+                    name="key">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                      <Qualifiers>
+                        <QualifierList />
+                      </Qualifiers>
+                    </JSONObjectEntry>
+                    <JSONObjectEntry dataType="character"
+                    isMappable="true" isNode="true" key="72"
+                    name="values">
+                      <DataFormat>
+                        <ProfileCharacterFormat />
+                      </DataFormat>
+                      <JSONArray elementType="repeating"
+                      isMappable="false" isNode="true" key="73"
+                      name="Array">
+                        <JSONArrayElement dataType="number"
+                        isMappable="true" isNode="true" key="74"
+                        maxOccurs="-1" minOccurs="0"
+                        name="ArrayElement1">
+                          <DataFormat>
+                            <ProfileNumberFormat numberFormat="" />
+                          </DataFormat>
+                          <Qualifiers>
+                            <QualifierList />
+                          </Qualifiers>
+                        </JSONArrayElement>
+                      </JSONArray>
+                      <Qualifiers>
+                        <QualifierList />
+                      </Qualifiers>
+                    </JSONObjectEntry>
+                  </JSONObject>
+                  <Qualifiers>
+                    <QualifierList />
+                  </Qualifiers>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="character"
+                isMappable="true" isNode="true" key="75"
+                name="extensionType">
+                  <DataFormat>
+                    <ProfileCharacterFormat />
+                  </DataFormat>
+                </JSONObjectEntry>
+                <JSONObjectEntry dataType="boolean"
+                isMappable="true" isNode="true" key="76"
+                name="onlyActivePerson">
+                  <DataFormat />
+                  <Qualifiers>
+                    <QualifierList />
+                  </Qualifiers>
+                </JSONObjectEntry>
+              </JSONObject>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+          </JSONObject>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>

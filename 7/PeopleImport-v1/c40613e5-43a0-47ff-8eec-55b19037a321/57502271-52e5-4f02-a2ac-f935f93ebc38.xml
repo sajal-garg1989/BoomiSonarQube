@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>57502271-52e5-4f02-a2ac-f935f93ebc38</Id>
+  <Type>connector-action</Type>
+  <Name>MultiReadOperation</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Get</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+    <Property>
+      <Name>output-profile</Name>
+      <Value>590dac7e-bac5-414e-8d70-fdf1237308ae</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="590dac7e-bac5-414e-8d70-fdf1237308ae"
+    refId="response-profile" name="MultiReadAPIResponse" />
+    <Ref compId="12da1e45-9952-4b83-b841-e8b47d7d2767"
+    refId="request-profile" name="MultiReadPersonsAPIRequest" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpGetAction dataContentType="application/json"
+        followRedirects="false" methodType="POST"
+        requestProfile="12da1e45-9952-4b83-b841-e8b47d7d2767"
+        requestProfileType="JSON"
+        responseProfile="590dac7e-bac5-414e-8d70-fdf1237308ae"
+        responseProfileType="JSON" returnErrors="true">
+          <requestHeaders>
+            <header headerName="Accept"
+            headerValue="application/json" key="1000002" />
+            <header headerName="Authorization"
+            headerValue="Authorization" isVariable="true"
+            key="1000003" />
+            <header headerName="AppKey" headerValue="AppKey"
+            isVariable="true" key="1000004" />
+            <header headerName="Cookie" isVariable="true"
+            key="1000005" />
+          </requestHeaders>
+          <pathElements>
+            <element key="2000000"
+            name="/v1/commons/persons/extensions/multi_read" />
+            <element isVariable="true" key="2000001"
+            name="api_qstring" />
+          </pathElements>
+          <responseHeaderMapping />
+          <reflectHeaders />
+        </HttpGetAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>
