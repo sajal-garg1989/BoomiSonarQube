@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f5b9a351-5c3a-4020-916e-784de2ae1015</Id>
+  <Type>connector-settings</Type>
+  <Name>FalconDBConnection</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/DB Access">1880631</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>database</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <DatabaseConnectionSettings additional=""
+    className="com.edb.Driver" dbname="" driverId="custom" host=""
+    isPoolEnabled="false" password=""
+    urlFormat="jdbc:edb://keng02-dev01-ins01-wfm09-dbs-01.int.dev.mykronos.com:5444,keng02-dev01-ins01-wfm09-dbs-02.int.dev.mykronos.com:5444,keng02-dev01-ins01-wfm09-dbs-03.int.dev.mykronos.com:5444/niharika_gupta?targetServerType=master"
+    username="tkcsowner">
+      <WriteOptions sqlFilePath="" writeSQLToFile="false" />
+      <AdapterPoolInfo exhaustedAction="1" maxActive="-1"
+      maxIdle="-1" maxIdleTime="0" maxWait="0" minIdle="0"
+      numberOfTests="0" testIdle="false" testOnBorrow="false"
+      testOnReturn="false" timeBetweenRuns="0"
+      validationQuery="" />
+    </DatabaseConnectionSettings>
+  </Object>
+</Component>

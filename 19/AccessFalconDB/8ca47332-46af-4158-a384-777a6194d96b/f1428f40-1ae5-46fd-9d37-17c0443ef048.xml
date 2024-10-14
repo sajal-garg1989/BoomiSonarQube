@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f1428f40-1ae5-46fd-9d37-17c0443ef048</Id>
+  <Type>connector-action</Type>
+  <Name>AccRead</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/DB Access">1880631</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>database</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>
+      EMBEDDED|databaseparameterchooser|83fe79d4-e5c4-40b0-a5b0-5abaac33d87d</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Get</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="83fe79d4-e5c4-40b0-a5b0-5abaac33d87d"
+    refId="db-profile" name="ACC" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <DatabaseGetAction batchCount="0" maxRows="0">
+          <ReadProfile profileId="83fe79d4-e5c4-40b0-a5b0-5abaac33d87d" />
+        </DatabaseGetAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

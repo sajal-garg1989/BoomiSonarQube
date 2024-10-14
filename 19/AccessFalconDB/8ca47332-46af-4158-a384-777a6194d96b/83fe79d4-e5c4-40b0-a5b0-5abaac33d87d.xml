@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>83fe79d4-e5c4-40b0-a5b0-5abaac33d87d</Id>
+  <Type>profile.db</Type>
+  <Name>ACC</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/DB Access">1880631</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>dbsubtype</Name>
+      <Value>dbread</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <DatabaseProfile strict="true" version="2">
+      <ProfileProperties>
+        <DatabaseGeneralInfo executionType="dbread" />
+      </ProfileProperties>
+      <DataElements>
+        <DBStatement isNode="true" key="2" name="Statement"
+        statementType="select" storedProcedure="" tableName="">
+          <DBFields isNode="true" key="3" name="Fields"
+          type="result_set">
+            <DatabaseElement dataType="number"
+            enforceUnique="false" isMappable="true" isNode="true"
+            key="5" mandatory="false" name="integration_accountid">
+              <DataFormat>
+                <ProfileNumberFormat />
+              </DataFormat>
+            </DatabaseElement>
+            <DatabaseElement enforceUnique="false"
+            isMappable="true" isNode="true" key="6"
+            mandatory="false" name="account_name">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </DatabaseElement>
+          </DBFields>
+          <DBParameters isNode="true" key="4" name="Parameters" />
+          <sql>select integration_accountid, account_name from
+          healthcare.ihub_integration_account</sql>
+        </DBStatement>
+      </DataElements>
+    </DatabaseProfile>
+  </Object>
+</Component>

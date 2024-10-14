@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>8ca47332-46af-4158-a384-777a6194d96b</Id>
+  <Type>process</Type>
+  <Name>AccessFalconDB</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/DB Access">1880631</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>true</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>CONNECTOR</Value>
+    </Property>
+    <Property>
+      <Name>startshape-action-type</Name>
+      <Value>Get</Value>
+    </Property>
+    <Property>
+      <Name>startshape-connector-type</Name>
+      <Value>database</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="f5b9a351-5c3a-4020-916e-784de2ae1015"
+    refId="shape6.connection" name="FalconDBConnection" />
+    <Ref compId="d68a4cb4-2553-4e13-92ab-0d2b483c43c6"
+    refId="shape6.operation" name="GetPersonRecords" />
+    <Ref compId="f5b9a351-5c3a-4020-916e-784de2ae1015"
+    refId="shape9.connection" name="FalconDBConnection" />
+    <Ref compId="f1428f40-1ae5-46fd-9d37-17c0443ef048"
+    refId="shape9.operation" name="AccRead" />
+    <Ref compId="10422c4b-591d-49b2-a5da-9e057a887655"
+    refId="shape12-parameter-0-profile"
+    name="GetPersonDataProfile" />
+    <Ref compId="10422c4b-591d-49b2-a5da-9e057a887655"
+    refId="shape12-parameter-1-profile"
+    name="GetPersonDataProfile" />
+    <Ref compId="83fe79d4-e5c4-40b0-a5b0-5abaac33d87d"
+    refId="shape15-parameter-0-profile" name="ACC" />
+    <Ref compId="83fe79d4-e5c4-40b0-a5b0-5abaac33d87d"
+    refId="shape15-parameter-1-profile" name="ACC" />
+    <Ref compId="f5b9a351-5c3a-4020-916e-784de2ae1015"
+    refId="shape1.connection" name="FalconDBConnection" />
+    <Ref compId="f1428f40-1ae5-46fd-9d37-17c0443ef048"
+    refId="shape1.operation" name="AccRead" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="80.0" y="240.0">
+          <configuration>
+            <connectoraction actionType="Get"
+            connectionId="f5b9a351-5c3a-4020-916e-784de2ae1015"
+            connectorType="database" hideSettings="false"
+            operationId="f1428f40-1ae5-46fd-9d37-17c0443ef048"
+            parameter-profile="EMBEDDED|databaseparameterchooser|83fe79d4-e5c4-40b0-a5b0-5abaac33d87d|f1428f40-1ae5-46fd-9d37-17c0443ef048">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape15"
+            x="464.0" y="249.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="114.0" y="255.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="114.0" y="255.0" />
+              <linesegment length="183"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="114.0" y="255.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="297.0" y="255.0" />
+              <linesegment length="167"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="297.0" y="255.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape6"
+        shapetype="connectoraction" userlabel="" x="336.0"
+        y="432.0">
+          <configuration>
+            <connectoraction actionType="Get"
+            connectionId="f5b9a351-5c3a-4020-916e-784de2ae1015"
+            connectorType="database" hideSettings="false"
+            operationId="d68a4cb4-2553-4e13-92ab-0d2b483c43c6"
+            parameter-profile="EMBEDDED|databaseparameterchooser|10422c4b-591d-49b2-a5da-9e057a887655|d68a4cb4-2553-4e13-92ab-0d2b483c43c6">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape6.dragpoint1" toShape="shape12"
+            x="464.0" y="393.0">
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg1" orient="horizontal"
+              x="370.0" y="447.0" />
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg2" orient="vertical"
+              x="370.0" y="447.0" />
+              <linesegment length="55"
+              name="shape6.dragpoint1.lineseg3" orient="horizontal"
+              x="370.0" y="447.0" />
+              <linesegment length="48"
+              name="shape6.dragpoint1.lineseg4" orient="vertical"
+              x="425.0" y="399.0" />
+              <linesegment length="39"
+              name="shape6.dragpoint1.lineseg5" orient="horizontal"
+              x="425.0" y="399.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape7" shapetype="stop"
+        userlabel="" x="688.0" y="480.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="connectoraction_icon" name="shape9"
+        shapetype="connectoraction" userlabel="" x="336.0"
+        y="96.0">
+          <configuration>
+            <connectoraction actionType="Get"
+            connectionId="f5b9a351-5c3a-4020-916e-784de2ae1015"
+            connectorType="database" hideSettings="false"
+            operationId="f1428f40-1ae5-46fd-9d37-17c0443ef048"
+            parameter-profile="EMBEDDED|databaseparameterchooser|83fe79d4-e5c4-40b0-a5b0-5abaac33d87d|f1428f40-1ae5-46fd-9d37-17c0443ef048">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape9.dragpoint1" toShape="unset"
+            x="465.0" y="158.0">
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg1" orient="horizontal"
+              x="370.0" y="111.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg2" orient="vertical"
+              x="370.0" y="111.0" />
+              <linesegment length="55"
+              name="shape9.dragpoint1.lineseg3" orient="horizontal"
+              x="370.0" y="111.0" />
+              <linesegment length="53"
+              name="shape9.dragpoint1.lineseg4" orient="vertical"
+              x="425.0" y="111.0" />
+              <linesegment length="40"
+              name="shape9.dragpoint1.lineseg5" orient="horizontal"
+              x="425.0" y="164.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape10" shapetype="stop"
+        userlabel="" x="688.0" y="240.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="message_icon" name="shape12"
+        shapetype="message" userlabel="person data" x="480.0"
+        y="384.0">
+          <configuration>
+            <message combined="false">
+              <msgTxt>Id = {1} Name = {2}</msgTxt>
+              <msgParameters>
+                <parametervalue key="0" valueType="profile">
+                  <profileelement elementId="5"
+                  elementName="id (Statement/Fields/id)"
+                  profileId="10422c4b-591d-49b2-a5da-9e057a887655"
+                  profileType="profile.db" />
+                </parametervalue>
+                <parametervalue key="1" valueType="profile">
+                  <profileelement elementId="6"
+                  elementName="name (Statement/Fields/name)"
+                  profileId="10422c4b-591d-49b2-a5da-9e057a887655"
+                  profileType="profile.db" />
+                </parametervalue>
+              </msgParameters>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape14"
+            x="512.0" y="473.0">
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg1"
+              orient="horizontal" x="514.0" y="399.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg2" orient="vertical"
+              x="514.0" y="399.0" />
+              <linesegment length="7"
+              name="shape12.dragpoint1.lineseg3"
+              orient="horizontal" x="514.0" y="399.0" />
+              <linesegment length="80"
+              name="shape12.dragpoint1.lineseg4" orient="vertical"
+              x="521.0" y="399.0" />
+              <linesegment length="-9"
+              name="shape12.dragpoint1.lineseg5"
+              orient="horizontal" x="521.0" y="479.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape13"
+        shapetype="returndocuments" userlabel="" x="704.0"
+        y="416.0">
+          <configuration>
+            <returndocuments label="" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="branch_icon" name="shape14"
+        shapetype="branch" userlabel="" x="528.0" y="464.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape14.dragpoint1"
+            text="1" toShape="shape13" x="688.0" y="425.0">
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg1"
+              orient="horizontal" x="562.0" y="479.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg2" orient="vertical"
+              x="562.0" y="479.0" />
+              <linesegment length="71"
+              name="shape14.dragpoint1.lineseg3"
+              orient="horizontal" x="562.0" y="479.0" />
+              <linesegment length="48"
+              name="shape14.dragpoint1.lineseg4" orient="vertical"
+              x="633.0" y="431.0" />
+              <linesegment label="1" length="55"
+              name="shape14.dragpoint1.lineseg5"
+              orient="horizontal" x="633.0" y="431.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape14.dragpoint2"
+            text="2" toShape="shape7" x="672.0" y="489.0">
+              <linesegment length="0"
+              name="shape14.dragpoint2.lineseg1"
+              orient="horizontal" x="562.0" y="479.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint2.lineseg2" orient="vertical"
+              x="562.0" y="479.0" />
+              <linesegment length="63"
+              name="shape14.dragpoint2.lineseg3"
+              orient="horizontal" x="562.0" y="479.0" />
+              <linesegment length="16"
+              name="shape14.dragpoint2.lineseg4" orient="vertical"
+              x="625.0" y="479.0" />
+              <linesegment label="2" length="47"
+              name="shape14.dragpoint2.lineseg5"
+              orient="horizontal" x="625.0" y="495.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="message_icon" name="shape15"
+        shapetype="message" userlabel="" x="480.0" y="240.0">
+          <configuration>
+            <message combined="false">
+              <msgTxt>{1} {2}</msgTxt>
+              <msgParameters>
+                <parametervalue key="0" valueType="profile">
+                  <profileelement elementId="5"
+                  elementName="integration_accountid (Statement/Fields/integration_accountid)"
+                  profileId="83fe79d4-e5c4-40b0-a5b0-5abaac33d87d"
+                  profileType="profile.db" />
+                </parametervalue>
+                <parametervalue key="1" valueType="profile">
+                  <profileelement elementId="6"
+                  elementName="account_name (Statement/Fields/account_name)"
+                  profileId="83fe79d4-e5c4-40b0-a5b0-5abaac33d87d"
+                  profileType="profile.db" />
+                </parametervalue>
+              </msgParameters>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape15.dragpoint1" toShape="shape10"
+            x="672.0" y="249.0">
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg1"
+              orient="horizontal" x="514.0" y="255.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg2" orient="vertical"
+              x="514.0" y="255.0" />
+              <linesegment length="87"
+              name="shape15.dragpoint1.lineseg3"
+              orient="horizontal" x="514.0" y="255.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg4" orient="vertical"
+              x="601.0" y="255.0" />
+              <linesegment length="71"
+              name="shape15.dragpoint1.lineseg5"
+              orient="horizontal" x="601.0" y="255.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape17"
+        shapetype="exception" userlabel="" x="352.0" y="352.0">
+          <configuration>
+            <exception stopProcessReturnSingleDoc="false"
+            stopsingledoc="false" title="">
+              <exMessage>{1}</exMessage>
+              <exParameters>
+                <parametervalue key="0" valueType="track">
+                  <trackparameter defaultValue=""
+                  propertyId="meta.base.catcherrorsmessage"
+                  propertyName="Base - Try/Catch Message" />
+                </parametervalue>
+              </exParameters>
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+  <Overrides allowScheduleOverride="false">
+    <Connections>
+      <ConnectionOverride id="f5b9a351-5c3a-4020-916e-784de2ae1015">
+
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@driverId"
+        label="Driver Type" id="driverId" />
+        <field overrideable="true"
+        xpath="DatabaseConnectionSettings/@username" label="User"
+        id="username" />
+        <field overrideable="true"
+        xpath="DatabaseConnectionSettings/@password"
+        label="Password" id="password" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@host" label="Host"
+        id="host" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@port" label="Port"
+        id="port" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@dbname" label="DB Name"
+        id="dbname" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@additional"
+        label="Additional Options" id="additional" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@className"
+        label="Class Name" id="className" />
+        <field overrideable="true"
+        xpath="DatabaseConnectionSettings/@urlFormat"
+        label="Connection URL" id="urlFormat" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/WriteOptions/@writeSQLToFile"
+        label="Write SQL To File?" id="writeSQLToFile" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/WriteOptions/@sqlFilePath"
+        label="SQL File Path" id="sqlFilePath" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/@isPoolEnabled"
+        label="Enable Pooling" id="isPoolEnabled" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@maxActive"
+        label="Maximum Connections (0 for unlimited)"
+        id="maxActive" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@minIdle"
+        label="Minimum Connections" id="minIdle" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@maxIdleTime"
+        label="Maximum Idle Time (sec)" id="maxIdleTime" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@exhaustedAction"
+        label="When Exhausted Action" id="exhaustedAction" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@maxWait"
+        label="Maximum Wait Time (sec)" id="maxWait" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@testOnBorrow"
+        label="Test Connection When Borrowing From Pool"
+        id="testOnBorrow" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@testOnReturn"
+        label="Test Connection When Returning To Pool"
+        id="testOnReturn" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@testIdle"
+        label="Test Idle Connections" id="testIdle" />
+        <field overrideable="false"
+        xpath="DatabaseConnectionSettings/AdapterPoolInfo/@validationQuery"
+        label="Validation Query" id="maxIdle" />
+      </ConnectionOverride>
+    </Connections>
+    <PartnerOverrides />
+    <Properties />
+    <Extensions>
+      <ObjectDefinitions>
+        <unusedProfiles />
+      </ObjectDefinitions>
+      <DataMaps>
+        <unusedMaps />
+      </DataMaps>
+    </Extensions>
+    <CrossReferenceOverrides />
+    <PGPOverrides />
+    <DefinedProcessPropertyOverrides />
+  </Overrides>
+</Component>
