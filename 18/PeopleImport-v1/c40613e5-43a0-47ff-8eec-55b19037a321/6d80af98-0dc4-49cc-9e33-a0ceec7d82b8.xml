@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>6d80af98-0dc4-49cc-9e33-a0ceec7d82b8</Id>
+  <Type>transform.function</Type>
+  <Name>AssignUnassignLicenses</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-26-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-27-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-28-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="21" name="IsManager" />
+        <Input key="22" name="Flag1" />
+        <Input key="23" name="License1" />
+        <Input key="24" name="Flag2" />
+        <Input key="25" name="License2" />
+        <Input key="26" name="Flag3" />
+        <Input key="27" name="License3" />
+        <Input key="28" name="Flag4" />
+        <Input key="29" name="License4" />
+        <Input key="30" name="Flag5" />
+        <Input key="31" name="License5" />
+        <Input key="32" name="Flag6" />
+        <Input key="33" name="License6" />
+        <Input key="34" name="Flag7" />
+        <Input key="35" name="License7" />
+        <Input key="36" name="Flag8" />
+        <Input key="37" name="License8" />
+        <Input key="38" name="Flag9" />
+        <Input key="39" name="License9" />
+        <Input key="40" name="Flag10" />
+        <Input key="41" name="License10" />
+      </Inputs>
+      <Outputs>
+        <Output key="2" name="Flag1" />
+        <Output key="1" name="License1" />
+        <Output key="4" name="Flag2" />
+        <Output key="3" name="License2" />
+        <Output key="6" name="Flag3" />
+        <Output key="5" name="License3" />
+        <Output key="8" name="Flag4" />
+        <Output key="7" name="License4" />
+        <Output key="10" name="Flag5" />
+        <Output key="9" name="License5" />
+        <Output key="12" name="Flag6" />
+        <Output key="11" name="License6" />
+        <Output key="14" name="Flag7" />
+        <Output key="13" name="License7" />
+        <Output key="16" name="Flag8" />
+        <Output key="15" name="License8" />
+        <Output key="18" name="Flag9" />
+        <Output key="17" name="License9" />
+        <Output key="20" name="Flag10" />
+        <Output key="19" name="License10" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="4" name="Scripting" position="15"
+        sumEnabled="false" type="Scripting" x="633.0" y="132.0">
+          <Inputs>
+            <Input default="" key="1" name="assignLicenses" />
+            <Input default="" key="2" name="unassignLicenses" />
+            <Input key="5" name="isManager" />
+            <Input key="6" name="roles" />
+            <Input key="7" name="mappedLicenses" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="LicenseString" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>LinkedHashMap&lt;String,String&gt;
+              licenseMap = new
+              LinkedHashMap&lt;String,String&gt;(); //process
+              mapped licenses String[] mappedL =
+              mappedLicenses.split(",") int counter=1; boolean
+              isLic = false; String lic2process = ""; for (String
+              lic1: mappedL){ if ((counter%2) != 0){ isLic = true;
+              lic2process = lic1.trim(); } if (isLic &amp;&amp;
+              lic1 != null &amp;&amp; lic1.trim().length()&gt;0){
+              licenseMap.put(lic2process,"false"); } if (!isLic
+              &amp;&amp; lic2process.trim().length()&gt;0
+              &amp;&amp; lic1 != null &amp;&amp;
+              lic1.trim().length()&gt;0){
+              licenseMap.put(lic2process,lic1.trim()); } counter++;
+              isLic=false; } //assign roles String managerRole
+              =null String employeeRole=null //assign licenses List
+              aL = assignLicenses.tokenize(",") for (String lic1:
+              aL){ if (lic1 != null &amp;&amp;
+              !licenseMap.containsKey(lic1)){
+              licenseMap.put(lic1.trim(),"true"); } } List rL =
+              roles.tokenize(",") for (String lic1: rL){ if (lic1
+              != null &amp;&amp; lic1.trim().length()&gt;0
+              &amp;&amp; lic1.toLowerCase().contains("manager")){
+              managerRole = lic1 } else if (lic1 != null &amp;&amp;
+              lic1.trim().length()&gt;0 &amp;&amp;
+              lic1.toLowerCase().contains("employee")){
+              employeeRole = lic1 } if
+              (!licenseMap.containsKey(lic1)){
+              licenseMap.put(lic1.trim(),"true"); } } //unassign
+              manager license if (isManager!= null &amp;&amp;
+              isManager.trim().length()&gt;0 &amp;&amp;
+              !(isManager.equalsIgnoreCase("true") ||
+              isManager.equalsIgnoreCase("yes"))){ if (managerRole
+              != null &amp;&amp; managerRole.trim().length()&gt;0)
+              licenseMap.put(managerRole.trim(),"false"); }
+              //un-assign licenses List uL =
+              unassignLicenses.tokenize(",") for (String lic1: uL){
+              if (lic1 != null &amp;&amp;
+              !licenseMap.containsKey(lic1)){
+              licenseMap.put(lic1.trim(),"false"); } }
+              StringBuilder licString = new StringBuilder();
+              LicenseCount=0; for (Map.Entry&lt;String, String&gt;
+              entry : licenseMap.entrySet()){ if (LicenseCount ==
+              10){ break; } LicenseCount++; licString
+              .append(entry.getKey()); licString .append(",");
+              licString .append(entry.getValue());
+              licString.append(","); } LicenseString =
+              licString.toString();</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="assignLicenses" />
+              <Input dataType="character" index="2"
+              name="unassignLicenses" />
+              <Input dataType="character" index="5"
+              name="isManager" />
+              <Input dataType="character" index="6" name="roles" />
+              <Input dataType="character" index="7"
+              name="mappedLicenses" />
+              <Output index="3" name="LicenseString" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="5" name="String Split" position="16"
+        sumEnabled="false" type="StringSplit" x="892.0" y="50.0">
+          <Inputs>
+            <Input default="" key="1" name="Original String" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="L1" />
+            <Output key="3" name="F1" />
+            <Output key="4" name="L2" />
+            <Output key="5" name="F2" />
+            <Output key="6" name="L3" />
+            <Output key="7" name="F3" />
+            <Output key="8" name="L4" />
+            <Output key="9" name="F4" />
+            <Output key="10" name="L5" />
+            <Output key="11" name="F5" />
+            <Output key="12" name="L6" />
+            <Output key="13" name="F6" />
+            <Output key="14" name="L7" />
+            <Output key="15" name="F7" />
+            <Output key="16" name="L8" />
+            <Output key="17" name="F8" />
+            <Output key="18" name="L9" />
+            <Output key="19" name="F9" />
+            <Output key="20" name="L10" />
+            <Output key="21" name="F10" />
+          </Outputs>
+          <Configuration>
+            <StringSplit delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="10" name="String Concat"
+        position="1" sumEnabled="false" type="StringConcat"
+        x="22.0" y="21.0">
+          <Inputs>
+            <Input key="3" name="License" />
+            <Input key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="15"
+        name="String Concat" position="5" sumEnabled="false"
+        type="StringConcat" x="38.0" y="543.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="16"
+        name="String Concat" position="4" sumEnabled="false"
+        type="StringConcat" x="29.0" y="409.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="17"
+        name="String Concat" position="2" sumEnabled="false"
+        type="StringConcat" x="22.0" y="147.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="18"
+        name="String Concat" position="3" sumEnabled="false"
+        type="StringConcat" x="27.0" y="281.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="20"
+        name="String Concat" position="6" sumEnabled="false"
+        type="StringConcat" x="43.0" y="671.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="21"
+        name="String Concat" position="7" sumEnabled="false"
+        type="StringConcat" x="48.0" y="800.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="22"
+        name="String Concat" position="8" sumEnabled="false"
+        type="StringConcat" x="56.0" y="929.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="23"
+        name="String Concat" position="9" sumEnabled="false"
+        type="StringConcat" x="60.0" y="1071.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="24"
+        name="String Concat" position="10" sumEnabled="false"
+        type="StringConcat" x="75.0" y="1203.0">
+          <Inputs>
+            <Input isReset="false" key="3" name="License" />
+            <Input isReset="false" key="4" name="Flag" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" enabled="true" key="25"
+        name="String Concat" position="14" sumEnabled="false"
+        type="StringConcat" x="325.0" y="363.0">
+          <Inputs>
+            <Input default="" isReset="false" key="1" name="L1" />
+            <Input default="" isReset="false" key="2" name="L2" />
+            <Input default="" isReset="false" key="3" name="L3" />
+            <Input default="" isReset="false" key="4" name="L4" />
+            <Input default="" isReset="false" key="5" name="L5" />
+            <Input isReset="false" key="6" name="L6" />
+            <Input isReset="false" key="7" name="L7" />
+            <Input isReset="false" key="8" name="L8" />
+            <Input isReset="false" key="9" name="L9" />
+            <Input isReset="false" key="10" name="L10" />
+          </Inputs>
+          <Outputs>
+            <Output isReset="false" key="2" name="Result" />
+          </Outputs>
+          <Configuration>
+            <StringConcat delimiter="," />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="26"
+        name="Get Process Property" position="11"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="320.0" y="58.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="AssignLicenses" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="PeopleImport-v1_ProcessProperties"
+            propertyKey="6160f7e9-5fac-42ef-902e-0f7b5795e4b3"
+            propertyName="AssignLicenses" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="27"
+        name="Get Process Property" position="12"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="322.0" y="147.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="UnassignLicenses" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="PeopleImport-v1_ProcessProperties"
+            propertyKey="3062e98d-a7d8-4004-a513-0c08475c14a3"
+            propertyName="UnassignLicenses" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" enabled="true" key="28"
+        name="Get Process Property" position="13"
+        sumEnabled="false" type="DefinedProcessPropertyGet"
+        x="323.0" y="242.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="Roles" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="PeopleImport-v1_ProcessProperties"
+            propertyKey="05e5927d-8f9a-4f85-8319-55f0cf13da84"
+            propertyName="Roles" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="27" fromKey="1"
+        fromNamePath="Get Process Property/UnassignLicenses"
+        fromType="function" toFunction="4" toKey="2"
+        toNamePath="Scripting/unassignLicenses"
+        toType="function" />
+        <Mapping fromFunction="26" fromKey="1"
+        fromNamePath="Get Process Property/AssignLicenses"
+        fromType="function" toFunction="4" toKey="1"
+        toNamePath="Scripting/assignLicenses" toType="function" />
+        <Mapping fromFunction="0" fromKey="35"
+        fromNamePath="Editor/License7" fromType="function"
+        toFunction="21" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="22" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="8" toNamePath="String Concat/L8"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="22"
+        fromNamePath="Editor/Flag1" fromType="function"
+        toFunction="10" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="15"
+        fromNamePath="String Split/F7" fromType="function"
+        toFunction="0" toKey="14" toNamePath="Editor/Flag7"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="4"
+        fromNamePath="String Split/L2" fromType="function"
+        toFunction="0" toKey="3" toNamePath="Editor/License2"
+        toType="function" />
+        <Mapping fromFunction="18" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="3" toNamePath="String Concat/L3"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="28"
+        fromNamePath="Editor/Flag4" fromType="function"
+        toFunction="16" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="10"
+        fromNamePath="String Split/L5" fromType="function"
+        toFunction="0" toKey="9" toNamePath="Editor/License5"
+        toType="function" />
+        <Mapping fromFunction="28" fromKey="1"
+        fromNamePath="Get Process Property/Roles"
+        fromType="function" toFunction="4" toKey="6"
+        toNamePath="Scripting/roles" toType="function" />
+        <Mapping fromFunction="0" fromKey="34"
+        fromNamePath="Editor/Flag7" fromType="function"
+        toFunction="21" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="16"
+        fromNamePath="String Split/L8" fromType="function"
+        toFunction="0" toKey="15" toNamePath="Editor/License8"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="27"
+        fromNamePath="Editor/License3" fromType="function"
+        toFunction="18" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="5" fromKey="7"
+        fromNamePath="String Split/F3" fromType="function"
+        toFunction="0" toKey="6" toNamePath="Editor/Flag3"
+        toType="function" />
+        <Mapping fromFunction="15" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="5" toNamePath="String Concat/L5"
+        toType="function" />
+        <Mapping fromFunction="10" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="1" toNamePath="String Concat/L1"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="33"
+        fromNamePath="Editor/License6" fromType="function"
+        toFunction="20" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="5" fromKey="13"
+        fromNamePath="String Split/F6" fromType="function"
+        toFunction="0" toKey="12" toNamePath="Editor/Flag6"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="21"
+        fromNamePath="String Split/F10" fromType="function"
+        toFunction="0" toKey="20" toNamePath="Editor/Flag10"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="39"
+        fromNamePath="Editor/License9" fromType="function"
+        toFunction="23" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="0" fromKey="26"
+        fromNamePath="Editor/Flag3" fromType="function"
+        toFunction="18" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="21" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="7" toNamePath="String Concat/L7"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="19"
+        fromNamePath="String Split/F9" fromType="function"
+        toFunction="0" toKey="18" toNamePath="Editor/Flag9"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="8"
+        fromNamePath="String Split/L4" fromType="function"
+        toFunction="0" toKey="7" toNamePath="Editor/License4"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="21"
+        fromNamePath="Editor/IsManager" fromType="function"
+        toFunction="4" toKey="5" toNamePath="Scripting/isManager"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="41"
+        fromNamePath="Editor/License10" fromType="function"
+        toFunction="24" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="17" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="2" toNamePath="String Concat/L2"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="32"
+        fromNamePath="Editor/Flag6" fromType="function"
+        toFunction="20" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="14"
+        fromNamePath="String Split/L7" fromType="function"
+        toFunction="0" toKey="13" toNamePath="Editor/License7"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="25"
+        fromNamePath="Editor/License2" fromType="function"
+        toFunction="17" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="5" fromKey="1"
+        fromNamePath="String Split/L1" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/License1"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="38"
+        fromNamePath="Editor/Flag9" fromType="function"
+        toFunction="23" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="5"
+        fromNamePath="String Split/F2" fromType="function"
+        toFunction="0" toKey="4" toNamePath="Editor/Flag2"
+        toType="function" />
+        <Mapping fromFunction="23" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="9" toNamePath="String Concat/L9"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="31"
+        fromNamePath="Editor/License5" fromType="function"
+        toFunction="15" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="0" fromKey="40"
+        fromNamePath="Editor/Flag10" fromType="function"
+        toFunction="24" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="11"
+        fromNamePath="String Split/F5" fromType="function"
+        toFunction="0" toKey="10" toNamePath="Editor/Flag5"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="37"
+        fromNamePath="Editor/License8" fromType="function"
+        toFunction="22" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="0" fromKey="24"
+        fromNamePath="Editor/Flag2" fromType="function"
+        toFunction="17" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="17"
+        fromNamePath="String Split/F8" fromType="function"
+        toFunction="0" toKey="16" toNamePath="Editor/Flag8"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="6"
+        fromNamePath="String Split/L3" fromType="function"
+        toFunction="0" toKey="5" toNamePath="Editor/License3"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="20"
+        fromNamePath="String Split/L10" fromType="function"
+        toFunction="0" toKey="19" toNamePath="Editor/License10"
+        toType="function" />
+        <Mapping fromFunction="24" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="10" toNamePath="String Concat/L10"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="23"
+        fromNamePath="Editor/License1" fromType="function"
+        toFunction="10" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="0" fromKey="36"
+        fromNamePath="Editor/Flag8" fromType="function"
+        toFunction="22" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="3"
+        fromNamePath="String Split/F1" fromType="function"
+        toFunction="0" toKey="2" toNamePath="Editor/Flag1"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="18"
+        fromNamePath="String Split/L9" fromType="function"
+        toFunction="0" toKey="17" toNamePath="Editor/License9"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="29"
+        fromNamePath="Editor/License4" fromType="function"
+        toFunction="16" toKey="3"
+        toNamePath="String Concat/License" toType="function" />
+        <Mapping fromFunction="4" fromKey="3"
+        fromNamePath="Scripting/LicenseString" fromType="function"
+        toFunction="5" toKey="1"
+        toNamePath="String Split/Original String"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="9"
+        fromNamePath="String Split/F4" fromType="function"
+        toFunction="0" toKey="8" toNamePath="Editor/Flag4"
+        toType="function" />
+        <Mapping fromFunction="5" fromKey="12"
+        fromNamePath="String Split/L6" fromType="function"
+        toFunction="0" toKey="11" toNamePath="Editor/License6"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="30"
+        fromNamePath="Editor/Flag5" fromType="function"
+        toFunction="15" toKey="4" toNamePath="String Concat/Flag"
+        toType="function" />
+        <Mapping fromFunction="16" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="4" toNamePath="String Concat/L4"
+        toType="function" />
+        <Mapping fromFunction="20" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="25" toKey="6" toNamePath="String Concat/L6"
+        toType="function" />
+        <Mapping fromFunction="25" fromKey="2"
+        fromNamePath="String Concat/Result" fromType="function"
+        toFunction="4" toKey="7"
+        toNamePath="Scripting/mappedLicenses" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

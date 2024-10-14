@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>aaaa23a3-7c40-4369-99ac-dc63fe7df142</Id>
+  <Type>processproperty</Type>
+  <Name>HyperfindProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="d56423a0-eae5-45f2-a1a9-73c84a172a95">
+
+        <helpText>Symbolic Payperiod id</helpText>
+        <label>PayPeriod</label>
+        <type>string</type>
+        <defaultValue>13</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="46847be9-321f-414a-8af9-77beace75e9d">
+
+        <helpText>Limit to fetch persons.</helpText>
+        <label>Threshold</label>
+        <type>number</type>
+        <defaultValue>5000</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0db441c9-0fbd-4491-9a42-99b1fada2177">
+
+        <helpText>Hyperfind Id</helpText>
+        <label>Hyperfind</label>
+        <type>string</type>
+        <defaultValue>1</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="2c33260f-a0f9-455d-938e-6309373a7094">
+
+        <helpText>Type should be "Hyperfind".</helpText>
+        <label>HyperfindType</label>
+        <type>string</type>
+        <defaultValue>Hyperfind</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e7c8a85a-f5f6-44c5-aecb-af58ff4a9050">
+
+        <helpText>Date range.</helpText>
+        <label>PayPeriodSpan</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

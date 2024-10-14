@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>453604b2-ec05-495d-8fef-01f90ba7fc07</Id>
+  <Type>process</Type>
+  <Name>_ReadFileFromServerAndDelete</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="2dd6c53e-f53b-4ad9-b918-c555d57897d8"
+    refId="shape8.connection" name="PeopleImport-v1_SFTPServer" />
+    <Ref compId="2311f50e-375c-41c7-8713-0607dd014bc5"
+    refId="shape8.operation" name="SFTPGetOperation" />
+    <Ref compId="3a2ea171-903f-40bf-bb87-02aca8c936da"
+    refId="shape10" name="_InitiateRecordsProcessing" />
+    <Ref compId="2dd6c53e-f53b-4ad9-b918-c555d57897d8"
+    refId="shape33.connection" name="PeopleImport-v1_SFTPServer" />
+    <Ref compId="47ffe614-bb81-48f4-980d-da852424a950"
+    refId="shape33.operation" name="SFTPPutOperation" />
+    <Ref compId="2dd6c53e-f53b-4ad9-b918-c555d57897d8"
+    refId="shape36.connection" name="PeopleImport-v1_SFTPServer" />
+    <Ref compId="c119b977-75fd-42fe-9df7-ae26b28cae46"
+    refId="shape36.operation" name="SFTPGetAndDeleteOperation" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="shape38.processpropertya832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+    refId="shape32-parameter-1-processproperty"
+    name="PeopleImport-v1_SFTPProperties" />
+    <Ref compId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+    refId="shape32-parameter-2-processproperty"
+    name="PeopleImport-v1_SFTPProperties" />
+    <Ref compId="236f7137-555b-4ca1-83e9-dba27196e731"
+    refId="shape38.processproperty236f7137-555b-4ca1-83e9-dba27196e731"
+    name="RunSummaryStep" />
+    <Ref compId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+    refId="shape8-parameter-0-processproperty"
+    name="PeopleImport-v1_SFTPProperties" />
+    <Ref compId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+    refId="shape8-parameter-1-processproperty"
+    name="PeopleImport-v1_SFTPProperties" />
+    <Ref compId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+    refId="shape36-parameter-0-processproperty"
+    name="PeopleImport-v1_SFTPProperties" />
+    <Ref compId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+    refId="shape36-parameter-1-processproperty"
+    name="PeopleImport-v1_SFTPProperties" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" updateRunDates="false"
+    workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="Get file and process" x="0.0" y="176.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape8"
+            x="240.0" y="185.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="191.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="191.0" />
+              <linesegment length="111"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="191.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="145.0" y="191.0" />
+              <linesegment length="95"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="145.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape8"
+        shapetype="connectoraction"
+        userlabel="Connect to SFTP server" x="256.0" y="176.0">
+          <configuration>
+            <connectoraction actionType="Get"
+            connectionId="2dd6c53e-f53b-4ad9-b918-c555d57897d8"
+            connectorType="sftp" hideSettings="false"
+            operationId="2311f50e-375c-41c7-8713-0607dd014bc5"
+            parameter-profile="EMBEDDED|sftpparameterchooser|2311f50e-375c-41c7-8713-0607dd014bc5">
+
+              <parameters>
+                <parametervalue elementToSetId="2"
+                elementToSetName="Remote Directory" key="0"
+                valueType="definedparameter">
+                  <definedprocessparameter componentId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+                  componentName="GenericPeopleImport_SFTPProperties"
+                  propertyKey="dfb8df9b-683c-47fd-874b-7f8abfce3981"
+                  propertyLabel="SourceDirectory" />
+                </parametervalue>
+                <parametervalue elementToSetId="1"
+                elementToSetName="File Filter" key="1"
+                valueType="definedparameter">
+                  <definedprocessparameter componentId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+                  componentName="GenericPeopleImport_SFTPProperties"
+                  propertyKey="403e7a59-e917-4980-9a74-5a73e49d433e"
+                  propertyLabel="FileFilter" />
+                </parametervalue>
+              </parameters>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape8.dragpoint1" toShape="shape38"
+            x="496.0" y="185.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="290.0" y="191.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="290.0" y="191.0" />
+              <linesegment length="111"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="290.0" y="191.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="401.0" y="191.0" />
+              <linesegment length="95"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="401.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape10"
+        shapetype="processcall" userlabel="" x="768.0" y="96.0">
+          <configuration>
+            <processcall abort="true"
+            processId="3a2ea171-903f-40bf-bb87-02aca8c936da"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="branch_icon" name="shape19"
+        shapetype="branch" userlabel="" x="640.0" y="176.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape19.dragpoint1"
+            text="1" toShape="shape10" x="752.0" y="105.0">
+              <linesegment length="0"
+              name="shape19.dragpoint1.lineseg1"
+              orient="horizontal" x="674.0" y="191.0" />
+              <linesegment length="0"
+              name="shape19.dragpoint1.lineseg2" orient="vertical"
+              x="674.0" y="191.0" />
+              <linesegment length="47"
+              name="shape19.dragpoint1.lineseg3"
+              orient="horizontal" x="674.0" y="191.0" />
+              <linesegment length="80"
+              name="shape19.dragpoint1.lineseg4" orient="vertical"
+              x="721.0" y="111.0" />
+              <linesegment label="1" length="31"
+              name="shape19.dragpoint1.lineseg5"
+              orient="horizontal" x="721.0" y="111.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape19.dragpoint2"
+            text="2" toShape="shape36" x="752.0" y="265.0">
+              <linesegment length="0"
+              name="shape19.dragpoint2.lineseg1"
+              orient="horizontal" x="674.0" y="191.0" />
+              <linesegment length="0"
+              name="shape19.dragpoint2.lineseg2" orient="vertical"
+              x="674.0" y="191.0" />
+              <linesegment length="47"
+              name="shape19.dragpoint2.lineseg3"
+              orient="horizontal" x="674.0" y="191.0" />
+              <linesegment length="80"
+              name="shape19.dragpoint2.lineseg4" orient="vertical"
+              x="721.0" y="191.0" />
+              <linesegment label="2" length="31"
+              name="shape19.dragpoint2.lineseg5"
+              orient="horizontal" x="721.0" y="271.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape32"
+        shapetype="documentproperties"
+        userlabel="Set SFTP Properties" x="928.0" y="256.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="SFTP - Remote Directory" persist="false"
+              propertyId="connector.sftp.remoteDirectory">
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+                    componentName="GenericPeopleImportSFTPProperties"
+                    propertyKey="ea0769d5-ef2f-453b-a811-7ae12cf9905f"
+                    propertyLabel="_DestinationDirectoryPath" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="SFTP - Move To Directory" persist="false"
+              propertyId="connector.sftp.movetoDirectory">
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+                    componentName="GenericPeopleImportSFTPProperties"
+                    propertyKey="aea1aa5e-254e-4ac5-88f6-54a3f5f91655"
+                    propertyLabel="_MoveProcessedFileToDirectory" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false" name="SFTP - File Name"
+              persist="false" propertyId="connector.sftp.filename">
+                <sourcevalues>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="PersonRecords_" />
+                  </parametervalue>
+                  <parametervalue key="4" valueType="date">
+                    <dateparameter dateparametertype="current"
+                    datetimemask="yyyyMMdd HHmmss" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="_done.csv" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape32.dragpoint1" toShape="shape33"
+            x="1040.0" y="265.0">
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg1"
+              orient="horizontal" x="962.0" y="271.0" />
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg2" orient="vertical"
+              x="962.0" y="271.0" />
+              <linesegment length="47"
+              name="shape32.dragpoint1.lineseg3"
+              orient="horizontal" x="962.0" y="271.0" />
+              <linesegment length="0"
+              name="shape32.dragpoint1.lineseg4" orient="vertical"
+              x="1009.0" y="271.0" />
+              <linesegment length="31"
+              name="shape32.dragpoint1.lineseg5"
+              orient="horizontal" x="1009.0" y="271.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape28" shapetype="stop"
+        userlabel="STOP" x="1232.0" y="256.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="connectoraction_icon" name="shape33"
+        shapetype="connectoraction" userlabel="Connect SFTP Server"
+        x="1056.0" y="256.0">
+          <configuration>
+            <connectoraction actionType="Send"
+            connectionId="2dd6c53e-f53b-4ad9-b918-c555d57897d8"
+            connectorType="sftp" hideSettings="false"
+            operationId="47ffe614-bb81-48f4-980d-da852424a950">
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape33.dragpoint1" toShape="shape28"
+            x="1216.0" y="265.0">
+              <linesegment length="0"
+              name="shape33.dragpoint1.lineseg1"
+              orient="horizontal" x="1090.0" y="271.0" />
+              <linesegment length="0"
+              name="shape33.dragpoint1.lineseg2" orient="vertical"
+              x="1090.0" y="271.0" />
+              <linesegment length="71"
+              name="shape33.dragpoint1.lineseg3"
+              orient="horizontal" x="1090.0" y="271.0" />
+              <linesegment length="0"
+              name="shape33.dragpoint1.lineseg4" orient="vertical"
+              x="1161.0" y="271.0" />
+              <linesegment length="55"
+              name="shape33.dragpoint1.lineseg5"
+              orient="horizontal" x="1161.0" y="271.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape36"
+        shapetype="connectoraction"
+        userlabel="Connect to SFTP server" x="768.0" y="256.0">
+          <configuration>
+            <connectoraction actionType="Get"
+            connectionId="2dd6c53e-f53b-4ad9-b918-c555d57897d8"
+            connectorType="sftp" hideSettings="false"
+            operationId="c119b977-75fd-42fe-9df7-ae26b28cae46"
+            parameter-profile="EMBEDDED|sftpparameterchooser|c119b977-75fd-42fe-9df7-ae26b28cae46">
+
+              <parameters>
+                <parametervalue elementToSetId="2"
+                elementToSetName="Remote Directory" key="0"
+                valueType="definedparameter">
+                  <definedprocessparameter componentId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+                  componentName="GenericPeopleImport_SFTPProperties"
+                  propertyKey="dfb8df9b-683c-47fd-874b-7f8abfce3981"
+                  propertyLabel="SourceDirectory" />
+                </parametervalue>
+                <parametervalue elementToSetId="1"
+                elementToSetName="File Filter" key="1"
+                valueType="definedparameter">
+                  <definedprocessparameter componentId="c2c3500c-7589-452a-9eeb-34da8bc743cc"
+                  componentName="GenericPeopleImport_SFTPProperties"
+                  propertyKey="403e7a59-e917-4980-9a74-5a73e49d433e"
+                  propertyLabel="FileFilter" />
+                </parametervalue>
+              </parameters>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape36.dragpoint1" toShape="shape32"
+            x="912.0" y="265.0">
+              <linesegment length="0"
+              name="shape36.dragpoint1.lineseg1"
+              orient="horizontal" x="802.0" y="271.0" />
+              <linesegment length="0"
+              name="shape36.dragpoint1.lineseg2" orient="vertical"
+              x="802.0" y="271.0" />
+              <linesegment length="63"
+              name="shape36.dragpoint1.lineseg3"
+              orient="horizontal" x="802.0" y="271.0" />
+              <linesegment length="0"
+              name="shape36.dragpoint1.lineseg4" orient="vertical"
+              x="865.0" y="271.0" />
+              <linesegment length="47"
+              name="shape36.dragpoint1.lineseg5"
+              orient="horizontal" x="865.0" y="271.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape38"
+        shapetype="documentproperties" userlabel="" x="512.0"
+        y="176.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - documentName"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@8abc13ec-15da-40ec-9fce-931e28d723d6">
+
+                <sourcevalues>
+                  <parametervalue key="1" valueType="track">
+                    <trackparameter defaultValue=""
+                    propertyId="connector.sftp.filename"
+                    propertyName="SFTP - File Name" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - RunSummaryStep - sourceFile"
+              persist="false"
+              propertyId="definedprocess.236f7137-555b-4ca1-83e9-dba27196e731@b2bcd769-3c1e-4e3e-a6d0-0df9745dec9a">
+
+                <sourcevalues>
+                  <parametervalue key="2" valueType="track">
+                    <trackparameter defaultValue=""
+                    propertyId="connector.sftp.filename"
+                    propertyName="SFTP - File Name" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape38.dragpoint1" toShape="shape19"
+            x="624.0" y="185.0">
+              <linesegment length="0"
+              name="shape38.dragpoint1.lineseg1"
+              orient="horizontal" x="546.0" y="191.0" />
+              <linesegment length="0"
+              name="shape38.dragpoint1.lineseg2" orient="vertical"
+              x="546.0" y="191.0" />
+              <linesegment length="47"
+              name="shape38.dragpoint1.lineseg3"
+              orient="horizontal" x="546.0" y="191.0" />
+              <linesegment length="0"
+              name="shape38.dragpoint1.lineseg4" orient="vertical"
+              x="593.0" y="191.0" />
+              <linesegment length="31"
+              name="shape38.dragpoint1.lineseg5"
+              orient="horizontal" x="593.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

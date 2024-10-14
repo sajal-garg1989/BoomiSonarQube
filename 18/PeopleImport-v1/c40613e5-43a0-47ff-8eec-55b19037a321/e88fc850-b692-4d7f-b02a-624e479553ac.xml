@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>e88fc850-b692-4d7f-b02a-624e479553ac</Id>
+  <Type>processproperty</Type>
+  <Name>AuthenticationProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="f6711f40-878d-4c49-9fd6-972a7ce2c0c3">
+
+        <helpText>The user name for authentication.</helpText>
+        <label>Username</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d7489fd7-cab7-49d5-b705-ee880e3c4fcb">
+
+        <helpText>The password for authentication.</helpText>
+        <label>Password</label>
+        <type>password</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="2ce65dc6-63cb-4d70-8673-e8c0fc689d40">
+
+        <helpText>The client ID obtained from the
+        application.</helpText>
+        <label>ClientID</label>
+        <type>string</type>
+        <defaultValue>kronos</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f9857bc5-8053-4d75-96bd-70b7029b0c18">
+
+        <helpText>The client secret obtained from the
+        application.</helpText>
+        <label>ClientSecret</label>
+        <type>password</type>
+        <defaultValue>kronites</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b756d569-0c68-47e2-ad4c-65427ded176e">
+
+        <helpText>A value that an API internally uses to gain
+        access to the protected resources on behalf of the
+        user.</helpText>
+        <label>AccessToken</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d433e82a-500a-4cff-a3d7-bb13514e1378">
+
+        <helpText />
+        <label>TenantId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3e1b2cf7-00a3-4c4f-abd5-ac96efce0b96">
+
+        <helpText>Provide API Gateway Port</helpText>
+        <label>GatewayDefaultPort</label>
+        <type>string</type>
+        <defaultValue>80/api</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="41841706-fab3-4095-842f-83c63035a675">
+
+        <helpText />
+        <label>AppKey</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8fa009f5-f77c-47d3-b6d7-0b4da4e33ae9">
+
+        <helpText>Use authn chain parameter to get access token.
+        Default is false.</helpText>
+        <label>EnableAuthnChain</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ca17c482-1ab9-4a88-a773-419850a6f508">
+
+        <helpText />
+        <label>AUTHN_TOKEN</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="5b9784a7-7419-4422-8cf5-9eefab05b1b2">
+
+        <helpText />
+        <label>AUTHN_SSID</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8563db50-83fb-450e-ad10-df7bdfceae24">
+
+        <helpText>For authentication using access token, enable
+        this property. By default APIs are executed using
+        cookie.</helpText>
+        <label>DisableCookie</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

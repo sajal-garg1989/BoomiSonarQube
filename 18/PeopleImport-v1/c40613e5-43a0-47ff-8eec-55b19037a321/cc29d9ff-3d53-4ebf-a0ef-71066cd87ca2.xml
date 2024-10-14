@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>cc29d9ff-3d53-4ebf-a0ef-71066cd87ca2</Id>
+  <Type>transform.map</Type>
+  <Name>APIFailureHandlingMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="ec5afbce-76b1-4b4d-8ed0-810242a10360"
+    refId="fromProfile" name="APIRequestProfile" />
+    <Ref compId="9d263f88-50d2-458d-8f9c-51d8cbd16110"
+    refId="toProfile" name="TransactionAssistantResponse" />
+    <Ref compId="eb67cd18-894f-4239-a775-e46cd2b7839b"
+    refId="function-1" name="CalculateErrorCounts" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="ec5afbce-76b1-4b4d-8ed0-810242a10360"
+    toProfile="9d263f88-50d2-458d-8f9c-51d8cbd16110">
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="2" fromType="function"
+        toKey="8"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']"
+        toNamePath="Root/Object/Response/Object/RecordsProcessed"
+        toType="profile" />
+        <Mapping fromFunction="1" fromKey="1" fromType="function"
+        toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        toNamePath="Root/Object/Response/Object/FailedRecords"
+        toType="profile" />
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Root/Array/ArrayElement1" fromType="profile"
+        toFunction="1" toKey="1" toType="function" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep category="userdefined"
+        id="eb67cd18-894f-4239-a775-e46cd2b7839b" key="1"
+        name="CalculateErrorCounts" position="1" type="userdefined"
+        x="10.0" y="10.0">
+          <Inputs>
+            <Input key="1" name="record" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="processCount" />
+            <Output key="1" name="errorCount" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults>
+        <Default toKey="11" value="true" />
+        <Default toKey="9" value="0" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

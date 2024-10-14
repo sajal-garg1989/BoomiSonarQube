@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>d93a0b29-e0de-4755-ba3f-36dd050a2871</Id>
+  <Type>transform.function</Type>
+  <Name>CountRecordsPerBatch</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="2" name="array" />
+      </Inputs>
+      <Outputs />
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="4"
+        name="Set Document Property" position="2"
+        sumEnabled="false" type="DocumentPropertySet" x="446.0"
+        y="111.0">
+          <Inputs>
+            <Input default="" key="1"
+            name="Dynamic Document Property - recordsperbatch" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.recordsperbatch"
+            propertyName="Dynamic Document Property - recordsperbatch" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="false" category="Numeric"
+        key="6" name="Count" position="1" sumEnabled="true"
+        type="Count" x="101.0" y="137.0">
+          <Inputs>
+            <Input key="1" name="Field to Count" />
+            <Input default="70" key="2" name="Reset Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/array" fromType="function"
+        toFunction="6" toKey="1" toNamePath="Count/Field to Count"
+        toType="function" />
+        <Mapping fromFunction="6" fromKey="2"
+        fromNamePath="Count/Result" fromType="function"
+        toFunction="4" toKey="1"
+        toNamePath="Set Document Property/Dynamic Document Property - recordsperbatch"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

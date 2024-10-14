@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>dfb52dd6-20d4-4527-8d09-fbbf616fc846</Id>
+  <Type>transform.function</Type>
+  <Name>PopulatePersonIdFunction</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="personId" />
+      </Inputs>
+      <Outputs />
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="12" name="Scripting" position="2"
+        sumEnabled="false" type="Scripting" x="308.0" y="72.0">
+          <Inputs>
+            <Input default="" key="1" name="newPersonid" />
+            <Input key="3" name="concatvalue" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="concatvalue" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>import
+              com.boomi.execution.ExecutionUtil; import
+              java.util.logging.Logger; Logger logger =
+              ExecutionUtil.getBaseLogger(); isPersonId = "false";
+              logger.severe("Got to this point in the script!
+              personid=" + newPersonid); logger.severe("Got to this
+              point in the script! personids=" + concatvalue);
+              if(newPersonid != null){ isPersonId = "true";
+              if(concatvalue != null &amp;&amp;
+              concatvalue.length()&gt;0){
+              concatvalue+=","+newPersonid ; }else{
+              concatvalue=newPersonid; } }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="newPersonid" />
+              <Input dataType="character" index="3"
+              name="concatvalue" />
+              <Output index="2" name="concatvalue" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="19"
+        name="Get Document Property" position="1"
+        sumEnabled="false" type="DocumentPropertyGet" x="0.0"
+        y="68.0">
+          <Inputs />
+          <Outputs>
+            <Output key="3"
+            name="Dynamic Document Property - personId" />
+          </Outputs>
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.personId"
+            propertyName="Dynamic Document Property - personId" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="20"
+        name="Set Document Property" position="3"
+        sumEnabled="false" type="DocumentPropertySet" x="590.0"
+        y="83.0">
+          <Inputs>
+            <Input default="" key="1"
+            name="Dynamic Document Property - personId" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.personId"
+            propertyName="Dynamic Document Property - personId" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="12" fromKey="2"
+        fromNamePath="Scripting/concatvalue" fromType="function"
+        toFunction="20" toKey="1"
+        toNamePath="Set Document Property/Dynamic Document Property - personId"
+        toType="function" />
+        <Mapping fromFunction="19" fromKey="3"
+        fromNamePath="Get Document Property/Dynamic Document Property - personId"
+        fromType="function" toFunction="12" toKey="3"
+        toNamePath="Scripting/concatvalue" toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/personId" fromType="function"
+        toFunction="12" toKey="1"
+        toNamePath="Scripting/newPersonid" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>eadf8548-c127-4200-9e05-6b3a69c0dc43</Id>
+  <Type>profile.json</Type>
+  <Name>TransactionAssistantJSONRequest</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONObject isMappable="false" isNode="true" key="2"
+          name="Object">
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="38"
+            name="enableTransactionAssistant">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="3" name="batchName">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="number" isMappable="true"
+            isNode="true" key="23" name="transactionId">
+              <DataFormat>
+                <ProfileNumberFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="5" name="sourceName">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="6" name="sourceDetails">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="7" name="transactionType">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="24" name="requestEndDate">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="25" name="requestEndTime">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="26" name="requestBeginDate">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="27" name="requestBeginTime">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="28" name="errorText">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="29" name="endpointUrl">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="30" name="requestBodyText">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="31" name="propertyValue">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="32" name="propertyName">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="33" name="errorCode">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="34" name="batchStartDate">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="35" name="batchStartTime">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="36" name="batchEndDate">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="37" name="batchEndTime">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+              <Qualifiers>
+                <QualifierList />
+              </Qualifiers>
+            </JSONObjectEntry>
+          </JSONObject>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>

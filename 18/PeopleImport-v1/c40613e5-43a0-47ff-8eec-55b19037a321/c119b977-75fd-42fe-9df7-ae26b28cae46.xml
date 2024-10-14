@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>c119b977-75fd-42fe-9df7-ae26b28cae46</Id>
+  <Type>connector-action</Type>
+  <Name>SFTPGetAndDeleteOperation</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>sftp</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Get</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|sftpparameterchooser</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <SFTPGetAction fileToMove="" maxFileCount="1"
+        remoteDirectory="" sftpaction="actiongetdelete" />
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>

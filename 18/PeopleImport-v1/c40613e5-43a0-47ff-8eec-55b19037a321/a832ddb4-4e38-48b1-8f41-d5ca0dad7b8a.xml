@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a</Id>
+  <Type>processproperty</Type>
+  <Name>TransactionAssistantProcessProperties</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="710dfc37-19d5-45f2-9ded-1336a2fab3b8">
+
+        <helpText>If true, submits import errors to Transaction
+        Assistant</helpText>
+        <label>EnableTransactionAssistant</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="18cd7bfa-14d7-4cc0-8e45-adc11070a9ce">
+
+        <helpText>Specify batch name</helpText>
+        <label>BatchName</label>
+        <type>string</type>
+        <defaultValue>Person Import</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="91b26812-4709-4fc3-bb84-386e5c062c1d">
+
+        <helpText />
+        <label>SourceName</label>
+        <type>string</type>
+        <defaultValue>IHUB</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="06e0bc77-0aaa-48ab-b13e-19c3826afce9">
+
+        <helpText />
+        <label>SourceDetails</label>
+        <type>string</type>
+        <defaultValue>Integration Hub</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ddeb65ba-0a1b-49f5-bc40-fcb130410a19">
+
+        <helpText />
+        <label>TransactionType</label>
+        <type>string</type>
+        <defaultValue>People</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e2ed97be-713a-4dbd-8f4a-f701540af615">
+
+        <helpText />
+        <label>EndpointURL</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6b1c4d8a-66a9-4f29-b60b-100a41c1e17a">
+
+        <helpText />
+        <label>RequestBody</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e14b7b58-c321-4831-a4a8-8abd4ef27df6">
+
+        <helpText />
+        <label>ResponseBody</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="312ef5ac-a57b-4c59-a44b-bebd06cd3326">
+
+        <helpText />
+        <label>FalconExecutionId</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="970f2d04-843f-4835-b156-5b018cc752ee">
+
+        <helpText />
+        <label>TotalRecordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a8396e2d-fd6e-40a8-a2c6-dee808a65321">
+
+        <helpText />
+        <label>TotalImportedRecords</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3a47783a-2844-45ec-b032-619035acc468">
+
+        <helpText />
+        <label>TotalErrorRecords</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8abc13ec-15da-40ec-9fce-931e28d723d6">
+
+        <helpText />
+        <label>DocumentName</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3c0d1770-4a94-49db-a3c1-7e0f90fb73b5">
+
+        <helpText />
+        <label>CountRecordsProcessed</label>
+        <type>boolean</type>
+        <defaultValue>true</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e8ce9440-3dd2-4eea-a9d9-55b50e35e4f4">
+
+        <helpText />
+        <label>ImportError</label>
+        <type>boolean</type>
+        <defaultValue>false</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f357fd48-414e-4dfd-be56-df96ec675bb8">
+
+        <helpText />
+        <label>DisplayFailedProcess</label>
+        <type>string</type>
+        <defaultValue>Name -</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>
