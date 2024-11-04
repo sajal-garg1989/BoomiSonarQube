@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>b700bd8d-1c9c-4ac3-baec-98578a9ba940</Id>
+  <Type>process</Type>
+  <Name>_ImportNewRecords</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>true</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="c3de07ce-f636-4dc3-aa1b-3909d53f5b7e"
+    refId="shape52"
+    name="_CountRecordsDisqualifiedByBusinessRule" />
+    <Ref compId="f9e6056a-3891-4ff0-8679-c1ac56ed0c2d"
+    refId="shape59" name="_InvokeImportProcesses" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape60-rule3-function2processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape60-rule3-function3processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape60-rule3-function4processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="shape60-profile" name="PersonsAPIXMLProfile" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape60-rule6-function4processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape60-rule6-function5processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape60-rule6-function6processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="56654aea-2afe-422f-8d76-312b4f35835d"
+    refId="shape61" name="_DataTransformation" />
+    <Ref compId="a9494887-502f-4310-8eff-b60bf2b8ae82"
+    refId="shape60-rule8-function1documentCache"
+    name="EmployeeExtensionCache" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" updateRunDates="false"
+    workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="Person Records" x="0.0" y="304.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape12"
+            x="112.0" y="313.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="319.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="319.0" />
+              <linesegment length="47"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="319.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="81.0" y="319.0" />
+              <linesegment length="31"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="81.0" y="319.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape12"
+        shapetype="dataprocess" userlabel="" x="128.0" y="304.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="ff">
+                  <SplitOptions>
+                    <FFOptions headersOption="retain"
+                    splitOption="split_line" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape53"
+            x="224.0" y="313.0">
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg1"
+              orient="horizontal" x="162.0" y="319.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg2" orient="vertical"
+              x="162.0" y="319.0" />
+              <linesegment length="39"
+              name="shape12.dragpoint1.lineseg3"
+              orient="horizontal" x="162.0" y="319.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg4" orient="vertical"
+              x="201.0" y="319.0" />
+              <linesegment length="23"
+              name="shape12.dragpoint1.lineseg5"
+              orient="horizontal" x="201.0" y="319.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape52"
+        shapetype="processcall" userlabel="" x="1008.0" y="432.0">
+          <configuration>
+            <processcall abort="true"
+            processId="c3de07ce-f636-4dc3-aa1b-3909d53f5b7e"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape53"
+        shapetype="documentproperties" userlabel="Set Current Data"
+        x="240.0" y="304.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - DisqualifiedRows"
+              persist="false"
+              propertyId="dynamicdocument.DisqualifiedRows">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="current" />
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape53.dragpoint1" toShape="shape61"
+            x="416.0" y="313.0">
+              <linesegment length="0"
+              name="shape53.dragpoint1.lineseg1"
+              orient="horizontal" x="274.0" y="319.0" />
+              <linesegment length="0"
+              name="shape53.dragpoint1.lineseg2" orient="vertical"
+              x="274.0" y="319.0" />
+              <linesegment length="79"
+              name="shape53.dragpoint1.lineseg3"
+              orient="horizontal" x="274.0" y="319.0" />
+              <linesegment length="0"
+              name="shape53.dragpoint1.lineseg4" orient="vertical"
+              x="353.0" y="319.0" />
+              <linesegment length="63"
+              name="shape53.dragpoint1.lineseg5"
+              orient="horizontal" x="353.0" y="319.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape59"
+        shapetype="processcall" userlabel="" x="1008.0" y="240.0">
+          <configuration>
+            <processcall abort="false"
+            processId="f9e6056a-3891-4ff0-8679-c1ac56ed0c2d"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="businessrules_icon" name="shape60"
+        shapetype="businessrules" userlabel="" x="672.0" y="304.0">
+          <configuration>
+            <businessrules profileId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+            profileName="PersonsAPIXMLProfile"
+            profileType="profile.xml">
+              <rule key="5" name="Check person number?">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="PersonNumber" elementKey="1499" id="1"
+                name="PersonNumber (Kronos_Persons_API/Request/PersonIdentity/PersonNumber)"
+                taglist="0" xsi:type="BusinessRuleField" />
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="and" xsi:type="GroupingCondition">
+                  <nestedExpression operator="is not empty"
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="PersonNumber"
+                    xsi:type="FieldConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage />
+              </rule>
+              <rule key="6" name="FilterRecordsBasedOnStatus">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="DisqualifyActive" id="4"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="ProcessProperty" key="4"
+                  name="Get Process Property" position="-1"
+                  type="DefinedProcessPropertyGet">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1" name="DisqualifyActive" />
+                    </Outputs>
+                    <Configuration>
+                      <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                      componentName="GenericPeopleImport_ProcessProperties"
+                      propertyKey="be3ef091-a01e-46a9-8ae4-a827c9332c58"
+                      propertyName="DisqualifyActive" />
+                    </Configuration>
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="DisqualifyInactive" id="5"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="ProcessProperty" key="5"
+                  name="Get Process Property" position="-1"
+                  type="DefinedProcessPropertyGet">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1" name="DisqualifyInactive" />
+                    </Outputs>
+                    <Configuration>
+                      <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                      componentName="GenericPeopleImport_ProcessProperties"
+                      propertyKey="e4fd2d21-406a-4116-864b-36de4b8fe5c1"
+                      propertyName="DisqualifyInactive" />
+                    </Configuration>
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="DisqualifyTerminated" id="6"
+                xsi:type="BusinessRuleFunction">
+                  <FunctionStep cacheEnabled="false"
+                  category="ProcessProperty" key="6"
+                  name="Get Process Property" position="-1"
+                  type="DefinedProcessPropertyGet">
+                    <Inputs />
+                    <Outputs>
+                      <Output key="1"
+                      name="DisqualifyTerminated" />
+                    </Outputs>
+                    <Configuration>
+                      <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                      componentName="GenericPeopleImport_ProcessProperties"
+                      propertyKey="7371cdbf-6ce0-4ae2-ac8e-5e96c0d7f7d0"
+                      propertyName="DisqualifyTerminated" />
+                    </Configuration>
+                  </FunctionStep>
+                </input>
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="EmploymentStatus" id="3"
+                xsi:type="BusinessRuleFunction">
+                  <inputMapping fromElementKey="1151"
+                  fromName="EmploymentStatusName (Kronos_Persons_API/Request/Personality/PersonInformationData/PersonInformation/EmploymentStatusList/EmploymentStatus1/EmploymentStatusName)"
+                  fromTaglist="0" toFunctionInputKey="1" />
+                  <FunctionStep cacheEnabled="false"
+                  category="String" key="3" name="String To Lower"
+                  position="-1" type="String2Lower">
+                    <Inputs>
+                      <Input default="" key="1"
+                      name="Original String" />
+                    </Inputs>
+                    <Outputs>
+                      <Output key="2" name="Result" />
+                    </Outputs>
+                    <Configuration />
+                  </FunctionStep>
+                </input>
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="or" xsi:type="GroupingCondition">
+                  <nestedExpression operator="and"
+                  xsi:type="GroupingCondition">
+                    <nestedExpression operator="="
+                    xsi:type="SimpleCondition">
+                      <leftInput deleted="false" id="3"
+                      name="EmploymentStatus" outputId="2"
+                      xsi:type="FunctionConditionInput" />
+                      <rightInput deleted="false" id="0"
+                      name="&quot;active&quot;" value="active"
+                      xsi:type="StaticConditionInput" />
+                    </nestedExpression>
+                    <nestedExpression operator="!="
+                    xsi:type="SimpleCondition">
+                      <leftInput deleted="false" id="4"
+                      name="DisqualifyActive" outputId="1"
+                      xsi:type="FunctionConditionInput" />
+                      <rightInput deleted="false" id="0"
+                      name="&quot;true&quot;" value="true"
+                      xsi:type="StaticConditionInput" />
+                    </nestedExpression>
+                  </nestedExpression>
+                  <nestedExpression operator="and"
+                  xsi:type="GroupingCondition">
+                    <nestedExpression operator="="
+                    xsi:type="SimpleCondition">
+                      <leftInput deleted="false" id="3"
+                      name="EmploymentStatus" outputId="2"
+                      xsi:type="FunctionConditionInput" />
+                      <rightInput deleted="false" id="0"
+                      name="&quot;inactive&quot;" value="inactive"
+                      xsi:type="StaticConditionInput" />
+                    </nestedExpression>
+                    <nestedExpression operator="!="
+                    xsi:type="SimpleCondition">
+                      <leftInput deleted="false" id="5"
+                      name="DisqualifyInactive" outputId="1"
+                      xsi:type="FunctionConditionInput" />
+                      <rightInput deleted="false" id="0"
+                      name="&quot;true&quot;" value="true"
+                      xsi:type="StaticConditionInput" />
+                    </nestedExpression>
+                  </nestedExpression>
+                  <nestedExpression operator="and"
+                  xsi:type="GroupingCondition">
+                    <nestedExpression operator="="
+                    xsi:type="SimpleCondition">
+                      <leftInput deleted="false" id="3"
+                      name="EmploymentStatus" outputId="2"
+                      xsi:type="FunctionConditionInput" />
+                      <rightInput deleted="false" id="0"
+                      name="&quot;terminated&quot;"
+                      value="terminated"
+                      xsi:type="StaticConditionInput" />
+                    </nestedExpression>
+                    <nestedExpression operator="!="
+                    xsi:type="SimpleCondition">
+                      <leftInput deleted="false" id="6"
+                      name="DisqualifyTerminated" outputId="1"
+                      xsi:type="FunctionConditionInput" />
+                      <rightInput deleted="false" id="0"
+                      name="&quot;true&quot;" value="true"
+                      xsi:type="StaticConditionInput" />
+                    </nestedExpression>
+                  </nestedExpression>
+                  <nestedExpression operator="is empty"
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="3"
+                    name="EmploymentStatus" outputId="2"
+                    xsi:type="FunctionConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage />
+              </rule>
+              <rule key="7" name="Qualify?">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="Qualifier (Kronos_Persons_API/Request/Qualifier)"
+                elementKey="443" id="1"
+                name="Qualifier (Kronos_Persons_API/Request/Qualifier)"
+                taglist="0" xsi:type="BusinessRuleField" />
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="or" xsi:type="GroupingCondition">
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="Qualifier (Kronos_Persons_API/Request/Qualifier)"
+                    xsi:type="FieldConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;1&quot;" value="1"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="Qualifier (Kronos_Persons_API/Request/Qualifier)"
+                    xsi:type="FieldConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;true&quot;" value="true"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage />
+              </rule>
+              <rule key="8" name="Filter new employee">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="Document Cache Lookup" id="1"
+                xsi:type="BusinessRuleFunction">
+                  <inputMapping fromElementKey="1499"
+                  fromName="PersonNumber (Kronos_Persons_API/Request/PersonIdentity/PersonNumber)"
+                  fromTaglist="0" toFunctionInputKey="4" />
+                  <FunctionStep cacheEnabled="false"
+                  category="Lookup" key="1"
+                  name="Document Cache Lookup" position="-1"
+                  type="DocumentCacheLookup">
+                    <Inputs>
+                      <Input default="" key="4"
+                      name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                    </Inputs>
+                    <Outputs>
+                      <Output key="3"
+                      name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                    </Outputs>
+                    <Configuration>
+                      <DocumentCacheLookup cacheIndex="1"
+                      docCache="a9494887-502f-4310-8eff-b60bf2b8ae82">
+
+                        <Input index="4" keyId="3"
+                        name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                        <Output index="3" key="236"
+                        name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)" />
+                      </DocumentCacheLookup>
+                    </Configuration>
+                  </FunctionStep>
+                </input>
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="and" xsi:type="GroupingCondition">
+                  <nestedExpression operator="is empty"
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="Document Cache Lookup" outputId="3"
+                    xsi:type="FunctionConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage />
+              </rule>
+            </businessrules>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="Accepted"
+            name="shape60.dragpoint1" text="Accepted"
+            toShape="shape59" x="992.0" y="249.0">
+              <linesegment length="0"
+              name="shape60.dragpoint1.lineseg1"
+              orient="horizontal" x="706.0" y="319.0" />
+              <linesegment length="0"
+              name="shape60.dragpoint1.lineseg2" orient="vertical"
+              x="706.0" y="319.0" />
+              <linesegment length="151"
+              name="shape60.dragpoint1.lineseg3"
+              orient="horizontal" x="706.0" y="319.0" />
+              <linesegment length="64"
+              name="shape60.dragpoint1.lineseg4" orient="vertical"
+              x="857.0" y="255.0" />
+              <linesegment label="Accepted" length="135"
+              name="shape60.dragpoint1.lineseg5"
+              orient="horizontal" x="857.0" y="255.0" />
+            </dragpoint>
+            <dragpoint identifier="Rejected"
+            name="shape60.dragpoint2" text="Rejected"
+            toShape="shape52" x="992.0" y="441.0">
+              <linesegment length="0"
+              name="shape60.dragpoint2.lineseg1"
+              orient="horizontal" x="706.0" y="319.0" />
+              <linesegment length="0"
+              name="shape60.dragpoint2.lineseg2" orient="vertical"
+              x="706.0" y="319.0" />
+              <linesegment length="151"
+              name="shape60.dragpoint2.lineseg3"
+              orient="horizontal" x="706.0" y="319.0" />
+              <linesegment length="128"
+              name="shape60.dragpoint2.lineseg4" orient="vertical"
+              x="857.0" y="319.0" />
+              <linesegment label="Rejected" length="135"
+              name="shape60.dragpoint2.lineseg5"
+              orient="horizontal" x="857.0" y="447.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape61"
+        shapetype="processcall" userlabel="" x="432.0" y="304.0">
+          <configuration>
+            <processcall abort="true"
+            processId="56654aea-2afe-422f-8d76-312b4f35835d"
+            wait="true">
+              <parameters />
+              <returnpaths>
+                <returnpaths childShapeName="shape14"
+                returnLabel="TransformedData" />
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape14"
+            name="shape61.dragpoint1" text="TransformedData"
+            toShape="shape60" x="656.0" y="313.0">
+              <linesegment length="0"
+              name="shape61.dragpoint1.lineseg1"
+              orient="horizontal" x="466.0" y="319.0" />
+              <linesegment length="0"
+              name="shape61.dragpoint1.lineseg2" orient="vertical"
+              x="466.0" y="319.0" />
+              <linesegment length="103"
+              name="shape61.dragpoint1.lineseg3"
+              orient="horizontal" x="466.0" y="319.0" />
+              <linesegment length="0"
+              name="shape61.dragpoint1.lineseg4" orient="vertical"
+              x="569.0" y="319.0" />
+              <linesegment label="TransformedData" length="87"
+              name="shape61.dragpoint1.lineseg5"
+              orient="horizontal" x="569.0" y="319.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+  <Overrides allowScheduleOverride="false">
+    <Connections>
+      <ConnectionOverride id="d3812ced-7ad8-4064-ad1a-483f25c5dcff">
+
+        <field id="directory" label="Directory"
+        xpath="DiskSettings/@directory" overrideable="true" />
+      </ConnectionOverride>
+      <ConnectionOverride id="8ef5d487-b467-4867-a931-5bb8f8eb9a45">
+
+        <field id="directory" label="Directory"
+        xpath="DiskSettings/@directory" overrideable="true" />
+      </ConnectionOverride>
+      <ConnectionOverride id="6b517e22-636c-4633-8871-56d24a98d9c2">
+
+        <field id="directory" label="Directory"
+        xpath="DiskSettings/@directory" overrideable="true" />
+      </ConnectionOverride>
+      <ConnectionOverride id="84d862f1-01cb-42fc-a64b-3046e7855aec">
+
+        <field id="url" label="URL" xpath="HttpSettings/@url"
+        overrideable="true" />
+        <field id="useBasicAuth" label="Use Basic Authentication"
+        xpath="HttpSettings/@useBasicAuth" overrideable="false" />
+        <field id="user" label="User"
+        xpath="HttpSettings/AuthSettings/@user"
+        overrideable="true" />
+        <field id="password" label="Password"
+        xpath="HttpSettings/AuthSettings/@password"
+        overrideable="true" />
+        <field id="consumerKey" label="OAuth Consumer Key"
+        xpath="HttpSettings/OAuthSettings/@consumerKey"
+        overrideable="false" />
+        <field id="accessToken" label="OAuth Access Token"
+        xpath="HttpSettings/OAuthSettings/@accessToken"
+        overrideable="false" />
+        <field id="tokenSecret" label="OAuth Token Secret"
+        xpath="HttpSettings/OAuthSettings/@tokenSecret"
+        overrideable="false" />
+        <field id="requestTokenURL" label="OAuth Request Token URL"
+        xpath="HttpSettings/OAuthSettings/@requestTokenURL"
+        overrideable="false" />
+        <field id="authorizationURL"
+        label="OAuth Authorization URL"
+        xpath="HttpSettings/OAuthSettings/@authorizationURL"
+        overrideable="false" />
+        <field id="accessTokenURL" label="OAuth Access URL"
+        xpath="HttpSettings/OAuthSettings/@accessTokenURL"
+        overrideable="false" />
+        <field id="consumerSecret" label="OAuth Consumer Secret"
+        xpath="HttpSettings/OAuthSettings/@consumerSecret"
+        overrideable="false" />
+        <field id="clientauth" label="Use Client Authorization"
+        xpath="HttpSettings/SSLOptions/@clientauth"
+        overrideable="false" />
+        <field id="clientsslalias" label="Client SSL Certificate"
+        xpath="HttpSettings/SSLOptions/@clientsslalias"
+        overrideable="false" />
+        <field id="trustServerCert"
+        label="Use Trusted SSL Certificate"
+        xpath="HttpSettings/SSLOptions/@trustServerCert"
+        overrideable="false" />
+        <field id="trustedcertalias"
+        label="Trust SSL Server Certificate"
+        xpath="HttpSettings/SSLOptions/@trustedcertalias"
+        overrideable="false" />
+      </ConnectionOverride>
+    </Connections>
+    <PartnerOverrides />
+    <Properties />
+    <Extensions>
+      <ObjectDefinitions>
+        <objectDefinition objectType="CSV"
+        name="PersonUpdateCSVProfile" id="1434621051968"
+        userDefined="true">
+          <profiles>
+            <profile contentRoot="" contentRootId=""
+            name="PersonUpdateCSVProfile" type="profile.flatfile"
+            id="36333a2f-9641-4052-bc0e-f506ad985062" />
+          </profiles>
+          <LockedFields />
+          <Aliases />
+        </objectDefinition>
+        <objectDefinition objectType="XML"
+        name="PersonUpdateXMLProfile" id="1434621070612"
+        userDefined="true">
+          <profiles>
+            <profile contentRoot="" contentRootId=""
+            name="PersonalityUpdateXMLAPIRequestProfile"
+            type="profile.xml"
+            id="3e390f72-e948-42f8-b66c-880c6e2e6dd1" />
+          </profiles>
+          <LockedFields />
+          <Aliases />
+        </objectDefinition>
+        <unusedProfiles />
+      </ObjectDefinitions>
+      <DataMaps>
+        <dataMap name="PersonUpdateCSVProfile - PersonUpdateXMLProfile"
+        id="14346210519681434621070612">
+          <source objectType="CSV" name="PersonUpdateCSVProfile"
+          id="1434621051968" userDefined="true">
+            <profiles>
+              <profile contentRoot="" contentRootId=""
+              name="PersonUpdateCSVProfile" type="profile.flatfile"
+              id="36333a2f-9641-4052-bc0e-f506ad985062" />
+            </profiles>
+            <Aliases />
+          </source>
+          <destination objectType="XML"
+          name="PersonUpdateXMLProfile" id="1434621070612"
+          userDefined="true">
+            <profiles>
+              <profile contentRoot="" contentRootId=""
+              name="PersonalityUpdateXMLAPIRequestProfile"
+              type="profile.xml"
+              id="3e390f72-e948-42f8-b66c-880c6e2e6dd1" />
+            </profiles>
+            <Aliases />
+          </destination>
+          <maps>
+            <map extensible="true" name="PersonUpdateCSV2XMLAPIMap"
+            id="4af03dda-a4fd-4624-99be-7c4be4ee7976" />
+          </maps>
+        </dataMap>
+        <unusedMaps />
+      </DataMaps>
+    </Extensions>
+    <CrossReferenceOverrides />
+    <PGPOverrides />
+    <DefinedProcessPropertyOverrides>
+      <OverrideableDefinedProcessPropertyComponent componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff">
+
+        <OverrideableDefinedProcessPropertyValue key="be3ef091-a01e-46a9-8ae4-a827c9332c58"
+        name="Import Active" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="e4fd2d21-406a-4116-864b-36de4b8fe5c1"
+        name="Import InActive" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="7371cdbf-6ce0-4ae2-ac8e-5e96c0d7f7d0"
+        name="Import Terminated" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="b5f11bdc-dfeb-45b8-9f22-91c30f99ad4b"
+        name="Lookup Existing Person Data" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="f6be6a6d-d878-478b-bb99-4f4cabfc3e1b"
+        name="kronos-username" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="dc7c89b2-a0b5-4860-ac65-d7111f4eea84"
+        name="kronos-password" overrideable="true" />
+        <OverrideableDefinedProcessPropertyValue key="d4647233-31ec-45b0-99c2-7eec5519e8e8"
+        name="Import New Only" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="9c10f143-86cc-460f-b81f-e7cf1d5ea556"
+        name="Import Existing Only" overrideable="false" />
+        <OverrideableDefinedProcessPropertyValue key="61c5c22b-3a06-463d-9f51-28498491b115"
+        name="Process Id" overrideable="false" />
+      </OverrideableDefinedProcessPropertyComponent>
+    </DefinedProcessPropertyOverrides>
+  </Overrides>
+</Component>

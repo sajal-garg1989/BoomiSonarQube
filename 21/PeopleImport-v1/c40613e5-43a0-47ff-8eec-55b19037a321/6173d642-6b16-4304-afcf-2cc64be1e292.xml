@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>6173d642-6b16-4304-afcf-2cc64be1e292</Id>
+  <Type>transform.map</Type>
+  <Name>UpdateForDeAssignment</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="a986a481-436f-48df-b2e0-f6a1a0d8b28b"
+    refId="fromProfile" name="PersonMinorRuleProfile" />
+    <Ref compId="a986a481-436f-48df-b2e0-f6a1a0d8b28b"
+    refId="toProfile" name="PersonMinorRuleProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="a986a481-436f-48df-b2e0-f6a1a0d8b28b"
+    toProfile="a986a481-436f-48df-b2e0-f6a1a0d8b28b">
+      <Mappings>
+        <Mapping fromKey="7"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        fromNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        fromType="profile" toKey="7"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='5']/*[@key='6']/*[@key='7']"
+        toNamePath="Root/Array/ArrayElement1/Object/personIdentity/Object/personNumber"
+        toType="profile" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']/*[@key='9']/*[@key='10']"
+        fromNamePath="Root/Array/ArrayElement1/Object/minorRule/Object/qualifier"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+        <Mapping fromKey="13"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='13']"
+        fromNamePath="Root/Array/ArrayElement1/Object/schoolCalendar/Object/qualifier"
+        fromType="profile" toFunction="1" toKey="2"
+        toType="function" />
+        <Mapping fromKey="14"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='14']"
+        fromNamePath="Root/Array/ArrayElement1/Object/emancipatedMinor"
+        fromType="profile" toFunction="1" toKey="3"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="4" fromType="function"
+        toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='8']/*[@key='9']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/minorRule/Object/qualifier"
+        toType="profile" />
+        <Mapping fromFunction="1" fromKey="5" fromType="function"
+        toKey="13"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']/*[@key='12']/*[@key='13']"
+        toNamePath="Root/Array/ArrayElement1/Object/schoolCalendar/Object/qualifier"
+        toType="profile" />
+        <Mapping fromFunction="1" fromKey="6" fromType="function"
+        toKey="14"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='14']"
+        toNamePath="Root/Array/ArrayElement1/Object/emancipatedMinor"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="1"
+        sumEnabled="false" type="Scripting" x="10.0" y="10.0">
+          <Inputs>
+            <Input key="1" name="MinorRule" />
+            <Input key="2" name="SchoolCalendar" />
+            <Input key="3" name="EmancipatedMinor" />
+          </Inputs>
+          <Outputs>
+            <Output key="4" name="MinorRule" />
+            <Output key="5" name="SchoolCalendar" />
+            <Output key="6" name="EmancipatedMinor" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy" useComponent="false">
+              <ScriptToExecute>
+              if(MinorRule.equalsIgnoreCase("NONE") ||
+              MinorRule.equalsIgnoreCase("EMPTY") ){ MinorRule= "";
+              } if(SchoolCalendar.equalsIgnoreCase("NONE") ||
+              SchoolCalendar.equalsIgnoreCase("EMPTY")) {
+              SchoolCalendar=""; }
+              if(EmancipatedMinor.equalsIgnoreCase("NONE") ||
+              EmancipatedMinor.equalsIgnoreCase("EMPTY") ){
+              EmancipatedMinor=false; }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="MinorRule" />
+              <Input dataType="character" index="2"
+              name="SchoolCalendar" />
+              <Input dataType="character" index="3"
+              name="EmancipatedMinor" />
+              <Output index="4" name="MinorRule" />
+              <Output index="5" name="SchoolCalendar" />
+              <Output index="6" name="EmancipatedMinor" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

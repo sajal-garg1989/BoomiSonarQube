@@ -1,0 +1,599 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>9d1ba578-dddc-4e0d-93bc-ae269875255f</Id>
+  <Type>process</Type>
+  <Name>_Assignment_JobPreferences</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-15-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-16-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="e88fc850-b692-4d7f-b02a-624e479553ac"
+    refId="shape9-parameter-17-processproperty"
+    name="AuthenticationProperties" />
+    <Ref compId="f7b07976-2925-4f90-ae73-c776d21014cd"
+    refId="shape2-step1-profile" name="EmployeeJobPreferences" />
+    <Ref compId="a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    refId="shape3.processpropertya832ddb4-4e38-48b1-8f41-d5ca0dad7b8a"
+    name="TransactionAssistantProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape3-parameter-1-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape3-parameter-13-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape3-parameter-9-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="6ee4f8b4-f6e2-41db-9419-05590cac629d"
+    refId="shape5" name="_LogData" />
+    <Ref compId="6ee4f8b4-f6e2-41db-9419-05590cac629d"
+    refId="shape6" name="_LogData" />
+    <Ref compId="866d897d-a578-4ae7-9005-d80520b18c03"
+    refId="shape8.connection"
+    name="PeopleImport-v1_APIGatewayServer" />
+    <Ref compId="5d746b89-278c-43fc-85aa-8b145088720a"
+    refId="shape8.operation" name="EmployeeJobPreferences" />
+    <Ref compId="248658d7-e214-4822-af3a-75790c26ed7b"
+    refId="shape10" name="_TransactionAssistantImportProcess" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape9-parameter-14-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="0.0" y="176.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2"
+            x="128.0" y="185.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="191.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="191.0" />
+              <linesegment length="55"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="191.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="89.0" y="191.0" />
+              <linesegment length="39"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="89.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape9"
+        shapetype="documentproperties" userlabel="" x="272.0"
+        y="176.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - api_qstring"
+              persist="false"
+              propertyId="dynamicdocument.api_qstring">
+                <sourcevalues>
+                  <parametervalue key="13" valueType="static">
+                    <staticparameter staticproperty="?tenantId=" />
+                  </parametervalue>
+                  <parametervalue key="14"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="PeopleImport-v1_ProcessProperties"
+                    propertyKey="7938e873-6a62-4e4d-9b90-63771494c315"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - requestBody"
+              persist="false"
+              propertyId="dynamicdocument.requestBody">
+                <sourcevalues>
+                  <parametervalue key="9" valueType="current" />
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - AppKey"
+              persist="false" propertyId="dynamicdocument.AppKey">
+                <sourcevalues>
+                  <parametervalue key="15"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="41841706-fab3-4095-842f-83c63035a675"
+                    propertyLabel="AppKey" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - Authorization"
+              persist="false"
+              propertyId="dynamicdocument.Authorization">
+                <sourcevalues>
+                  <parametervalue key="16"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="b756d569-0c68-47e2-ad4c-65427ded176e"
+                    propertyLabel="AccessToken" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - Cookie"
+              persist="false" propertyId="dynamicdocument.Cookie">
+                <sourcevalues>
+                  <parametervalue key="17"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="e88fc850-b692-4d7f-b02a-624e479553ac"
+                    componentName="AuthenticationProperties"
+                    propertyKey="b756d569-0c68-47e2-ad4c-65427ded176e"
+                    propertyLabel="AccessToken" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - logfilename"
+              persist="false"
+              propertyId="dynamicdocument.logfilename">
+                <sourcevalues>
+                  <parametervalue key="18" valueType="static">
+                    <staticparameter staticproperty="UniversalPeopleImport_EmpJobPreferences_APIRequest" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape9.dragpoint1" toShape="shape11"
+            x="432.0" y="185.0">
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg1" orient="horizontal"
+              x="306.0" y="191.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg2" orient="vertical"
+              x="306.0" y="191.0" />
+              <linesegment length="71"
+              name="shape9.dragpoint1.lineseg3" orient="horizontal"
+              x="306.0" y="191.0" />
+              <linesegment length="0"
+              name="shape9.dragpoint1.lineseg4" orient="vertical"
+              x="377.0" y="191.0" />
+              <linesegment length="55"
+              name="shape9.dragpoint1.lineseg5" orient="horizontal"
+              x="377.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape2"
+        shapetype="dataprocess" userlabel="" x="144.0" y="176.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="1" name="Split Documents"
+              processtype="8">
+                <documentsplit profileType="json">
+                  <SplitOptions>
+                    <JSONOptions batchCount="100"
+                    linkElementKey="3"
+                    linkElementName="ArrayElement1 (Root/Array/ArrayElement1)"
+                    profileId="f7b07976-2925-4f90-ae73-c776d21014cd" />
+                  </SplitOptions>
+                </documentsplit>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape9"
+            x="256.0" y="185.0">
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg1" orient="horizontal"
+              x="178.0" y="191.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg2" orient="vertical"
+              x="178.0" y="191.0" />
+              <linesegment length="47"
+              name="shape2.dragpoint1.lineseg3" orient="horizontal"
+              x="178.0" y="191.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg4" orient="vertical"
+              x="225.0" y="191.0" />
+              <linesegment length="31"
+              name="shape2.dragpoint1.lineseg5" orient="horizontal"
+              x="225.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape3"
+        shapetype="documentproperties" userlabel="" x="992.0"
+        y="336.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - enableTransactionAssistant"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@710dfc37-19d5-45f2-9ded-1336a2fab3b8">
+
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="JobUpdateProcessProperties"
+                    propertyKey="26e5d174-14d4-4c45-b28b-d850bbf1aab7"
+                    propertyLabel="enableTransactionAssistant" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - batchName"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@18cd7bfa-14d7-4cc0-8e45-adc11070a9ce">
+
+                <sourcevalues>
+                  <parametervalue key="13"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="GenericPeopleImportProcessProperties"
+                    propertyKey="0ed77471-b94a-4d10-b3d5-26231d492e5c"
+                    propertyLabel="batchName" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - sourceName"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@91b26812-4709-4fc3-bb84-386e5c062c1d">
+
+                <sourcevalues>
+                  <parametervalue key="2" valueType="static">
+                    <staticparameter staticproperty="IHUB" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - sourceDetails"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@06e0bc77-0aaa-48ab-b13e-19c3826afce9">
+
+                <sourcevalues>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="Integration Hub" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - transactionType"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@ddeb65ba-0a1b-49f5-bc40-fcb130410a19">
+
+                <sourcevalues>
+                  <parametervalue key="4" valueType="static">
+                    <staticparameter staticproperty="People" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - endpointURL"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@e2ed97be-713a-4dbd-8f4a-f701540af615">
+
+                <sourcevalues>
+                  <parametervalue key="7" valueType="static">
+                    <staticparameter staticproperty="v1/commons/persons/job_preferences/multi_update" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - falconExecutionId"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@312ef5ac-a57b-4c59-a44b-bebd06cd3326">
+
+                <sourcevalues>
+                  <parametervalue key="9"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="GenericPeopleImportProcessProperties"
+                    propertyKey="61c5c22b-3a06-463d-9f51-28498491b115"
+                    propertyLabel="falconExecutionId" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - responseBody"
+              persist="false"
+              propertyId="dynamicdocument.responseBody">
+                <sourcevalues>
+                  <parametervalue key="12" valueType="current" />
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - TransactionAssistantProcessProperties - displayFailedProcess"
+              persist="false"
+              propertyId="definedprocess.a832ddb4-4e38-48b1-8f41-d5ca0dad7b8a@415c9589-ac43-4da4-aed0-721313ff07f1">
+
+                <sourcevalues>
+                  <parametervalue key="14" valueType="static">
+                    <staticparameter staticproperty="Personality Data" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape3.dragpoint1" toShape="shape10"
+            x="1184.0" y="345.0">
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg1" orient="horizontal"
+              x="1026.0" y="351.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg2" orient="vertical"
+              x="1026.0" y="351.0" />
+              <linesegment length="87"
+              name="shape3.dragpoint1.lineseg3" orient="horizontal"
+              x="1026.0" y="351.0" />
+              <linesegment length="0"
+              name="shape3.dragpoint1.lineseg4" orient="vertical"
+              x="1113.0" y="351.0" />
+              <linesegment length="71"
+              name="shape3.dragpoint1.lineseg5" orient="horizontal"
+              x="1113.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape4"
+        shapetype="documentproperties" userlabel="" x="1056.0"
+        y="176.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - logfilename"
+              persist="false"
+              propertyId="dynamicdocument.logfilename">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="static">
+                    <staticparameter staticproperty="UniversalPeopleImport_EmpJobPreferences_APIResponse" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Dynamic Document Property - isAPIResponse"
+              persist="false"
+              propertyId="dynamicdocument.isAPIResponse">
+                <sourcevalues>
+                  <parametervalue key="2" valueType="static">
+                    <staticparameter staticproperty="true" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape4.dragpoint1" toShape="shape5"
+            x="1184.0" y="185.0">
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg1" orient="horizontal"
+              x="1090.0" y="191.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg2" orient="vertical"
+              x="1090.0" y="191.0" />
+              <linesegment length="55"
+              name="shape4.dragpoint1.lineseg3" orient="horizontal"
+              x="1090.0" y="191.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg4" orient="vertical"
+              x="1145.0" y="191.0" />
+              <linesegment length="39"
+              name="shape4.dragpoint1.lineseg5" orient="horizontal"
+              x="1145.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape5"
+        shapetype="processcall" userlabel="" x="1200.0" y="176.0">
+          <configuration>
+            <processcall abort="false"
+            processId="6ee4f8b4-f6e2-41db-9419-05590cac629d"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape6"
+        shapetype="processcall" userlabel="" x="608.0" y="368.0">
+          <configuration>
+            <processcall abort="false"
+            processId="6ee4f8b4-f6e2-41db-9419-05590cac629d"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="branch_icon" name="shape7" shapetype="branch"
+        userlabel="" x="816.0" y="176.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape7.dragpoint1"
+            text="1" toShape="shape4" x="1040.0" y="185.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="850.0" y="191.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="850.0" y="191.0" />
+              <linesegment length="103"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="850.0" y="191.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="953.0" y="191.0" />
+              <linesegment label="1" length="87"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="953.0" y="191.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape7.dragpoint2"
+            text="2" toShape="shape3" x="976.0" y="345.0">
+              <linesegment length="0"
+              name="shape7.dragpoint2.lineseg1" orient="horizontal"
+              x="850.0" y="191.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint2.lineseg2" orient="vertical"
+              x="850.0" y="191.0" />
+              <linesegment length="71"
+              name="shape7.dragpoint2.lineseg3" orient="horizontal"
+              x="850.0" y="191.0" />
+              <linesegment length="160"
+              name="shape7.dragpoint2.lineseg4" orient="vertical"
+              x="921.0" y="191.0" />
+              <linesegment label="2" length="55"
+              name="shape7.dragpoint2.lineseg5" orient="horizontal"
+              x="921.0" y="351.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape8"
+        shapetype="connectoraction"
+        userlabel="EmployeeJobPreferences" x="656.0" y="176.0">
+          <configuration>
+            <connectoraction actionType="Send"
+            connectionId="866d897d-a578-4ae7-9005-d80520b18c03"
+            connectorType="http" hideSettings="false"
+            operationId="5d746b89-278c-43fc-85aa-8b145088720a"
+            parameter-profile="EMBEDDED|HttpParameterChooser|5d746b89-278c-43fc-85aa-8b145088720a">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape8.dragpoint1" toShape="shape7"
+            x="800.0" y="185.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="690.0" y="191.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="690.0" y="191.0" />
+              <linesegment length="63"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="690.0" y="191.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="753.0" y="191.0" />
+              <linesegment length="47"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="753.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape10"
+        shapetype="processcall" userlabel="" x="1200.0" y="336.0">
+          <configuration>
+            <processcall abort="true"
+            processId="248658d7-e214-4822-af3a-75790c26ed7b"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="branch_icon" name="shape11"
+        shapetype="branch" userlabel="" x="448.0" y="176.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape11.dragpoint1"
+            text="1" toShape="shape8" x="640.0" y="185.0">
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg1"
+              orient="horizontal" x="482.0" y="191.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg2" orient="vertical"
+              x="482.0" y="191.0" />
+              <linesegment length="87"
+              name="shape11.dragpoint1.lineseg3"
+              orient="horizontal" x="482.0" y="191.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg4" orient="vertical"
+              x="569.0" y="191.0" />
+              <linesegment label="1" length="71"
+              name="shape11.dragpoint1.lineseg5"
+              orient="horizontal" x="569.0" y="191.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape11.dragpoint2"
+            text="2" toShape="shape6" x="592.0" y="377.0">
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg1"
+              orient="horizontal" x="482.0" y="191.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg2" orient="vertical"
+              x="482.0" y="191.0" />
+              <linesegment length="63"
+              name="shape11.dragpoint2.lineseg3"
+              orient="horizontal" x="482.0" y="191.0" />
+              <linesegment length="192"
+              name="shape11.dragpoint2.lineseg4" orient="vertical"
+              x="545.0" y="191.0" />
+              <linesegment label="2" length="47"
+              name="shape11.dragpoint2.lineseg5"
+              orient="horizontal" x="545.0" y="383.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

@@ -1,0 +1,797 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>4a70b706-5893-4259-9049-373cde0908e3</Id>
+  <Type>process</Type>
+  <Name>_AutoCallback</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="79e27374-56b4-4936-8454-92b10bf1c868"
+    refId="shape4" name="GetAccessToken" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape7.processproperty74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    name="AutoCallbackProperty" />
+    <Ref compId="bebc6246-9600-410e-a3d0-cf544b2dc0dc"
+    refId="shape7-parameter-1-profile" name="AccessTokenJSON" />
+    <Ref compId="6d0fb8ca-5054-4549-803d-f3bb7cc5e4e2"
+    refId="shape8" name="HttpCallback" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2.processproperty74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-1-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-2-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-4-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-6-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-8-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-10-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape2-parameter-12-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape7-parameter-2-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape7-parameter-6-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape13-0-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14.processproperty74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-1-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-2-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-4-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-6-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-8-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-10-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape14-parameter-12-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape15-0-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape16.processproperty74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape16-parameter-2-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape16-parameter-6-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape16-parameter-8-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="shape16-parameter-10-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="0a45d2d3-775e-4c5a-acdf-e476959f22fd"
+    refId="shape7-parameter-7-processproperty"
+    name="DefaultProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="16.0" y="128.0">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape11"
+            x="128.0" y="137.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="50.0" y="143.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="50.0" y="143.0" />
+              <linesegment length="47"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="50.0" y="143.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="97.0" y="143.0" />
+              <linesegment length="31"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="97.0" y="143.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape2"
+        shapetype="documentproperties"
+        userlabel="SetOAuthProperties" x="608.0" y="16.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - ServerURL"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@de843a69-0a23-41c7-9335-249242f5a889">
+
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="d76e92c8-d5b0-4f6a-8aa7-804752165b69"
+                    propertyLabel="AuthURL" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - PathParam"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@3d1453eb-d285-4329-a707-67e2a6874508">
+
+                <sourcevalues>
+                  <parametervalue key="13" valueType="static">
+                    <staticparameter staticproperty="oauth2/" />
+                  </parametervalue>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="49e2b1b5-824e-43a7-991a-16d617e6ef3f"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="/access_token?username=" />
+                  </parametervalue>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="dc403b02-2dc7-4b28-853a-da7833bdb502"
+                    propertyLabel="Username" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="&amp;password=" />
+                  </parametervalue>
+                  <parametervalue key="6"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="6539f06e-8001-41a4-b4c2-26cabbbe2bb5"
+                    propertyLabel="Password" />
+                  </parametervalue>
+                  <parametervalue key="7" valueType="static">
+                    <staticparameter staticproperty="&amp;client_id=" />
+                  </parametervalue>
+                  <parametervalue key="8"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="598f21d9-2112-4e1f-a7fa-102e8435def0"
+                    propertyLabel="ClientId" />
+                  </parametervalue>
+                  <parametervalue key="9" valueType="static">
+                    <staticparameter staticproperty="&amp;client_secret=" />
+                  </parametervalue>
+                  <parametervalue key="10"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="139c2482-702b-4d64-911b-7ba64708261c"
+                    propertyLabel="ClientSecret" />
+                  </parametervalue>
+                  <parametervalue key="11" valueType="static">
+                    <staticparameter staticproperty="&amp;grant_type=" />
+                  </parametervalue>
+                  <parametervalue key="12"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="263309a6-ed9d-4efe-9857-be669a967a93"
+                    propertyLabel="GrantType" />
+                  </parametervalue>
+                  <parametervalue key="14" valueType="static">
+                    <staticparameter staticproperty="&amp;auth_chain=OAuthLdapService" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape4"
+            x="832.0" y="121.0">
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg1" orient="horizontal"
+              x="642.0" y="31.0" />
+              <linesegment length="0"
+              name="shape2.dragpoint1.lineseg2" orient="vertical"
+              x="642.0" y="31.0" />
+              <linesegment length="103"
+              name="shape2.dragpoint1.lineseg3" orient="horizontal"
+              x="642.0" y="31.0" />
+              <linesegment length="96"
+              name="shape2.dragpoint1.lineseg4" orient="vertical"
+              x="745.0" y="31.0" />
+              <linesegment length="87"
+              name="shape2.dragpoint1.lineseg5" orient="horizontal"
+              x="745.0" y="127.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape4" shapetype="map"
+        userlabel="GetAccessToken" x="848.0" y="112.0">
+          <configuration>
+            <map mapId="79e27374-56b4-4936-8454-92b10bf1c868" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape4.dragpoint1" toShape="shape7"
+            x="1008.0" y="121.0">
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg1" orient="horizontal"
+              x="882.0" y="127.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg2" orient="vertical"
+              x="882.0" y="127.0" />
+              <linesegment length="71"
+              name="shape4.dragpoint1.lineseg3" orient="horizontal"
+              x="882.0" y="127.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg4" orient="vertical"
+              x="953.0" y="127.0" />
+              <linesegment length="55"
+              name="shape4.dragpoint1.lineseg5" orient="horizontal"
+              x="953.0" y="127.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape5" shapetype="stop"
+        userlabel="" x="1440.0" y="288.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="documentproperties_icon" name="shape7"
+        shapetype="documentproperties" userlabel="SetToken"
+        x="1024.0" y="112.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - AccessToken"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@cbb4fdc9-8ab8-48fc-9800-f77fa084678f">
+
+                <sourcevalues>
+                  <parametervalue key="1" valueType="profile">
+                    <profileelement elementId="3"
+                    elementName="access_token (Root/Object/access_token)"
+                    profileId="bebc6246-9600-410e-a3d0-cf544b2dc0dc"
+                    profileType="profile.json" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - ServerURL"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@de843a69-0a23-41c7-9335-249242f5a889">
+
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="251eea0f-7236-4851-9b96-b4fee7294be7"
+                    propertyLabel="GatewayURL" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - PathParam"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@3d1453eb-d285-4329-a707-67e2a6874508">
+
+                <sourcevalues>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="v1/ihub/callback?" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="tenantId=" />
+                  </parametervalue>
+                  <parametervalue key="6"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="49e2b1b5-824e-43a7-991a-16d617e6ef3f"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - AppKey"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@f776b017-4ce5-430f-9e81-186149337360">
+
+                <sourcevalues>
+                  <parametervalue key="7"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="0a45d2d3-775e-4c5a-acdf-e476959f22fd"
+                    componentName="DefaultProcessProperties"
+                    propertyKey="6e12d5b4-e339-48dc-9aa4-d1168a0a4abf"
+                    propertyLabel="DefaultAppKey" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape7.dragpoint1" toShape="shape8"
+            x="1168.0" y="297.0">
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg1" orient="horizontal"
+              x="1058.0" y="127.0" />
+              <linesegment length="0"
+              name="shape7.dragpoint1.lineseg2" orient="vertical"
+              x="1058.0" y="127.0" />
+              <linesegment length="63"
+              name="shape7.dragpoint1.lineseg3" orient="horizontal"
+              x="1058.0" y="127.0" />
+              <linesegment length="176"
+              name="shape7.dragpoint1.lineseg4" orient="vertical"
+              x="1121.0" y="127.0" />
+              <linesegment length="47"
+              name="shape7.dragpoint1.lineseg5" orient="horizontal"
+              x="1121.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape8" shapetype="map"
+        userlabel="CreateCallbackRequest" x="1184.0" y="288.0">
+          <configuration>
+            <map mapId="6d0fb8ca-5054-4549-803d-f3bb7cc5e4e2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape8.dragpoint1" toShape="shape5"
+            x="1424.0" y="297.0">
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg1" orient="horizontal"
+              x="1218.0" y="303.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg2" orient="vertical"
+              x="1218.0" y="303.0" />
+              <linesegment length="111"
+              name="shape8.dragpoint1.lineseg3" orient="horizontal"
+              x="1218.0" y="303.0" />
+              <linesegment length="0"
+              name="shape8.dragpoint1.lineseg4" orient="vertical"
+              x="1329.0" y="303.0" />
+              <linesegment length="95"
+              name="shape8.dragpoint1.lineseg5" orient="horizontal"
+              x="1329.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="catcherrors_icon" name="shape11"
+        shapetype="catcherrors" userlabel="" x="144.0" y="128.0">
+          <configuration>
+            <catcherrors catchAll="true" retryCount="0" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="default"
+            name="shape11.dragpoint1" text="Try" toShape="shape15"
+            x="256.0" y="73.0">
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg1"
+              orient="horizontal" x="178.0" y="143.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint1.lineseg2" orient="vertical"
+              x="178.0" y="143.0" />
+              <linesegment length="47"
+              name="shape11.dragpoint1.lineseg3"
+              orient="horizontal" x="178.0" y="143.0" />
+              <linesegment length="64"
+              name="shape11.dragpoint1.lineseg4" orient="vertical"
+              x="225.0" y="79.0" />
+              <linesegment label="Try" length="31"
+              name="shape11.dragpoint1.lineseg5"
+              orient="horizontal" x="225.0" y="79.0" />
+            </dragpoint>
+            <dragpoint identifier="error" name="shape11.dragpoint2"
+            text="Catch" toShape="shape12" x="256.0" y="377.0">
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg1"
+              orient="horizontal" x="178.0" y="143.0" />
+              <linesegment length="0"
+              name="shape11.dragpoint2.lineseg2" orient="vertical"
+              x="178.0" y="143.0" />
+              <linesegment length="47"
+              name="shape11.dragpoint2.lineseg3"
+              orient="horizontal" x="178.0" y="143.0" />
+              <linesegment length="240"
+              name="shape11.dragpoint2.lineseg4" orient="vertical"
+              x="225.0" y="143.0" />
+              <linesegment label="Catch" length="31"
+              name="shape11.dragpoint2.lineseg5"
+              orient="horizontal" x="225.0" y="383.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape12"
+        shapetype="exception" userlabel="AutoCallbackException"
+        x="272.0" y="368.0">
+          <configuration>
+            <exception stopProcessReturnSingleDoc="false"
+            stopsingledoc="false" title="">
+              <exMessage>Error occurred while executing integration
+              process. Auto callback failed to update process
+              status in integration hub self service. Refer to logs
+              for details.</exMessage>
+              <exParameters />
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="decision_icon" name="shape13"
+        shapetype="decision" userlabel="" x="432.0" y="64.0">
+          <configuration>
+            <decision comparison="equals" name="">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                componentName="AutoCallbackProperty"
+                propertyKey="c6371192-2d06-4665-83da-92de6f466b53"
+                propertyLabel="EnableAuthnChain" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape13.dragpoint1"
+            text="True" toShape="shape2" x="592.0" y="25.0">
+              <linesegment length="0"
+              name="shape13.dragpoint1.lineseg1"
+              orient="horizontal" x="466.0" y="79.0" />
+              <linesegment length="0"
+              name="shape13.dragpoint1.lineseg2" orient="vertical"
+              x="466.0" y="79.0" />
+              <linesegment length="71"
+              name="shape13.dragpoint1.lineseg3"
+              orient="horizontal" x="466.0" y="79.0" />
+              <linesegment length="48"
+              name="shape13.dragpoint1.lineseg4" orient="vertical"
+              x="537.0" y="31.0" />
+              <linesegment label="True" length="55"
+              name="shape13.dragpoint1.lineseg5"
+              orient="horizontal" x="537.0" y="31.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape13.dragpoint2"
+            text="False" toShape="shape14" x="592.0" y="185.0">
+              <linesegment length="0"
+              name="shape13.dragpoint2.lineseg1"
+              orient="horizontal" x="466.0" y="79.0" />
+              <linesegment length="0"
+              name="shape13.dragpoint2.lineseg2" orient="vertical"
+              x="466.0" y="79.0" />
+              <linesegment length="71"
+              name="shape13.dragpoint2.lineseg3"
+              orient="horizontal" x="466.0" y="79.0" />
+              <linesegment length="112"
+              name="shape13.dragpoint2.lineseg4" orient="vertical"
+              x="537.0" y="79.0" />
+              <linesegment label="False" length="55"
+              name="shape13.dragpoint2.lineseg5"
+              orient="horizontal" x="537.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape14"
+        shapetype="documentproperties"
+        userlabel="SetOAuthProperties" x="608.0" y="176.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - ServerURL"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@de843a69-0a23-41c7-9335-249242f5a889">
+
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="d76e92c8-d5b0-4f6a-8aa7-804752165b69"
+                    propertyLabel="AuthURL" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - PathParam"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@3d1453eb-d285-4329-a707-67e2a6874508">
+
+                <sourcevalues>
+                  <parametervalue key="13" valueType="static">
+                    <staticparameter staticproperty="oauth2/" />
+                  </parametervalue>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="49e2b1b5-824e-43a7-991a-16d617e6ef3f"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="/access_token?username=" />
+                  </parametervalue>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="dc403b02-2dc7-4b28-853a-da7833bdb502"
+                    propertyLabel="Username" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="&amp;password=" />
+                  </parametervalue>
+                  <parametervalue key="6"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="6539f06e-8001-41a4-b4c2-26cabbbe2bb5"
+                    propertyLabel="Password" />
+                  </parametervalue>
+                  <parametervalue key="7" valueType="static">
+                    <staticparameter staticproperty="&amp;client_id=" />
+                  </parametervalue>
+                  <parametervalue key="8"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="598f21d9-2112-4e1f-a7fa-102e8435def0"
+                    propertyLabel="ClientId" />
+                  </parametervalue>
+                  <parametervalue key="9" valueType="static">
+                    <staticparameter staticproperty="&amp;client_secret=" />
+                  </parametervalue>
+                  <parametervalue key="10"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="139c2482-702b-4d64-911b-7ba64708261c"
+                    propertyLabel="ClientSecret" />
+                  </parametervalue>
+                  <parametervalue key="11" valueType="static">
+                    <staticparameter staticproperty="&amp;grant_type=" />
+                  </parametervalue>
+                  <parametervalue key="12"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="263309a6-ed9d-4efe-9857-be669a967a93"
+                    propertyLabel="GrantType" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape14.dragpoint1" toShape="shape4"
+            x="832.0" y="121.0">
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg1"
+              orient="horizontal" x="642.0" y="191.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg2" orient="vertical"
+              x="642.0" y="191.0" />
+              <linesegment length="103"
+              name="shape14.dragpoint1.lineseg3"
+              orient="horizontal" x="642.0" y="191.0" />
+              <linesegment length="64"
+              name="shape14.dragpoint1.lineseg4" orient="vertical"
+              x="745.0" y="127.0" />
+              <linesegment length="87"
+              name="shape14.dragpoint1.lineseg5"
+              orient="horizontal" x="745.0" y="127.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="decision_icon" name="shape15"
+        shapetype="decision" userlabel="" x="272.0" y="64.0">
+          <configuration>
+            <decision comparison="equals" name="">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                componentName="AutoCallbackProperty"
+                propertyKey="04fff28e-46ac-4582-8cfd-8c23ed042b21"
+                propertyLabel="DisableCookie" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape15.dragpoint1"
+            text="True" toShape="shape13" x="416.0" y="73.0">
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg1"
+              orient="horizontal" x="306.0" y="79.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg2" orient="vertical"
+              x="306.0" y="79.0" />
+              <linesegment length="63"
+              name="shape15.dragpoint1.lineseg3"
+              orient="horizontal" x="306.0" y="79.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint1.lineseg4" orient="vertical"
+              x="369.0" y="79.0" />
+              <linesegment label="True" length="47"
+              name="shape15.dragpoint1.lineseg5"
+              orient="horizontal" x="369.0" y="79.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape15.dragpoint2"
+            text="False" toShape="shape16" x="400.0" y="297.0">
+              <linesegment length="0"
+              name="shape15.dragpoint2.lineseg1"
+              orient="horizontal" x="306.0" y="79.0" />
+              <linesegment length="0"
+              name="shape15.dragpoint2.lineseg2" orient="vertical"
+              x="306.0" y="79.0" />
+              <linesegment length="55"
+              name="shape15.dragpoint2.lineseg3"
+              orient="horizontal" x="306.0" y="79.0" />
+              <linesegment length="224"
+              name="shape15.dragpoint2.lineseg4" orient="vertical"
+              x="361.0" y="79.0" />
+              <linesegment label="False" length="39"
+              name="shape15.dragpoint2.lineseg5"
+              orient="horizontal" x="361.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape16"
+        shapetype="documentproperties" userlabel="SetToken"
+        x="416.0" y="288.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - ServerURL"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@de843a69-0a23-41c7-9335-249242f5a889">
+
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="251eea0f-7236-4851-9b96-b4fee7294be7"
+                    propertyLabel="GatewayURL" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - PathParam"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@3d1453eb-d285-4329-a707-67e2a6874508">
+
+                <sourcevalues>
+                  <parametervalue key="3" valueType="static">
+                    <staticparameter staticproperty="v1/ihub/callback?" />
+                  </parametervalue>
+                  <parametervalue key="5" valueType="static">
+                    <staticparameter staticproperty="tenantId=" />
+                  </parametervalue>
+                  <parametervalue key="6"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="49e2b1b5-824e-43a7-991a-16d617e6ef3f"
+                    propertyLabel="TenantId" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - AutoCallbackProperty - AccessToken"
+              persist="false"
+              propertyId="definedprocess.74d2c1a4-b757-459c-ba46-a40fb4b8389c@cbb4fdc9-8ab8-48fc-9800-f77fa084678f">
+
+                <sourcevalues>
+                  <parametervalue key="7" valueType="static">
+                    <staticparameter staticproperty="AUTHN_TOKEN=&quot;" />
+                  </parametervalue>
+                  <parametervalue key="8"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="3e755c74-4973-4107-a218-4e4a9b84e189"
+                    propertyLabel="AUTHN_TOKEN" />
+                  </parametervalue>
+                  <parametervalue key="9" valueType="static">
+                    <staticparameter staticproperty="&quot;;authn_ssid=" />
+                  </parametervalue>
+                  <parametervalue key="10"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+                    componentName="AutoCallbackProperty"
+                    propertyKey="8db98355-ba2e-4daf-b325-4455ecd72636"
+                    propertyLabel="AUTHN_SSID" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape16.dragpoint1" toShape="shape8"
+            x="1168.0" y="297.0">
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg1"
+              orient="horizontal" x="450.0" y="303.0" />
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg2" orient="vertical"
+              x="450.0" y="303.0" />
+              <linesegment length="367"
+              name="shape16.dragpoint1.lineseg3"
+              orient="horizontal" x="450.0" y="303.0" />
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg4" orient="vertical"
+              x="817.0" y="303.0" />
+              <linesegment length="351"
+              name="shape16.dragpoint1.lineseg5"
+              orient="horizontal" x="817.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

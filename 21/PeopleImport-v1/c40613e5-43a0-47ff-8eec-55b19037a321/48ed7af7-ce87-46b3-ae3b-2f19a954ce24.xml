@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>48ed7af7-ce87-46b3-ae3b-2f19a954ce24</Id>
+  <Type>transform.function</Type>
+  <Name>CalculateErrorCount</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="errorIndex" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="count" />
+        <Output key="2" name="errorExist" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="false" category="Numeric"
+        key="1" name="Count" position="1" sumEnabled="true"
+        type="Count" x="24.0" y="40.0">
+          <Inputs>
+            <Input default="0" key="1" name="Field to Count" />
+            <Input default="0" key="2" name="Reset Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" category="Scripting"
+        key="2" name="Scripting" position="2" sumEnabled="false"
+        type="Scripting" x="322.0" y="189.0">
+          <Inputs>
+            <Input key="1" name="errorCount" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="errorExist" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy2" useComponent="false">
+              <ScriptToExecute>if(errorCount != 0) { errorExist =
+              true; }</ScriptToExecute>
+              <Input dataType="integer" index="1"
+              name="errorCount" />
+              <Output index="2" name="errorExist" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="ProcessProperty" key="3"
+        name="Set Document Property" position="3"
+        sumEnabled="false" type="DocumentPropertySet" x="329.0"
+        y="311.0">
+          <Inputs>
+            <Input key="1"
+            name="Dynamic Document Property - ErrorRecordCount" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DocumentProperty defaultValue="" persist="false"
+            propertyId="dynamicdocument.ErrorRecordCount"
+            propertyName="Dynamic Document Property - ErrorRecordCount" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="Count/Result" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/count"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="Count/Result" fromType="function"
+        toFunction="3" toKey="1"
+        toNamePath="Set Document Property/Dynamic Document Property - ErrorRecordCount"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/errorIndex" fromType="function"
+        toFunction="1" toKey="1" toNamePath="Count/Field to Count"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="Count/Result" fromType="function"
+        toFunction="2" toKey="1" toNamePath="Scripting/errorCount"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="2"
+        fromNamePath="Scripting/errorExist" fromType="function"
+        toFunction="0" toKey="2" toNamePath="Editor/errorExist"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

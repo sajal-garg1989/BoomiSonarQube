@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>becff08f-9576-40b6-8737-094a73e963bb</Id>
+  <Type>connector-action</Type>
+  <Name>ZoneCategoriesAssignmentOperation</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Send</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="1220d21c-ce55-47ff-bace-73c9e3156d0b"
+    refId="request-profile"
+    name="PersonZoneCategoryAssignmentProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpSendAction dataContentType="application/json"
+        followRedirects="false" methodType="POST"
+        requestProfile="1220d21c-ce55-47ff-bace-73c9e3156d0b"
+        requestProfileType="JSON" responseProfileType="NONE"
+        returnErrors="true" returnResponses="true">
+          <requestHeaders>
+            <header headerName="AppKey" isVariable="true"
+            key="1000000" />
+            <header headerName="Authorization" isVariable="true"
+            key="1000001" />
+            <header headerName="Cookie" isVariable="true"
+            key="1000002" />
+          </requestHeaders>
+          <pathElements>
+            <element key="2000000"
+            name="v1/commons/persons/scheduling_employee_preferences/multi_upsert" />
+            <element isVariable="true" key="2000001"
+            name="api_qstring" />
+          </pathElements>
+          <responseHeaderMapping />
+          <reflectHeaders />
+        </HttpSendAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>
