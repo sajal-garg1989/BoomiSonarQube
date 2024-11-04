@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>3a115d0e-f459-4cab-abe4-3b8fffa50632</Id>
+  <Type>processproperty</Type>
+  <Name>RunSummaryIntegration</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="78bfe2de-34f9-47bf-bc6c-5b840ee8809e">
+
+        <helpText />
+        <label>IntegrationType</label>
+        <type>string</type>
+        <defaultValue>Import</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="9348bb05-1848-4b77-99c0-5a2d2cccfef2">
+
+        <helpText />
+        <label>TotalErrors</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e3e61846-6bb2-4fe1-9586-3311f32e25e7">
+
+        <helpText />
+        <label>TotalDisqualified</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="15f62c6c-7c7d-4b3d-b099-a799f5686923">
+
+        <helpText />
+        <label>TotalRecords</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="48e49fbc-c41a-457b-b9a8-abd078ffb908">
+
+        <helpText />
+        <label>DisqualifiedByStatus</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ebadf71f-1148-4056-9a72-68f11307f48f">
+
+        <helpText />
+        <label>DisqualifiedByBusinessRule</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b1249205-617c-468a-a9f0-39a07231f8c7">
+
+        <helpText />
+        <label>CountDisqRecords</label>
+        <type>boolean</type>
+        <defaultValue>true</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="843fba33-da33-4d2d-b756-07d1e01b3a02">
+
+        <helpText />
+        <label>TAErrorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>

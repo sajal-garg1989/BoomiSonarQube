@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f9779ab6-154a-45ed-a024-9213c3a5cd96</Id>
+  <Type>documentcache</Type>
+  <Name>TerminatedEmployeeExtensionCache</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="c1f3c364-529f-43cd-9cf1-ec30a8194b72"
+    refId="docCacheProfile" name="EmployeeExtension" />
+  </References>
+  <Description />
+  <Object>
+    <DocumentCache profile="c1f3c364-529f-43cd-9cf1-ec30a8194b72"
+    profileType="profile.json">
+      <CacheIndex indexId="1" indexName="PersonNumber">
+        <cacheKey xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        alias="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)"
+        elementKey="236" id="2"
+        name="personNumber (Root/Array/ArrayElement1/Object/employeeExtension/Object/personNumber)"
+        taglistKey="0" xsi:type="ProfileElementKeyConfig" />
+      </CacheIndex>
+    </DocumentCache>
+  </Object>
+</Component>

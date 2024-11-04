@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>68b1fcf1-f5b0-469a-b435-eb8e8bce4bde</Id>
+  <Type>transform.map</Type>
+  <Name>TotalRecordsMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="36333a2f-9641-4052-bc0e-f506ad985062"
+    refId="fromProfile" name="PeopleImportFlatFileProfile" />
+    <Ref compId="f9740a8e-9888-46ed-95a0-4a10fa7f14b2"
+    refId="function-1" name="CountRecordsMap" />
+    <Ref compId="36333a2f-9641-4052-bc0e-f506ad985062"
+    refId="toProfile" name="PeopleImportFlatFileProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="36333a2f-9641-4052-bc0e-f506ad985062"
+    toProfile="36333a2f-9641-4052-bc0e-f506ad985062">
+      <Mappings>
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        fromNamePath="Record/Elements/PersonNumber"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        toNamePath="Record/Elements/PersonNumber"
+        toType="profile" />
+        <Mapping fromKey="12"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='12']"
+        fromNamePath="Record/Elements/FirstName" fromType="profile"
+        toKey="12" toKeyPath="*[@key='1']/*[@key='2']/*[@key='12']"
+        toNamePath="Record/Elements/FirstName" toType="profile" />
+        <Mapping fromKey="13"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='13']"
+        fromNamePath="Record/Elements/LastName" fromType="profile"
+        toKey="13" toKeyPath="*[@key='1']/*[@key='2']/*[@key='13']"
+        toNamePath="Record/Elements/LastName" toType="profile" />
+        <Mapping fromKey="14"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='14']"
+        fromNamePath="Record/Elements/MiddleInitial"
+        fromType="profile" toKey="14"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='14']"
+        toNamePath="Record/Elements/MiddleInitial"
+        toType="profile" />
+        <Mapping fromKey="78"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='78']"
+        fromNamePath="Record/Elements/ShortName" fromType="profile"
+        toKey="78" toKeyPath="*[@key='1']/*[@key='2']/*[@key='78']"
+        toNamePath="Record/Elements/ShortName" toType="profile" />
+        <Mapping fromKey="34"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='34']"
+        fromNamePath="Record/Elements/BadgeNumber"
+        fromType="profile" toKey="34"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='34']"
+        toNamePath="Record/Elements/BadgeNumber"
+        toType="profile" />
+        <Mapping fromKey="36"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='36']"
+        fromNamePath="Record/Elements/BirthDate" fromType="profile"
+        toKey="36" toKeyPath="*[@key='1']/*[@key='2']/*[@key='36']"
+        toNamePath="Record/Elements/BirthDate" toType="profile" />
+        <Mapping fromKey="80"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='80']"
+        fromNamePath="Record/Elements/PhoneNumber"
+        fromType="profile" toKey="80"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='80']"
+        toNamePath="Record/Elements/PhoneNumber"
+        toType="profile" />
+        <Mapping fromKey="42"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='42']"
+        fromNamePath="Record/Elements/Email" fromType="profile"
+        toKey="42" toKeyPath="*[@key='1']/*[@key='2']/*[@key='42']"
+        toNamePath="Record/Elements/Email" toType="profile" />
+        <Mapping fromKey="19"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='19']"
+        fromNamePath="Record/Elements/HomeAddressStreet"
+        fromType="profile" toKey="19"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='19']"
+        toNamePath="Record/Elements/HomeAddressStreet"
+        toType="profile" />
+        <Mapping fromKey="21"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='21']"
+        fromNamePath="Record/Elements/HomeAddressCity"
+        fromType="profile" toKey="21"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='21']"
+        toNamePath="Record/Elements/HomeAddressCity"
+        toType="profile" />
+        <Mapping fromKey="23"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='23']"
+        fromNamePath="Record/Elements/HomeAddressState"
+        fromType="profile" toKey="23"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='23']"
+        toNamePath="Record/Elements/HomeAddressState"
+        toType="profile" />
+        <Mapping fromKey="54"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='54']"
+        fromNamePath="Record/Elements/HomeAddressPostalCode"
+        fromType="profile" toKey="54"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='54']"
+        toNamePath="Record/Elements/HomeAddressPostalCode"
+        toType="profile" />
+        <Mapping fromKey="55"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='55']"
+        fromNamePath="Record/Elements/HomeAddressCountry"
+        fromType="profile" toKey="55"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='55']"
+        toNamePath="Record/Elements/HomeAddressCountry"
+        toType="profile" />
+        <Mapping fromKey="44"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='44']"
+        fromNamePath="Record/Elements/EmployeeStatus"
+        fromType="profile" toKey="44"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='44']"
+        toNamePath="Record/Elements/EmployeeStatus"
+        toType="profile" />
+        <Mapping fromKey="46"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='46']"
+        fromNamePath="Record/Elements/StatusStartDate"
+        fromType="profile" toKey="46"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='46']"
+        toNamePath="Record/Elements/StatusStartDate"
+        toType="profile" />
+        <Mapping fromKey="24"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='24']"
+        fromNamePath="Record/Elements/StatusEndDate"
+        fromType="profile" toKey="24"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='24']"
+        toNamePath="Record/Elements/StatusEndDate"
+        toType="profile" />
+        <Mapping fromKey="25"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='25']"
+        fromNamePath="Record/Elements/HireDate" fromType="profile"
+        toKey="25" toKeyPath="*[@key='1']/*[@key='2']/*[@key='25']"
+        toNamePath="Record/Elements/HireDate" toType="profile" />
+        <Mapping fromKey="26"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='26']"
+        fromNamePath="Record/Elements/RehireDate"
+        fromType="profile" toKey="26"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='26']"
+        toNamePath="Record/Elements/RehireDate" toType="profile" />
+        <Mapping fromKey="27"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='27']"
+        fromNamePath="Record/Elements/TerminationDate"
+        fromType="profile" toKey="27"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='27']"
+        toNamePath="Record/Elements/TerminationDate"
+        toType="profile" />
+        <Mapping fromKey="32"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='32']"
+        fromNamePath="Record/Elements/ExemptStatus"
+        fromType="profile" toKey="32"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='32']"
+        toNamePath="Record/Elements/ExemptStatus"
+        toType="profile" />
+        <Mapping fromKey="82"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='82']"
+        fromNamePath="Record/Elements/WorkerType"
+        fromType="profile" toKey="82"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='82']"
+        toNamePath="Record/Elements/WorkerType" toType="profile" />
+        <Mapping fromKey="90"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='90']"
+        fromNamePath="Record/Elements/PrimaryLaborCategory"
+        fromType="profile" toKey="90"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='90']"
+        toNamePath="Record/Elements/PrimaryLaborCategory"
+        toType="profile" />
+        <Mapping fromKey="92"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='92']"
+        fromNamePath="Record/Elements/EffectiveDate"
+        fromType="profile" toKey="92"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='92']"
+        toNamePath="Record/Elements/EffectiveDate"
+        toType="profile" />
+        <Mapping fromKey="91"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='91']"
+        fromNamePath="Record/Elements/PrimaryJob"
+        fromType="profile" toKey="91"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='91']"
+        toNamePath="Record/Elements/PrimaryJob" toType="profile" />
+        <Mapping fromKey="111"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='111']"
+        fromNamePath="Record/Elements/OrgLevel1" fromType="profile"
+        toKey="111"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='111']"
+        toNamePath="Record/Elements/OrgLevel1" toType="profile" />
+        <Mapping fromKey="112"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='112']"
+        fromNamePath="Record/Elements/OrgLevel2" fromType="profile"
+        toKey="112"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='112']"
+        toNamePath="Record/Elements/OrgLevel2" toType="profile" />
+        <Mapping fromKey="113"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='113']"
+        fromNamePath="Record/Elements/OrgLevel3" fromType="profile"
+        toKey="113"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='113']"
+        toNamePath="Record/Elements/OrgLevel3" toType="profile" />
+        <Mapping fromKey="114"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='114']"
+        fromNamePath="Record/Elements/OrgLevel4" fromType="profile"
+        toKey="114"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='114']"
+        toNamePath="Record/Elements/OrgLevel4" toType="profile" />
+        <Mapping fromKey="115"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='115']"
+        fromNamePath="Record/Elements/OrgLevel5" fromType="profile"
+        toKey="115"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='115']"
+        toNamePath="Record/Elements/OrgLevel5" toType="profile" />
+        <Mapping fromKey="93"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='93']"
+        fromNamePath="Record/Elements/EmployeeStandardHours"
+        fromType="profile" toKey="93"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='93']"
+        toNamePath="Record/Elements/EmployeeStandardHours"
+        toType="profile" />
+        <Mapping fromKey="94"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='94']"
+        fromNamePath="Record/Elements/EmployeeFullTimeHours"
+        fromType="profile" toKey="94"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='94']"
+        toNamePath="Record/Elements/EmployeeFullTimeHours"
+        toType="profile" />
+        <Mapping fromKey="95"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='95']"
+        fromNamePath="Record/Elements/IsManager" fromType="profile"
+        toKey="95" toKeyPath="*[@key='1']/*[@key='2']/*[@key='95']"
+        toNamePath="Record/Elements/IsManager" toType="profile" />
+        <Mapping fromKey="96"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='96']"
+        fromNamePath="Record/Elements/ReportsTo" fromType="profile"
+        toKey="96" toKeyPath="*[@key='1']/*[@key='2']/*[@key='96']"
+        toNamePath="Record/Elements/ReportsTo" toType="profile" />
+        <Mapping fromKey="98"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='98']"
+        fromNamePath="Record/Elements/PayRule" fromType="profile"
+        toKey="98" toKeyPath="*[@key='1']/*[@key='2']/*[@key='98']"
+        toNamePath="Record/Elements/PayRule" toType="profile" />
+        <Mapping fromKey="99"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='99']"
+        fromNamePath="Record/Elements/PayType" fromType="profile"
+        toKey="99" toKeyPath="*[@key='1']/*[@key='2']/*[@key='99']"
+        toNamePath="Record/Elements/PayType" toType="profile" />
+        <Mapping fromKey="100"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='100']"
+        fromNamePath="Record/Elements/PayFrequency"
+        fromType="profile" toKey="100"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='100']"
+        toNamePath="Record/Elements/PayFrequency"
+        toType="profile" />
+        <Mapping fromKey="97"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='97']"
+        fromNamePath="Record/Elements/WageRate" fromType="profile"
+        toKey="97" toKeyPath="*[@key='1']/*[@key='2']/*[@key='97']"
+        toNamePath="Record/Elements/WageRate" toType="profile" />
+        <Mapping fromKey="117"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='117']"
+        fromNamePath="Record/Elements/WageRateEffectiveDate"
+        fromType="profile" toKey="117"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='117']"
+        toNamePath="Record/Elements/WageRateEffectiveDate"
+        toType="profile" />
+        <Mapping fromKey="118"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='118']"
+        fromNamePath="Record/Elements/ScheduleGroup"
+        fromType="profile" toKey="118"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='118']"
+        toNamePath="Record/Elements/ScheduleGroup"
+        toType="profile" />
+        <Mapping fromKey="116"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='116']"
+        fromNamePath="Record/Elements/DeviceGroupName"
+        fromType="profile" toKey="116"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='116']"
+        toNamePath="Record/Elements/DeviceGroupName"
+        toType="profile" />
+        <Mapping fromKey="119"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='119']"
+        fromNamePath="Record/Elements/DeviceNumber"
+        fromType="profile" toKey="119"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='119']"
+        toNamePath="Record/Elements/DeviceNumber"
+        toType="profile" />
+        <Mapping fromKey="120"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='120']"
+        fromNamePath="Record/Elements/Timezone" fromType="profile"
+        toKey="120"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='120']"
+        toNamePath="Record/Elements/Timezone" toType="profile" />
+        <Mapping fromKey="121"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='121']"
+        fromNamePath="Record/Elements/Currency" fromType="profile"
+        toKey="121"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='121']"
+        toNamePath="Record/Elements/Currency" toType="profile" />
+        <Mapping fromKey="122"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='122']"
+        fromNamePath="Record/Elements/CurrencyLocale"
+        fromType="profile" toKey="122"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='122']"
+        toNamePath="Record/Elements/CurrencyLocale"
+        toType="profile" />
+        <Mapping fromKey="101"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='101']"
+        fromNamePath="Record/Elements/UserID" fromType="profile"
+        toKey="101"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='101']"
+        toNamePath="Record/Elements/UserID" toType="profile" />
+        <Mapping fromKey="102"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='102']"
+        fromNamePath="Record/Elements/Password" fromType="profile"
+        toKey="102"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='102']"
+        toNamePath="Record/Elements/Password" toType="profile" />
+        <Mapping fromKey="103"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='103']"
+        fromNamePath="Record/Elements/UserAccountStatus"
+        fromType="profile" toKey="103"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='103']"
+        toNamePath="Record/Elements/UserAccountStatus"
+        toType="profile" />
+        <Mapping fromKey="104"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='104']"
+        fromNamePath="Record/Elements/UserAccountExpirationDate"
+        fromType="profile" toKey="104"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='104']"
+        toNamePath="Record/Elements/UserAccountExpirationDate"
+        toType="profile" />
+        <Mapping fromKey="110"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='110']"
+        fromNamePath="Record/Elements/AuthenticationType"
+        fromType="profile" toKey="110"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='110']"
+        toNamePath="Record/Elements/AuthenticationType"
+        toType="profile" />
+        <Mapping fromKey="86"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='86']"
+        fromNamePath="Record/Elements/CustomFieldDataType"
+        fromType="profile" toKey="86"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='86']"
+        toNamePath="Record/Elements/CustomFieldDataType"
+        toType="profile" />
+        <Mapping fromKey="87"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='87']"
+        fromNamePath="Record/Elements/CustomFieldDataValue"
+        fromType="profile" toKey="87"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='87']"
+        toNamePath="Record/Elements/CustomFieldDataValue"
+        toType="profile" />
+        <Mapping fromKey="88"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='88']"
+        fromNamePath="Record/Elements/CustomDateName"
+        fromType="profile" toKey="88"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='88']"
+        toNamePath="Record/Elements/CustomDateName"
+        toType="profile" />
+        <Mapping fromKey="89"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='89']"
+        fromNamePath="Record/Elements/CustomDateValue"
+        fromType="profile" toKey="89"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='89']"
+        toNamePath="Record/Elements/CustomDateValue"
+        toType="profile" />
+        <Mapping fromKey="10"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='10']"
+        fromNamePath="Record/Elements/PersonNumber"
+        fromType="profile" toFunction="1" toKey="1"
+        toType="function" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep category="userdefined"
+        id="f9740a8e-9888-46ed-95a0-4a10fa7f14b2" key="1"
+        name="CountRecordsMap" position="1" type="userdefined"
+        x="10.0" y="10.0">
+          <Inputs>
+            <Input key="1" name="Input" />
+          </Inputs>
+          <Outputs>
+            <Output key="1" name="OutputCount" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

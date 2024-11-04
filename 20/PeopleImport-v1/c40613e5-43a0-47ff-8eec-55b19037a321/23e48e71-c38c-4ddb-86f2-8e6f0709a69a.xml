@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>23e48e71-c38c-4ddb-86f2-8e6f0709a69a</Id>
+  <Type>transform.function</Type>
+  <Name>HttpClient_AccessToken</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-2-processproperty"
+    name="AutoCallbackProperty" />
+    <Ref compId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+    refId="function-3-processproperty"
+    name="AutoCallbackProperty" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs />
+      <Outputs>
+        <Output key="1" name="out" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="1" name="Scripting" position="3"
+        sumEnabled="false" type="Scripting" x="358.0" y="116.0">
+          <Inputs>
+            <Input default="" key="1" name="serverUrl" />
+            <Input default="" key="2" name="pathParam" />
+          </Inputs>
+          <Outputs>
+            <Output key="3" name="out" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>/** * Created by Ashish.Kumar on
+              9/21/2016. */ import java.io.BufferedReader import
+              java.io.InputStreamReader import
+              java.io.OutputStreamWriter import java.net.URL import
+              java.net.URLConnection import
+              java.net.HttpURLConnection def String
+              sendPostRequest() { //String serverUrl =
+              "http://keng01-dev01-ath72-oam72.dev.mykronos.internal:8080/openam/"
+              //String pathParam
+              ="oauth2/manufacturing/access_token?username=AnnaClark&amp;password=kronites&amp;client_id=kronos&amp;client_secret=kronites&amp;grant_type=password"
+              def reader def writer def authUrl try { if
+              (serverUrl.endsWith("/")) authUrl = serverUrl +
+              pathParam else authUrl = serverUrl + "/" + pathParam
+              def url = new URL(authUrl) HttpURLConnection conn =
+              (HttpURLConnection)url.openConnection()
+              conn.setRequestMethod("POST")
+              conn.setRequestProperty("Content-Type",
+              "application/x-www-form-urlencoded");
+              conn.setDoOutput(true) writer = new
+              OutputStreamWriter(conn.getOutputStream())
+              writer.write("") writer.flush() String line String
+              output = "" reader = new BufferedReader(new
+              InputStreamReader(conn.getInputStream())) while
+              ((line = reader.readLine()) != null) { output += line
+              } //println "API Response :" + output return output }
+              catch (Exception e){ throw new Exception ("Exception
+              occurred during auto callback - get access token
+              process. Reason: " + e.getLocalizedMessage()) }
+              finally { if (writer != null) writer.close() if
+              (reader != null) reader.close() } } out =
+              sendPostRequest()</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="serverUrl" />
+              <Input dataType="character" index="2"
+              name="pathParam" />
+              <Output index="3" name="out" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="2"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="9.0" y="10.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="ServerURL" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="de843a69-0a23-41c7-9335-249242f5a889"
+            propertyName="ServerURL" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="3"
+        name="Get Process Property" position="2" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="93.0" y="131.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="PathParam" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="74d2c1a4-b757-459c-ba46-a40fb4b8389c"
+            componentName="AutoCallbackProperty"
+            propertyKey="3d1453eb-d285-4329-a707-67e2a6874508"
+            propertyName="PathParam" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="3"
+        fromNamePath="Scripting/out" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/out"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="1"
+        fromNamePath="Get Process Property/ServerURL"
+        fromType="function" toFunction="1" toKey="1"
+        toNamePath="Scripting/serverUrl" toType="function" />
+        <Mapping fromFunction="3" fromKey="1"
+        fromNamePath="Get Process Property/PathParam"
+        fromType="function" toFunction="1" toKey="2"
+        toNamePath="Scripting/pathParam" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>73719a83-698d-4844-a09f-fc1f40aaa0a0</Id>
+  <Type>transform.function</Type>
+  <Name>HandleCSLicenses</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="InputValue" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="OutputValue" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="String" key="1" name="String Replace"
+        position="1" sumEnabled="false" type="StringReplace"
+        x="99.0" y="39.0">
+          <Inputs>
+            <Input default="" key="1" name="Original String" />
+            <Input default="," key="2" name="String to Search" />
+            <Input default="#" key="3" name="String to Replace" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="String Replace/Result" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/OutputValue"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/InputValue" fromType="function"
+        toFunction="1" toKey="1"
+        toNamePath="String Replace/Original String"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>08d6f812-e761-4e7a-bbc3-fa38c47cb048</Id>
+  <Type>transform.map</Type>
+  <Name>CallbackMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="1157b4b7-2359-4a58-be7a-b745016cc017"
+    refId="fromProfile" name="CallbackProfile" />
+    <Ref compId="d462bf2c-8b29-48bc-a938-fea9a2f02533"
+    refId="toProfile" name="CallbackRequest" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-3-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-4-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-2-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-6-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-5-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="1157b4b7-2359-4a58-be7a-b745016cc017"
+    toProfile="d462bf2c-8b29-48bc-a938-fea9a2f02533">
+      <Mappings>
+        <Mapping fromFunction="4" fromKey="1" fromType="function"
+        toKey="5" toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Root/Object/status" toType="profile" />
+        <Mapping fromFunction="3" fromKey="1" fromType="function"
+        toKey="6" toKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        toNamePath="Root/Object/callbackmessages"
+        toType="profile" />
+        <Mapping fromFunction="2" fromKey="1" fromType="function"
+        toKey="3" toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Root/Object/id" toType="profile" />
+        <Mapping fromFunction="5" fromKey="1" fromType="function"
+        toKey="7" toKeyPath="*[@key='1']/*[@key='2']/*[@key='7']"
+        toNamePath="Root/Object/runsummary" toType="profile" />
+        <Mapping fromFunction="6" fromKey="1" fromType="function"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Root/Object/executionid" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true">
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="2"
+        name="Get Process Property" position="2" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="77.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="falconExecutionId" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="JobUpdateProcessProperties"
+            propertyKey="61c5c22b-3a06-463d-9f51-28498491b115"
+            propertyName="falconExecutionId" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="3"
+        name="Get Process Property" position="3" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="152.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="CallBackMessage" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="JobUpdateProcessProperties"
+            propertyKey="24cd69d3-86a5-4db0-bfc6-209d364d7c42"
+            propertyName="CallBackMessage" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="4"
+        name="Get Process Property" position="4" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="227.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="ProcessStatus" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="JobUpdateProcessProperties"
+            propertyKey="1d5d2d58-b60c-433e-9195-81f78346aca2"
+            propertyName="ProcessStatus" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="5"
+        name="Get Process Property" position="5" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="302.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="RunSummary" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="PeopleImport-v1_ProcessProperties"
+            propertyKey="aee89c7e-2398-42c2-97f0-2b02330093f7"
+            propertyName="RunSummary" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="6"
+        name="Get Process Property" position="6" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="377.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="BoomiExecutionId" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="GenericPeopleImport_ProcessProperties"
+            propertyKey="ace31159-3eb1-4d9a-a29e-e963ef155010"
+            propertyName="BoomiExecutionId" />
+          </Configuration>
+        </FunctionStep>
+      </Functions>
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

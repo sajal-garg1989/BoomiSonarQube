@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>f9740a8e-9888-46ed-95a0-4a10fa7f14b2</Id>
+  <Type>transform.function</Type>
+  <Name>CountRecordsMap</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="3a115d0e-f459-4cab-abe4-3b8fffa50632"
+    refId="function-2-processproperty"
+    name="RunSummaryIntegration" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="1" name="Input" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="OutputCount" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="false" category="Numeric"
+        key="1" name="Count" position="1" sumEnabled="true"
+        type="Count" x="51.0" y="24.0">
+          <Inputs>
+            <Input default="" key="1" name="Field to Count" />
+            <Input default="0" key="2" name="Reset Value" />
+          </Inputs>
+          <Outputs>
+            <Output key="2" name="Result" />
+          </Outputs>
+          <Configuration />
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="2"
+        name="Set Process Property" position="2" sumEnabled="false"
+        type="DefinedProcessPropertySet" x="391.0" y="42.0">
+          <Inputs>
+            <Input key="1" name="TotalRecords" />
+          </Inputs>
+          <Outputs />
+          <Configuration>
+            <DefinedProcessProperty componentId="3a115d0e-f459-4cab-abe4-3b8fffa50632"
+            componentName="RunSummaryIntegration"
+            propertyKey="15f62c6c-7c7d-4b3d-b099-a799f5686923"
+            propertyName="TotalRecords" />
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="Count/Result" fromType="function"
+        toFunction="2" toKey="1"
+        toNamePath="Set Process Property/TotalRecords"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/Input" fromType="function"
+        toFunction="1" toKey="1" toNamePath="Count/Field to Count"
+        toType="function" />
+        <Mapping fromFunction="1" fromKey="2"
+        fromNamePath="Count/Result" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/OutputCount"
+        toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

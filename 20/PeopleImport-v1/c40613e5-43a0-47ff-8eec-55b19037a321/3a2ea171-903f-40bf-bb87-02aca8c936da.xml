@@ -1,0 +1,756 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>3a2ea171-903f-40bf-bb87-02aca8c936da</Id>
+  <Type>process</Type>
+  <Name>_InitiateRecordsProcessing</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>PASSTHROUGH</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="0b4658fa-8993-48e8-8ea9-d7decb901d5f"
+    refId="shape11" name="_ImportAllRecords" />
+    <Ref compId="b700bd8d-1c9c-4ac3-baec-98578a9ba940"
+    refId="shape3" name="_ImportNewRecords" />
+    <Ref compId="de350ad5-b651-4a48-b9d9-87c572d9c6e4"
+    refId="shape2" name="_ImportExistingRecords" />
+    <Ref compId="235b61ed-9ebb-42ba-8047-ab8726c041ad"
+    refId="shape7" name="_GetExistingPersonData" />
+    <Ref compId="68b1fcf1-f5b0-469a-b435-eb8e8bce4bde"
+    refId="shape13" name="TotalRecordsMap" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape6-0-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape12-0-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape10-0-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="ac7a932a-695f-42fb-badd-4cd0d8f58e0e"
+    refId="shape25" name="_UserDefinedDelimiter" />
+    <Ref compId="8b527dcd-0969-4f2b-b3a1-4417c3710170"
+    refId="shape26.processproperty8b527dcd-0969-4f2b-b3a1-4417c3710170"
+    name="UserDefinedDelimiter" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape26-parameter-1-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape26-parameter-2-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="aaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    refId="shape30.processpropertyaaaa23a3-7c40-4369-99ac-dc63fe7df142"
+    name="HyperfindProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape30-parameter-1-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape30-parameter-2-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape30-parameter-3-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape30-parameter-4-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape30-parameter-5-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="shape31-0-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" updateRunDates="false"
+    workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="Person Records" x="0.0" y="159.0">
+          <configuration>
+            <passthroughaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape26"
+            x="96.0" y="169.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="34.0" y="175.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="34.0" y="175.0" />
+              <linesegment length="39"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="34.0" y="175.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="73.0" y="175.0" />
+              <linesegment length="23"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="73.0" y="175.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape4" shapetype="branch"
+        userlabel="Import New/Existing Records" x="768.0"
+        y="399.0">
+          <configuration>
+            <branch numBranches="2" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape4.dragpoint1"
+            text="1" toShape="shape6" x="1072.0" y="265.0">
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg1" orient="horizontal"
+              x="802.0" y="415.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint1.lineseg2" orient="vertical"
+              x="802.0" y="415.0" />
+              <linesegment length="143"
+              name="shape4.dragpoint1.lineseg3" orient="horizontal"
+              x="802.0" y="415.0" />
+              <linesegment length="144"
+              name="shape4.dragpoint1.lineseg4" orient="vertical"
+              x="945.0" y="271.0" />
+              <linesegment label="1" length="127"
+              name="shape4.dragpoint1.lineseg5" orient="horizontal"
+              x="945.0" y="271.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape4.dragpoint2"
+            text="2" toShape="shape12" x="1072.0" y="617.0">
+              <linesegment length="0"
+              name="shape4.dragpoint2.lineseg1" orient="horizontal"
+              x="802.0" y="415.0" />
+              <linesegment length="0"
+              name="shape4.dragpoint2.lineseg2" orient="vertical"
+              x="802.0" y="415.0" />
+              <linesegment length="143"
+              name="shape4.dragpoint2.lineseg3" orient="horizontal"
+              x="802.0" y="415.0" />
+              <linesegment length="208"
+              name="shape4.dragpoint2.lineseg4" orient="vertical"
+              x="945.0" y="415.0" />
+              <linesegment label="2" length="127"
+              name="shape4.dragpoint2.lineseg5" orient="horizontal"
+              x="945.0" y="623.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape11"
+        shapetype="processcall" userlabel="Import All" x="768.0"
+        y="607.0">
+          <configuration>
+            <processcall abort="true"
+            processId="0b4658fa-8993-48e8-8ea9-d7decb901d5f"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="stop_icon" name="shape8" shapetype="stop"
+        userlabel="STOP" x="1488.0" y="607.0">
+          <configuration>
+            <stop continue="false" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape3"
+        shapetype="processcall" userlabel="Import New Records"
+        x="1296.0" y="191.0">
+          <configuration>
+            <processcall abort="true"
+            processId="b700bd8d-1c9c-4ac3-baec-98578a9ba940"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="decision_icon" name="shape6"
+        shapetype="decision" userlabel="Import New Records"
+        x="1088.0" y="255.0">
+          <configuration>
+            <decision comparison="notequals"
+            name="Import New Records">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                componentName="GenericPeopleImport_ProcessProperties"
+                propertyKey="d4647233-31ec-45b0-99c2-7eec5519e8e8"
+                propertyLabel="disqualifyNew" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape6.dragpoint1"
+            text="True" toShape="shape3" x="1280.0" y="200.0">
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg1" orient="horizontal"
+              x="1122.0" y="271.0" />
+              <linesegment length="0"
+              name="shape6.dragpoint1.lineseg2" orient="vertical"
+              x="1122.0" y="271.0" />
+              <linesegment length="87"
+              name="shape6.dragpoint1.lineseg3" orient="horizontal"
+              x="1122.0" y="271.0" />
+              <linesegment length="65"
+              name="shape6.dragpoint1.lineseg4" orient="vertical"
+              x="1209.0" y="206.0" />
+              <linesegment label="True" length="71"
+              name="shape6.dragpoint1.lineseg5" orient="horizontal"
+              x="1209.0" y="206.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape6.dragpoint2"
+            text="False" toShape="shape9" x="1280.0" y="329.0">
+              <linesegment length="0"
+              name="shape6.dragpoint2.lineseg1" orient="horizontal"
+              x="1122.0" y="271.0" />
+              <linesegment length="0"
+              name="shape6.dragpoint2.lineseg2" orient="vertical"
+              x="1122.0" y="271.0" />
+              <linesegment length="87"
+              name="shape6.dragpoint2.lineseg3" orient="horizontal"
+              x="1122.0" y="271.0" />
+              <linesegment length="64"
+              name="shape6.dragpoint2.lineseg4" orient="vertical"
+              x="1209.0" y="271.0" />
+              <linesegment label="False" length="71"
+              name="shape6.dragpoint2.lineseg5" orient="horizontal"
+              x="1209.0" y="335.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape9" shapetype="stop"
+        userlabel="STOP" x="1296.0" y="319.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="decision_icon" name="shape10"
+        shapetype="decision"
+        userlabel="Lookup Existing Person Data" x="464.0"
+        y="511.0">
+          <configuration>
+            <decision comparison="equals"
+            name="Lookup Existing Person Data">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                componentName="GenericPeopleImport_ProcessProperties"
+                propertyKey="b5f11bdc-dfeb-45b8-9f22-91c30f99ad4b"
+                propertyLabel="LookupExistingPersonData" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape10.dragpoint1"
+            text="True" toShape="shape4" x="752.0" y="409.0">
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg1"
+              orient="horizontal" x="498.0" y="527.0" />
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg2" orient="vertical"
+              x="498.0" y="527.0" />
+              <linesegment length="135"
+              name="shape10.dragpoint1.lineseg3"
+              orient="horizontal" x="498.0" y="527.0" />
+              <linesegment length="112"
+              name="shape10.dragpoint1.lineseg4" orient="vertical"
+              x="633.0" y="415.0" />
+              <linesegment label="True" length="119"
+              name="shape10.dragpoint1.lineseg5"
+              orient="horizontal" x="633.0" y="415.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape10.dragpoint2"
+            text="False" toShape="shape11" x="752.0" y="616.0">
+              <linesegment length="0"
+              name="shape10.dragpoint2.lineseg1"
+              orient="horizontal" x="498.0" y="527.0" />
+              <linesegment length="0"
+              name="shape10.dragpoint2.lineseg2" orient="vertical"
+              x="498.0" y="527.0" />
+              <linesegment length="135"
+              name="shape10.dragpoint2.lineseg3"
+              orient="horizontal" x="498.0" y="527.0" />
+              <linesegment length="95"
+              name="shape10.dragpoint2.lineseg4" orient="vertical"
+              x="633.0" y="527.0" />
+              <linesegment label="False" length="119"
+              name="shape10.dragpoint2.lineseg5"
+              orient="horizontal" x="633.0" y="622.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape2"
+        shapetype="processcall" userlabel="Import Existing Records"
+        x="1296.0" y="463.0">
+          <configuration>
+            <processcall abort="true"
+            processId="de350ad5-b651-4a48-b9d9-87c572d9c6e4"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape7"
+        shapetype="processcall"
+        userlabel="Get Existing Person Data" x="848.0" y="159.0">
+          <configuration>
+            <processcall abort="true"
+            processId="235b61ed-9ebb-42ba-8047-ab8726c041ad"
+            wait="true">
+              <parameters />
+              <returnpaths />
+            </processcall>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="decision_icon" name="shape12"
+        shapetype="decision" userlabel="Import Existing Records"
+        x="1088.0" y="607.0">
+          <configuration>
+            <decision comparison="notequals"
+            name="Import Existing Records">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                componentName="GenericPeopleImport_ProcessProperties"
+                propertyKey="9c10f143-86cc-460f-b81f-e7cf1d5ea556"
+                propertyLabel="disqualifyExisting" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape12.dragpoint1"
+            text="True" toShape="shape2" x="1280.0" y="472.0">
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg1"
+              orient="horizontal" x="1122.0" y="623.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint1.lineseg2" orient="vertical"
+              x="1122.0" y="623.0" />
+              <linesegment length="87"
+              name="shape12.dragpoint1.lineseg3"
+              orient="horizontal" x="1122.0" y="623.0" />
+              <linesegment length="145"
+              name="shape12.dragpoint1.lineseg4" orient="vertical"
+              x="1209.0" y="478.0" />
+              <linesegment label="True" length="71"
+              name="shape12.dragpoint1.lineseg5"
+              orient="horizontal" x="1209.0" y="478.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape12.dragpoint2"
+            text="False" toShape="shape8" x="1472.0" y="617.0">
+              <linesegment length="0"
+              name="shape12.dragpoint2.lineseg1"
+              orient="horizontal" x="1122.0" y="623.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint2.lineseg2" orient="vertical"
+              x="1122.0" y="623.0" />
+              <linesegment length="183"
+              name="shape12.dragpoint2.lineseg3"
+              orient="horizontal" x="1122.0" y="623.0" />
+              <linesegment length="0"
+              name="shape12.dragpoint2.lineseg4" orient="vertical"
+              x="1305.0" y="623.0" />
+              <linesegment label="False" length="167"
+              name="shape12.dragpoint2.lineseg5"
+              orient="horizontal" x="1305.0" y="623.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape13" shapetype="map"
+        userlabel="Count Total File Records" x="464.0" y="16.0">
+          <configuration>
+            <map mapId="68b1fcf1-f5b0-469a-b435-eb8e8bce4bde" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape13.dragpoint1" toShape="shape15"
+            x="608.0" y="25.0">
+              <linesegment length="0"
+              name="shape13.dragpoint1.lineseg1"
+              orient="horizontal" x="498.0" y="31.0" />
+              <linesegment length="0"
+              name="shape13.dragpoint1.lineseg2" orient="vertical"
+              x="498.0" y="31.0" />
+              <linesegment length="63"
+              name="shape13.dragpoint1.lineseg3"
+              orient="horizontal" x="498.0" y="31.0" />
+              <linesegment length="0"
+              name="shape13.dragpoint1.lineseg4" orient="vertical"
+              x="561.0" y="31.0" />
+              <linesegment length="47"
+              name="shape13.dragpoint1.lineseg5"
+              orient="horizontal" x="561.0" y="31.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="branch_icon" name="shape14"
+        shapetype="branch" userlabel="" x="400.0" y="159.0">
+          <configuration>
+            <branch numBranches="3" />
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="1" name="shape14.dragpoint1"
+            text="1" toShape="shape13" x="448.0" y="25.0">
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg1"
+              orient="horizontal" x="434.0" y="175.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint1.lineseg2" orient="vertical"
+              x="434.0" y="175.0" />
+              <linesegment length="15"
+              name="shape14.dragpoint1.lineseg3"
+              orient="horizontal" x="434.0" y="175.0" />
+              <linesegment length="144"
+              name="shape14.dragpoint1.lineseg4" orient="vertical"
+              x="449.0" y="31.0" />
+              <linesegment label="1" length="-1"
+              name="shape14.dragpoint1.lineseg5"
+              orient="horizontal" x="449.0" y="31.0" />
+            </dragpoint>
+            <dragpoint identifier="2" name="shape14.dragpoint2"
+            text="2" toShape="shape31" x="480.0" y="169.0">
+              <linesegment length="0"
+              name="shape14.dragpoint2.lineseg1"
+              orient="horizontal" x="434.0" y="175.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint2.lineseg2" orient="vertical"
+              x="434.0" y="175.0" />
+              <linesegment length="31"
+              name="shape14.dragpoint2.lineseg3"
+              orient="horizontal" x="434.0" y="175.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint2.lineseg4" orient="vertical"
+              x="465.0" y="175.0" />
+              <linesegment label="2" length="15"
+              name="shape14.dragpoint2.lineseg5"
+              orient="horizontal" x="465.0" y="175.0" />
+            </dragpoint>
+            <dragpoint identifier="3" name="shape14.dragpoint3"
+            text="3" toShape="shape10" x="448.0" y="521.0">
+              <linesegment length="0"
+              name="shape14.dragpoint3.lineseg1"
+              orient="horizontal" x="434.0" y="175.0" />
+              <linesegment length="0"
+              name="shape14.dragpoint3.lineseg2" orient="vertical"
+              x="434.0" y="175.0" />
+              <linesegment length="15"
+              name="shape14.dragpoint3.lineseg3"
+              orient="horizontal" x="434.0" y="175.0" />
+              <linesegment length="352"
+              name="shape14.dragpoint3.lineseg4" orient="vertical"
+              x="449.0" y="175.0" />
+              <linesegment label="3" length="-1"
+              name="shape14.dragpoint3.lineseg5"
+              orient="horizontal" x="449.0" y="527.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape15" shapetype="stop"
+        userlabel="" x="624.0" y="16.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="processcall_icon" name="shape25"
+        shapetype="processcall" userlabel="UserDefinedDelimiter"
+        x="256.0" y="159.0">
+          <configuration>
+            <processcall abort="true"
+            processId="ac7a932a-695f-42fb-badd-4cd0d8f58e0e"
+            wait="true">
+              <parameters />
+              <returnpaths>
+                <returnpaths childShapeName="shape3"
+                returnLabel="ConvertedFile" />
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape3"
+            name="shape25.dragpoint1" text="ConvertedFile"
+            toShape="shape14" x="384.0" y="169.0">
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg1"
+              orient="horizontal" x="290.0" y="174.0" />
+              <linesegment length="0"
+              name="shape25.dragpoint1.lineseg2" orient="vertical"
+              x="290.0" y="174.0" />
+              <linesegment length="55"
+              name="shape25.dragpoint1.lineseg3"
+              orient="horizontal" x="290.0" y="174.0" />
+              <linesegment length="1"
+              name="shape25.dragpoint1.lineseg4" orient="vertical"
+              x="345.0" y="174.0" />
+              <linesegment label="ConvertedFile" length="39"
+              name="shape25.dragpoint1.lineseg5"
+              orient="horizontal" x="345.0" y="175.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape26"
+        shapetype="documentproperties"
+        userlabel="DelimiterProperties" x="112.0" y="159.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - UserDefinedDelimiter - Delimiter"
+              persist="false"
+              propertyId="definedprocess.8b527dcd-0969-4f2b-b3a1-4417c3710170@6ca250b9-9c38-464d-ac33-7ae048df2ebc">
+
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="GenericPeopleImport_ProcessProperties"
+                    propertyKey="72080e42-a3e2-4734-a833-7df15a92a086"
+                    propertyLabel="Delimiter" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - UserDefinedDelimiter - IntegrationType"
+              persist="false"
+              propertyId="definedprocess.8b527dcd-0969-4f2b-b3a1-4417c3710170@8e1a23a3-90e8-4cd3-aa11-479ad7742d5e">
+
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="GenericPeopleImport_ProcessProperties"
+                    propertyKey="c815a45d-0fbb-41f2-9672-cfcf1111bbf0"
+                    propertyLabel="_IntegrationType" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape26.dragpoint1" toShape="shape25"
+            x="240.0" y="168.0">
+              <linesegment length="0"
+              name="shape26.dragpoint1.lineseg1"
+              orient="horizontal" x="146.0" y="175.0" />
+              <linesegment length="0"
+              name="shape26.dragpoint1.lineseg2" orient="vertical"
+              x="146.0" y="175.0" />
+              <linesegment length="55"
+              name="shape26.dragpoint1.lineseg3"
+              orient="horizontal" x="146.0" y="175.0" />
+              <linesegment length="1"
+              name="shape26.dragpoint1.lineseg4" orient="vertical"
+              x="201.0" y="174.0" />
+              <linesegment length="39"
+              name="shape26.dragpoint1.lineseg5"
+              orient="horizontal" x="201.0" y="174.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape30"
+        shapetype="documentproperties" userlabel="" x="704.0"
+        y="159.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - Hyperfind"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@0db441c9-0fbd-4491-9a42-99b1fada2177">
+
+                <sourcevalues>
+                  <parametervalue key="1"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="PeopleImport-v1_ProcessProperties"
+                    propertyKey="08be490e-b926-4cf4-b815-51b8f6dd68a7"
+                    propertyLabel="Hyperfind" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - HyperfindType"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@2c33260f-a0f9-455d-938e-6309373a7094">
+
+                <sourcevalues>
+                  <parametervalue key="2"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="PeopleImport-v1_ProcessProperties"
+                    propertyKey="36b281d5-d334-4b46-8b2f-667f7d556e11"
+                    propertyLabel="HyperfindType" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - PayPeriod"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@d56423a0-eae5-45f2-a1a9-73c84a172a95">
+
+                <sourcevalues>
+                  <parametervalue key="3"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="PeopleImport-v1_ProcessProperties"
+                    propertyKey="5ad302c5-f237-4aa7-90d4-0141ce82a719"
+                    propertyLabel="PayPeriod" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - PayPeriodSpan"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@e7c8a85a-f5f6-44c5-aecb-af58ff4a9050">
+
+                <sourcevalues>
+                  <parametervalue key="4"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="PeopleImport-v1_ProcessProperties"
+                    propertyKey="57b0fa81-4e29-43a7-a276-0ee2a45e35fa"
+                    propertyLabel="_PayPeriodSpan" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+              <documentproperty defaultValue=""
+              isTradingPartner="false"
+              name="Process Property - HyperfindProperties - Threshold"
+              persist="false"
+              propertyId="definedprocess.aaaa23a3-7c40-4369-99ac-dc63fe7df142@46847be9-321f-414a-8af9-77beace75e9d">
+
+                <sourcevalues>
+                  <parametervalue key="5"
+                  valueType="definedparameter">
+                    <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                    componentName="PeopleImport-v1_ProcessProperties"
+                    propertyKey="9131c8b5-7f19-4376-86bb-8ceda85f90c0"
+                    propertyLabel="_Threshold" />
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape30.dragpoint1" toShape="shape7"
+            x="832.0" y="168.0">
+              <linesegment length="0"
+              name="shape30.dragpoint1.lineseg1"
+              orient="horizontal" x="738.0" y="175.0" />
+              <linesegment length="0"
+              name="shape30.dragpoint1.lineseg2" orient="vertical"
+              x="738.0" y="175.0" />
+              <linesegment length="55"
+              name="shape30.dragpoint1.lineseg3"
+              orient="horizontal" x="738.0" y="175.0" />
+              <linesegment length="1"
+              name="shape30.dragpoint1.lineseg4" orient="vertical"
+              x="793.0" y="174.0" />
+              <linesegment length="39"
+              name="shape30.dragpoint1.lineseg5"
+              orient="horizontal" x="793.0" y="174.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="decision_icon" name="shape31"
+        shapetype="decision"
+        userlabel="Lookup Existing Person Data" x="496.0"
+        y="159.0">
+          <configuration>
+            <decision comparison="equals"
+            name="Lookup Existing Person Data">
+              <decisionvalue valueType="definedparameter">
+                <definedprocessparameter componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+                componentName="GenericPeopleImport_ProcessProperties"
+                propertyKey="b5f11bdc-dfeb-45b8-9f22-91c30f99ad4b"
+                propertyLabel="LookupExistingPersonData" />
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="true" />
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape31.dragpoint1"
+            text="True" toShape="shape30" x="688.0" y="169.0">
+              <linesegment length="0"
+              name="shape31.dragpoint1.lineseg1"
+              orient="horizontal" x="530.0" y="175.0" />
+              <linesegment length="0"
+              name="shape31.dragpoint1.lineseg2" orient="vertical"
+              x="530.0" y="175.0" />
+              <linesegment length="87"
+              name="shape31.dragpoint1.lineseg3"
+              orient="horizontal" x="530.0" y="175.0" />
+              <linesegment length="0"
+              name="shape31.dragpoint1.lineseg4" orient="vertical"
+              x="617.0" y="175.0" />
+              <linesegment label="True" length="71"
+              name="shape31.dragpoint1.lineseg5"
+              orient="horizontal" x="617.0" y="175.0" />
+            </dragpoint>
+            <dragpoint identifier="false" name="shape31.dragpoint2"
+            text="False" toShape="shape32" x="624.0" y="297.0">
+              <linesegment length="0"
+              name="shape31.dragpoint2.lineseg1"
+              orient="horizontal" x="530.0" y="175.0" />
+              <linesegment length="0"
+              name="shape31.dragpoint2.lineseg2" orient="vertical"
+              x="530.0" y="175.0" />
+              <linesegment length="55"
+              name="shape31.dragpoint2.lineseg3"
+              orient="horizontal" x="530.0" y="175.0" />
+              <linesegment length="128"
+              name="shape31.dragpoint2.lineseg4" orient="vertical"
+              x="585.0" y="175.0" />
+              <linesegment label="False" length="39"
+              name="shape31.dragpoint2.lineseg5"
+              orient="horizontal" x="585.0" y="303.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape32" shapetype="stop"
+        userlabel="" x="640.0" y="287.0">
+          <configuration>
+            <stop continue="true" />
+          </configuration>
+          <dragpoints />
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>

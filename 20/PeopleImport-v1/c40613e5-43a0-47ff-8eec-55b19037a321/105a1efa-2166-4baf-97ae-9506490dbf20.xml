@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>105a1efa-2166-4baf-97ae-9506490dbf20</Id>
+  <Type>transform.function</Type>
+  <Name>ReportsToMapping</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+    refId="function-1-processproperty"
+    name="PeopleImport-v1_ProcessProperties" />
+  </References>
+  <Description />
+  <Object>
+    <Function>
+      <Inputs>
+        <Input key="2" name="supervisorName" />
+        <Input key="1" name="supervisorNumber" />
+      </Inputs>
+      <Outputs>
+        <Output key="1" name="supervisorName" />
+        <Output key="2" name="supervisorNumber" />
+      </Outputs>
+      <Steps>
+        <FunctionStep cacheEnabled="true"
+        category="ProcessProperty" key="1"
+        name="Get Process Property" position="1" sumEnabled="false"
+        type="DefinedProcessPropertyGet" x="30.0" y="16.0">
+          <Inputs />
+          <Outputs>
+            <Output key="1" name="disableReportsToMapping" />
+          </Outputs>
+          <Configuration>
+            <DefinedProcessProperty componentId="207de6c1-73b8-4f29-94c0-d0e3985339ff"
+            componentName="GenericPeopleImport_ProcessProperties"
+            propertyKey="a8050738-2fcc-4841-8d14-6173d3ea8e44"
+            propertyName="disableReportsToMapping" />
+          </Configuration>
+        </FunctionStep>
+        <FunctionStep cacheEnabled="true" cacheOption="none"
+        category="Scripting" key="2" name="Scripting" position="2"
+        sumEnabled="false" type="Scripting" x="271.0" y="54.0">
+          <Inputs>
+            <Input default="" key="1"
+            name="disableReportsToMapping" />
+            <Input key="6" name="supervisorName" />
+            <Input key="7" name="supervisorNumber" />
+          </Inputs>
+          <Outputs>
+            <Output key="10" name="SName" />
+            <Output key="11" name="SNumber" />
+          </Outputs>
+          <Configuration>
+            <Scripting language="groovy">
+              <ScriptToExecute>if (
+              disableReportsToMapping.equals("true")){ SName= ""
+              SNumber="" } else { SName=supervisorName
+              SNumber=supervisorNumber }</ScriptToExecute>
+              <Input dataType="character" index="1"
+              name="disableReportsToMapping" />
+              <Input dataType="character" index="6"
+              name="supervisorName" />
+              <Input dataType="character" index="7"
+              name="supervisorNumber" />
+              <Output index="10" name="SName" />
+              <Output index="11" name="SNumber" />
+            </Scripting>
+          </Configuration>
+        </FunctionStep>
+      </Steps>
+      <Mappings>
+        <Mapping fromFunction="2" fromKey="10"
+        fromNamePath="Scripting/SName" fromType="function"
+        toFunction="0" toKey="1" toNamePath="Editor/supervisorName"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="2"
+        fromNamePath="Editor/supervisorName" fromType="function"
+        toFunction="2" toKey="6"
+        toNamePath="Scripting/supervisorName" toType="function" />
+        <Mapping fromFunction="1" fromKey="1"
+        fromNamePath="Get Process Property/disableReportsToMapping"
+        fromType="function" toFunction="2" toKey="1"
+        toNamePath="Scripting/disableReportsToMapping"
+        toType="function" />
+        <Mapping fromFunction="0" fromKey="1"
+        fromNamePath="Editor/supervisorNumber" fromType="function"
+        toFunction="2" toKey="7"
+        toNamePath="Scripting/supervisorNumber"
+        toType="function" />
+        <Mapping fromFunction="2" fromKey="11"
+        fromNamePath="Scripting/SNumber" fromType="function"
+        toFunction="0" toKey="2"
+        toNamePath="Editor/supervisorNumber" toType="function" />
+      </Mappings>
+    </Function>
+  </Object>
+</Component>

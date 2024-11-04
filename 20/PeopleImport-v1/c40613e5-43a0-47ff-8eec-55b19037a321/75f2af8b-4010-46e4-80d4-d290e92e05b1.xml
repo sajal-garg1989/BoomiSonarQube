@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>75f2af8b-4010-46e4-80d4-d290e92e05b1</Id>
+  <Type>transform.map</Type>
+  <Name>PersonsXML2ProcessProfile</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    refId="fromProfile" name="PersonsAPIXMLProfile" />
+    <Ref compId="9e42d9f5-5945-4803-b18a-9f4b22160b3e"
+    refId="toProfile" name="PersonProcessProfile" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="b218c08f-1eb2-4653-bf43-e71c87fa641c"
+    toProfile="9e42d9f5-5945-4803-b18a-9f4b22160b3e">
+      <Mappings>
+        <Mapping fromKey="1611"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1610']/*[@key='1611']"
+        fromNamePath="Kronos_Persons_API/Request/PersonProcessProfileAssignment/ManagerProcessProfile"
+        fromType="profile" toKey="10"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='10']"
+        toNamePath="Root/Array/ArrayElement1/Object/managerProcessProfileName"
+        toType="profile" />
+        <Mapping fromKey="1612"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1610']/*[@key='1612']"
+        fromNamePath="Kronos_Persons_API/Request/PersonProcessProfileAssignment/EmployeeProcessProfile"
+        fromType="profile" toKey="11"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='11']"
+        toNamePath="Root/Array/ArrayElement1/Object/employeeProcessProfileName"
+        toType="profile" />
+        <Mapping fromKey="1499"
+        fromKeyPath="*[@key='1']/*[@key='439']/*[@key='1498']/*[@key='1499']"
+        fromNamePath="Kronos_Persons_API/Request/PersonIdentity/PersonNumber"
+        fromType="profile" toKey="9"
+        toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']/*[@key='4']/*[@key='7']/*[@key='8']/*[@key='9']"
+        toNamePath="Root/Array/ArrayElement1/Object/personidentity/Object/personNumber"
+        toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults />
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

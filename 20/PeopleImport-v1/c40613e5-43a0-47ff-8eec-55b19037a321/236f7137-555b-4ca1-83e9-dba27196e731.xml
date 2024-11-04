@@ -1,0 +1,584 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>236f7137-555b-4ca1-83e9-dba27196e731</Id>
+  <Type>processproperty</Type>
+  <Name>RunSummaryStep</Name>
+  <Version>1</Version>
+  <FolderId name="ClientName8428/Process Library/jainendra-sandbox/People_Import">
+  3962285</FolderId>
+  <AccountId>clientname8428-NPZ917</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <DefinedProcessProperties>
+      <definedProcessProperty key="13367540-5ed3-4d53-8fc2-dfde42345d91">
+
+        <helpText />
+        <label>PI_recordProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7a72f0fe-0852-4c80-8da1-497b7e091041">
+
+        <helpText />
+        <label>PI_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="4c17f44d-bba1-4d3e-ad39-d0ae036cb37f">
+
+        <helpText />
+        <label>PI_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a5f7ee89-b03a-4060-b607-a7555c2174ab">
+
+        <helpText />
+        <label>PI_disqualifiedCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="cf77b544-bbf9-486f-9bfb-d77854536c66">
+
+        <helpText />
+        <label>sourceType</label>
+        <type>string</type>
+        <defaultValue>Flat File</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="ebc60447-cee8-498f-a49b-797c992b8abb">
+
+        <helpText />
+        <label>outputType</label>
+        <type>string</type>
+        <defaultValue>Kronos</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b2bcd769-3c1e-4e3e-a6d0-0df9745dec9a">
+
+        <helpText />
+        <label>sourceFile</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="c889a847-0d26-424d-931e-245306c657ba">
+
+        <helpText />
+        <label>errorMessage</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="fcee9b72-6441-422b-b792-979dc814a28d">
+
+        <helpText />
+        <label>DisqualifiedFileName</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="c9b5e1e8-8d4b-49ea-9583-006c7aa805e1">
+
+        <helpText />
+        <label>IsDownloadable</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8de04d2f-f85e-43e7-8b67-32c19ea1fbe5">
+
+        <helpText />
+        <label>TotalPIDisqualified</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="1a38710f-6997-4bbb-b6a5-53e7ed48ae61">
+
+        <helpText />
+        <label>EAR_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="185c5a4b-f7b6-4eeb-a68a-beecd2ed75c9">
+
+        <helpText />
+        <label>EAR_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3b810f72-a781-4cb0-ad5a-43aa47ef2c12">
+
+        <helpText />
+        <label>EAR_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3f809749-b710-4858-b4a9-282e12d421e3">
+
+        <helpText />
+        <label>EJP_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8c223e15-528f-4e8a-8166-021b30c83a60">
+
+        <helpText />
+        <label>EJP_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8fb9380d-af56-4d61-8606-5d799138b719">
+
+        <helpText />
+        <label>EJP_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="0cbf87ec-8a8c-4201-80df-e581d83c2b39">
+
+        <helpText />
+        <label>AttAdmin_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="1cdf0626-95cb-4399-873e-62076a0c7109">
+
+        <helpText />
+        <label>AttAdmin_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="65fccaec-9472-409a-8298-8d3ea648c585">
+
+        <helpText />
+        <label>AttAdmin_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3caebdd5-2fa1-480e-8dd9-ce193043fe21">
+
+        <helpText />
+        <label>AttProfile_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="25233e41-3e31-4e58-92ca-5410ebe200f5">
+
+        <helpText />
+        <label>AttProfile_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="2651ca42-5f36-46dc-aed8-a5201403001a">
+
+        <helpText />
+        <label>AttProfile_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="da57ee5c-73c3-4747-86f2-e24593a4c6e6">
+
+        <helpText />
+        <label>CascadeProfile_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="dc6fdcea-cd36-4fc7-aa44-eff97e0befa3">
+
+        <helpText />
+        <label>CascadeProfile_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="9fca40ff-615d-405f-b510-14c48f6e5598">
+
+        <helpText />
+        <label>CascadeProfile_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="66ba85b1-d5fa-4a19-ab17-34b77df91651">
+
+        <helpText />
+        <label>LeaveAdmin_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7a8a707f-612a-4280-9593-4058fd0eca49">
+
+        <helpText />
+        <label>LeaveAdmin_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="6a049ce9-01f1-4a25-8452-b6424ddf51b4">
+
+        <helpText />
+        <label>LeaveAdmin_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f33814b8-7e66-4e97-8b63-de13fe5d682b">
+
+        <helpText />
+        <label>LeaveProfile_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="7c2fa12d-76ee-4e2e-b37d-802b8225c117">
+
+        <helpText />
+        <label>LeaveProfile_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="268ac350-640d-459d-97df-6881d947dfc6">
+
+        <helpText />
+        <label>LeaveProfile_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e83e8166-e49f-4ba2-a89c-4acd0b592a8d">
+
+        <helpText />
+        <label>RunSummaryContent</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="59112729-c690-44d5-a2db-b61d6d1c7235">
+
+        <helpText />
+        <label>APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue>GA</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="870806a4-c6c9-4b1b-9a0d-26cf127251da">
+
+        <helpText />
+        <label>PI_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="df426e3e-c400-456e-ae98-838926979112">
+
+        <helpText />
+        <label>EAR_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a90f201e-eecf-4ed4-92b2-9db1cbf14b73">
+
+        <helpText />
+        <label>EJP_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="b1302002-904f-4a19-be94-2a9abed5ad34">
+
+        <helpText />
+        <label>AttAdmin_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="2ea14059-c033-4688-87db-0a775b9f0017">
+
+        <helpText />
+        <label>AttProfile_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="04be3c4e-9d5f-4b5b-a845-3e6ebe128389">
+
+        <helpText />
+        <label>Cascade_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a2bc1af3-60a1-4741-8c0c-cc6f8203692b">
+
+        <helpText />
+        <label>LeaveAdmin_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="bb66514c-b0fa-4efb-8caf-1a8b8e780b61">
+
+        <helpText />
+        <label>LeaveProfile_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="27a56026-05df-4708-bfa8-543506950612">
+
+        <helpText />
+        <label>ProcessProfile_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="80757c8b-ac0d-4073-994c-ff4c7503eb27">
+
+        <helpText />
+        <label>ProcessProfile_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="654d4a0f-176e-4613-bc1a-23a6484fdefd">
+
+        <helpText />
+        <label>ProcessProfile_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="8d185da3-bbd4-4113-aa55-e3ee201b6ac8">
+
+        <helpText />
+        <label>ProcessProfile_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="e357290a-33ab-4761-b602-5b540e67b279">
+
+        <helpText />
+        <label>PayCoeValueProfile_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="df72ffc3-7424-41ef-97ed-332249862352">
+
+        <helpText />
+        <label>PayCodeValueProfile_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="bc451807-3dfe-43ce-bd4a-33499bb47d6a">
+
+        <helpText />
+        <label>PayCodeValueProfile_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="2643a734-a9c7-443e-889a-2673f1d65069">
+
+        <helpText />
+        <label>PayCodeValueProfile_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="5dd58527-9aad-4500-afdd-8f21ce7ebc75">
+
+        <helpText />
+        <label>MinorRule_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a05f6c0b-bd46-49a1-8c82-35adb3bc02c1">
+
+        <helpText />
+        <label>MinorRule_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="a73379a0-9b69-47b9-88b6-35eeb8608bdc">
+
+        <helpText />
+        <label>MinorRule_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="db6cdd40-512e-4bd6-a4e9-52e6ef10ba93">
+
+        <helpText />
+        <label>MinorRule_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="cb729e15-d4ad-4657-abd2-d37e9d24ae1d">
+
+        <helpText />
+        <label>ZoneCategoriesAssignment_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="3b971b44-6d75-48f8-81cc-cdcf662040ff">
+
+        <helpText />
+        <label>ZoneCategoriesAssignment_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="f8714ac8-21bb-4e2d-a0df-bc0543be7e88">
+
+        <helpText />
+        <label>ZoneCategoriesAssignment_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="53a47755-2d5c-431c-a32e-16b1c6e0410a">
+
+        <helpText />
+        <label>
+        ZoneCategoriesAssignment_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="066104a8-d2f0-49d4-83d2-ac3985cda14b">
+
+        <helpText />
+        <label>
+        PercentageAllocationAssignment_recordsProcessed</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="d590407e-0b5d-453f-b274-087154bfc401">
+
+        <helpText />
+        <label>
+        PercentageAllocationAssignment_recordsCreated</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="72f49f43-511c-4138-87bb-eb39a5e06a84">
+
+        <helpText />
+        <label>PercentageAllocationAssignment_errorCount</label>
+        <type>string</type>
+        <defaultValue>0</defaultValue>
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+      <definedProcessProperty key="978eb3fe-3cde-42d2-956b-dae7c8bb8a43">
+
+        <helpText />
+        <label>
+        PercentageAllocationAssignment_APIResponse_filenames</label>
+        <type>string</type>
+        <defaultValue />
+        <allowedValues />
+        <persisted>false</persisted>
+      </definedProcessProperty>
+    </DefinedProcessProperties>
+  </Object>
+</Component>
